@@ -30,17 +30,18 @@ namespace DespesaDigital
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnCadastro = new System.Windows.Forms.Button();
             this.btnMinhaConta = new System.Windows.Forms.Button();
             this.btnCentroCusto = new System.Windows.Forms.Button();
             this.btnDespesa = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbNome = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.btnCadastro = new System.Windows.Forms.Button();
+            this.panelPrincipal = new System.Windows.Forms.Panel();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -54,18 +55,24 @@ namespace DespesaDigital
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(179, 491);
+            this.panel1.Size = new System.Drawing.Size(179, 620);
             this.panel1.TabIndex = 0;
             // 
-            // pictureBox1
+            // btnCadastro
             // 
-            this.pictureBox1.Image = global::DespesaDigital.Properties.Resources.logodespesadigital;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(173, 97);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.btnCadastro.Enabled = false;
+            this.btnCadastro.FlatAppearance.BorderSize = 0;
+            this.btnCadastro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCadastro.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastro.ForeColor = System.Drawing.Color.White;
+            this.btnCadastro.Location = new System.Drawing.Point(0, 239);
+            this.btnCadastro.Name = "btnCadastro";
+            this.btnCadastro.Size = new System.Drawing.Size(182, 52);
+            this.btnCadastro.TabIndex = 3;
+            this.btnCadastro.Text = "Cadastros";
+            this.btnCadastro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCadastro.UseVisualStyleBackColor = true;
+            this.btnCadastro.Click += new System.EventHandler(this.btnCadastro_Click);
             // 
             // btnMinhaConta
             // 
@@ -81,6 +88,7 @@ namespace DespesaDigital
             this.btnMinhaConta.Text = "Minha Conta";
             this.btnMinhaConta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMinhaConta.UseVisualStyleBackColor = true;
+            this.btnMinhaConta.Click += new System.EventHandler(this.btnMinhaConta_Click);
             // 
             // btnCentroCusto
             // 
@@ -118,11 +126,12 @@ namespace DespesaDigital
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.btnLogout);
             this.panel2.Controls.Add(this.lbNome);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(179, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(757, 64);
+            this.panel2.Size = new System.Drawing.Size(892, 64);
             this.panel2.TabIndex = 1;
             // 
             // lbNome
@@ -135,37 +144,47 @@ namespace DespesaDigital
             this.lbNome.TabIndex = 0;
             this.lbNome.Text = "Seu nome";
             // 
-            // panel3
+            // panelPrincipal
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(231)))), ((int)(((byte)(213)))));
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel3.Location = new System.Drawing.Point(179, 64);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(757, 427);
-            this.panel3.TabIndex = 2;
+            this.panelPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(231)))), ((int)(((byte)(213)))));
+            this.panelPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelPrincipal.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelPrincipal.Location = new System.Drawing.Point(179, 64);
+            this.panelPrincipal.Name = "panelPrincipal";
+            this.panelPrincipal.Size = new System.Drawing.Size(892, 556);
+            this.panelPrincipal.TabIndex = 2;
             // 
-            // btnCadastro
+            // btnLogout
             // 
-            this.btnCadastro.Enabled = false;
-            this.btnCadastro.FlatAppearance.BorderSize = 0;
-            this.btnCadastro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCadastro.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastro.ForeColor = System.Drawing.Color.White;
-            this.btnCadastro.Location = new System.Drawing.Point(0, 239);
-            this.btnCadastro.Name = "btnCadastro";
-            this.btnCadastro.Size = new System.Drawing.Size(182, 52);
-            this.btnCadastro.TabIndex = 3;
-            this.btnCadastro.Text = "Cadastros";
-            this.btnCadastro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCadastro.UseVisualStyleBackColor = true;
+            this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLogout.BackgroundImage = global::DespesaDigital.Properties.Resources.logout;
+            this.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Location = new System.Drawing.Point(851, 21);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(29, 24);
+            this.btnLogout.TabIndex = 1;
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::DespesaDigital.Properties.Resources.logodespesadigital;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(173, 97);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(936, 491);
-            this.Controls.Add(this.panel3);
+            this.ClientSize = new System.Drawing.Size(1071, 620);
+            this.Controls.Add(this.panelPrincipal);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "frmPrincipal";
@@ -173,9 +192,9 @@ namespace DespesaDigital
             this.Text = "Despesa Digital";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -184,13 +203,14 @@ namespace DespesaDigital
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panelPrincipal;
         private System.Windows.Forms.Button btnMinhaConta;
         private System.Windows.Forms.Button btnCentroCusto;
         private System.Windows.Forms.Button btnDespesa;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lbNome;
         private System.Windows.Forms.Button btnCadastro;
+        private System.Windows.Forms.Button btnLogout;
     }
 }
 

@@ -1,5 +1,6 @@
 ﻿using DespesaDigital.Code.DAL.dalUsuario;
 using DespesaDigital.Code.DTO;
+using System.Collections.Generic;
 
 namespace DespesaDigital.Code.BLL
 {
@@ -9,6 +10,30 @@ namespace DespesaDigital.Code.BLL
         {
             var dal = new dalUsuario();
             return dal.AutenticaUsuario(email, senha);
+        }
+
+        public static List<dtoUsuario> ListarUsuariosPorStatus(string status)
+        {
+            var dal = new dalUsuario();
+            return dal.ListarUsuariosPorStatus(status);
+        }
+
+        public static List<dtoUsuario> ListarUsuariosPorNome(string status, string nome)
+        {
+            var dal = new dalUsuario();
+            return dal.ListarUsuariosPorNome(status, nome);
+        }
+
+        public static bool Update(dtoUsuario dto)
+        {
+            var dal = new dalUsuario();
+            return dal.Update(dto);
+        }
+
+        public static bool Delete(int codigo)
+        {
+            var dal = new dalUsuario();
+            return dal.Delete(codigo);
         }
     }
 }
