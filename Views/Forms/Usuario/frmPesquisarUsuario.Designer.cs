@@ -30,9 +30,7 @@ namespace DespesaDigital.Views.Forms.Usuario
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGrid = new System.Windows.Forms.DataGridView();
             this.rdAtivos = new System.Windows.Forms.RadioButton();
             this.rdInativos = new System.Windows.Forms.RadioButton();
@@ -43,14 +41,13 @@ namespace DespesaDigital.Views.Forms.Usuario
             this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sobrenome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nivel = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.status = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.nivel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.setor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.salvar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.excluir = new System.Windows.Forms.DataGridViewButtonColumn();
             this.senha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigo_setor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nivel_acesso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nome_departamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,25 +77,24 @@ namespace DespesaDigital.Views.Forms.Usuario
             this.nivel,
             this.status,
             this.setor,
-            this.salvar,
-            this.excluir,
             this.senha,
             this.codigo_setor,
-            this.nivel_acesso});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGrid.DefaultCellStyle = dataGridViewCellStyle4;
+            this.nivel_acesso,
+            this.nome_departamento});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGrid.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGrid.Location = new System.Drawing.Point(-2, 95);
             this.dataGrid.Name = "dataGrid";
             this.dataGrid.RowHeadersVisible = false;
             this.dataGrid.Size = new System.Drawing.Size(917, 405);
             this.dataGrid.TabIndex = 0;
-            this.dataGrid.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGrid_CellMouseClick);
+            this.dataGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_CellDoubleClick);
             // 
             // rdAtivos
             // 
@@ -175,6 +171,7 @@ namespace DespesaDigital.Views.Forms.Usuario
             // 
             // sobrenome
             // 
+            this.sobrenome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.sobrenome.DataPropertyName = "sobrenome";
             this.sobrenome.HeaderText = "Sobrenome:";
             this.sobrenome.Name = "sobrenome";
@@ -191,25 +188,15 @@ namespace DespesaDigital.Views.Forms.Usuario
             // 
             this.nivel.DataPropertyName = "s_nivel_acesso";
             this.nivel.HeaderText = "Acesso:";
-            this.nivel.Items.AddRange(new object[] {
-            "Técnico",
-            "Supervisor",
-            "Gestor"});
             this.nivel.Name = "nivel";
             this.nivel.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.nivel.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // status
             // 
             this.status.DataPropertyName = "ativo";
             this.status.HeaderText = "Status:";
-            this.status.Items.AddRange(new object[] {
-            "Ativo",
-            "Inativo",
-            "Pendente"});
             this.status.Name = "status";
             this.status.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.status.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // setor
             // 
@@ -218,36 +205,6 @@ namespace DespesaDigital.Views.Forms.Usuario
             this.setor.Name = "setor";
             this.setor.ReadOnly = true;
             this.setor.Width = 207;
-            // 
-            // salvar
-            // 
-            this.salvar.DataPropertyName = "salvar";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            this.salvar.DefaultCellStyle = dataGridViewCellStyle2;
-            this.salvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.salvar.HeaderText = "Ações";
-            this.salvar.Name = "salvar";
-            this.salvar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.salvar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.salvar.Width = 80;
-            // 
-            // excluir
-            // 
-            this.excluir.DataPropertyName = "excluir";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            this.excluir.DefaultCellStyle = dataGridViewCellStyle3;
-            this.excluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.excluir.HeaderText = "";
-            this.excluir.Name = "excluir";
-            this.excluir.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.excluir.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.excluir.Width = 80;
             // 
             // senha
             // 
@@ -273,11 +230,19 @@ namespace DespesaDigital.Views.Forms.Usuario
             this.nivel_acesso.ReadOnly = true;
             this.nivel_acesso.Visible = false;
             // 
+            // nome_departamento
+            // 
+            this.nome_departamento.DataPropertyName = "nome_departamento";
+            this.nome_departamento.HeaderText = "departamento";
+            this.nome_departamento.Name = "nome_departamento";
+            this.nome_departamento.ReadOnly = true;
+            this.nome_departamento.Visible = false;
+            // 
             // frmPesquisarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(915, 498);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNome);
@@ -306,13 +271,12 @@ namespace DespesaDigital.Views.Forms.Usuario
         private System.Windows.Forms.DataGridViewTextBoxColumn nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn sobrenome;
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
-        private System.Windows.Forms.DataGridViewComboBoxColumn nivel;
-        private System.Windows.Forms.DataGridViewComboBoxColumn status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nivel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn status;
         private System.Windows.Forms.DataGridViewTextBoxColumn setor;
-        private System.Windows.Forms.DataGridViewButtonColumn salvar;
-        private System.Windows.Forms.DataGridViewButtonColumn excluir;
         private System.Windows.Forms.DataGridViewTextBoxColumn senha;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo_setor;
         private System.Windows.Forms.DataGridViewTextBoxColumn nivel_acesso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nome_departamento;
     }
 }

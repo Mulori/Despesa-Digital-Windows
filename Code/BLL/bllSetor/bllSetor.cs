@@ -6,10 +6,10 @@ namespace DespesaDigital.Code.BLL.bllSetor
 {
     public class bllSetor
     {
-        public static List<dtoSetor> TodosSetoresPorDepartamento(string departamento)
+        public static List<dtoSetor> TodosSetoresPorDepartamento(int departamento)
         {
             var dal = new dalSetor();
-            return dal.TodosSetoresPorSetor(departamento);
+            return dal.TodosSetoresPorCodigoDepartamento(departamento);
         }
 
         public static int IdSetorPorNome(string setor)

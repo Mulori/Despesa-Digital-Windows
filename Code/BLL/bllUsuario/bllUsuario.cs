@@ -35,5 +35,17 @@ namespace DespesaDigital.Code.BLL
             var dal = new dalUsuario();
             return dal.Delete(codigo);
         }
+
+        public static dtoUsuario UsuarioPorCodigo(int codigo)
+        {
+            var dal = new dalUsuario();
+            return dal.UsuarioPorCodigo(codigo);
+        }
+
+        public static bool UpdateAceitar(int codigo_usuario, int nivel)
+        {
+            var dal = new dalUsuario();
+            return dal.UpdateAceitar(codigo_usuario, nivel);
+        }
     }
 }

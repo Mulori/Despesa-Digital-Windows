@@ -167,6 +167,7 @@ namespace DespesaDigital
             this.btnLogout.Size = new System.Drawing.Size(29, 24);
             this.btnLogout.TabIndex = 1;
             this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Visible = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // pictureBox1

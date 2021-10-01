@@ -1,4 +1,5 @@
 ﻿using DespesaDigital.Code.DTO;
+using DespesaDigital.Core;
 using Npgsql;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ namespace DespesaDigital.Code.DAL.dalUsuario
         {
             var dto = new dtoUsuario();
 
-            var ssql = $"select * from usuario where email = '{email}' and senha = md5('{senha}')";
+            var ssql = $"select * from usuario where email = '{email}' and senha = md5('{senha}') and ativo = 'A'";
 
             using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
             using (var dr = cmd.ExecuteReader())
@@ -71,27 +72,16 @@ namespace DespesaDigital.Code.DAL.dalUsuario
                     switch (dr["ativo"].ToString())
                     {
                         case "A":
-                            dto.salvar = "Salvar";
-                            dto.excluir = "Excluir";
-
                             dto.ativo = "Ativo";
                             break;
                         case "P":
-                            dto.salvar = "Aceitar";
-                            dto.excluir = "Recusar";
-
                             dto.ativo = "Pendente";
                             break;
                         case "I":
-                            dto.salvar = "Salvar";
-                            dto.excluir = "Excluir";
-
                             dto.ativo = "Inativo";
                             break;
                     }
 
-                    dto.salvar = "Salvar";
-                    dto.excluir = "Excluir";
                     dto.nome_setor = dr["setor"].ToString();
 
                     list.Add(dto);
@@ -135,21 +125,12 @@ namespace DespesaDigital.Code.DAL.dalUsuario
                     switch (dr["ativo"].ToString())
                     {
                         case "A":
-                            dto.salvar = "Salvar";
-                            dto.excluir = "Excluir";
-
                             dto.ativo = "Ativo";
                             break;
                         case "P":
-                            dto.salvar = "Aceitar";
-                            dto.excluir = "Recusar";
-
                             dto.ativo = "Pendente";
                             break;
                         case "I":
-                            dto.salvar = "Salvar";
-                            dto.excluir = "Excluir";
-
                             dto.ativo = "Inativo";
                             break;
                     }
@@ -161,6 +142,57 @@ namespace DespesaDigital.Code.DAL.dalUsuario
                 dr.Close();
             }
             return list;
+        }
+
+        public dtoUsuario UsuarioPorCodigo(int codigo)
+        {
+            var ssql = $"select u.codigo, u.nome as usuario, u.sobrenome, u.email, u.nivel_acesso, u.ativo, s.nome as setor, d.nome as departamento " +
+                $"from usuario u inner join setor s on(u.codigo_setor = s.codigo) inner join departamento d on(d.codigo = s.codigo_departamento) where u.codigo = '{codigo}'";
+
+            var dto = new dtoUsuario();
+
+            using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
+            using (var dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    dto.codigo = Convert.ToInt32(dr["codigo"]);
+                    dto.nome = dr["usuario"].ToString();
+                    dto.sobrenome = dr["sobrenome"].ToString();
+                    dto.email = dr["email"].ToString();
+
+                    switch (dr["nivel_acesso"].ToString())
+                    {
+                        case "1":
+                            dto.s_nivel_acesso = "Tecnico";
+                            break;
+                        case "2":
+                            dto.s_nivel_acesso = "Supervisor";
+                            break;
+                        case "3":
+                            dto.s_nivel_acesso = "Gestor";
+                            break;
+                    }
+
+                    switch (dr["ativo"].ToString())
+                    {
+                        case "A":
+                            dto.ativo = "Ativo";
+                            break;
+                        case "P":
+                            dto.ativo = "Pendente";
+                            break;
+                        case "I":
+                            dto.ativo = "Inativo";
+                            break;
+                    }
+
+                    dto.nome_setor = dr["setor"].ToString();
+                    dto.nome_departamento = dr["departamento"].ToString();
+                }
+                dr.Close();
+            }
+            return dto;
         }
 
         public bool Update(dtoUsuario dto)
@@ -182,7 +214,39 @@ namespace DespesaDigital.Code.DAL.dalUsuario
                     cmd.ExecuteNonQuery();
                     return true;
                 }
-                catch(Exception e)
+                catch
+                {
+                    return false;
+                }
+            }
+        }
+
+        public bool UpdateAceitar(int codigo_usuario, int nivel)
+        {
+            var ssql = $"update usuario set ativo = 'A', nivel_acesso = '{nivel}' where codigo = '{codigo_usuario}'";
+
+            using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
+            {
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+
+            ssql = $"update usuario_aprovacao set motivo = 'Usuário aprovado por: {VariaveisGlobais.codigo_usuario} {VariaveisGlobais.nome_usuario}', aprovado = 'S' where codigo_usuario = '{codigo_usuario}'";
+            
+            using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
+            {
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    return true;
+                }
+                catch
                 {
                     return false;
                 }

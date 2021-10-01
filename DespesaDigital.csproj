@@ -84,11 +84,14 @@
     <Compile Include="Code\BLL\bllConexao\bllConexao.cs" />
     <Compile Include="Code\BLL\bllDepartamento\bllDepartamento.cs" />
     <Compile Include="Code\BLL\bllSetor\bllSetor.cs" />
+    <Compile Include="Code\BLL\bllUsuarioAprovacao\bllUsuarioAprovacao.cs" />
     <Compile Include="Code\BLL\bllUsuario\bllUsuario.cs" />
     <Compile Include="Code\DAL\dalConexao\dalConexao.cs" />
     <Compile Include="Code\DAL\dalDepartamento\dalDepartamento.cs" />
     <Compile Include="Code\DAL\dalSetor\dalSetor.cs" />
+    <Compile Include="Code\DAL\dalUsuarioAprovacao\dalUsuarioAprovacao.cs" />
     <Compile Include="Code\DAL\dalUsuario\dalUsuario.cs" />
+    <Compile Include="Code\DTO\dtoComponentes\dtoComboBox.cs" />
     <Compile Include="Code\DTO\dtoDepartamento\dtoDepartamento.cs" />
     <Compile Include="Code\DTO\dtoSetor\dtoSetor.cs" />
     <Compile Include="Code\DTO\dtoUsuario\dtoUsuario.cs" />
@@ -138,6 +141,12 @@
     <Compile Include="Views\Forms\SolicitarAcesso\frmSolicitarAcesso.Designer.cs">
       <DependentUpon>frmSolicitarAcesso.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Forms\Usuario\frmEditarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\Usuario\frmEditarUsuario.Designer.cs">
+      <DependentUpon>frmEditarUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Forms\Usuario\frmPesquisarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\SolicitarAcesso\frmSolicitarAcesso.resx">
       <DependentUpon>frmSolicitarAcesso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\Usuario\frmEditarUsuario.resx">
+      <DependentUpon>frmEditarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\Usuario\frmPesquisarUsuario.resx">
       <DependentUpon>frmPesquisarUsuario.cs</DependentUpon>

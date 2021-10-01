@@ -7,11 +7,11 @@ namespace DespesaDigital.Code.DAL.dalSetor
 {
     public class dalSetor
     {
-        public List<dtoSetor> TodosSetoresPorSetor(string departamento)
+        public List<dtoSetor> TodosSetoresPorCodigoDepartamento(int departamento)
         {
             var list = new List<dtoSetor>();
 
-            var ssql = $"select * from setor where codigo_departamento in (select codigo from departamento where nome = '{departamento}')";
+            var ssql = $"select * from setor where codigo_departamento = '{departamento}')";
 
             using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
             using (var dr = cmd.ExecuteReader())

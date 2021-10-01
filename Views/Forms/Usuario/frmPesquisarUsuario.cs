@@ -114,86 +114,13 @@ namespace DespesaDigital.Views.Forms.Usuario
             }
         }
 
-        private void dataGrid_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void dataGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            var dto = new dtoUsuario();
-            dto.codigo = Convert.ToInt32(dataGrid.CurrentRow.Cells[0].Value.ToString());
-            dto.nome = dataGrid.CurrentRow.Cells[1].Value.ToString();
-            dto.sobrenome = dataGrid.CurrentRow.Cells[2].Value.ToString();
-            dto.email = dataGrid.CurrentRow.Cells[3].Value.ToString();
+            var codigo = Convert.ToInt32(dataGrid.CurrentRow.Cells[0].Value.ToString());
 
-            if (string.IsNullOrEmpty(dataGrid.CurrentRow.Cells[6].Value.ToString()))
+            using (var form = new frmEditarUsuario(codigo))
             {
-                corePopUp.exibirMensagem("Selecione o nivel de acesso do usuário!", "Atenção");
-                return;
-            }
-
-            switch (dataGrid.CurrentRow.Cells[6].Value.ToString())
-            {
-                case "Técnico":
-                    dto.nivel_acesso = 1;
-                    break;
-                case "Supervisor":
-                    dto.nivel_acesso = 2;
-                    break;
-                case "Gestor": //Gestor
-                    dto.nivel_acesso = 3;
-                    break;
-            }
-
-            switch (dataGrid.CurrentRow.Cells[7].Value.ToString())
-            {
-                case "Ativo":
-                    dto.ativo = "A";
-                    break;
-                case "Pendente":
-                    dto.ativo = "P";
-                    break;
-                case "Inativo":
-                    dto.ativo = "I";
-                    break;
-            }
-
-            dto.codigo_setor = bllSetor.IdSetorPorNome(dataGrid.CurrentRow.Cells[9].Value.ToString());
-
-            switch (dataGrid.CurrentCell.ColumnIndex)
-            {
-                case 10: //Salvar
-
-                    if (!corePopUp.exibirPergunta("Atenção:", "Deseja salvar esse cadastro?", 1))
-                    {
-                        return;
-                    }
-
-                    if (bllUsuario.Update(dto))
-                    {
-                        corePopUp.exibirMensagem("Usuário alterado com sucesso.", "Atenção");
-                    }
-                    else
-                    {
-                        corePopUp.exibirMensagem("Ocorreu um erro ao alterar o usuário!", "Atenção");
-                    }
-
-                    break;
-                case 11: //Excluir
-
-                    if (!corePopUp.exibirPergunta("Atenção:", "Deseja excluir esse cadastro?", 2))
-                    {
-                        return;
-                    }
-
-                    if (bllUsuario.Delete(dto.codigo))
-                    {
-                        corePopUp.exibirMensagem("Usuário excluido com sucesso.", "Atenção");
-                    }
-                    else
-                    {
-                        corePopUp.exibirMensagem("Ocorreu um erro ao excluir o usuário!", "Atenção");
-                    }
-
-                    break;
-                default:
-                    return;
+                form.ShowDialog();
             }
 
             AtualizarGrid();
