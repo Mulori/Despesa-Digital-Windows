@@ -46,12 +46,15 @@ namespace DespesaDigital.Views.Forms.Usuario
         {
             if(VariaveisGlobais.nivel_acesso == 2)
             {
-                cmbNivel.Items.Add("Técnico");
+                cmbNivel.Items.Add("Tecnico");
                 cmbNivel.Items.Add("Supervisor");
+
+                cmbDepartamento.Enabled = false;
+                cmbSetor.Enabled = false;
             }
             else if(VariaveisGlobais.nivel_acesso == 3)
             {
-                cmbNivel.Items.Add("Técnico");
+                cmbNivel.Items.Add("Tecnico");
                 cmbNivel.Items.Add("Supervisor");
                 cmbNivel.Items.Add("Gestor");
             }
@@ -134,7 +137,7 @@ namespace DespesaDigital.Views.Forms.Usuario
 
             switch (cmbNivel.Text)
             {
-                case "Técnico":
+                case "Tecnico":
                     dto.nivel_acesso = 1;
                     break;
                 case "Supervisor":
@@ -201,7 +204,7 @@ namespace DespesaDigital.Views.Forms.Usuario
                     break;
             }
 
-            dto.codigo_setor = bllSetor.IdSetorPorNome(cmbSetor.Text);
+            dto.codigo_setor = Convert.ToInt32(((KeyValuePair<string, string>)cmbSetor.SelectedItem).Key);
 
             if (!corePopUp.exibirPergunta("Atenção:", "Deseja salvar esse cadastro?", 1))
             {
@@ -225,13 +228,18 @@ namespace DespesaDigital.Views.Forms.Usuario
         {
             string key = ((KeyValuePair<string, string>)cmbDepartamento.SelectedItem).Key;
 
-            cmbSetor.Items.Clear();
+            cmbSetor.DataSource = null;
 
             var list = bllSetor.TodosSetoresPorDepartamento(Convert.ToInt32(key));
-            foreach (var setor in list)
+            Dictionary<string, string> comboSource = new Dictionary<string, string>();
+            foreach (var item in list)
             {
-                cmbSetor.Items.Add(setor.nome);
+                comboSource.Add($"{item.codigo}", $"{item.nome}");
             }
+
+            cmbSetor.DataSource = new BindingSource(comboSource, null);
+            cmbSetor.DisplayMember = "Value";
+            cmbSetor.ValueMember = "Key";
         }
     }
 }

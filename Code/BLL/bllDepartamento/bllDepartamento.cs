@@ -15,5 +15,11 @@ namespace DespesaDigital.Code.BLL.bllDepartamento
             var dal = new dalDepartamento();
             return dal.TodosDepartamentos();
         }
+
+        public static List<dtoDepartamento> DepartamentoPorSetor(int id)
+        {
+            var dal = new dalDepartamento();
+            return dal.DepartamentoPorSetor(id);
+        }
     }
 }

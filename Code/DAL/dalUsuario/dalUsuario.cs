@@ -43,6 +43,11 @@ namespace DespesaDigital.Code.DAL.dalUsuario
             var ssql = $"select u.codigo, u.nome as usuario, u.sobrenome, u.email, u.nivel_acesso, u.ativo, s.nome as setor " +
                 $"from usuario u inner join setor s on(u.codigo_setor = s.codigo) where u.ativo = '{status}'";
 
+            if (VariaveisGlobais.nivel_acesso == 2)
+            {
+                ssql += $" and u.codigo_setor = '{VariaveisGlobais.codigo_setor}'";
+            }
+
             var list = new List<dtoUsuario>();
 
             using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
@@ -96,6 +101,11 @@ namespace DespesaDigital.Code.DAL.dalUsuario
             var ssql = $"select u.codigo, u.nome as usuario, u.sobrenome, u.email, u.nivel_acesso, u.ativo, s.nome as setor " +
                 $"from usuario u inner join setor s on(u.codigo_setor = s.codigo) where u.ativo = '{status}' and UPPER(u.nome) like UPPER('%{nome}%')";
 
+            if (VariaveisGlobais.nivel_acesso == 2)
+            {
+                ssql += $" and u.codigo_setor = '{VariaveisGlobais.codigo_setor}'";
+            }
+
             var list = new List<dtoUsuario>();
 
             using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
@@ -148,6 +158,16 @@ namespace DespesaDigital.Code.DAL.dalUsuario
         {
             var ssql = $"select u.codigo, u.nome as usuario, u.sobrenome, u.email, u.nivel_acesso, u.ativo, s.nome as setor, d.nome as departamento " +
                 $"from usuario u inner join setor s on(u.codigo_setor = s.codigo) inner join departamento d on(d.codigo = s.codigo_departamento) where u.codigo = '{codigo}'";
+
+            if (VariaveisGlobais.nivel_acesso == 2)
+            {
+                ssql += $" and u.codigo_setor = '{VariaveisGlobais.codigo_setor}'";
+            }
+
+            if (VariaveisGlobais.nivel_acesso == 2)
+            {
+                ssql += $" and u.codigo_setor = '{VariaveisGlobais.codigo_setor}'";
+            }
 
             var dto = new dtoUsuario();
 
@@ -271,6 +291,26 @@ namespace DespesaDigital.Code.DAL.dalUsuario
                     return false;
                 }
             }
+        }
+
+        public int NovoUsuario(dtoUsuario dto)
+        {
+            var retorno = 0;
+
+            var ssql = $"select NovoUsuario('{dto.nome}', '{dto.sobrenome}', '{dto.email}', '{dto.senha}', {dto.codigo_setor});";
+
+            using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
+            using (var dr = cmd.ExecuteReader())
+            {
+                if (dr.Read())
+                {
+                    retorno = int.Parse(dr["NovoUsuario"].ToString());
+                }
+
+                dr.Close();
+            }
+
+            return retorno;
         }
     }
 }

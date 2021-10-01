@@ -139,10 +139,12 @@ namespace DespesaDigital.Views.Forms.SolicitarAcesso
             this.txtConfirmeSenha.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtConfirmeSenha.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtConfirmeSenha.Location = new System.Drawing.Point(22, 284);
+            this.txtConfirmeSenha.MaxLength = 10;
             this.txtConfirmeSenha.Name = "txtConfirmeSenha";
             this.txtConfirmeSenha.PasswordChar = '*';
             this.txtConfirmeSenha.Size = new System.Drawing.Size(282, 22);
             this.txtConfirmeSenha.TabIndex = 4;
+            this.txtConfirmeSenha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtConfirmeSenha_KeyPress);
             // 
             // label4
             // 
@@ -171,10 +173,11 @@ namespace DespesaDigital.Views.Forms.SolicitarAcesso
             this.txtSobrenome.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSobrenome.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.txtSobrenome.Location = new System.Drawing.Point(19, 136);
+            this.txtSobrenome.MaxLength = 100;
             this.txtSobrenome.Name = "txtSobrenome";
-            this.txtSobrenome.PasswordChar = '*';
             this.txtSobrenome.Size = new System.Drawing.Size(282, 22);
             this.txtSobrenome.TabIndex = 1;
+            this.txtSobrenome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSobrenome_KeyPress);
             // 
             // txtNome
             // 
@@ -183,9 +186,11 @@ namespace DespesaDigital.Views.Forms.SolicitarAcesso
             this.txtNome.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNome.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.txtNome.Location = new System.Drawing.Point(20, 88);
+            this.txtNome.MaxLength = 100;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(282, 22);
             this.txtNome.TabIndex = 0;
+            this.txtNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNome_KeyPress);
             // 
             // btnSolicitar
             // 
@@ -200,6 +205,7 @@ namespace DespesaDigital.Views.Forms.SolicitarAcesso
             this.btnSolicitar.TabIndex = 7;
             this.btnSolicitar.Text = "Solicitar";
             this.btnSolicitar.UseVisualStyleBackColor = false;
+            this.btnSolicitar.Click += new System.EventHandler(this.btnSolicitar_Click);
             // 
             // label2
             // 
@@ -228,10 +234,12 @@ namespace DespesaDigital.Views.Forms.SolicitarAcesso
             this.txtSenha.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSenha.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.txtSenha.Location = new System.Drawing.Point(22, 236);
+            this.txtSenha.MaxLength = 10;
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(282, 22);
             this.txtSenha.TabIndex = 3;
+            this.txtSenha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSenha_KeyPress);
             // 
             // txtEmail
             // 
@@ -240,9 +248,11 @@ namespace DespesaDigital.Views.Forms.SolicitarAcesso
             this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.txtEmail.Location = new System.Drawing.Point(20, 184);
+            this.txtEmail.MaxLength = 250;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(282, 22);
             this.txtEmail.TabIndex = 2;
+            this.txtEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEmail_KeyPress);
             // 
             // panel2
             // 
@@ -295,7 +305,7 @@ namespace DespesaDigital.Views.Forms.SolicitarAcesso
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(56)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(781, 487);
+            this.ClientSize = new System.Drawing.Size(781, 495);
             this.Controls.Add(this.btnFechar);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.panel1);

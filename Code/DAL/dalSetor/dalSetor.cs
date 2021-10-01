@@ -11,7 +11,7 @@ namespace DespesaDigital.Code.DAL.dalSetor
         {
             var list = new List<dtoSetor>();
 
-            var ssql = $"select * from setor where codigo_departamento = '{departamento}')";
+            var ssql = $"select * from setor where codigo_departamento = '{departamento}'";
 
             using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
             using (var dr = cmd.ExecuteReader())
@@ -30,26 +30,5 @@ namespace DespesaDigital.Code.DAL.dalSetor
 
             return list;
         }
-
-        public int IdSetorPorNome(string setor)
-        {
-            var id = 0;
-
-            var ssql = $"select * from setor where nome = '{setor}' and codigo_departamento = '1'";
-
-            using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
-            using (var dr = cmd.ExecuteReader())
-            {
-                if (dr.Read())
-                {
-                    id = Convert.ToInt32(dr["codigo"]);
-                }
-                dr.Close();
-            }
-
-            return id;
-        }
-
-       
     }
 }

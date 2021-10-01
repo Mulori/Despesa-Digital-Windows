@@ -81,6 +81,7 @@ namespace DespesaDigital.Views.Forms.Cadastros
             this.btnDepartamentos.TabIndex = 2;
             this.btnDepartamentos.Text = "Departamentos";
             this.btnDepartamentos.UseVisualStyleBackColor = false;
+            this.btnDepartamentos.Click += new System.EventHandler(this.btnDepartamentos_Click);
             // 
             // panel1
             // 
