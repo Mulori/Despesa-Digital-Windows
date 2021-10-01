@@ -47,6 +47,10 @@ namespace DespesaDigital.Code.DAL.dalUsuario
             {
                 ssql += $" and u.codigo_setor = '{VariaveisGlobais.codigo_setor}'";
             }
+            else if(VariaveisGlobais.nivel_acesso == 3)
+            {
+                ssql += $" and u.codigo_setor in({VariaveisGlobais.setores_concatenados})";
+            }
 
             var list = new List<dtoUsuario>();
 
@@ -104,6 +108,10 @@ namespace DespesaDigital.Code.DAL.dalUsuario
             if (VariaveisGlobais.nivel_acesso == 2)
             {
                 ssql += $" and u.codigo_setor = '{VariaveisGlobais.codigo_setor}'";
+            }
+            else if (VariaveisGlobais.nivel_acesso == 3)
+            {
+                ssql += $" and u.codigo_setor in ({VariaveisGlobais.setores_concatenados})";
             }
 
             var list = new List<dtoUsuario>();
@@ -163,10 +171,9 @@ namespace DespesaDigital.Code.DAL.dalUsuario
             {
                 ssql += $" and u.codigo_setor = '{VariaveisGlobais.codigo_setor}'";
             }
-
-            if (VariaveisGlobais.nivel_acesso == 2)
+            else if (VariaveisGlobais.nivel_acesso == 3)
             {
-                ssql += $" and u.codigo_setor = '{VariaveisGlobais.codigo_setor}'";
+                ssql += $" and u.codigo_setor in ({VariaveisGlobais.setores_concatenados})";
             }
 
             var dto = new dtoUsuario();

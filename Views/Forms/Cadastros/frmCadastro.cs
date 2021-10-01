@@ -1,4 +1,5 @@
 ﻿using DespesaDigital.Views.Forms.Departamento;
+using DespesaDigital.Views.Forms.Setor;
 using DespesaDigital.Views.Forms.Usuario;
 using System;
 using System.Windows.Forms;
@@ -28,6 +29,14 @@ namespace DespesaDigital.Views.Forms.Cadastros
         private void btnDepartamentos_Click(object sender, EventArgs e)
         {
             using (var form = new frmPesquisarDepartamento())
+            {
+                form.ShowDialog();
+            }
+        }
+
+        private void btnSetores_Click(object sender, EventArgs e)
+        {
+            using (var form = new frmPesquisaSetor())
             {
                 form.ShowDialog();
             }

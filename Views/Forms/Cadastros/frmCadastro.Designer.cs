@@ -52,6 +52,7 @@ namespace DespesaDigital.Views.Forms.Cadastros
             this.btnSetores.TabIndex = 0;
             this.btnSetores.Text = "Setores";
             this.btnSetores.UseVisualStyleBackColor = false;
+            this.btnSetores.Click += new System.EventHandler(this.btnSetores_Click);
             // 
             // btnUsuarios
             // 

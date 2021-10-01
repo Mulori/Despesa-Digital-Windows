@@ -91,7 +91,6 @@
     <Compile Include="Code\DAL\dalSetor\dalSetor.cs" />
     <Compile Include="Code\DAL\dalUsuarioAprovacao\dalUsuarioAprovacao.cs" />
     <Compile Include="Code\DAL\dalUsuario\dalUsuario.cs" />
-    <Compile Include="Code\DTO\dtoComponentes\dtoComboBox.cs" />
     <Compile Include="Code\DTO\dtoDepartamento\dtoDepartamento.cs" />
     <Compile Include="Code\DTO\dtoSetor\dtoSetor.cs" />
     <Compile Include="Code\DTO\dtoUsuario\dtoUsuario.cs" />
@@ -140,6 +139,12 @@
     </Compile>
     <Compile Include="Views\Forms\MinhaConta\frmMinhaConta.Designer.cs">
       <DependentUpon>frmMinhaConta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\Setor\frmPesquisaSetor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\Setor\frmPesquisaSetor.Designer.cs">
+      <DependentUpon>frmPesquisaSetor.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Forms\SolicitarAcesso\frmSolicitarAcesso.cs">
       <SubType>Form</SubType>
@@ -190,6 +195,9 @@
     <EmbeddedResource Include="Views\Forms\MinhaConta\frmMinhaConta.resx">
       <DependentUpon>frmMinhaConta.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\Setor\frmPesquisaSetor.resx">
+      <DependentUpon>frmPesquisaSetor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\SolicitarAcesso\frmSolicitarAcesso.resx">
       <DependentUpon>frmSolicitarAcesso.cs</DependentUpon>
     </EmbeddedResource>
@@ -213,9 +221,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Image\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\logodespesadigital.png" />
   </ItemGroup>

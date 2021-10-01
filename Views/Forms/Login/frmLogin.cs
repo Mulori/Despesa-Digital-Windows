@@ -1,4 +1,5 @@
 ﻿using DespesaDigital.Code.BLL;
+using DespesaDigital.Code.BLL.bllSetor;
 using DespesaDigital.Core;
 using DespesaDigital.Views.Forms.Mensagens;
 using DespesaDigital.Views.Forms.SolicitarAcesso;
@@ -45,20 +46,14 @@ namespace DespesaDigital.Views.Forms.Login
         {
             if(string.IsNullOrEmpty(txtEmail.Text) || string.IsNullOrEmpty(txtSenha.Text))
             {
-                using(var form = new frmMensagem("Preencha todos os campos.", "Atenção:"))
-                {
-                    form.ShowDialog();
-                }
+                corePopUp.exibirMensagem("Preencha todos os campos.", "Atenção");
 
                 return;
             }
 
             if (!rg.IsMatch(txtEmail.Text))
             {
-                using (var form = new frmMensagem("O e-mail informado não é valido.", "Erro:"))
-                {
-                    form.ShowDialog();                    
-                }
+                corePopUp.exibirMensagem("O e-mail informado não é valido.", "Atenção");
 
                 txtEmail.Text = "";
                 txtEmail.Focus();
@@ -67,10 +62,7 @@ namespace DespesaDigital.Views.Forms.Login
 
             if(txtSenha.Text.Length < 4)
             {
-                using (var form = new frmMensagem("A senha informada deve conter no mínimo 4 caracteres.", "Erro:"))
-                {
-                    form.ShowDialog();                    
-                }
+                corePopUp.exibirMensagem("A senha informada deve conter no mínimo 4 caracteres.", "Atenção");
 
                 txtSenha.Text = "";
                 txtSenha.Focus();
@@ -81,10 +73,7 @@ namespace DespesaDigital.Views.Forms.Login
 
             if(bll.codigo == 0)
             {
-                using (var form = new frmMensagem("E-mail ou senha invalidos.", "Erro:"))
-                {
-                    form.ShowDialog();
-                }
+                corePopUp.exibirMensagem("E-mail ou senha invalidos.", "Atenção");
                 return;
             }
 
@@ -93,6 +82,8 @@ namespace DespesaDigital.Views.Forms.Login
             VariaveisGlobais.nome_usuario = bll.nome;
             VariaveisGlobais.sobrenome_usuario = bll.sobrenome;
             VariaveisGlobais.nivel_acesso = bll.nivel_acesso;
+            VariaveisGlobais.codigo_departamento = bllSetor.CodigoDepartamentoPorCodigoSetor(bll.codigo_setor);
+            VariaveisGlobais.setores_concatenados = bllSetor.CodigoSetoresContatenado(VariaveisGlobais.codigo_departamento);
 
             this.Close();
         }

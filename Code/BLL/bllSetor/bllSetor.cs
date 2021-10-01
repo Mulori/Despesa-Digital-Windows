@@ -11,5 +11,23 @@ namespace DespesaDigital.Code.BLL.bllSetor
             var dal = new dalSetor();
             return dal.TodosSetoresPorCodigoDepartamento(departamento);
         }
+
+        public static string CodigoSetoresContatenado(int departamento)
+        {
+            var dal = new dalSetor();
+            return dal.CodigoSetoresContatenado(departamento);
+        }
+
+        public static int CodigoDepartamentoPorCodigoSetor(int setor)
+        {
+            var dal = new dalSetor();
+            return dal.CodigoDepartamentoPorCodigoSetor(setor);
+        }
+
+        public static List<dtoSetor> SetorPorCodigo(int setor)
+        {
+            var dal = new dalSetor();
+            return dal.SetorPorCodigo(setor);
+        }
     }
 }
