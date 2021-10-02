@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DespesaDigital.Code.BLL.bllProduto;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,12 @@ namespace DespesaDigital.Views.Forms.Produtos
         public frmPesquisarProduto()
         {
             InitializeComponent();
+            Inicializa();
+        }
+
+        void Inicializa()
+        {
+            dataGrid.DataSource = bllProduto.ListarTodosProdutosPorStatus("A");
         }
     }
 }
