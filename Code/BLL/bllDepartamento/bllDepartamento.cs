@@ -21,5 +21,35 @@ namespace DespesaDigital.Code.BLL.bllDepartamento
             var dal = new dalDepartamento();
             return dal.DepartamentoPorSetor(id);
         }
+
+        public static bool Insert(dtoDepartamento dto)
+        {
+            var dal = new dalDepartamento();
+            return dal.Insert(dto);
+        }
+
+        public static bool VerificaNomeExistente(string nome)
+        {
+            var dal = new dalDepartamento();
+            return dal.VerificaNomeExistente(nome);
+        }
+
+        public static dtoDepartamento DepartamentoPorCodigo(int id)
+        {
+            var dal = new dalDepartamento();
+            return dal.DepartamentoPorCodigo(id);
+        }
+
+        public static bool Update(dtoDepartamento dto)
+        {
+            var dal = new dalDepartamento();
+            return dal.Update(dto);
+        }
+
+        public static bool Delete(int codigo)
+        {
+            var dal = new dalDepartamento();
+            return dal.Delete(codigo);
+        }
     }
 }

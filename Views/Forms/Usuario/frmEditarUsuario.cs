@@ -1,5 +1,6 @@
 ﻿using DespesaDigital.Code.BLL;
 using DespesaDigital.Code.BLL.bllDepartamento;
+using DespesaDigital.Code.BLL.bllLogSistema;
 using DespesaDigital.Code.BLL.bllSetor;
 using DespesaDigital.Code.BLL.bllUsuarioAprovacao;
 using DespesaDigital.Code.DTO;
@@ -116,8 +117,11 @@ namespace DespesaDigital.Views.Forms.Usuario
                 {
                     if (bllUsuario.Delete(Convert.ToInt32(txtCodigo.Text)))
                     {
+                        bllLogSistema.Insert($"Recusou o acesso do usuario de codigo: {txtCodigo.Text}");
+
                         corePopUp.exibirMensagem("Usuário rejeitado com sucesso!", "Atenção");
                         Close();
+
                         return;
                     }
                 }
@@ -157,6 +161,8 @@ namespace DespesaDigital.Views.Forms.Usuario
 
                 if (bllUsuario.UpdateAceitar(Convert.ToInt32(txtCodigo.Text), dto.nivel_acesso))
                 {
+                    bllLogSistema.Insert($"Aceitou o acesso do usuario de codigo: {txtCodigo.Text} com o nivel de acesso: {dto.nivel_acesso}");
+
                     corePopUp.exibirMensagem("Usuário aprovado com sucesso!", "Atenção");
                     Close();
                     return;
@@ -213,6 +219,9 @@ namespace DespesaDigital.Views.Forms.Usuario
 
             if (bllUsuario.Update(dto))
             {
+                bllLogSistema.Insert($"Alterou o cadastro do usuario de codigo: {txtCodigo.Text} com o nivel de acesso: {dto.nivel_acesso}");
+
+
                 corePopUp.exibirMensagem("Usuário alterado com sucesso.", "Atenção");
                 Close();
                 return;

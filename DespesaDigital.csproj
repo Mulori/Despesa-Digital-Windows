@@ -83,11 +83,13 @@
   <ItemGroup>
     <Compile Include="Code\BLL\bllConexao\bllConexao.cs" />
     <Compile Include="Code\BLL\bllDepartamento\bllDepartamento.cs" />
+    <Compile Include="Code\BLL\bllLogSistema\bllLogSistema.cs" />
     <Compile Include="Code\BLL\bllSetor\bllSetor.cs" />
     <Compile Include="Code\BLL\bllUsuarioAprovacao\bllUsuarioAprovacao.cs" />
     <Compile Include="Code\BLL\bllUsuario\bllUsuario.cs" />
     <Compile Include="Code\DAL\dalConexao\dalConexao.cs" />
     <Compile Include="Code\DAL\dalDepartamento\dalDepartamento.cs" />
+    <Compile Include="Code\DAL\dalLogSistema\dalLogSistema.cs" />
     <Compile Include="Code\DAL\dalSetor\dalSetor.cs" />
     <Compile Include="Code\DAL\dalUsuarioAprovacao\dalUsuarioAprovacao.cs" />
     <Compile Include="Code\DAL\dalUsuario\dalUsuario.cs" />
@@ -109,6 +111,12 @@
     </Compile>
     <Compile Include="Views\Forms\Cadastros\frmCadastro.Designer.cs">
       <DependentUpon>frmCadastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\Departamento\frmNovoDepartamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\Departamento\frmNovoDepartamento.Designer.cs">
+      <DependentUpon>frmNovoDepartamento.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Forms\Departamento\frmPesquisarDepartamento.cs">
       <SubType>Form</SubType>
@@ -139,6 +147,18 @@
     </Compile>
     <Compile Include="Views\Forms\MinhaConta\frmMinhaConta.Designer.cs">
       <DependentUpon>frmMinhaConta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\Produtos\frmPesquisarProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\Produtos\frmPesquisarProduto.Designer.cs">
+      <DependentUpon>frmPesquisarProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\Setor\frmNovoSetor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\Setor\frmNovoSetor.Designer.cs">
+      <DependentUpon>frmNovoSetor.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Forms\Setor\frmPesquisaSetor.cs">
       <SubType>Form</SubType>
@@ -180,6 +200,9 @@
     <EmbeddedResource Include="Views\Forms\Cadastros\frmCadastro.resx">
       <DependentUpon>frmCadastro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\Departamento\frmNovoDepartamento.resx">
+      <DependentUpon>frmNovoDepartamento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\Departamento\frmPesquisarDepartamento.resx">
       <DependentUpon>frmPesquisarDepartamento.cs</DependentUpon>
     </EmbeddedResource>
@@ -194,6 +217,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\MinhaConta\frmMinhaConta.resx">
       <DependentUpon>frmMinhaConta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\Produtos\frmPesquisarProduto.resx">
+      <DependentUpon>frmPesquisarProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\Setor\frmNovoSetor.resx">
+      <DependentUpon>frmNovoSetor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\Setor\frmPesquisaSetor.resx">
       <DependentUpon>frmPesquisaSetor.cs</DependentUpon>

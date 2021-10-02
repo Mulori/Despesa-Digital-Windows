@@ -1,4 +1,5 @@
 ﻿using DespesaDigital.Code.BLL;
+using DespesaDigital.Code.BLL.bllLogSistema;
 using DespesaDigital.Code.BLL.bllSetor;
 using DespesaDigital.Core;
 using DespesaDigital.Views.Forms.Mensagens;
@@ -82,8 +83,11 @@ namespace DespesaDigital.Views.Forms.Login
             VariaveisGlobais.nome_usuario = bll.nome;
             VariaveisGlobais.sobrenome_usuario = bll.sobrenome;
             VariaveisGlobais.nivel_acesso = bll.nivel_acesso;
+            VariaveisGlobais.email_usuario = bll.email;
             VariaveisGlobais.codigo_departamento = bllSetor.CodigoDepartamentoPorCodigoSetor(bll.codigo_setor);
             VariaveisGlobais.setores_concatenados = bllSetor.CodigoSetoresContatenado(VariaveisGlobais.codigo_departamento);
+
+            bllLogSistema.Insert("Acesso ao sistema");
 
             this.Close();
         }

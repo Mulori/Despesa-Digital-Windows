@@ -36,6 +36,8 @@ namespace DespesaDigital.Views.Forms.Cadastros
             this.button4 = new System.Windows.Forms.Button();
             this.btnDespesas = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -87,15 +89,17 @@ namespace DespesaDigital.Views.Forms.Cadastros
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.btnDespesas);
             this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.btnSetores);
             this.panel1.Controls.Add(this.btnUsuarios);
             this.panel1.Controls.Add(this.btnDepartamentos);
-            this.panel1.Location = new System.Drawing.Point(22, 23);
+            this.panel1.Location = new System.Drawing.Point(12, 11);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(650, 374);
+            this.panel1.Size = new System.Drawing.Size(864, 369);
             this.panel1.TabIndex = 4;
             // 
             // button4
@@ -123,7 +127,7 @@ namespace DespesaDigital.Views.Forms.Cadastros
             this.btnDespesas.Name = "btnDespesas";
             this.btnDespesas.Size = new System.Drawing.Size(165, 144);
             this.btnDespesas.TabIndex = 4;
-            this.btnDespesas.Text = "Despesas";
+            this.btnDespesas.Text = "Fornecedores";
             this.btnDespesas.UseVisualStyleBackColor = false;
             // 
             // button6
@@ -140,12 +144,40 @@ namespace DespesaDigital.Views.Forms.Cadastros
             this.button6.Text = "Tipo Despesa";
             this.button6.UseVisualStyleBackColor = false;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(678, 202);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(165, 144);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Categorias";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(678, 24);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(165, 144);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "Produtos";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
             // frmCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(231)))), ((int)(((byte)(213)))));
-            this.ClientSize = new System.Drawing.Size(693, 420);
+            this.ClientSize = new System.Drawing.Size(888, 390);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmCadastro";
@@ -165,5 +197,7 @@ namespace DespesaDigital.Views.Forms.Cadastros
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnDespesas;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
