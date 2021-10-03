@@ -31,6 +31,8 @@ namespace DespesaDigital.Views.Forms.Produtos
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnIncluir = new System.Windows.Forms.Button();
@@ -43,14 +45,24 @@ namespace DespesaDigital.Views.Forms.Produtos
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dataGrid = new System.Windows.Forms.DataGridView();
+            this.dataGrid2 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cnpj = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.selecao = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.departamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dep = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -168,12 +180,15 @@ namespace DespesaDigital.Views.Forms.Produtos
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.dataGrid2);
             this.panel3.Controls.Add(this.dataGrid);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 182);
+            this.panel3.Location = new System.Drawing.Point(0, 178);
             this.panel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(771, 179);
+            this.panel3.Size = new System.Drawing.Size(771, 355);
             this.panel3.TabIndex = 48;
             // 
             // dataGrid
@@ -205,12 +220,91 @@ namespace DespesaDigital.Views.Forms.Produtos
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGrid.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGrid.Location = new System.Drawing.Point(0, 0);
+            this.dataGrid.Location = new System.Drawing.Point(0, 32);
             this.dataGrid.Name = "dataGrid";
             this.dataGrid.RowHeadersVisible = false;
-            this.dataGrid.Size = new System.Drawing.Size(771, 179);
+            this.dataGrid.Size = new System.Drawing.Size(771, 147);
             this.dataGrid.TabIndex = 2;
+            // 
+            // dataGrid2
+            // 
+            this.dataGrid2.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGrid2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGrid2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGrid2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGrid2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGrid2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewCheckBoxColumn1,
+            this.dataGridViewTextBoxColumn1,
+            this.cnpj,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGrid2.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGrid2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGrid2.Location = new System.Drawing.Point(0, 212);
+            this.dataGrid2.Name = "dataGrid2";
+            this.dataGrid2.RowHeadersVisible = false;
+            this.dataGrid2.Size = new System.Drawing.Size(771, 143);
+            this.dataGrid2.TabIndex = 3;
+            // 
+            // dataGridViewCheckBoxColumn1
+            // 
+            this.dataGridViewCheckBoxColumn1.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.dataGridViewCheckBoxColumn1.HeaderText = "";
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            this.dataGridViewCheckBoxColumn1.Width = 50;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "codigo";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Código:";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // cnpj
+            // 
+            this.cnpj.HeaderText = "CNPJ";
+            this.cnpj.Name = "cnpj";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "nome";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Razão Social:";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "s_departamento";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Departamento:";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "codigo_departamento";
+            this.dataGridViewTextBoxColumn4.HeaderText = "departamento";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Visible = false;
             // 
             // selecao
             // 
@@ -225,6 +319,7 @@ namespace DespesaDigital.Views.Forms.Produtos
             this.codigo.HeaderText = "Código:";
             this.codigo.Name = "codigo";
             this.codigo.ReadOnly = true;
+            this.codigo.Visible = false;
             // 
             // nome
             // 
@@ -239,6 +334,7 @@ namespace DespesaDigital.Views.Forms.Produtos
             this.departamento.DataPropertyName = "s_departamento";
             this.departamento.HeaderText = "Departamento:";
             this.departamento.Name = "departamento";
+            this.departamento.Visible = false;
             // 
             // dep
             // 
@@ -248,11 +344,31 @@ namespace DespesaDigital.Views.Forms.Produtos
             this.dep.ReadOnly = true;
             this.dep.Visible = false;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(7, 6);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(126, 20);
+            this.label4.TabIndex = 49;
+            this.label4.Text = "Vincular Setores:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(7, 185);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(168, 20);
+            this.label5.TabIndex = 50;
+            this.label5.Text = "Vincular Fornecedores:";
+            // 
             // frmNovoProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(771, 361);
+            this.ClientSize = new System.Drawing.Size(771, 533);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.cmbCategoria);
@@ -269,7 +385,9 @@ namespace DespesaDigital.Views.Forms.Produtos
             this.Text = "Cadastro de Produto";
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -289,6 +407,15 @@ namespace DespesaDigital.Views.Forms.Produtos
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView dataGrid;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridView dataGrid2;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cnpj;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewCheckBoxColumn selecao;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn nome;
