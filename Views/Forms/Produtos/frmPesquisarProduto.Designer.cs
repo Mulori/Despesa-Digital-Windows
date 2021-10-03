@@ -40,7 +40,6 @@ namespace DespesaDigital.Views.Forms.Produtos
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ativo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigo_categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
@@ -63,9 +62,10 @@ namespace DespesaDigital.Views.Forms.Produtos
             this.rdInativos.Location = new System.Drawing.Point(22, 45);
             this.rdInativos.Name = "rdInativos";
             this.rdInativos.Size = new System.Drawing.Size(74, 21);
-            this.rdInativos.TabIndex = 8;
+            this.rdInativos.TabIndex = 2;
             this.rdInativos.Text = "Inativos";
             this.rdInativos.UseVisualStyleBackColor = true;
+            this.rdInativos.CheckedChanged += new System.EventHandler(this.rdInativos_CheckedChanged);
             // 
             // rdAtivos
             // 
@@ -75,10 +75,11 @@ namespace DespesaDigital.Views.Forms.Produtos
             this.rdAtivos.Location = new System.Drawing.Point(22, 22);
             this.rdAtivos.Name = "rdAtivos";
             this.rdAtivos.Size = new System.Drawing.Size(64, 21);
-            this.rdAtivos.TabIndex = 7;
+            this.rdAtivos.TabIndex = 1;
             this.rdAtivos.TabStop = true;
             this.rdAtivos.Text = "Ativos";
             this.rdAtivos.UseVisualStyleBackColor = true;
+            this.rdAtivos.CheckedChanged += new System.EventHandler(this.rdAtivos_CheckedChanged);
             // 
             // txtDescricao
             // 
@@ -88,7 +89,8 @@ namespace DespesaDigital.Views.Forms.Produtos
             this.txtDescricao.Location = new System.Drawing.Point(130, 37);
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(626, 29);
-            this.txtDescricao.TabIndex = 10;
+            this.txtDescricao.TabIndex = 0;
+            this.txtDescricao.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDescricao_KeyPress);
             // 
             // dataGrid
             // 
@@ -112,7 +114,6 @@ namespace DespesaDigital.Views.Forms.Produtos
             this.codigo,
             this.descricao,
             this.status,
-            this.ativo,
             this.codigo_categoria,
             this.categoria});
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -127,7 +128,7 @@ namespace DespesaDigital.Views.Forms.Produtos
             this.dataGrid.Name = "dataGrid";
             this.dataGrid.RowHeadersVisible = false;
             this.dataGrid.Size = new System.Drawing.Size(917, 405);
-            this.dataGrid.TabIndex = 6;
+            this.dataGrid.TabIndex = 3;
             // 
             // btnNovo
             // 
@@ -140,9 +141,10 @@ namespace DespesaDigital.Views.Forms.Produtos
             this.btnNovo.Location = new System.Drawing.Point(777, 37);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(112, 28);
-            this.btnNovo.TabIndex = 12;
+            this.btnNovo.TabIndex = 5;
             this.btnNovo.Text = "Novo";
             this.btnNovo.UseVisualStyleBackColor = false;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // codigo
             // 
@@ -162,20 +164,14 @@ namespace DespesaDigital.Views.Forms.Produtos
             // status
             // 
             this.status.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.status.DataPropertyName = "status";
+            this.status.DataPropertyName = "ativo";
             this.status.HeaderText = "Status:";
             this.status.Name = "status";
             this.status.ReadOnly = true;
             // 
-            // ativo
-            // 
-            this.ativo.HeaderText = "ativo";
-            this.ativo.Name = "ativo";
-            this.ativo.ReadOnly = true;
-            this.ativo.Visible = false;
-            // 
             // codigo_categoria
             // 
+            this.codigo_categoria.DataPropertyName = "codigo_categoria";
             this.codigo_categoria.HeaderText = "codigo_categoria";
             this.codigo_categoria.Name = "codigo_categoria";
             this.codigo_categoria.ReadOnly = true;
@@ -184,6 +180,7 @@ namespace DespesaDigital.Views.Forms.Produtos
             // categoria
             // 
             this.categoria.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.categoria.DataPropertyName = "s_codigo_categoria";
             this.categoria.HeaderText = "Categoria:";
             this.categoria.Name = "categoria";
             this.categoria.ReadOnly = true;
@@ -219,7 +216,6 @@ namespace DespesaDigital.Views.Forms.Produtos
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn descricao;
         private System.Windows.Forms.DataGridViewTextBoxColumn status;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ativo;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo_categoria;
         private System.Windows.Forms.DataGridViewTextBoxColumn categoria;
     }

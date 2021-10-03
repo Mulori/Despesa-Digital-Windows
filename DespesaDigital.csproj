@@ -81,6 +81,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Code\BLL\bllCategoria\bllCategoria.cs" />
     <Compile Include="Code\BLL\bllConexao\bllConexao.cs" />
     <Compile Include="Code\BLL\bllDepartamento\bllDepartamento.cs" />
     <Compile Include="Code\BLL\bllLogSistema\bllLogSistema.cs" />
@@ -88,6 +89,7 @@
     <Compile Include="Code\BLL\bllSetor\bllSetor.cs" />
     <Compile Include="Code\BLL\bllUsuarioAprovacao\bllUsuarioAprovacao.cs" />
     <Compile Include="Code\BLL\bllUsuario\bllUsuario.cs" />
+    <Compile Include="Code\DAL\dalCategoria\dalCategoria.cs" />
     <Compile Include="Code\DAL\dalConexao\dalConexao.cs" />
     <Compile Include="Code\DAL\dalDepartamento\dalDepartamento.cs" />
     <Compile Include="Code\DAL\dalLogSistema\dalLogSistema.cs" />
@@ -95,6 +97,7 @@
     <Compile Include="Code\DAL\dalSetor\dalSetor.cs" />
     <Compile Include="Code\DAL\dalUsuarioAprovacao\dalUsuarioAprovacao.cs" />
     <Compile Include="Code\DAL\dalUsuario\dalUsuario.cs" />
+    <Compile Include="Code\DTO\dtoCategoria\dtoCategoria.cs" />
     <Compile Include="Code\DTO\dtoDepartamento\dtoDepartamento.cs" />
     <Compile Include="Code\DTO\dtoProduto\dtoProduto.cs" />
     <Compile Include="Code\DTO\dtoSetor\dtoSetor.cs" />
@@ -150,6 +153,12 @@
     </Compile>
     <Compile Include="Views\Forms\MinhaConta\frmMinhaConta.Designer.cs">
       <DependentUpon>frmMinhaConta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\Produtos\frmNovoProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\Produtos\frmNovoProduto.Designer.cs">
+      <DependentUpon>frmNovoProduto.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Forms\Produtos\frmPesquisarProduto.cs">
       <SubType>Form</SubType>
@@ -220,6 +229,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\MinhaConta\frmMinhaConta.resx">
       <DependentUpon>frmMinhaConta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\Produtos\frmNovoProduto.resx">
+      <DependentUpon>frmNovoProduto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\Produtos\frmPesquisarProduto.resx">
       <DependentUpon>frmPesquisarProduto.cs</DependentUpon>

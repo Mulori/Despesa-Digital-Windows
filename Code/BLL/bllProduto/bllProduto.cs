@@ -11,5 +11,17 @@ namespace DespesaDigital.Code.BLL.bllProduto
             var dal = new dalProduto();
             return dal.ListarTodosProdutosPorStatus(status);
         }
+
+        public static List<dtoProduto> ListarTodosProdutosPorStatusDescricao(string status, string descricao)
+        {
+            var dal = new dalProduto();
+            return dal.ListarTodosProdutosPorStatusDescricao(status, descricao);
+        }
+
+        public static dtoProduto ProdutoPorCodigo(int codigo)
+        {
+            var dal = new dalProduto();
+            return dal.ProdutoPorCodigo(codigo);
+        }
     }
 }
