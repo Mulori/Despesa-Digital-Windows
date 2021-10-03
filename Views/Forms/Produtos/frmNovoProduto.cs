@@ -1,7 +1,9 @@
 ﻿using DespesaDigital.Code.BLL.bllCategoria;
 using DespesaDigital.Code.BLL.bllProduto;
 using DespesaDigital.Code.BLL.bllSetor;
+using DespesaDigital.Code.DTO.dtoSetor;
 using DespesaDigital.Core;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -63,6 +65,23 @@ namespace DespesaDigital.Views.Forms.Produtos
             cmbCategoria.DataSource = new BindingSource(comboSource, null);
             cmbCategoria.DisplayMember = "Value";
             cmbCategoria.ValueMember = "Key";
+        }
+
+        private void btnSalvar_Click(object sender, System.EventArgs e)
+        {
+            List<dtoSetor> listSetor = new List<dtoSetor>();
+            List<DataGridViewRow> rows_with_checked_column = new List<DataGridViewRow>();
+            foreach (DataGridViewRow row in dataGrid.Rows)
+            {
+                if (Convert.ToBoolean(row.Cells[0].Value) == true)
+                {
+                    var dto = new dtoSetor();
+                    dto.codigo = Convert.ToInt32(row.Cells[1].Value);
+                    dto.nome = row.Cells[2].Value.ToString();
+
+                    listSetor.Add(dto);
+                }
+            }
         }
     }
 }

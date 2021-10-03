@@ -73,5 +73,17 @@ namespace DespesaDigital.Views.Forms.Produtos
 
             Inicializa();
         }
+
+        private void dataGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var codigo = Convert.ToInt32(dataGrid.CurrentRow.Cells[0].Value.ToString());
+
+            using (var form = new frmNovoProduto(codigo))
+            {
+                form.ShowDialog();
+            }
+
+            Inicializa();
+        }
     }
 }
