@@ -22,7 +22,7 @@ namespace DespesaDigital.Code.DAL.dalLogSistema
                     cmd.ExecuteNonQuery();
                     return true;
                 }
-                catch(Exception e)
+                catch
                 {
                     return false;
                 }

@@ -23,5 +23,23 @@ namespace DespesaDigital.Code.BLL.bllProduto
             var dal = new dalProduto();
             return dal.ProdutoPorCodigo(codigo);
         }
+
+        public static bool VerificaNomeExistente(string descricao)
+        {
+            var dal = new dalProduto();
+            return dal.VerificaNomeExistente(descricao);
+        }
+
+        public static bool Update(dtoProduto dto)
+        {
+            var dal = new dalProduto();
+            return dal.Update(dto);
+        }
+
+        public static bool Insert(dtoProduto dto)
+        {
+            var dal = new dalProduto();
+            return dal.Insert(dto);
+        }
     }
 }

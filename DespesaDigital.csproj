@@ -105,6 +105,7 @@
     <Compile Include="Code\DTO\dtoProduto\dtoProduto.cs" />
     <Compile Include="Code\DTO\dtoSetor\dtoSetor.cs" />
     <Compile Include="Code\DTO\dtoUsuario\dtoUsuario.cs" />
+    <Compile Include="Core\coreFormat.cs" />
     <Compile Include="Core\corePopUp.cs" />
     <Compile Include="Core\VariaveisGlobais.cs" />
     <Compile Include="frmPrincipal.cs">

@@ -37,8 +37,9 @@ namespace DespesaDigital.Views.Forms.Login
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnSair = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnSair = new System.Windows.Forms.Button();
+            this.lbVersao = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -147,6 +148,16 @@ namespace DespesaDigital.Views.Forms.Login
             this.panel2.Size = new System.Drawing.Size(324, 118);
             this.panel2.TabIndex = 0;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::DespesaDigital.Properties.Resources.logodespesadigital;
+            this.pictureBox1.Location = new System.Drawing.Point(73, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(185, 112);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // btnSair
             // 
             this.btnSair.BackgroundImage = global::DespesaDigital.Properties.Resources.exit;
@@ -160,15 +171,16 @@ namespace DespesaDigital.Views.Forms.Login
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
-            // pictureBox1
+            // lbVersao
             // 
-            this.pictureBox1.Image = global::DespesaDigital.Properties.Resources.logodespesadigital;
-            this.pictureBox1.Location = new System.Drawing.Point(73, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(185, 112);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.lbVersao.AutoSize = true;
+            this.lbVersao.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbVersao.ForeColor = System.Drawing.Color.White;
+            this.lbVersao.Location = new System.Drawing.Point(367, 464);
+            this.lbVersao.Name = "lbVersao";
+            this.lbVersao.Size = new System.Drawing.Size(43, 17);
+            this.lbVersao.TabIndex = 2;
+            this.lbVersao.Text = "label3";
             // 
             // frmLogin
             // 
@@ -176,6 +188,7 @@ namespace DespesaDigital.Views.Forms.Login
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(56)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(769, 490);
+            this.Controls.Add(this.lbVersao);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -187,6 +200,7 @@ namespace DespesaDigital.Views.Forms.Login
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -202,5 +216,6 @@ namespace DespesaDigital.Views.Forms.Login
         private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnSair;
+        private System.Windows.Forms.Label lbVersao;
     }
 }

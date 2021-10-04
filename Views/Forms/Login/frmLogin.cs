@@ -2,7 +2,6 @@
 using DespesaDigital.Code.BLL.bllLogSistema;
 using DespesaDigital.Code.BLL.bllSetor;
 using DespesaDigital.Core;
-using DespesaDigital.Views.Forms.Mensagens;
 using DespesaDigital.Views.Forms.SolicitarAcesso;
 using System;
 using System.Drawing;
@@ -20,6 +19,8 @@ namespace DespesaDigital.Views.Forms.Login
         public frmLogin()
         {
             InitializeComponent();
+
+            lbVersao.Text = Application.ProductVersion;
         }
 
         private void btnSair_Click(object sender, EventArgs e)

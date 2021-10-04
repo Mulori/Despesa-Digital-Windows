@@ -65,7 +65,7 @@ namespace DespesaDigital.Code.DAL.dalSetor
             var list = new List<dtoSetor>();
 
             var ssql = $"select s.codigo as cod_setor, s.nome as nome_setor, d.codigo as cod_departamento, d.nome as nome_departamento " +
-                $"from setor s inner join departamento d on(s.codigo_departamento = d.codigo) where UPPER(s.nome) like UPPER('%{nome}%') and s.codigo_departamento = '{VariaveisGlobais.codigo_departamento}'";
+                $"from setor s inner join departamento d on(s.codigo_departamento = d.codigo) where UPPER(s.nome) like UPPER('%{nome}%') and s.codigo_departamento = '{VariaveisGlobais.codigo_departamento}' order by s.nome asc";
 
             using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
             using (var dr = cmd.ExecuteReader())

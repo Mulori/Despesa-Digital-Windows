@@ -23,6 +23,7 @@ namespace DespesaDigital
             }
 
             lbNome.Text = $"Olá, {VariaveisGlobais.nome_usuario}!";
+            lbVersao.Text = Application.ProductVersion;
 
             setarNivelAcesso();
 

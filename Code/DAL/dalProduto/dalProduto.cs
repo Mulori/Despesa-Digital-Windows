@@ -157,5 +157,92 @@ namespace DespesaDigital.Code.DAL.dalProduto
 
             return dto;
         }
+
+        public bool Insert(dtoProduto dto)
+        {
+            var ssql = "insert into produto (descricao, ativo, codigo_categoria) values (@descricao, @ativo, @codigo_categoria)";
+
+            using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
+            {
+                cmd.Parameters.AddWithValue("@descricao", dto.descricao);
+                cmd.Parameters.AddWithValue("@ativo", dto.ativo);
+                cmd.Parameters.AddWithValue("@codigo_categoria", dto.codigo_categoria);
+
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+        }
+
+        public bool Delete(int codigo)
+        {
+            var ssql = $"delete from produto where codigo = '{codigo}'";
+
+            using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
+            {
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+        }
+
+        public bool Update(dtoProduto dto)
+        {
+            var ssql = "update produto set descricao = @descricao, ativo = @ativo, codigo_categoria = @codigo_categoria where codigo = @codigo";
+
+            using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
+            {
+                cmd.Parameters.AddWithValue("@codigo", dto.codigo);
+                cmd.Parameters.AddWithValue("@descricao", dto.descricao);
+                cmd.Parameters.AddWithValue("@ativo", dto.ativo);
+                cmd.Parameters.AddWithValue("@codigo_categoria", dto.codigo_categoria);
+
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+        }
+
+        public bool VerificaNomeExistente(string descricao)
+        {
+            var retorno = false;
+
+            var ssql = "select distinct p.codigo , p.descricao as desc_prod, c.descricao as desc_cat, p.codigo_categoria, p.ativo from setor_produto sp";
+            ssql += " inner join produto p on(sp.codigo_produto = p.codigo)";
+            ssql += " inner join categoria c on(p.codigo_categoria = c.codigo)";
+            ssql += " inner join setor s on(s.codigo = sp.codigo_setor)";
+            ssql += " inner join departamento d on(d.codigo = s.codigo_departamento)";
+            ssql += $" where d.codigo = '{VariaveisGlobais.codigo_departamento}' and UPPER(p.descricao) like UPPER('%{descricao}%')";
+
+            using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
+            using (var dr = cmd.ExecuteReader())
+            {
+                if (dr.Read())
+                {
+                    retorno = true;
+                }
+                dr.Close();
+            }
+
+            return retorno;
+        }
     }
 }
