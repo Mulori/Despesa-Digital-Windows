@@ -3,11 +3,13 @@ using DespesaDigital.Core;
 using Npgsql;
 using System;
 using System.Collections.Generic;
+using System.Data;
 
 namespace DespesaDigital.Code.DAL.dalSetor
 {
     public class dalSetor
     {
+
         public List<dtoSetor> TodosSetoresPorCodigoDepartamento(int departamento)
         {
             var list = new List<dtoSetor>();
@@ -34,7 +36,7 @@ namespace DespesaDigital.Code.DAL.dalSetor
             return list;
         }
 
-        public List<dtoSetor> ListSetorPorCodigo (int setor)
+        public List<dtoSetor> ListSetorPorCodigo(int setor)
         {
             var list = new List<dtoSetor>();
 

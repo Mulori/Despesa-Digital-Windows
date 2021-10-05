@@ -87,6 +87,7 @@
     <Compile Include="Code\BLL\bllFornecedor\bllFornecedor.cs" />
     <Compile Include="Code\BLL\bllLogSistema\bllLogSistema.cs" />
     <Compile Include="Code\BLL\bllProduto\bllProduto.cs" />
+    <Compile Include="Code\BLL\bllSetorProduto\bllSetorProduto.cs" />
     <Compile Include="Code\BLL\bllSetor\bllSetor.cs" />
     <Compile Include="Code\BLL\bllUsuarioAprovacao\bllUsuarioAprovacao.cs" />
     <Compile Include="Code\BLL\bllUsuario\bllUsuario.cs" />
@@ -96,6 +97,7 @@
     <Compile Include="Code\DAL\dalFornecedor\dalFornecedor.cs" />
     <Compile Include="Code\DAL\dalLogSistema\dalLogSistema.cs" />
     <Compile Include="Code\DAL\dalProduto\dalProduto.cs" />
+    <Compile Include="Code\DAL\dalSetorProduto\dalSetorProduto.cs" />
     <Compile Include="Code\DAL\dalSetor\dalSetor.cs" />
     <Compile Include="Code\DAL\dalUsuarioAprovacao\dalUsuarioAprovacao.cs" />
     <Compile Include="Code\DAL\dalUsuario\dalUsuario.cs" />

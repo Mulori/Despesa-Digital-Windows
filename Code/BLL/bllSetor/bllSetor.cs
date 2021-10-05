@@ -1,6 +1,7 @@
 ﻿using DespesaDigital.Code.DAL.dalSetor;
 using DespesaDigital.Code.DTO.dtoSetor;
 using System.Collections.Generic;
+using System.Data;
 
 namespace DespesaDigital.Code.BLL.bllSetor
 {

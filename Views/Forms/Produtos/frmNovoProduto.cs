@@ -3,6 +3,7 @@ using DespesaDigital.Code.BLL.bllFornecedor;
 using DespesaDigital.Code.BLL.bllLogSistema;
 using DespesaDigital.Code.BLL.bllProduto;
 using DespesaDigital.Code.BLL.bllSetor;
+using DespesaDigital.Code.BLL.bllSetorProduto;
 using DespesaDigital.Code.DTO.dtoFornecedor;
 using DespesaDigital.Code.DTO.dtoProduto;
 using DespesaDigital.Code.DTO.dtoSetor;
@@ -35,6 +36,21 @@ namespace DespesaDigital.Views.Forms.Produtos
                 txtDescricao.Enabled = true;
                 cmbCategoria.Enabled = true;
                 cmbStatus.Enabled = true;
+
+                //Ativa os setores que o produto esta vinculado
+                var listSetor = bllSetorProduto.GetSetoresVinculado(Convert.ToInt32(txtCodigo.Text));
+                foreach(var setor in listSetor)
+                {
+                    foreach (DataGridViewRow row in dataGrid.Rows)
+                    {
+                        if (row.Cells[2].Value.ToString() == setor)
+                        {
+                            row.Cells[0].Value = 1;
+
+                        }
+                    }
+                }
+                listSetor = null;
             }
             else
             {
@@ -152,6 +168,9 @@ namespace DespesaDigital.Views.Forms.Produtos
                 }
                 else
                 {
+                    bllSetorProduto.DeleteSetorProduto(Convert.ToInt32(txtCodigo.Text));
+                    bllSetorProduto.InsertSetorProduto(listSetor, Convert.ToInt32(txtCodigo.Text));
+
                     bllLogSistema.Insert($"Alterou informações do cadastro de produto: [Codigo: [{txtCodigo.Text}] Descricao: [{txtDescricao.Text}] Categoria: [{cmbCategoria.Text}]");
 
                     corePopUp.exibirMensagem("Cadastro salvo com sucesso!", "Atenção");
@@ -178,6 +197,11 @@ namespace DespesaDigital.Views.Forms.Produtos
                 }
                 else
                 {
+                    var codigo_produto = bllProduto.PegarUltimoCodigo();
+
+                    bllSetorProduto.DeleteSetorProduto(codigo_produto);
+                    bllSetorProduto.InsertSetorProduto(listSetor, codigo_produto);
+
                     bllLogSistema.Insert($"Incluiu um novo produto: [Nome: [{txtDescricao.Text}] Categoria: [{cmbCategoria.Text}]");
 
                     corePopUp.exibirMensagem("Cadastro incluido com sucesso!", "Atenção");

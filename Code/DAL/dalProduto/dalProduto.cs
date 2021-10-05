@@ -3,9 +3,6 @@ using DespesaDigital.Core;
 using Npgsql;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DespesaDigital.Code.DAL.dalProduto
 {
@@ -238,6 +235,25 @@ namespace DespesaDigital.Code.DAL.dalProduto
                 if (dr.Read())
                 {
                     retorno = true;
+                }
+                dr.Close();
+            }
+
+            return retorno;
+        }
+
+        public int PegarUltimoCodigo()
+        {
+            var retorno = 0;
+
+            var ssql = "select max(codigo) as codigo from produto";
+
+            using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
+            using (var dr = cmd.ExecuteReader())
+            {
+                if (dr.Read())
+                {
+                    retorno = string.IsNullOrEmpty(dr["codigo"].ToString()) ? 0 : Convert.ToInt32(dr["codigo"]);
                 }
                 dr.Close();
             }
