@@ -37,7 +37,7 @@ namespace DespesaDigital.Views.Forms.Cadastros
             this.btnProduto = new System.Windows.Forms.Button();
             this.btnFormaPagamento = new System.Windows.Forms.Button();
             this.btnFornecedores = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnTipoDespesa = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -93,7 +93,7 @@ namespace DespesaDigital.Views.Forms.Cadastros
             this.panel1.Controls.Add(this.btnProduto);
             this.panel1.Controls.Add(this.btnFormaPagamento);
             this.panel1.Controls.Add(this.btnFornecedores);
-            this.panel1.Controls.Add(this.button6);
+            this.panel1.Controls.Add(this.btnTipoDespesa);
             this.panel1.Controls.Add(this.btnSetores);
             this.panel1.Controls.Add(this.btnUsuarios);
             this.panel1.Controls.Add(this.btnDepartamentos);
@@ -161,19 +161,20 @@ namespace DespesaDigital.Views.Forms.Cadastros
             this.btnFornecedores.UseVisualStyleBackColor = false;
             this.btnFornecedores.Click += new System.EventHandler(this.btnFornecedores_Click);
             // 
-            // button6
+            // btnTipoDespesa
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(457, 202);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(165, 144);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "Tipo Despesa";
-            this.button6.UseVisualStyleBackColor = false;
+            this.btnTipoDespesa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.btnTipoDespesa.FlatAppearance.BorderSize = 0;
+            this.btnTipoDespesa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTipoDespesa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTipoDespesa.ForeColor = System.Drawing.Color.White;
+            this.btnTipoDespesa.Location = new System.Drawing.Point(457, 202);
+            this.btnTipoDespesa.Name = "btnTipoDespesa";
+            this.btnTipoDespesa.Size = new System.Drawing.Size(165, 144);
+            this.btnTipoDespesa.TabIndex = 5;
+            this.btnTipoDespesa.Text = "Tipo Despesa";
+            this.btnTipoDespesa.UseVisualStyleBackColor = false;
+            this.btnTipoDespesa.Click += new System.EventHandler(this.btnTipoDespesa_Click);
             // 
             // frmCadastro
             // 
@@ -199,7 +200,7 @@ namespace DespesaDigital.Views.Forms.Cadastros
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnFormaPagamento;
         private System.Windows.Forms.Button btnFornecedores;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnTipoDespesa;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnProduto;
     }

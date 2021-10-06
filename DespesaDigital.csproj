@@ -91,6 +91,7 @@
     <Compile Include="Code\BLL\bllProduto\bllProduto.cs" />
     <Compile Include="Code\BLL\bllSetorProduto\bllSetorProduto.cs" />
     <Compile Include="Code\BLL\bllSetor\bllSetor.cs" />
+    <Compile Include="Code\BLL\bllTipoDespesa\bllTipoDespesa.cs" />
     <Compile Include="Code\BLL\bllUsuarioAprovacao\bllUsuarioAprovacao.cs" />
     <Compile Include="Code\BLL\bllUsuario\bllUsuario.cs" />
     <Compile Include="Code\DAL\dalCategoria\dalCategoria.cs" />
@@ -103,6 +104,7 @@
     <Compile Include="Code\DAL\dalProduto\dalProduto.cs" />
     <Compile Include="Code\DAL\dalSetorProduto\dalSetorProduto.cs" />
     <Compile Include="Code\DAL\dalSetor\dalSetor.cs" />
+    <Compile Include="Code\DAL\dalTipoDespesa\dalTipoDespesa.cs" />
     <Compile Include="Code\DAL\dalUsuarioAprovacao\dalUsuarioAprovacao.cs" />
     <Compile Include="Code\DAL\dalUsuario\dalUsuario.cs" />
     <Compile Include="Code\DTO\dtoCategoria\dtoCategoria.cs" />
@@ -111,6 +113,7 @@
     <Compile Include="Code\DTO\dtoFornecedor\dtoFornecedor.cs" />
     <Compile Include="Code\DTO\dtoProduto\dtoProduto.cs" />
     <Compile Include="Code\DTO\dtoSetor\dtoSetor.cs" />
+    <Compile Include="Code\DTO\dtoTipoDespesa\dtoTipoDespesa.cs" />
     <Compile Include="Code\DTO\dtoUsuario\dtoUsuario.cs" />
     <Compile Include="Core\coreFormat.cs" />
     <Compile Include="Core\corePopUp.cs" />
@@ -213,6 +216,12 @@
     <Compile Include="Views\Forms\SolicitarAcesso\frmSolicitarAcesso.Designer.cs">
       <DependentUpon>frmSolicitarAcesso.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Forms\TipoDespesa\frmPesquisarTipoDespesa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\TipoDespesa\frmPesquisarTipoDespesa.Designer.cs">
+      <DependentUpon>frmPesquisarTipoDespesa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Forms\Usuario\frmEditarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -279,6 +288,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\SolicitarAcesso\frmSolicitarAcesso.resx">
       <DependentUpon>frmSolicitarAcesso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\TipoDespesa\frmPesquisarTipoDespesa.resx">
+      <DependentUpon>frmPesquisarTipoDespesa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\Usuario\frmEditarUsuario.resx">
       <DependentUpon>frmEditarUsuario.cs</DependentUpon>
