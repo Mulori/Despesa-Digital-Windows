@@ -23,5 +23,11 @@ namespace DespesaDigital.Code.BLL.bllFornecedor
             var dal = new dalFornecedor();
             return dal.CodigoFornecedoresContatenado(departamento);
         }
+
+        public static List<dtoFornecedor> ListarTodosFornecedoresPorCNPJ(string cnpj)
+        {
+            var dal = new dalFornecedor();
+            return dal.ListarTodosFornecedoresPorCNPJ(cnpj);
+        }
     }
 }
