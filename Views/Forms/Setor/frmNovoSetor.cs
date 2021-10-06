@@ -22,6 +22,7 @@ namespace DespesaDigital.Views.Forms.Setor
                 var bll = bllSetor.SetorPorCodigo(codigo_setor);
                 txtCodigo.Text = bll.codigo.ToString();
                 txtNome.Text = bll.nome;
+                txtCodCentroCusto.Text = bll.codigo_centro_custo;
 
                 cmbDepartamento.Text = bll.s_departamento;
 
@@ -29,6 +30,7 @@ namespace DespesaDigital.Views.Forms.Setor
                 btnExcluir.Enabled = true;
 
                 txtNome.Enabled = true;
+                txtCodCentroCusto.Enabled = true;
                 cmbDepartamento.Enabled = true;
             }
             else
@@ -45,6 +47,7 @@ namespace DespesaDigital.Views.Forms.Setor
 
             txtCodigo.Enabled = false;
             txtNome.Enabled = false;
+            txtCodCentroCusto.Enabled = false;
             cmbDepartamento.Enabled = false;
 
             List<dtoDepartamento> list;
@@ -77,6 +80,7 @@ namespace DespesaDigital.Views.Forms.Setor
             txtNome.Text = "";
 
             txtNome.Enabled = true;
+            txtCodCentroCusto.Enabled = true;
             cmbDepartamento.Enabled = true;
 
             txtNome.Focus();
@@ -93,10 +97,22 @@ namespace DespesaDigital.Views.Forms.Setor
             var dto = new dtoSetor();
             dto.nome = txtNome.Text;
             dto.codigo_departamento = Convert.ToInt32(((KeyValuePair<string, string>)cmbDepartamento.SelectedItem).Key);
+            dto.codigo_centro_custo = txtCodCentroCusto.Text;
 
             if (txtCodigo.Text.Length > 0)
             {
                 dto.codigo = Convert.ToInt32(txtCodigo.Text);
+
+                if (bllSetor.VerificaCentroCustoAtual(dto.codigo) != txtCodCentroCusto.Text)
+                {
+                    if (bllSetor.VerificaCentroCustoExistente(txtCodCentroCusto.Text))
+                    {
+                        corePopUp.exibirMensagem("Já existe um setor com este centro de custo.", "Atenção");
+                        txtCodCentroCusto.Text = "";
+                        txtCodCentroCusto.Focus();
+                        return;
+                    }
+                }
 
                 if (!bllSetor.Update(dto))
                 {
@@ -122,6 +138,14 @@ namespace DespesaDigital.Views.Forms.Setor
                     return;
                 }
 
+                if (bllSetor.VerificaCentroCustoExistente(txtCodCentroCusto.Text))
+                {
+                    corePopUp.exibirMensagem("Já existe um setor com este centro de custo.", "Atenção");
+                    txtCodCentroCusto.Text = "";
+                    txtCodCentroCusto.Focus();
+                    return;
+                }
+
                 if (!bllSetor.Insert(dto))
                 {
                     corePopUp.exibirMensagem("Ocorreu um erro ao incluir o cadastro", "Atenção");
@@ -140,8 +164,10 @@ namespace DespesaDigital.Views.Forms.Setor
             btnSalvar.Enabled = false;
 
             txtNome.Text = "";
+            txtCodCentroCusto.Text = "";
 
             cmbDepartamento.Enabled = false;
+            txtCodCentroCusto.Enabled = false;
             txtNome.Enabled = false;
             btnIncluir.Focus();
         }

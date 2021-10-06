@@ -17,6 +17,7 @@ namespace DespesaDigital.Core
         public static int codigo_departamento { get; set; }
         public static string setores_concatenados { get; set; }
         public static string email_usuario { get; set; }
+        public static string fornecedores_concatenados { get; set; }
         #endregion 
 
         #region mensagem

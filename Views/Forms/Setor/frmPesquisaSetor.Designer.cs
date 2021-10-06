@@ -29,16 +29,17 @@ namespace DespesaDigital.Views.Forms.Setor
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.dataGrid = new System.Windows.Forms.DataGridView();
+            this.btnNovo = new System.Windows.Forms.Button();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.departamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dep = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnNovo = new System.Windows.Forms.Button();
+            this.codigo_centrocusto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,34 +73,51 @@ namespace DespesaDigital.Views.Forms.Setor
             this.dataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codigo,
             this.nome,
             this.departamento,
-            this.dep});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGrid.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dep,
+            this.codigo_centrocusto});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGrid.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGrid.Location = new System.Drawing.Point(0, 74);
             this.dataGrid.Name = "dataGrid";
             this.dataGrid.RowHeadersVisible = false;
             this.dataGrid.Size = new System.Drawing.Size(830, 382);
             this.dataGrid.TabIndex = 1;
             this.dataGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_CellDoubleClick);
+            // 
+            // btnNovo
+            // 
+            this.btnNovo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNovo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.btnNovo.FlatAppearance.BorderSize = 0;
+            this.btnNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNovo.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNovo.ForeColor = System.Drawing.Color.White;
+            this.btnNovo.Location = new System.Drawing.Point(702, 30);
+            this.btnNovo.Name = "btnNovo";
+            this.btnNovo.Size = new System.Drawing.Size(112, 28);
+            this.btnNovo.TabIndex = 2;
+            this.btnNovo.Text = "Novo";
+            this.btnNovo.UseVisualStyleBackColor = false;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // codigo
             // 
@@ -130,21 +148,13 @@ namespace DespesaDigital.Views.Forms.Setor
             this.dep.ReadOnly = true;
             this.dep.Visible = false;
             // 
-            // btnNovo
+            // codigo_centrocusto
             // 
-            this.btnNovo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNovo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
-            this.btnNovo.FlatAppearance.BorderSize = 0;
-            this.btnNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNovo.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNovo.ForeColor = System.Drawing.Color.White;
-            this.btnNovo.Location = new System.Drawing.Point(702, 30);
-            this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(112, 28);
-            this.btnNovo.TabIndex = 2;
-            this.btnNovo.Text = "Novo";
-            this.btnNovo.UseVisualStyleBackColor = false;
-            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
+            this.codigo_centrocusto.DataPropertyName = "codigo_centro_custo";
+            this.codigo_centrocusto.HeaderText = "Column1";
+            this.codigo_centrocusto.Name = "codigo_centrocusto";
+            this.codigo_centrocusto.ReadOnly = true;
+            this.codigo_centrocusto.Visible = false;
             // 
             // frmPesquisaSetor
             // 
@@ -169,10 +179,11 @@ namespace DespesaDigital.Views.Forms.Setor
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.DataGridView dataGrid;
+        private System.Windows.Forms.Button btnNovo;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn departamento;
         private System.Windows.Forms.DataGridViewTextBoxColumn dep;
-        private System.Windows.Forms.Button btnNovo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigo_centrocusto;
     }
 }

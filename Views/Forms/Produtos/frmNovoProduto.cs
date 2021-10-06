@@ -2,6 +2,7 @@
 using DespesaDigital.Code.BLL.bllFornecedor;
 using DespesaDigital.Code.BLL.bllLogSistema;
 using DespesaDigital.Code.BLL.bllProduto;
+using DespesaDigital.Code.BLL.bllProdutoFornecedor;
 using DespesaDigital.Code.BLL.bllSetor;
 using DespesaDigital.Code.BLL.bllSetorProduto;
 using DespesaDigital.Code.DTO.dtoFornecedor;
@@ -10,6 +11,7 @@ using DespesaDigital.Code.DTO.dtoSetor;
 using DespesaDigital.Core;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace DespesaDigital.Views.Forms.Produtos
@@ -37,24 +39,41 @@ namespace DespesaDigital.Views.Forms.Produtos
                 cmbCategoria.Enabled = true;
                 cmbStatus.Enabled = true;
 
-                //Ativa os setores que o produto esta vinculado
+                ////Ativa os setores que o produto esta vinculado
                 var listSetor = bllSetorProduto.GetSetoresVinculado(Convert.ToInt32(txtCodigo.Text));
-                foreach(var setor in listSetor)
+                foreach (var setor in listSetor)
                 {
-                    foreach (DataGridViewRow row in dataGrid.Rows)
+                    int i;
+                    for (i = 0; i <= (chklistSetores.Items.Count - 1); i++)
                     {
-                        if (row.Cells[2].Value.ToString() == setor)
-                        {
-                            row.Cells[0].Value = 1;
+                        var atributos = chklistSetores.Items[i].ToString().Split('-');
 
+                        if (atributos[1] == setor)
+                        {
+                            chklistSetores.SetItemChecked(i, true);
                         }
                     }
                 }
-                listSetor = null;
+
+                ////Ativa os fornecedores que o produto esta vinculado
+                var listFornecedor = bllProdutoFornecedor.GetFornecedoresVinculado(Convert.ToInt32(txtCodigo.Text));
+                foreach (var fornecedores in listFornecedor)
+                {
+                    int i;
+                    for (i = 0; i <= (chkListFornecedores.Items.Count - 1); i++)
+                    {
+                        var atributos = chkListFornecedores.Items[i].ToString().Split('-');
+
+                        if (atributos[1] == fornecedores)
+                        {
+                            chkListFornecedores.SetItemChecked(i, true);
+                        }
+                    }
+                }
             }
             else
             {
-                btnIncluir.Enabled = true;                
+                btnIncluir.Enabled = true;
             }
         }
 
@@ -71,14 +90,29 @@ namespace DespesaDigital.Views.Forms.Produtos
 
             if (VariaveisGlobais.nivel_acesso == 2)
             {
-                dataGrid.DataSource = bllSetor.ListSetorPorCodigo(VariaveisGlobais.codigo_setor);
+                var listSetor = bllSetor.ListSetorPorCodigo(VariaveisGlobais.codigo_setor);
+
+                foreach (var setor in listSetor)
+                {
+                    chklistSetores.Items.Add(setor.codigo + "-" + setor.nome, CheckState.Unchecked);
+                }
             }
             else if (VariaveisGlobais.nivel_acesso == 3)
             {
-                dataGrid.DataSource = bllSetor.TodosSetoresPorDepartamento(VariaveisGlobais.codigo_departamento);
+                var listSetor = bllSetor.TodosSetoresPorDepartamento(VariaveisGlobais.codigo_departamento);
+
+                foreach (var setor in listSetor)
+                {
+                    chklistSetores.Items.Add(setor.codigo + "-" + setor.nome, CheckState.Unchecked);
+                }
             }
 
-            dataGrid2.DataSource = bllFornecedor.ListarTodosFornecedores();
+            var listFornecedor = bllFornecedor.ListarTodosFornecedores();
+
+            foreach (var fornecedor in listFornecedor)
+            {
+                chkListFornecedores.Items.Add(fornecedor.codigo + "-" + fornecedor.razao_social, CheckState.Unchecked);
+            }
 
             var list = bllCategoria.ListarTodasCategoriasPorStatus("A");
 
@@ -101,32 +135,38 @@ namespace DespesaDigital.Views.Forms.Produtos
             }
 
             List<dtoSetor> listSetor = new List<dtoSetor>();
-            foreach (DataGridViewRow row in dataGrid.Rows)
+            for (int i = 0; i <= (chklistSetores.Items.Count - 1); i++)
             {
-                if (Convert.ToBoolean(row.Cells[0].Value) == true)
-                {
-                    var dtoSetor = new dtoSetor();
-                    dtoSetor.codigo = Convert.ToInt32(row.Cells[1].Value);
-                    dtoSetor.nome = row.Cells[2].Value.ToString();
+                var atributos = chklistSetores.Items[i].ToString().Split('-');
 
-                    listSetor.Add(dtoSetor);
+                if (chklistSetores.GetItemChecked(i))
+                {
+                    var setor = new dtoSetor();
+                    setor.codigo = Convert.ToInt32(atributos[0]);
+                    setor.nome = atributos[1];
+
+                    listSetor.Add(setor);
                 }
+
             }
 
             List<dtoFornecedor> listFornecedor = new List<dtoFornecedor>();
-            foreach (DataGridViewRow row in dataGrid2.Rows)
+            for (int i = 0; i <= (chkListFornecedores.Items.Count - 1); i++)
             {
-                if (Convert.ToBoolean(row.Cells[0].Value) == true)
-                {
-                    var dtoFornecedor = new dtoFornecedor();
-                    dtoFornecedor.codigo = Convert.ToInt32(row.Cells[1].Value);
-                    dtoFornecedor.razao_social = row.Cells[2].Value.ToString();
+                var atributos = chkListFornecedores.Items[i].ToString().Split('-');
 
-                    listFornecedor.Add(dtoFornecedor);
+                if (chkListFornecedores.GetItemChecked(i))
+                {
+                    var fornecedor = new dtoFornecedor();
+                    fornecedor.codigo = Convert.ToInt32(atributos[0]);
+                    fornecedor.razao_social = atributos[1];
+
+                    listFornecedor.Add(fornecedor);
                 }
             }
 
-            if(listSetor.Count == 0)
+
+            if (listSetor.Count == 0)
             {
                 corePopUp.exibirMensagem("Selecione ao menos um setor!", "Atenção");
                 return;
@@ -134,7 +174,7 @@ namespace DespesaDigital.Views.Forms.Produtos
 
             if (listFornecedor.Count == 0)
             {
-                if(!corePopUp.exibirPergunta("Atenção", "Nenhum fornecedor selecionado, deseja continuar a salvar?", 1))
+                if (!corePopUp.exibirPergunta("Atenção", "Nenhum fornecedor selecionado, deseja continuar a salvar?", 1))
                 {
                     return;
                 }
@@ -168,8 +208,15 @@ namespace DespesaDigital.Views.Forms.Produtos
                 }
                 else
                 {
+                    //Apaga os registros da tabela vinculada entre produto e setor
                     bllSetorProduto.DeleteSetorProduto(Convert.ToInt32(txtCodigo.Text));
+                    //Insere novos registro da tabela vinculada entre produto e setor
                     bllSetorProduto.InsertSetorProduto(listSetor, Convert.ToInt32(txtCodigo.Text));
+
+                    //Apaga os registro da tabela vinculada entre produto e fornecedor
+                    bllProdutoFornecedor.DeleteSetorProduto(Convert.ToInt32(txtCodigo.Text));
+                    //Insere novos registro da tabela vinculada entre produto e setor
+                    bllProdutoFornecedor.InsertProdutoFornecedor(listFornecedor, Convert.ToInt32(txtCodigo.Text));
 
                     bllLogSistema.Insert($"Alterou informações do cadastro de produto: [Codigo: [{txtCodigo.Text}] Descricao: [{txtDescricao.Text}] Categoria: [{cmbCategoria.Text}]");
 
@@ -199,8 +246,15 @@ namespace DespesaDigital.Views.Forms.Produtos
                 {
                     var codigo_produto = bllProduto.PegarUltimoCodigo();
 
+                    //Apaga os registros da tabela vinculada entre produto e setor
                     bllSetorProduto.DeleteSetorProduto(codigo_produto);
+                    //Insere novos registro da tabela vinculada entre produto e setor
                     bllSetorProduto.InsertSetorProduto(listSetor, codigo_produto);
+
+                    //Apaga os registro da tabela vinculada entre produto e fornecedor
+                    bllProdutoFornecedor.DeleteSetorProduto(codigo_produto);
+                    //Insere novos registro da tabela vinculada entre produto e setor
+                    bllProdutoFornecedor.InsertProdutoFornecedor(listFornecedor, codigo_produto);
 
                     bllLogSistema.Insert($"Incluiu um novo produto: [Nome: [{txtDescricao.Text}] Categoria: [{cmbCategoria.Text}]");
 
@@ -221,42 +275,6 @@ namespace DespesaDigital.Views.Forms.Produtos
             btnIncluir.Focus();
         }
 
-        private void txtPesquisaSetores_Enter(object sender, EventArgs e)
-        {
-            txtPesquisaSetores.Text = "";
-        }
-
-        private void txtFornecedores_Enter(object sender, EventArgs e)
-        {
-            txtFornecedores.Text = "";
-        }
-
-        private void txtPesquisaSetores_Leave(object sender, EventArgs e)
-        {
-            txtPesquisaSetores.Text = "Pesquise por nome...";            
-        }
-
-        private void txtFornecedores_Leave(object sender, EventArgs e)
-        {
-            txtFornecedores.Text = "Pesquise por Razão Social...";
-        }
-
-        private void txtPesquisaSetores_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == 13)
-            {
-                dataGrid.DataSource = bllSetor.ListSetorPorNome(txtPesquisaSetores.Text);
-            }
-        }
-
-        private void txtFornecedores_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == 13)
-            {
-                dataGrid2.DataSource = bllFornecedor.ListarTodosFornecedoresPorRazaoSocial(txtFornecedores.Text);
-            }
-        }
-
         private void btnIncluir_Click(object sender, EventArgs e)
         {
             btnIncluir.Enabled = false;
@@ -268,6 +286,55 @@ namespace DespesaDigital.Views.Forms.Produtos
             cmbCategoria.Enabled = true;
 
             txtDescricao.Focus();
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            if (txtCodigo.Text.Length == 0)
+            {
+                corePopUp.exibirMensagem("Para excluir selecione um produto.", "Atenção");
+                return;
+            }
+
+            if (!corePopUp.exibirPergunta("Atenção:", "Deseja excluir este produto?", 2))
+            {
+                return;
+            }
+
+            //Apaga os registros da tabela vinculada entre produto e setor
+            if (bllSetorProduto.DeleteSetorProduto(Convert.ToInt32(txtCodigo.Text)))
+            {
+                //Apaga os registro da tabela vinculada entre produto e fornecedor
+                if (bllProdutoFornecedor.DeleteSetorProduto(Convert.ToInt32(txtCodigo.Text)))
+                {
+                    if (bllProduto.Delete(Convert.ToInt32(txtCodigo.Text)))
+                    {
+
+                        bllLogSistema.Insert($"Exclusão do produto: [Codigo: [{txtCodigo.Text}] Descrição: [{txtDescricao.Text}] Categoria: [{cmbCategoria.Text}]");
+
+                        corePopUp.exibirMensagem("Produto excluido com sucesso!.", "Atenção");
+                        Close();
+                        return;
+                    }
+                    else
+                    {
+                        corePopUp.exibirMensagem("Não foi possivel excluir o produto.", "Atenção");
+                        return;
+                    }
+
+                }
+                else
+                {
+                    corePopUp.exibirMensagem("Não foi possivel excluir o produto.", "Atenção");
+                    return;
+                }
+            }
+            else
+            {
+                corePopUp.exibirMensagem("Não foi possivel excluir o produto.", "Atenção");
+                return;
+            }
+
         }
     }
 }
