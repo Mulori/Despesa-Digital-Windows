@@ -1,4 +1,5 @@
 ﻿using DespesaDigital.Code.BLL;
+using DespesaDigital.Code.BLL.bllFornecedor;
 using DespesaDigital.Code.BLL.bllLogSistema;
 using DespesaDigital.Code.BLL.bllSetor;
 using DespesaDigital.Core;
@@ -87,6 +88,7 @@ namespace DespesaDigital.Views.Forms.Login
             VariaveisGlobais.email_usuario = bll.email;
             VariaveisGlobais.codigo_departamento = bllSetor.CodigoDepartamentoPorCodigoSetor(bll.codigo_setor);
             VariaveisGlobais.setores_concatenados = bllSetor.CodigoSetoresContatenado(VariaveisGlobais.codigo_departamento);
+            VariaveisGlobais.fornecedores_concatenados = bllFornecedor.CodigoFornecedoresContatenado(VariaveisGlobais.codigo_departamento);
 
             bllLogSistema.Insert("Acesso ao sistema");
 

@@ -137,7 +137,7 @@ namespace DespesaDigital.Code.DAL.dalSetor
         {
             var dto = new dtoSetor();
 
-            var ssql = $"select s.codigo, s.nome as setor, s.codigo_departamento, d.nome as departamento from setor s " +
+            var ssql = $"select s.codigo, s.nome as setor, s.codigo_departamento, s.codigo_centro_custo, d.nome as departamento from setor s " +
                 $"inner join departamento d on(s.codigo_departamento = d.codigo) where s.codigo = '{id}'";
 
             using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
@@ -149,6 +149,7 @@ namespace DespesaDigital.Code.DAL.dalSetor
                     dto.nome = dr["setor"].ToString();
                     dto.s_departamento = dr["departamento"].ToString();
                     dto.codigo_departamento = Convert.ToInt32(dr["codigo_departamento"]);
+                    dto.codigo_centro_custo = dr["codigo_centro_custo"].ToString();
                 }
                 dr.Close();
             }
@@ -158,12 +159,13 @@ namespace DespesaDigital.Code.DAL.dalSetor
 
         public bool Insert(dtoSetor dto)
         {
-            var ssql = "insert into setor (nome, codigo_departamento) values (@nome, @codigo_departamento)";
+            var ssql = "insert into setor (nome, codigo_departamento, codigo_centro_custo) values (@nome, @codigo_departamento, @codigo_centro_custo)";
 
             using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
             {
                 cmd.Parameters.AddWithValue("@nome", dto.nome);
                 cmd.Parameters.AddWithValue("@codigo_departamento", dto.codigo_departamento);
+                cmd.Parameters.AddWithValue("@codigo_centro_custo", dto.codigo_centro_custo);
 
                 try
                 {
@@ -197,13 +199,14 @@ namespace DespesaDigital.Code.DAL.dalSetor
 
         public bool Update(dtoSetor dto)
         {
-            var ssql = "update setor set nome = @nome, codigo_departamento = @codigo_departamento where codigo = @codigo";
+            var ssql = "update setor set nome = @nome, codigo_departamento = @codigo_departamento, codigo_centro_custo = @codigo_centro_custo where codigo = @codigo";
 
             using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
             {
                 cmd.Parameters.AddWithValue("@codigo", dto.codigo);
                 cmd.Parameters.AddWithValue("@nome", dto.nome);
                 cmd.Parameters.AddWithValue("@codigo_departamento", dto.codigo_departamento);
+                cmd.Parameters.AddWithValue("@codigo_centro_custo", dto.codigo_centro_custo);
 
                 try
                 {
@@ -229,6 +232,44 @@ namespace DespesaDigital.Code.DAL.dalSetor
                 if (dr.Read())
                 {
                     retorno = true;
+                }
+                dr.Close();
+            }
+
+            return retorno;
+        }
+
+        public bool VerificaCentroCustoExistente(string codigo)
+        {
+            var retorno = false;
+
+            var ssql = $"select codigo_centro_custo from setor where codigo_centro_custo = '{codigo}'";
+
+            using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
+            using (var dr = cmd.ExecuteReader())
+            {
+                if (dr.Read())
+                {
+                    retorno = true;
+                }
+                dr.Close();
+            }
+
+            return retorno;
+        }
+
+        public string VerificaCentroCustoAtual(int codigo)
+        {
+            var retorno = "";
+
+            var ssql = $"select codigo_centro_custo from setor where codigo = '{codigo}'";
+
+            using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
+            using (var dr = cmd.ExecuteReader())
+            {
+                if (dr.Read())
+                {
+                    retorno = string.IsNullOrEmpty(dr["codigo_centro_custo"].ToString()) ? "" : dr["codigo_centro_custo"].ToString();
                 }
                 dr.Close();
             }

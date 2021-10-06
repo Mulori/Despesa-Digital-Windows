@@ -12,5 +12,6 @@ namespace DespesaDigital.Code.DTO.dtoSetor
         public string nome { get; set; }
         public int codigo_departamento { get; set; } 
         public string s_departamento { get; set; }
+        public string codigo_centro_custo { get; set; }
     }
 }

@@ -47,5 +47,11 @@ namespace DespesaDigital.Code.BLL.bllProduto
             var dal = new dalProduto();
             return dal.PegarUltimoCodigo();
         }
+
+        public static bool Delete(int codigo)
+        {
+            var dal = new dalProduto();
+            return dal.Delete(codigo);
+        }
     }
 }

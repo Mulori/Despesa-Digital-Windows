@@ -17,5 +17,11 @@ namespace DespesaDigital.Code.BLL.bllFornecedor
             var dal = new dalFornecedor();
             return dal.ListarTodosFornecedoresPorRazaoSocial(razao_social);
         }
+
+        public static string CodigoFornecedoresContatenado(int departamento)
+        {
+            var dal = new dalFornecedor();
+            return dal.CodigoFornecedoresContatenado(departamento);
+        }
     }
 }

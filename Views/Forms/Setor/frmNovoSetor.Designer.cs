@@ -39,6 +39,8 @@ namespace DespesaDigital.Views.Forms.Setor
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cmbDepartamento = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtCodCentroCusto = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -103,7 +105,7 @@ namespace DespesaDigital.Views.Forms.Setor
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(125, 108);
+            this.label2.Location = new System.Drawing.Point(129, 108);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 20);
@@ -122,10 +124,10 @@ namespace DespesaDigital.Views.Forms.Setor
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(129, 136);
+            this.txtNome.Location = new System.Drawing.Point(133, 136);
             this.txtNome.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(242, 27);
+            this.txtNome.Size = new System.Drawing.Size(230, 27);
             this.txtNome.TabIndex = 2;
             // 
             // txtCodigo
@@ -135,12 +137,12 @@ namespace DespesaDigital.Views.Forms.Setor
             this.txtCodigo.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(110, 27);
-            this.txtCodigo.TabIndex = 1;
+            this.txtCodigo.TabIndex = 6;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(376, 108);
+            this.label3.Location = new System.Drawing.Point(565, 108);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(115, 20);
@@ -151,16 +153,37 @@ namespace DespesaDigital.Views.Forms.Setor
             // 
             this.cmbDepartamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDepartamento.FormattingEnabled = true;
-            this.cmbDepartamento.Location = new System.Drawing.Point(380, 136);
+            this.cmbDepartamento.Location = new System.Drawing.Point(569, 136);
             this.cmbDepartamento.Name = "cmbDepartamento";
-            this.cmbDepartamento.Size = new System.Drawing.Size(379, 28);
+            this.cmbDepartamento.Size = new System.Drawing.Size(190, 28);
             this.cmbDepartamento.TabIndex = 3;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(371, 108);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(125, 20);
+            this.label4.TabIndex = 42;
+            this.label4.Text = "Centro de Custo:";
+            // 
+            // txtCodCentroCusto
+            // 
+            this.txtCodCentroCusto.Location = new System.Drawing.Point(375, 136);
+            this.txtCodCentroCusto.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.txtCodCentroCusto.MaxLength = 100;
+            this.txtCodCentroCusto.Name = "txtCodCentroCusto";
+            this.txtCodCentroCusto.Size = new System.Drawing.Size(182, 27);
+            this.txtCodCentroCusto.TabIndex = 2;
             // 
             // frmNovoSetor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(771, 180);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtCodCentroCusto);
             this.Controls.Add(this.cmbDepartamento);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label3);
@@ -192,5 +215,7 @@ namespace DespesaDigital.Views.Forms.Setor
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cmbDepartamento;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtCodCentroCusto;
     }
 }

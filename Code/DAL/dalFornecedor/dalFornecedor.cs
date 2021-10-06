@@ -64,5 +64,31 @@ namespace DespesaDigital.Code.DAL.dalFornecedor
 
             return list;
         }
+
+        public string CodigoFornecedoresContatenado(int departamento)
+        {
+            var retorno = "";
+
+            var ssql = $"select codigo from fornecedor where codigo_departamento = '{departamento}'";
+
+            using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
+            using (var dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    if (retorno.Length > 0)
+                    {
+                        retorno += "," + dr["codigo"].ToString();
+                    }
+                    else
+                    {
+                        retorno += dr["codigo"].ToString();
+                    }
+                }
+                dr.Close();
+            }
+
+            return retorno;
+        }
     }
 }
