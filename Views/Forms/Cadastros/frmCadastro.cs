@@ -1,4 +1,6 @@
 ﻿using DespesaDigital.Views.Forms.Departamento;
+using DespesaDigital.Views.Forms.FormaPagamento;
+using DespesaDigital.Views.Forms.Fornecedor;
 using DespesaDigital.Views.Forms.Produtos;
 using DespesaDigital.Views.Forms.Setor;
 using DespesaDigital.Views.Forms.Usuario;
@@ -46,6 +48,22 @@ namespace DespesaDigital.Views.Forms.Cadastros
         private void btnProduto_Click(object sender, EventArgs e)
         {
             using (var form = new frmPesquisarProduto())
+            {
+                form.ShowDialog();
+            }
+        }
+
+        private void btnFornecedores_Click(object sender, EventArgs e)
+        {
+            using (var form = new frmPesquisarFornecedor())
+            {
+                form.ShowDialog();
+            }
+        }
+
+        private void btnFormaPagamento_Click(object sender, EventArgs e)
+        {
+            using (var form = new frmPesquisarFormaPagamento())
             {
                 form.ShowDialog();
             }

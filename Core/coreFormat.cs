@@ -20,7 +20,7 @@ namespace DespesaDigital.Core
 
         public static string SemFormatacao(string Codigo)
         {
-            return Codigo.Replace(".", string.Empty).Replace("-", string.Empty).Replace("/", string.Empty);
+            return Codigo.Replace(".", string.Empty).Replace("-", string.Empty).Replace("/", string.Empty).Replace(",", string.Empty);
         }
     }
 }
