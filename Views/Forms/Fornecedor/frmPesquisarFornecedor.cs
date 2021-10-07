@@ -43,5 +43,27 @@ namespace DespesaDigital.Views.Forms.Fornecedor
                 dataGrid.DataSource = bllFornecedor.ListarTodosFornecedoresPorRazaoSocial(txtRazaoSocial.Text);
             }
         }
+
+        private void btnNovo_Click(object sender, EventArgs e)
+        {
+            using (var form = new frmNovoFornecedor(0))
+            {
+                form.ShowDialog();
+            }
+
+            Inicializar();
+        }
+
+        private void dataGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var codigo = Convert.ToInt32(dataGrid.CurrentRow.Cells[0].Value.ToString());
+
+            using (var form = new frmNovoFornecedor(codigo))
+            {
+                form.ShowDialog();
+            }
+
+            Inicializar();
+        }
     }
 }

@@ -29,12 +29,205 @@ namespace DespesaDigital.Views.Forms.Fornecedor
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.btnIncluir = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtRazaoSocial = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.mskCNPJ = new System.Windows.Forms.MaskedTextBox();
+            this.btnContatos = new System.Windows.Forms.Button();
+            this.btnEndereco = new System.Windows.Forms.Button();
+            this.panel1.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel1.Controls.Add(this.btnEndereco);
+            this.panel1.Controls.Add(this.btnContatos);
+            this.panel1.Controls.Add(this.btnExcluir);
+            this.panel1.Controls.Add(this.btnIncluir);
+            this.panel1.Controls.Add(this.btnSalvar);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(771, 84);
+            this.panel1.TabIndex = 50;
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.btnExcluir.FlatAppearance.BorderSize = 0;
+            this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcluir.ForeColor = System.Drawing.Color.White;
+            this.btnExcluir.Location = new System.Drawing.Point(249, 18);
+            this.btnExcluir.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(110, 54);
+            this.btnExcluir.TabIndex = 5;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = false;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            // 
+            // btnIncluir
+            // 
+            this.btnIncluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.btnIncluir.FlatAppearance.BorderSize = 0;
+            this.btnIncluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIncluir.ForeColor = System.Drawing.Color.White;
+            this.btnIncluir.Location = new System.Drawing.Point(13, 18);
+            this.btnIncluir.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnIncluir.Name = "btnIncluir";
+            this.btnIncluir.Size = new System.Drawing.Size(110, 54);
+            this.btnIncluir.TabIndex = 0;
+            this.btnIncluir.Text = "Incluir";
+            this.btnIncluir.UseVisualStyleBackColor = false;
+            this.btnIncluir.Click += new System.EventHandler(this.btnIncluir_Click);
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.btnSalvar.FlatAppearance.BorderSize = 0;
+            this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalvar.ForeColor = System.Drawing.Color.White;
+            this.btnSalvar.Location = new System.Drawing.Point(131, 18);
+            this.btnSalvar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(110, 54);
+            this.btnSalvar.TabIndex = 4;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = false;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(260, 116);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(99, 20);
+            this.label4.TabIndex = 51;
+            this.label4.Text = "Razão Social:";
+            // 
+            // txtRazaoSocial
+            // 
+            this.txtRazaoSocial.Location = new System.Drawing.Point(259, 144);
+            this.txtRazaoSocial.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.txtRazaoSocial.MaxLength = 100;
+            this.txtRazaoSocial.Name = "txtRazaoSocial";
+            this.txtRazaoSocial.Size = new System.Drawing.Size(497, 27);
+            this.txtRazaoSocial.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(129, 116);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(49, 20);
+            this.label2.TabIndex = 48;
+            this.label2.Text = "CNPJ:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 116);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(62, 20);
+            this.label1.TabIndex = 47;
+            this.label1.Text = "Código:";
+            // 
+            // txtCodigo
+            // 
+            this.txtCodigo.Enabled = false;
+            this.txtCodigo.Location = new System.Drawing.Point(11, 144);
+            this.txtCodigo.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(110, 27);
+            this.txtCodigo.TabIndex = 46;
+            // 
+            // mskCNPJ
+            // 
+            this.mskCNPJ.Location = new System.Drawing.Point(130, 145);
+            this.mskCNPJ.Mask = "##.###.###/####-##";
+            this.mskCNPJ.Name = "mskCNPJ";
+            this.mskCNPJ.Size = new System.Drawing.Size(120, 27);
+            this.mskCNPJ.TabIndex = 1;
+            // 
+            // btnContatos
+            // 
+            this.btnContatos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.btnContatos.FlatAppearance.BorderSize = 0;
+            this.btnContatos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnContatos.ForeColor = System.Drawing.Color.White;
+            this.btnContatos.Location = new System.Drawing.Point(649, 18);
+            this.btnContatos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnContatos.Name = "btnContatos";
+            this.btnContatos.Size = new System.Drawing.Size(110, 54);
+            this.btnContatos.TabIndex = 7;
+            this.btnContatos.Text = "Contatos";
+            this.btnContatos.UseVisualStyleBackColor = false;
+            this.btnContatos.Click += new System.EventHandler(this.btnContatos_Click);
+            // 
+            // btnEndereco
+            // 
+            this.btnEndereco.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.btnEndereco.FlatAppearance.BorderSize = 0;
+            this.btnEndereco.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEndereco.ForeColor = System.Drawing.Color.White;
+            this.btnEndereco.Location = new System.Drawing.Point(531, 18);
+            this.btnEndereco.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnEndereco.Name = "btnEndereco";
+            this.btnEndereco.Size = new System.Drawing.Size(110, 54);
+            this.btnEndereco.TabIndex = 6;
+            this.btnEndereco.Text = "Endereços";
+            this.btnEndereco.UseVisualStyleBackColor = false;
+            this.btnEndereco.Click += new System.EventHandler(this.btnEndereco_Click);
+            // 
+            // frmNovoFornecedor
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "frmNovoFornecedor";
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.ClientSize = new System.Drawing.Size(771, 189);
+            this.Controls.Add(this.mskCNPJ);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtRazaoSocial);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtCodigo);
+            this.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Name = "frmNovoFornecedor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Cadastro de Fornecedor";
+            this.panel1.ResumeLayout(false);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnExcluir;
+        private System.Windows.Forms.Button btnIncluir;
+        private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtRazaoSocial;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtCodigo;
+        private System.Windows.Forms.MaskedTextBox mskCNPJ;
+        private System.Windows.Forms.Button btnEndereco;
+        private System.Windows.Forms.Button btnContatos;
     }
 }
