@@ -36,6 +36,9 @@
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.1.1.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Npgsql, Version=5.0.10.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
       <HintPath>packages\Npgsql.5.0.10\lib\netstandard2.0\Npgsql.dll</HintPath>
     </Reference>
@@ -86,6 +89,7 @@
     <Compile Include="Code\BLL\bllDepartamento\bllDepartamento.cs" />
     <Compile Include="Code\BLL\bllFormaPagamento\bllFormaPagamento.cs" />
     <Compile Include="Code\BLL\bllFornecedor\bllFornecedor.cs" />
+    <Compile Include="Code\BLL\bllFornecedor\bllFornecedorEndereco.cs" />
     <Compile Include="Code\BLL\bllLogSistema\bllLogSistema.cs" />
     <Compile Include="Code\BLL\bllProdutoFornecedor\bllProdutoFornecedor.cs" />
     <Compile Include="Code\BLL\bllProduto\bllProduto.cs" />
@@ -99,6 +103,7 @@
     <Compile Include="Code\DAL\dalDepartamento\dalDepartamento.cs" />
     <Compile Include="Code\DAL\dalFormaPagamento\dalFormaPagamento.cs" />
     <Compile Include="Code\DAL\dalFornecedor\dalFornecedor.cs" />
+    <Compile Include="Code\DAL\dalFornecedor\dalFornecedorEndereco.cs" />
     <Compile Include="Code\DAL\dalLogSistema\dalLogSistema.cs" />
     <Compile Include="Code\DAL\dalProdutoFornecedor\dalProdutoFornecedor.cs" />
     <Compile Include="Code\DAL\dalProduto\dalProduto.cs" />
@@ -111,12 +116,16 @@
     <Compile Include="Code\DTO\dtoDepartamento\dtoDepartamento.cs" />
     <Compile Include="Code\DTO\dtoFormaPagamento\dtoFormaPagamento.cs" />
     <Compile Include="Code\DTO\dtoFornecedor\dtoFornecedor.cs" />
+    <Compile Include="Code\DTO\dtoFornecedor\dtoFornecedorEndereco.cs" />
     <Compile Include="Code\DTO\dtoProduto\dtoProduto.cs" />
     <Compile Include="Code\DTO\dtoSetor\dtoSetor.cs" />
     <Compile Include="Code\DTO\dtoTipoDespesa\dtoTipoDespesa.cs" />
     <Compile Include="Code\DTO\dtoUsuario\dtoUsuario.cs" />
+    <Compile Include="Code\DTO\dtoWebApi\dtoWebApiPaises.cs" />
+    <Compile Include="Code\WEB\webApi.cs" />
     <Compile Include="Core\coreFormat.cs" />
     <Compile Include="Core\corePopUp.cs" />
+    <Compile Include="Core\coreValid.cs" />
     <Compile Include="Core\VariaveisGlobais.cs" />
     <Compile Include="frmPrincipal.cs">
       <SubType>Form</SubType>
@@ -149,6 +158,12 @@
     </Compile>
     <Compile Include="Views\Forms\FormaPagamento\frmPesquisarFormaPagamento.Designer.cs">
       <DependentUpon>frmPesquisarFormaPagamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\Fornecedor\frmEnderecoFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\Fornecedor\frmEnderecoFornecedor.Designer.cs">
+      <DependentUpon>frmEnderecoFornecedor.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Forms\Fornecedor\frmNovoFornecedor.cs">
       <SubType>Form</SubType>
@@ -258,6 +273,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\FormaPagamento\frmPesquisarFormaPagamento.resx">
       <DependentUpon>frmPesquisarFormaPagamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\Fornecedor\frmEnderecoFornecedor.resx">
+      <DependentUpon>frmEnderecoFornecedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\Fornecedor\frmNovoFornecedor.resx">
+      <DependentUpon>frmNovoFornecedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\Fornecedor\frmPesquisarFornecedor.resx">
       <DependentUpon>frmPesquisarFornecedor.cs</DependentUpon>

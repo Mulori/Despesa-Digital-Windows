@@ -67,7 +67,7 @@ namespace DespesaDigital.Views.Forms.Setor
             this.btnExcluir.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(110, 54);
-            this.btnExcluir.TabIndex = 5;
+            this.btnExcluir.TabIndex = 6;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = false;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
@@ -97,7 +97,7 @@ namespace DespesaDigital.Views.Forms.Setor
             this.btnSalvar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(110, 54);
-            this.btnSalvar.TabIndex = 4;
+            this.btnSalvar.TabIndex = 5;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
@@ -156,7 +156,7 @@ namespace DespesaDigital.Views.Forms.Setor
             this.cmbDepartamento.Location = new System.Drawing.Point(569, 136);
             this.cmbDepartamento.Name = "cmbDepartamento";
             this.cmbDepartamento.Size = new System.Drawing.Size(190, 28);
-            this.cmbDepartamento.TabIndex = 3;
+            this.cmbDepartamento.TabIndex = 4;
             // 
             // label4
             // 
@@ -175,7 +175,7 @@ namespace DespesaDigital.Views.Forms.Setor
             this.txtCodCentroCusto.MaxLength = 100;
             this.txtCodCentroCusto.Name = "txtCodCentroCusto";
             this.txtCodCentroCusto.Size = new System.Drawing.Size(182, 27);
-            this.txtCodCentroCusto.TabIndex = 2;
+            this.txtCodCentroCusto.TabIndex = 3;
             // 
             // frmNovoSetor
             // 
