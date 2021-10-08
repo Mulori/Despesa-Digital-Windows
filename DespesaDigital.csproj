@@ -122,7 +122,6 @@
     <Compile Include="Code\DTO\dtoTipoDespesa\dtoTipoDespesa.cs" />
     <Compile Include="Code\DTO\dtoUsuario\dtoUsuario.cs" />
     <Compile Include="Code\DTO\dtoWebApi\dtoWebApiPaises.cs" />
-    <Compile Include="Code\WEB\webApi.cs" />
     <Compile Include="Core\coreFormat.cs" />
     <Compile Include="Core\corePopUp.cs" />
     <Compile Include="Core\coreValid.cs" />
