@@ -90,8 +90,8 @@ namespace DespesaDigital.Views.Forms.Departamento
             }
 
             var dto = new dtoDepartamento();            
-            dto.nome = txtNome.Text;
-            dto.descricao = txtDescricao.Text;
+            dto.nome = txtNome.Text.Trim();
+            dto.descricao = txtDescricao.Text.Trim();
 
             if(txtCodigo.Text.Length > 0)
             {

@@ -88,24 +88,24 @@ namespace DespesaDigital.Views.Forms.Setor
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtNome.Text) || string.IsNullOrEmpty(cmbDepartamento.Text))
+            if (string.IsNullOrEmpty(txtNome.Text.Trim()) || string.IsNullOrEmpty(cmbDepartamento.Text.Trim()))
             {
                 corePopUp.exibirMensagem("Preencha todos os campos.", "Atenção");
                 return;
             }
 
             var dto = new dtoSetor();
-            dto.nome = txtNome.Text;
+            dto.nome = txtNome.Text.Trim();
             dto.codigo_departamento = Convert.ToInt32(((KeyValuePair<string, string>)cmbDepartamento.SelectedItem).Key);
-            dto.codigo_centro_custo = txtCodCentroCusto.Text;
+            dto.codigo_centro_custo = txtCodCentroCusto.Text.Trim();
 
             if (txtCodigo.Text.Length > 0)
             {
-                dto.codigo = Convert.ToInt32(txtCodigo.Text);
+                dto.codigo = Convert.ToInt32(txtCodigo.Text.Trim());
 
-                if (bllSetor.VerificaCentroCustoAtual(dto.codigo) != txtCodCentroCusto.Text)
+                if (bllSetor.VerificaCentroCustoAtual(dto.codigo) != txtCodCentroCusto.Text.Trim())
                 {
-                    if (bllSetor.VerificaCentroCustoExistente(txtCodCentroCusto.Text))
+                    if (bllSetor.VerificaCentroCustoExistente(txtCodCentroCusto.Text.Trim()))
                     {
                         corePopUp.exibirMensagem("Já existe um setor com este centro de custo.", "Atenção");
                         txtCodCentroCusto.Text = "";
@@ -121,7 +121,7 @@ namespace DespesaDigital.Views.Forms.Setor
                 }
                 else
                 {
-                    bllLogSistema.Insert($"Alterou informações do cadastro de setor: [Codigo: [{txtCodigo.Text}] Nome: [{txtNome}] Departamento: [{cmbDepartamento.Text}]");
+                    bllLogSistema.Insert($"Alterou informações do cadastro de setor: [Codigo: [{txtCodigo.Text.Trim()}] Nome: [{txtNome.Text.Trim()}] Departamento: [{cmbDepartamento.Text.Trim()}]");
 
                     corePopUp.exibirMensagem("Cadastro salvo com sucesso!", "Atenção");
                     Close();
@@ -130,7 +130,7 @@ namespace DespesaDigital.Views.Forms.Setor
             }
             else
             {
-                if (bllSetor.VerificaNomeExistente(txtNome.Text))
+                if (bllSetor.VerificaNomeExistente(txtNome.Text.Trim()))
                 {
                     corePopUp.exibirMensagem("Já existe um setor com este nome.", "Atenção");
                     txtNome.Text = "";
@@ -138,7 +138,7 @@ namespace DespesaDigital.Views.Forms.Setor
                     return;
                 }
 
-                if (bllSetor.VerificaCentroCustoExistente(txtCodCentroCusto.Text))
+                if (bllSetor.VerificaCentroCustoExistente(txtCodCentroCusto.Text.Trim()))
                 {
                     corePopUp.exibirMensagem("Já existe um setor com este centro de custo.", "Atenção");
                     txtCodCentroCusto.Text = "";
@@ -153,7 +153,7 @@ namespace DespesaDigital.Views.Forms.Setor
                 }
                 else
                 {
-                    bllLogSistema.Insert($"Incluiu um novo departamento: [Nome: [{txtNome}] Departamento: [{cmbDepartamento.Text}]");
+                    bllLogSistema.Insert($"Incluiu um novo departamento: [Nome: [{txtNome.Text.Trim()}] Departamento: [{cmbDepartamento.Text}]");
 
                     corePopUp.exibirMensagem("Cadastro incluido com sucesso!", "Atenção");
                 }

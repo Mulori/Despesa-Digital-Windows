@@ -89,6 +89,7 @@
     <Compile Include="Code\BLL\bllDepartamento\bllDepartamento.cs" />
     <Compile Include="Code\BLL\bllFormaPagamento\bllFormaPagamento.cs" />
     <Compile Include="Code\BLL\bllFornecedor\bllFornecedor.cs" />
+    <Compile Include="Code\BLL\bllFornecedor\bllFornecedorContato.cs" />
     <Compile Include="Code\BLL\bllFornecedor\bllFornecedorEndereco.cs" />
     <Compile Include="Code\BLL\bllLogSistema\bllLogSistema.cs" />
     <Compile Include="Code\BLL\bllProdutoFornecedor\bllProdutoFornecedor.cs" />
@@ -103,6 +104,7 @@
     <Compile Include="Code\DAL\dalDepartamento\dalDepartamento.cs" />
     <Compile Include="Code\DAL\dalFormaPagamento\dalFormaPagamento.cs" />
     <Compile Include="Code\DAL\dalFornecedor\dalFornecedor.cs" />
+    <Compile Include="Code\DAL\dalFornecedor\dalFornecedorContato.cs" />
     <Compile Include="Code\DAL\dalFornecedor\dalFornecedorEndereco.cs" />
     <Compile Include="Code\DAL\dalLogSistema\dalLogSistema.cs" />
     <Compile Include="Code\DAL\dalProdutoFornecedor\dalProdutoFornecedor.cs" />
@@ -116,6 +118,7 @@
     <Compile Include="Code\DTO\dtoDepartamento\dtoDepartamento.cs" />
     <Compile Include="Code\DTO\dtoFormaPagamento\dtoFormaPagamento.cs" />
     <Compile Include="Code\DTO\dtoFornecedor\dtoFornecedor.cs" />
+    <Compile Include="Code\DTO\dtoFornecedor\dtoFornecedorContato.cs" />
     <Compile Include="Code\DTO\dtoFornecedor\dtoFornecedorEndereco.cs" />
     <Compile Include="Code\DTO\dtoProduto\dtoProduto.cs" />
     <Compile Include="Code\DTO\dtoSetor\dtoSetor.cs" />
@@ -157,6 +160,12 @@
     </Compile>
     <Compile Include="Views\Forms\FormaPagamento\frmPesquisarFormaPagamento.Designer.cs">
       <DependentUpon>frmPesquisarFormaPagamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\Fornecedor\frmContatoFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\Fornecedor\frmContatoFornecedor.Designer.cs">
+      <DependentUpon>frmContatoFornecedor.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Forms\Fornecedor\frmEnderecoFornecedor.cs">
       <SubType>Form</SubType>
@@ -272,6 +281,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\FormaPagamento\frmPesquisarFormaPagamento.resx">
       <DependentUpon>frmPesquisarFormaPagamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\Fornecedor\frmContatoFornecedor.resx">
+      <DependentUpon>frmContatoFornecedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\Fornecedor\frmEnderecoFornecedor.resx">
       <DependentUpon>frmEnderecoFornecedor.cs</DependentUpon>

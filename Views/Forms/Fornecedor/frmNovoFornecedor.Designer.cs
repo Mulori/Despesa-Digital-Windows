@@ -30,6 +30,8 @@ namespace DespesaDigital.Views.Forms.Fornecedor
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnEndereco = new System.Windows.Forms.Button();
+            this.btnContatos = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnIncluir = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
@@ -39,8 +41,6 @@ namespace DespesaDigital.Views.Forms.Fornecedor
             this.label1 = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.mskCNPJ = new System.Windows.Forms.MaskedTextBox();
-            this.btnContatos = new System.Windows.Forms.Button();
-            this.btnEndereco = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,6 +58,36 @@ namespace DespesaDigital.Views.Forms.Fornecedor
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(771, 84);
             this.panel1.TabIndex = 50;
+            // 
+            // btnEndereco
+            // 
+            this.btnEndereco.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.btnEndereco.FlatAppearance.BorderSize = 0;
+            this.btnEndereco.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEndereco.ForeColor = System.Drawing.Color.White;
+            this.btnEndereco.Location = new System.Drawing.Point(531, 18);
+            this.btnEndereco.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnEndereco.Name = "btnEndereco";
+            this.btnEndereco.Size = new System.Drawing.Size(110, 54);
+            this.btnEndereco.TabIndex = 6;
+            this.btnEndereco.Text = "Endereços";
+            this.btnEndereco.UseVisualStyleBackColor = false;
+            this.btnEndereco.Click += new System.EventHandler(this.btnEndereco_Click);
+            // 
+            // btnContatos
+            // 
+            this.btnContatos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.btnContatos.FlatAppearance.BorderSize = 0;
+            this.btnContatos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnContatos.ForeColor = System.Drawing.Color.White;
+            this.btnContatos.Location = new System.Drawing.Point(649, 18);
+            this.btnContatos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnContatos.Name = "btnContatos";
+            this.btnContatos.Size = new System.Drawing.Size(110, 54);
+            this.btnContatos.TabIndex = 7;
+            this.btnContatos.Text = "Contatos";
+            this.btnContatos.UseVisualStyleBackColor = false;
+            this.btnContatos.Click += new System.EventHandler(this.btnContatos_Click);
             // 
             // btnExcluir
             // 
@@ -107,7 +137,7 @@ namespace DespesaDigital.Views.Forms.Fornecedor
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(260, 116);
+            this.label4.Location = new System.Drawing.Point(294, 116);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(99, 20);
@@ -116,11 +146,11 @@ namespace DespesaDigital.Views.Forms.Fornecedor
             // 
             // txtRazaoSocial
             // 
-            this.txtRazaoSocial.Location = new System.Drawing.Point(259, 144);
+            this.txtRazaoSocial.Location = new System.Drawing.Point(298, 144);
             this.txtRazaoSocial.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.txtRazaoSocial.MaxLength = 100;
             this.txtRazaoSocial.Name = "txtRazaoSocial";
-            this.txtRazaoSocial.Size = new System.Drawing.Size(497, 27);
+            this.txtRazaoSocial.Size = new System.Drawing.Size(458, 27);
             this.txtRazaoSocial.TabIndex = 2;
             // 
             // label2
@@ -157,38 +187,8 @@ namespace DespesaDigital.Views.Forms.Fornecedor
             this.mskCNPJ.Location = new System.Drawing.Point(130, 145);
             this.mskCNPJ.Mask = "##.###.###/####-##";
             this.mskCNPJ.Name = "mskCNPJ";
-            this.mskCNPJ.Size = new System.Drawing.Size(120, 27);
+            this.mskCNPJ.Size = new System.Drawing.Size(159, 27);
             this.mskCNPJ.TabIndex = 1;
-            // 
-            // btnContatos
-            // 
-            this.btnContatos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
-            this.btnContatos.FlatAppearance.BorderSize = 0;
-            this.btnContatos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnContatos.ForeColor = System.Drawing.Color.White;
-            this.btnContatos.Location = new System.Drawing.Point(649, 18);
-            this.btnContatos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnContatos.Name = "btnContatos";
-            this.btnContatos.Size = new System.Drawing.Size(110, 54);
-            this.btnContatos.TabIndex = 7;
-            this.btnContatos.Text = "Contatos";
-            this.btnContatos.UseVisualStyleBackColor = false;
-            this.btnContatos.Click += new System.EventHandler(this.btnContatos_Click);
-            // 
-            // btnEndereco
-            // 
-            this.btnEndereco.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
-            this.btnEndereco.FlatAppearance.BorderSize = 0;
-            this.btnEndereco.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEndereco.ForeColor = System.Drawing.Color.White;
-            this.btnEndereco.Location = new System.Drawing.Point(531, 18);
-            this.btnEndereco.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnEndereco.Name = "btnEndereco";
-            this.btnEndereco.Size = new System.Drawing.Size(110, 54);
-            this.btnEndereco.TabIndex = 6;
-            this.btnEndereco.Text = "Endereços";
-            this.btnEndereco.UseVisualStyleBackColor = false;
-            this.btnEndereco.Click += new System.EventHandler(this.btnEndereco_Click);
             // 
             // frmNovoFornecedor
             // 

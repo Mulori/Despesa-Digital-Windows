@@ -147,7 +147,7 @@ namespace DespesaDigital.Views.Forms.Fornecedor
 
         private void dataGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            var codigo = Convert.ToInt32(dataGrid.CurrentRow.Cells[1].Value.ToString());
+            var codigo = Convert.ToInt32(dataGrid.CurrentRow.Cells[0].Value.ToString());
 
             var dto = bllFornecedorEndereco.EnderecoCodigo(codigo);
 
