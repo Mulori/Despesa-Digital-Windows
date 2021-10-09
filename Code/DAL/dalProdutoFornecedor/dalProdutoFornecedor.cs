@@ -1,5 +1,6 @@
 ﻿using DespesaDigital.Core;
 using Npgsql;
+using System;
 using System.Collections.Generic;
 
 namespace DespesaDigital.Code.DAL.dalProdutoFornecedor
@@ -57,7 +58,7 @@ namespace DespesaDigital.Code.DAL.dalProdutoFornecedor
                     cmd.ExecuteNonQuery();
                     return true;
                 }
-                catch
+                catch(Exception e)
                 {
                     return false;
                 }

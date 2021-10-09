@@ -1,15 +1,11 @@
 ﻿using DespesaDigital.Code.BLL.bllFornecedor;
 using DespesaDigital.Code.BLL.bllSetor;
+using DespesaDigital.Code.DTO.dtoModal;
 using DespesaDigital.Code.DTO.dtoSetor;
 using DespesaDigital.Core;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DespesaDigital.Views.Forms.Modais
@@ -25,7 +21,7 @@ namespace DespesaDigital.Views.Forms.Modais
 
         private bool mouseDown;
         private Point lastLocation;
-        public List<int> listReturn = new List<int>();
+        public List<dtoModalCheckListBox> listReturn = new List<dtoModalCheckListBox>();
         private int codigo_funcao { get; set; }
 
 
@@ -116,7 +112,11 @@ namespace DespesaDigital.Views.Forms.Modais
 
                 if (checkList.GetItemChecked(i))
                 {
-                    listReturn.Add(Convert.ToInt32(atributos[0]));
+                    var dto = new dtoModalCheckListBox();
+                    dto.codigo = Convert.ToInt32(atributos[0]);
+                    dto.descricao = atributos[1].ToString();
+
+                    listReturn.Add(dto);
                 }
             }
 
