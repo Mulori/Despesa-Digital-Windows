@@ -120,6 +120,7 @@
     <Compile Include="Code\DTO\dtoFornecedor\dtoFornecedor.cs" />
     <Compile Include="Code\DTO\dtoFornecedor\dtoFornecedorContato.cs" />
     <Compile Include="Code\DTO\dtoFornecedor\dtoFornecedorEndereco.cs" />
+    <Compile Include="Code\DTO\dtoModal\dtoModalCheckListBox.cs" />
     <Compile Include="Code\DTO\dtoProduto\dtoProduto.cs" />
     <Compile Include="Code\DTO\dtoSetor\dtoSetor.cs" />
     <Compile Include="Code\DTO\dtoTipoDespesa\dtoTipoDespesa.cs" />
