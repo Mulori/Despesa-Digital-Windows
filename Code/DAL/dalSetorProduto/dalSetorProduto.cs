@@ -1,5 +1,7 @@
-﻿using DespesaDigital.Core;
+﻿using DespesaDigital.Code.DTO.dtoSetor;
+using DespesaDigital.Core;
 using Npgsql;
+using System;
 using System.Collections.Generic;
 
 namespace DespesaDigital.Code.DAL.dalSetorProduto
@@ -62,6 +64,27 @@ namespace DespesaDigital.Code.DAL.dalSetorProduto
             }
 
             return retorno;
+        }
+
+        public List<dtoSetor> SetorProdutoPorCodigoProduto(int codigo_produto)
+        {
+            var list = new List<dtoSetor>();
+
+            var ssql = $"select s.codigo, s.nome from setor_produto sp inner join setor s on(s.codigo = sp.codigo_setor) where sp.codigo_produto = '{codigo_produto}' order by s.nome";
+            using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
+            using (var dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    var dto = new dtoSetor();
+                    dto.codigo = Convert.ToInt32(dr["codigo"]);
+                    dto.nome = dr["nome"].ToString();
+                    list.Add(dto);
+                }
+                dr.Close();
+            }
+
+            return list;
         }
     }
 }

@@ -58,7 +58,7 @@ namespace DespesaDigital.Code.DAL.dalProdutoFornecedor
                     cmd.ExecuteNonQuery();
                     return true;
                 }
-                catch(Exception e)
+                catch
                 {
                     return false;
                 }
