@@ -39,20 +39,18 @@ namespace DespesaDigital.Views.Forms.Produtos
             this.label1 = new System.Windows.Forms.Label();
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.txtCodigo = new System.Windows.Forms.TextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.cmbStatus = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.chklistSetores = new System.Windows.Forms.CheckedListBox();
-            this.chkListFornecedores = new System.Windows.Forms.CheckedListBox();
+            this.btnVinculaFornecedores = new System.Windows.Forms.Button();
+            this.btnVinculaSetores = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel1.Controls.Add(this.btnVinculaSetores);
+            this.panel1.Controls.Add(this.btnVinculaFornecedores);
             this.panel1.Controls.Add(this.btnExcluir);
             this.panel1.Controls.Add(this.btnIncluir);
             this.panel1.Controls.Add(this.btnSalvar);
@@ -164,42 +162,6 @@ namespace DespesaDigital.Views.Forms.Produtos
             this.txtCodigo.Size = new System.Drawing.Size(110, 27);
             this.txtCodigo.TabIndex = 41;
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
-            this.panel3.Controls.Add(this.chkListFornecedores);
-            this.panel3.Controls.Add(this.chklistSetores);
-            this.panel3.Controls.Add(this.label5);
-            this.panel3.Controls.Add(this.label4);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 184);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(771, 192);
-            this.panel3.TabIndex = 48;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(400, 9);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(168, 20);
-            this.label5.TabIndex = 50;
-            this.label5.Text = "Vincular Fornecedores:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(9, 9);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(137, 20);
-            this.label4.TabIndex = 49;
-            this.label4.Text = "Vincular Setores: *";
-            // 
             // cmbStatus
             // 
             this.cmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -222,30 +184,43 @@ namespace DespesaDigital.Views.Forms.Produtos
             this.label6.TabIndex = 50;
             this.label6.Text = "Status: *";
             // 
-            // chklistSetores
+            // btnVinculaFornecedores
             // 
-            this.chklistSetores.FormattingEnabled = true;
-            this.chklistSetores.Location = new System.Drawing.Point(0, 35);
-            this.chklistSetores.Name = "chklistSetores";
-            this.chklistSetores.Size = new System.Drawing.Size(392, 158);
-            this.chklistSetores.TabIndex = 53;
+            this.btnVinculaFornecedores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.btnVinculaFornecedores.FlatAppearance.BorderSize = 0;
+            this.btnVinculaFornecedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVinculaFornecedores.ForeColor = System.Drawing.Color.White;
+            this.btnVinculaFornecedores.Location = new System.Drawing.Point(643, 18);
+            this.btnVinculaFornecedores.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnVinculaFornecedores.Name = "btnVinculaFornecedores";
+            this.btnVinculaFornecedores.Size = new System.Drawing.Size(116, 54);
+            this.btnVinculaFornecedores.TabIndex = 6;
+            this.btnVinculaFornecedores.Text = "Vincula Fornecedores";
+            this.btnVinculaFornecedores.UseVisualStyleBackColor = false;
+            this.btnVinculaFornecedores.Click += new System.EventHandler(this.btnVinculaFornecedores_Click);
             // 
-            // chkListFornecedores
+            // btnVinculaSetores
             // 
-            this.chkListFornecedores.FormattingEnabled = true;
-            this.chkListFornecedores.Location = new System.Drawing.Point(392, 35);
-            this.chkListFornecedores.Name = "chkListFornecedores";
-            this.chkListFornecedores.Size = new System.Drawing.Size(379, 158);
-            this.chkListFornecedores.TabIndex = 54;
+            this.btnVinculaSetores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.btnVinculaSetores.FlatAppearance.BorderSize = 0;
+            this.btnVinculaSetores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVinculaSetores.ForeColor = System.Drawing.Color.White;
+            this.btnVinculaSetores.Location = new System.Drawing.Point(519, 18);
+            this.btnVinculaSetores.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnVinculaSetores.Name = "btnVinculaSetores";
+            this.btnVinculaSetores.Size = new System.Drawing.Size(116, 54);
+            this.btnVinculaSetores.TabIndex = 7;
+            this.btnVinculaSetores.Text = "Vincula Setores";
+            this.btnVinculaSetores.UseVisualStyleBackColor = false;
+            this.btnVinculaSetores.Click += new System.EventHandler(this.btnVinculaSetores_Click);
             // 
             // frmNovoProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(771, 376);
+            this.ClientSize = new System.Drawing.Size(771, 180);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cmbStatus);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.cmbCategoria);
             this.Controls.Add(this.label3);
@@ -260,8 +235,6 @@ namespace DespesaDigital.Views.Forms.Produtos
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Produto";
             this.panel1.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -279,12 +252,9 @@ namespace DespesaDigital.Views.Forms.Produtos
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.TextBox txtCodigo;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cmbStatus;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.CheckedListBox chklistSetores;
-        private System.Windows.Forms.CheckedListBox chkListFornecedores;
+        private System.Windows.Forms.Button btnVinculaFornecedores;
+        private System.Windows.Forms.Button btnVinculaSetores;
     }
 }
