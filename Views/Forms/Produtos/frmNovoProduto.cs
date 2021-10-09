@@ -21,8 +21,6 @@ namespace DespesaDigital.Views.Forms.Produtos
         private List<dtoModalCheckListBox> listSetoresBackup = new List<dtoModalCheckListBox>();
         private List<dtoModalCheckListBox> listFornecedores = new List<dtoModalCheckListBox>();
         private List<dtoModalCheckListBox> listFornecedoresBackup = new List<dtoModalCheckListBox>();
-        private List<dtoModalCheckListBox> listFornecedoresBackupTemp = new List<dtoModalCheckListBox>();
-
 
         public frmNovoProduto(int codigo_produto)
         {
@@ -44,6 +42,19 @@ namespace DespesaDigital.Views.Forms.Produtos
                 txtDescricao.Enabled = true;
                 cmbCategoria.Enabled = true;
                 cmbStatus.Enabled = true;
+
+                var listSetor = bllSetorProduto.SetorProdutoPorCodigoProduto(bll.codigo);
+                var listSetorCheckBox = new List<dtoModalCheckListBox>();
+
+                foreach(var setor in listSetor)
+                {
+                    var dto = new dtoModalCheckListBox();
+                    dto.codigo = setor.codigo;
+                    dto.descricao = setor.nome;
+                    listSetorCheckBox.Add(dto);
+                }
+
+                CarregaListaSetores(listSetorCheckBox);
             }
             else
             {
