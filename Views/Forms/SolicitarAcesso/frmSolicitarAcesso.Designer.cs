@@ -30,6 +30,8 @@ namespace DespesaDigital.Views.Forms.SolicitarAcesso
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtReinserirEmail = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.cmbSetor = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -56,6 +58,8 @@ namespace DespesaDigital.Views.Forms.SolicitarAcesso
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.txtReinserirEmail);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.cmbSetor);
             this.panel1.Controls.Add(this.label7);
@@ -74,14 +78,37 @@ namespace DespesaDigital.Views.Forms.SolicitarAcesso
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(236, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(324, 463);
+            this.panel1.Size = new System.Drawing.Size(324, 515);
             this.panel1.TabIndex = 2;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(17, 212);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(123, 20);
+            this.label9.TabIndex = 16;
+            this.label9.Text = "Reinserir E-mail:";
+            // 
+            // txtReinserirEmail
+            // 
+            this.txtReinserirEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.txtReinserirEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtReinserirEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReinserirEmail.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtReinserirEmail.Location = new System.Drawing.Point(21, 235);
+            this.txtReinserirEmail.MaxLength = 250;
+            this.txtReinserirEmail.Name = "txtReinserirEmail";
+            this.txtReinserirEmail.Size = new System.Drawing.Size(282, 22);
+            this.txtReinserirEmail.TabIndex = 3;
+            this.txtReinserirEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtReinserirEmail_KeyPress);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(20, 365);
+            this.label8.Location = new System.Drawing.Point(18, 418);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(51, 20);
             this.label8.TabIndex = 14;
@@ -94,16 +121,16 @@ namespace DespesaDigital.Views.Forms.SolicitarAcesso
             this.cmbSetor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbSetor.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSetor.FormattingEnabled = true;
-            this.cmbSetor.Location = new System.Drawing.Point(22, 388);
+            this.cmbSetor.Location = new System.Drawing.Point(20, 441);
             this.cmbSetor.Name = "cmbSetor";
             this.cmbSetor.Size = new System.Drawing.Size(282, 28);
-            this.cmbSetor.TabIndex = 6;
+            this.cmbSetor.TabIndex = 7;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(20, 311);
+            this.label7.Location = new System.Drawing.Point(18, 364);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(115, 20);
             this.label7.TabIndex = 12;
@@ -116,21 +143,21 @@ namespace DespesaDigital.Views.Forms.SolicitarAcesso
             this.cmbDepartamento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbDepartamento.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbDepartamento.FormattingEnabled = true;
-            this.cmbDepartamento.Location = new System.Drawing.Point(22, 334);
+            this.cmbDepartamento.Location = new System.Drawing.Point(20, 387);
             this.cmbDepartamento.Name = "cmbDepartamento";
             this.cmbDepartamento.Size = new System.Drawing.Size(282, 28);
-            this.cmbDepartamento.TabIndex = 5;
+            this.cmbDepartamento.TabIndex = 6;
             this.cmbDepartamento.SelectedIndexChanged += new System.EventHandler(this.cmbDepartamento_SelectedIndexChanged);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(20, 261);
+            this.label6.Location = new System.Drawing.Point(18, 314);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(151, 20);
+            this.label6.Size = new System.Drawing.Size(121, 20);
             this.label6.TabIndex = 10;
-            this.label6.Text = "Confirme sua senha:";
+            this.label6.Text = "Reinserir Senha:";
             // 
             // txtConfirmeSenha
             // 
@@ -138,12 +165,12 @@ namespace DespesaDigital.Views.Forms.SolicitarAcesso
             this.txtConfirmeSenha.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtConfirmeSenha.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtConfirmeSenha.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtConfirmeSenha.Location = new System.Drawing.Point(22, 284);
+            this.txtConfirmeSenha.Location = new System.Drawing.Point(20, 337);
             this.txtConfirmeSenha.MaxLength = 10;
             this.txtConfirmeSenha.Name = "txtConfirmeSenha";
             this.txtConfirmeSenha.PasswordChar = '*';
             this.txtConfirmeSenha.Size = new System.Drawing.Size(282, 22);
-            this.txtConfirmeSenha.TabIndex = 4;
+            this.txtConfirmeSenha.TabIndex = 5;
             this.txtConfirmeSenha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtConfirmeSenha_KeyPress);
             // 
             // label4
@@ -199,10 +226,10 @@ namespace DespesaDigital.Views.Forms.SolicitarAcesso
             this.btnSolicitar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSolicitar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSolicitar.ForeColor = System.Drawing.Color.White;
-            this.btnSolicitar.Location = new System.Drawing.Point(22, 423);
+            this.btnSolicitar.Location = new System.Drawing.Point(20, 476);
             this.btnSolicitar.Name = "btnSolicitar";
             this.btnSolicitar.Size = new System.Drawing.Size(282, 30);
-            this.btnSolicitar.TabIndex = 7;
+            this.btnSolicitar.TabIndex = 8;
             this.btnSolicitar.Text = "Solicitar";
             this.btnSolicitar.UseVisualStyleBackColor = false;
             this.btnSolicitar.Click += new System.EventHandler(this.btnSolicitar_Click);
@@ -211,7 +238,7 @@ namespace DespesaDigital.Views.Forms.SolicitarAcesso
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(18, 209);
+            this.label2.Location = new System.Drawing.Point(16, 262);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 20);
             this.label2.TabIndex = 4;
@@ -233,12 +260,12 @@ namespace DespesaDigital.Views.Forms.SolicitarAcesso
             this.txtSenha.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSenha.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSenha.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtSenha.Location = new System.Drawing.Point(22, 236);
+            this.txtSenha.Location = new System.Drawing.Point(20, 289);
             this.txtSenha.MaxLength = 10;
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(282, 22);
-            this.txtSenha.TabIndex = 3;
+            this.txtSenha.TabIndex = 4;
             this.txtSenha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSenha_KeyPress);
             // 
             // txtEmail
@@ -305,7 +332,7 @@ namespace DespesaDigital.Views.Forms.SolicitarAcesso
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(56)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(781, 495);
+            this.ClientSize = new System.Drawing.Size(781, 539);
             this.Controls.Add(this.btnFechar);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.panel1);
@@ -343,5 +370,7 @@ namespace DespesaDigital.Views.Forms.SolicitarAcesso
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnFechar;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtReinserirEmail;
     }
 }

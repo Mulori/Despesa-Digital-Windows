@@ -106,6 +106,7 @@ namespace DespesaDigital.Views.Forms.Fornecedor
             this.txtLogradouro.Name = "txtLogradouro";
             this.txtLogradouro.Size = new System.Drawing.Size(832, 25);
             this.txtLogradouro.TabIndex = 4;
+          
             // 
             // txtBairro
             // 
@@ -113,6 +114,7 @@ namespace DespesaDigital.Views.Forms.Fornecedor
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(396, 25);
             this.txtBairro.TabIndex = 3;
+          
             // 
             // label1
             // 
@@ -131,6 +133,7 @@ namespace DespesaDigital.Views.Forms.Fornecedor
             this.label2.Size = new System.Drawing.Size(49, 17);
             this.label2.TabIndex = 21;
             this.label2.Text = "Bairro:";
+         
             // 
             // label5
             // 
@@ -140,6 +143,7 @@ namespace DespesaDigital.Views.Forms.Fornecedor
             this.label5.Size = new System.Drawing.Size(53, 17);
             this.label5.TabIndex = 24;
             this.label5.Text = "Estado:";
+    
             // 
             // label6
             // 
@@ -149,6 +153,7 @@ namespace DespesaDigital.Views.Forms.Fornecedor
             this.label6.Size = new System.Drawing.Size(54, 17);
             this.label6.TabIndex = 25;
             this.label6.Text = "Cidade:";
+      
             // 
             // mskCep
             // 
@@ -157,6 +162,7 @@ namespace DespesaDigital.Views.Forms.Fornecedor
             this.mskCep.Name = "mskCep";
             this.mskCep.Size = new System.Drawing.Size(79, 25);
             this.mskCep.TabIndex = 5;
+         
             // 
             // label7
             // 
@@ -166,6 +172,7 @@ namespace DespesaDigital.Views.Forms.Fornecedor
             this.label7.Size = new System.Drawing.Size(35, 17);
             this.label7.TabIndex = 27;
             this.label7.Text = "CEP:";
+        
             // 
             // panel1
             // 
@@ -179,6 +186,7 @@ namespace DespesaDigital.Views.Forms.Fornecedor
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(942, 84);
             this.panel1.TabIndex = 41;
+ 
             // 
             // btnExcluir
             // 
@@ -231,6 +239,7 @@ namespace DespesaDigital.Views.Forms.Fornecedor
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(388, 25);
             this.txtCidade.TabIndex = 2;
+     
             // 
             // cmbEstado
             // 
@@ -268,9 +277,11 @@ namespace DespesaDigital.Views.Forms.Fornecedor
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(121, 25);
             this.cmbEstado.TabIndex = 1;
+  
             // 
             // codigo
             // 
+            this.codigo.DataPropertyName = "codigo";
             this.codigo.HeaderText = "codigo";
             this.codigo.Name = "codigo";
             this.codigo.ReadOnly = true;
@@ -290,12 +301,14 @@ namespace DespesaDigital.Views.Forms.Fornecedor
             this.bairro.DataPropertyName = "bairro";
             this.bairro.HeaderText = "Bairro:";
             this.bairro.Name = "bairro";
+            this.bairro.ReadOnly = true;
             // 
             // cep
             // 
             this.cep.DataPropertyName = "cep";
             this.cep.HeaderText = "CEP:";
             this.cep.Name = "cep";
+            this.cep.ReadOnly = true;
             // 
             // cidade
             // 
@@ -310,6 +323,7 @@ namespace DespesaDigital.Views.Forms.Fornecedor
             this.estado.DataPropertyName = "estado";
             this.estado.HeaderText = "Estado:";
             this.estado.Name = "estado";
+            this.estado.ReadOnly = true;
             this.estado.Width = 80;
             // 
             // pais
@@ -318,6 +332,7 @@ namespace DespesaDigital.Views.Forms.Fornecedor
             this.pais.DataPropertyName = "pais";
             this.pais.HeaderText = "Pais:";
             this.pais.Name = "pais";
+            this.pais.ReadOnly = true;
             this.pais.Visible = false;
             // 
             // codigo_fornecedor
@@ -349,7 +364,7 @@ namespace DespesaDigital.Views.Forms.Fornecedor
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmEnderecoFornecedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Endereço Fornecedor";
+            this.Text = "Endereços do Fornecedor";
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);

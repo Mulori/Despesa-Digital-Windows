@@ -47,14 +47,14 @@ namespace DespesaDigital.Views.Forms.Login
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            if(string.IsNullOrEmpty(txtEmail.Text) || string.IsNullOrEmpty(txtSenha.Text))
+            if(string.IsNullOrEmpty(txtEmail.Text.Trim()) || string.IsNullOrEmpty(txtSenha.Text.Trim()))
             {
                 corePopUp.exibirMensagem("Preencha todos os campos.", "Atenção");
 
                 return;
             }
 
-            if (!rg.IsMatch(txtEmail.Text))
+            if (!rg.IsMatch(txtEmail.Text.Trim()))
             {
                 corePopUp.exibirMensagem("O e-mail informado não é valido.", "Atenção");
 
@@ -63,7 +63,7 @@ namespace DespesaDigital.Views.Forms.Login
                 return;
             }
 
-            if(txtSenha.Text.Length < 4)
+            if(txtSenha.Text.Trim().Length < 4)
             {
                 corePopUp.exibirMensagem("A senha informada deve conter no mínimo 4 caracteres.", "Atenção");
 
@@ -72,7 +72,7 @@ namespace DespesaDigital.Views.Forms.Login
                 return;
             }
 
-            var bll = bllUsuario.AutenticaUsuario(txtEmail.Text, txtSenha.Text);
+            var bll = bllUsuario.AutenticaUsuario(txtEmail.Text.Trim(), txtSenha.Text.Trim());
 
             if(bll.codigo == 0)
             {

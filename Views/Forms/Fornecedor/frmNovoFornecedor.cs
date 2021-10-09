@@ -222,6 +222,11 @@ namespace DespesaDigital.Views.Forms.Fornecedor
                 corePopUp.exibirMensagem("Selecione um fornecedor.", "Atenção");
                 return;
             }
+
+            using (var form = new frmContatoFornecedor(Convert.ToInt32(txtCodigo.Text)))
+            {
+                form.ShowDialog();
+            }
         }
     }
 }

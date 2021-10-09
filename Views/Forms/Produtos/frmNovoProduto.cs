@@ -128,7 +128,7 @@ namespace DespesaDigital.Views.Forms.Produtos
 
         private void btnSalvar_Click(object sender, System.EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtDescricao.Text) || string.IsNullOrEmpty(cmbCategoria.Text))
+            if (string.IsNullOrEmpty(txtDescricao.Text.Trim()) || string.IsNullOrEmpty(cmbCategoria.Text.Trim()))
             {
                 corePopUp.exibirMensagem("Preencha todos os campos.", "Atenção");
                 return;
@@ -181,7 +181,7 @@ namespace DespesaDigital.Views.Forms.Produtos
             }
 
             var dto = new dtoProduto();
-            dto.descricao = txtDescricao.Text;
+            dto.descricao = txtDescricao.Text.Trim();
             dto.codigo_categoria = Convert.ToInt32(((KeyValuePair<string, string>)cmbCategoria.SelectedItem).Key);
 
             if (txtCodigo.Text.Length > 0)

@@ -84,6 +84,13 @@ namespace DespesaDigital.Views.Forms.SolicitarAcesso
                 return;
             }
 
+            if (string.IsNullOrEmpty(txtReinserirEmail.Text))
+            {
+                corePopUp.exibirMensagem("Reinsira o e-mail do cadastro.", "Atenção");
+                txtReinserirEmail.Focus();
+                return;
+            }
+
             if (string.IsNullOrEmpty(txtSenha.Text))
             {
                 corePopUp.exibirMensagem("Informe a senha do cadastro.", "Atenção");
@@ -123,7 +130,24 @@ namespace DespesaDigital.Views.Forms.SolicitarAcesso
                 return;
             }
 
-            if(txtSenha.Text.Length < 4)
+            if (!rg.IsMatch(txtReinserirEmail.Text))
+            {
+                corePopUp.exibirMensagem("O e-mail reinserido não é valido!", "Atenção");
+
+                txtReinserirEmail.Text = "";
+                txtReinserirEmail.Focus();
+                return;
+            }
+
+            if (!txtReinserirEmail.Text.Equals(txtEmail.Text))
+            {
+                corePopUp.exibirMensagem("Os e-mails não coincidem!", "Atenção");
+                txtReinserirEmail.Text = "";
+                txtReinserirEmail.Focus();
+                return;
+            }
+
+            if (txtSenha.Text.Length < 4)
             {
                 corePopUp.exibirMensagem("A senha deve conter no minimo 4 caracteres!", "Atenção");
 
@@ -141,10 +165,10 @@ namespace DespesaDigital.Views.Forms.SolicitarAcesso
             }
 
             var dto = new dtoUsuario();
-            dto.nome = txtNome.Text;
-            dto.sobrenome = txtSobrenome.Text;
-            dto.email = txtEmail.Text;
-            dto.senha = txtSenha.Text;
+            dto.nome = txtNome.Text.Trim();
+            dto.sobrenome = txtSobrenome.Text.Trim();
+            dto.email = txtEmail.Text.Trim();
+            dto.senha = txtSenha.Text.Trim();
             dto.codigo_setor = Convert.ToInt32(((KeyValuePair<string, string>)cmbSetor.SelectedItem).Key);
 
             if (bllUsuario.NovoUsuario(dto) < 1)
@@ -191,6 +215,14 @@ namespace DespesaDigital.Views.Forms.SolicitarAcesso
         }
 
         private void txtConfirmeSenha_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtReinserirEmail_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
             {
