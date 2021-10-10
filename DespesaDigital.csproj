@@ -157,6 +157,12 @@
     <Compile Include="Views\Forms\Departamento\frmPesquisarDepartamento.Designer.cs">
       <DependentUpon>frmPesquisarDepartamento.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Forms\FormaPagamento\frmNovaFormaPagamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\FormaPagamento\frmNovaFormaPagamento.Designer.cs">
+      <DependentUpon>frmNovaFormaPagamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Forms\FormaPagamento\frmPesquisarFormaPagamento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -286,6 +292,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\Departamento\frmPesquisarDepartamento.resx">
       <DependentUpon>frmPesquisarDepartamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\FormaPagamento\frmNovaFormaPagamento.resx">
+      <DependentUpon>frmNovaFormaPagamento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\FormaPagamento\frmPesquisarFormaPagamento.resx">
       <DependentUpon>frmPesquisarFormaPagamento.cs</DependentUpon>

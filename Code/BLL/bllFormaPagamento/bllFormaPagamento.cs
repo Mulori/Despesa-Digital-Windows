@@ -17,5 +17,11 @@ namespace DespesaDigital.Code.BLL.bllFormaPagamento
             var dal = new dalFormaPagamento();
             return dal.ListarTodasFormasPagamentoPorStatusDescricao(status, descricao);
         }
+
+        public static dtoFormaPagamento FormaPagamentoPorCodigo(int codigo)
+        {
+            var dal = new dalFormaPagamento();
+            return dal.FormaPagamentoPorCodigo(codigo);
+        }
     }
 }

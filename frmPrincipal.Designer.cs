@@ -30,6 +30,7 @@ namespace DespesaDigital
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbVersao = new System.Windows.Forms.Label();
             this.btnCadastro = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnMinhaConta = new System.Windows.Forms.Button();
@@ -39,7 +40,6 @@ namespace DespesaDigital
             this.btnLogout = new System.Windows.Forms.Button();
             this.lbNome = new System.Windows.Forms.Label();
             this.panelPrincipal = new System.Windows.Forms.Panel();
-            this.lbVersao = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -59,6 +59,19 @@ namespace DespesaDigital
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(179, 620);
             this.panel1.TabIndex = 0;
+            // 
+            // lbVersao
+            // 
+            this.lbVersao.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.lbVersao.AutoSize = true;
+            this.lbVersao.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbVersao.ForeColor = System.Drawing.Color.White;
+            this.lbVersao.Location = new System.Drawing.Point(66, 594);
+            this.lbVersao.Name = "lbVersao";
+            this.lbVersao.Size = new System.Drawing.Size(47, 17);
+            this.lbVersao.TabIndex = 0;
+            this.lbVersao.Text = "versão";
+            this.lbVersao.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnCadastro
             // 
@@ -181,19 +194,6 @@ namespace DespesaDigital
             this.panelPrincipal.Name = "panelPrincipal";
             this.panelPrincipal.Size = new System.Drawing.Size(892, 556);
             this.panelPrincipal.TabIndex = 2;
-            // 
-            // lbVersao
-            // 
-            this.lbVersao.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.lbVersao.AutoSize = true;
-            this.lbVersao.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbVersao.ForeColor = System.Drawing.Color.White;
-            this.lbVersao.Location = new System.Drawing.Point(66, 594);
-            this.lbVersao.Name = "lbVersao";
-            this.lbVersao.Size = new System.Drawing.Size(47, 17);
-            this.lbVersao.TabIndex = 0;
-            this.lbVersao.Text = "versao";
-            this.lbVersao.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frmPrincipal
             // 

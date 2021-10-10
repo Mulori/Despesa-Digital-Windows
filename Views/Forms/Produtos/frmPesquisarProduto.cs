@@ -22,6 +22,7 @@ namespace DespesaDigital.Views.Forms.Produtos
 
         void Inicializa()
         {
+            rdAtivos.Checked = true;
             dataGrid.DataSource = bllProduto.ListarTodosProdutosPorStatus("A");
         }
 
@@ -76,6 +77,11 @@ namespace DespesaDigital.Views.Forms.Produtos
 
         private void dataGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (dataGrid.RowCount == 0)
+            {
+                return;
+            }
+
             var codigo = Convert.ToInt32(dataGrid.CurrentRow.Cells[0].Value.ToString());
 
             using (var form = new frmNovoProduto(codigo))

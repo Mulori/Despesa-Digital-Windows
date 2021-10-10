@@ -116,7 +116,7 @@ namespace DespesaDigital.Views.Forms.Modais
                 {
                     var dto = new dtoModalCheckListBox();
                     dto.codigo = Convert.ToInt32(atributos[0]);
-                    dto.descricao = atributos[1].ToString();
+                    dto.descricao = atributos[1].ToString().Trim();
 
                     listReturn.Add(dto);
                 }
