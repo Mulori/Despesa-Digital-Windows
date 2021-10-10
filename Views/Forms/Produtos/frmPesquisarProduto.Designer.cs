@@ -164,11 +164,11 @@ namespace DespesaDigital.Views.Forms.Produtos
             // 
             // status
             // 
-            this.status.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.status.DataPropertyName = "ativo";
             this.status.HeaderText = "Status:";
             this.status.Name = "status";
             this.status.ReadOnly = true;
+            this.status.Width = 140;
             // 
             // codigo_categoria
             // 

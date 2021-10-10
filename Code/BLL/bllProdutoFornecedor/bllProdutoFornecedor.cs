@@ -34,5 +34,11 @@ namespace DespesaDigital.Code.BLL.bllProdutoFornecedor
 
             return true;
         }
+
+        public static List<dtoFornecedor> ProdutoFornecedorPorCodigoProduto(int codigo_produto)
+        {
+            var dal = new dalProdutoFornecedor();
+            return dal.ProdutoFornecedorPorCodigoProduto(codigo_produto);
+        }
     }
 }

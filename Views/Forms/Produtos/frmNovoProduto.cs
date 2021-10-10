@@ -46,7 +46,7 @@ namespace DespesaDigital.Views.Forms.Produtos
                 var listSetor = bllSetorProduto.SetorProdutoPorCodigoProduto(bll.codigo);
                 var listSetorCheckBox = new List<dtoModalCheckListBox>();
 
-                foreach(var setor in listSetor)
+                foreach (var setor in listSetor)
                 {
                     var dto = new dtoModalCheckListBox();
                     dto.codigo = setor.codigo;
@@ -55,6 +55,19 @@ namespace DespesaDigital.Views.Forms.Produtos
                 }
 
                 CarregaListaSetores(listSetorCheckBox);
+
+                var listFornecedor = bllProdutoFornecedor.ProdutoFornecedorPorCodigoProduto(bll.codigo);
+                var listFornecedorCheckBox = new List<dtoModalCheckListBox>();
+
+                foreach (var setor in listFornecedor)
+                {
+                    var dto = new dtoModalCheckListBox();
+                    dto.codigo = setor.codigo;
+                    dto.descricao = setor.cnpj + " " + setor.razao_social;
+                    listFornecedorCheckBox.Add(dto);
+                }
+
+                CarregaListaFornecedores(listFornecedorCheckBox);
             }
             else
             {
@@ -327,6 +340,11 @@ namespace DespesaDigital.Views.Forms.Produtos
         {
             if (e.KeyCode == Keys.Delete)
             {
+                if (chkListFornecedores.Items.Count == 0)
+                {
+                    return;
+                }
+
                 var codigo = 0;
                 var descricao = "";
                 for (int i = 0; i <= (chkListSetores.Items.Count - 1); i++)
@@ -453,7 +471,7 @@ namespace DespesaDigital.Views.Forms.Produtos
             var listFornecedoresBackupTemp = new List<dtoModalCheckListBox>();
             Dictionary<string, string> comboSource = new Dictionary<string, string>();
 
-            if (listFornecedoresBackup.Count > 0) 
+            if (listFornecedoresBackup.Count > 0)
             {
                 foreach (var new_item in list)
                 {
@@ -509,7 +527,7 @@ namespace DespesaDigital.Views.Forms.Produtos
             listFornecedoresBackupTemp = null;
 
             if (comboSource.Count > 0)
-            {              
+            {
                 chkListFornecedores.DataSource = new BindingSource(comboSource, null);
                 chkListFornecedores.DisplayMember = "Value";
                 chkListFornecedores.ValueMember = "Key";
@@ -525,6 +543,11 @@ namespace DespesaDigital.Views.Forms.Produtos
         {
             if (e.KeyCode == Keys.Delete)
             {
+                if(chkListFornecedores.Items.Count == 0)
+                {
+                    return;
+                }
+
                 var codigo = 0;
                 var descricao = "";
                 for (int i = 0; i <= (chkListFornecedores.Items.Count - 1); i++)
@@ -556,13 +579,27 @@ namespace DespesaDigital.Views.Forms.Produtos
                     {
                         if (listFornecedoresBackup.Count > 0)
                         {
-                            listFornecedoresBackup.RemoveAt(it);
-                            CarregaListaFornecedores(listFornecedoresBackup);
+                            try
+                            {
+                                listFornecedoresBackup.RemoveAt(it);
+                                CarregaListaFornecedores(listFornecedoresBackup);
+                            }
+                            catch
+                            {
+
+                            }
                         }
                         else
                         {
-                            listFornecedores.RemoveAt(it);
-                            CarregaListaFornecedores(listFornecedores);
+                            try
+                            {
+                                listFornecedores.RemoveAt(it);
+                                CarregaListaFornecedores(listFornecedores);
+                            }
+                            catch
+                            {
+
+                            }                            
                         }
 
                         break;
