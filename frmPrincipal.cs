@@ -15,7 +15,12 @@ namespace DespesaDigital
         {
             InitializeComponent();
 
-            bllConexao.Conectar();
+            if (!bllConexao.Conectar())
+            {
+                corePopUp.exibirMensagem("Não foi possivel estabelecer conexão \n com o servidor de banco de dados.", "Sem conexão!");
+                Application.Exit();
+                return;
+            }
 
             using (var form = new frmLogin())
             {

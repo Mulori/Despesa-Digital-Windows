@@ -1,4 +1,5 @@
 ﻿using DespesaDigital.Code.BLL.bllFormaPagamento;
+using System;
 using System.Windows.Forms;
 
 namespace DespesaDigital.Views.Forms.FormaPagamento
@@ -53,6 +54,33 @@ namespace DespesaDigital.Views.Forms.FormaPagamento
                     dataGrid.DataSource = bllFormaPagamento.ListarTodasFormasPagamentoPorStatusDescricao("I", txtDescricao.Text);
                 }
             }
+        }
+
+        private void btnNovo_Click(object sender, System.EventArgs e)
+        {
+            using (var form = new frmNovaFormaPagamento(0))
+            {
+                form.ShowDialog();
+            }
+
+            Inicializar();
+        }
+
+        private void dataGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(dataGrid.RowCount == 0)
+            {
+                return;
+            }
+
+            var codigo = Convert.ToInt32(dataGrid.CurrentRow.Cells[0].Value.ToString());
+
+            using (var form = new frmNovaFormaPagamento(codigo))
+            {
+                form.ShowDialog();
+            }
+
+            Inicializar();
         }
     }
 }
