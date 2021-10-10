@@ -30,6 +30,8 @@ namespace DespesaDigital.Views.Forms.Modais
             InitializeComponent();
             codigo_funcao = _codigo_funcao;
             Inicializar();
+
+            txtPesquisa.Focus();
         }
 
         void Inicializar()
@@ -121,6 +123,47 @@ namespace DespesaDigital.Views.Forms.Modais
             }
 
             this.Close();
+        }
+
+        private void txtPesquisa_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == 13)
+            {
+                //Valida para qual entidade deve funcionar
+                switch (codigo_funcao)
+                {
+                    case 1: //Listar Setores do Departamento Pertencente
+
+                        List<dtoSetor> listSetor = new List<dtoSetor>();
+
+                        listSetor = bllSetor.ListSetorPorNome(txtPesquisa.Text);                        
+                        
+                        Dictionary<string, string> comboSourceSetor = new Dictionary<string, string>();
+                        foreach (var item in listSetor)
+                        {
+                            comboSourceSetor.Add($"{item.codigo}", $"{item.nome}");
+                        }
+                        checkList.DataSource = new BindingSource(comboSourceSetor, null);
+                        checkList.DisplayMember = "Value";
+                        checkList.ValueMember = "Key";
+
+                        break;
+                    case 2: //Lista Todos os Fornecedores
+
+                        var listFornecedor = bllFornecedor.ListarTodosFornecedoresPorRazaoSocial(txtPesquisa.Text);
+
+                        Dictionary<string, string> comboSourceFornecedor = new Dictionary<string, string>();
+                        foreach (var item in listFornecedor)
+                        {
+                            comboSourceFornecedor.Add($"{item.codigo}", $"{item.cnpj}  {item.razao_social}");
+                        }
+                        checkList.DataSource = new BindingSource(comboSourceFornecedor, null);
+                        checkList.DisplayMember = "Value";
+                        checkList.ValueMember = "Key";
+
+                        break;
+                }
+            }            
         }
     }
 }

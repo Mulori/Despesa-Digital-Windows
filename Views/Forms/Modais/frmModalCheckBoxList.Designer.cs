@@ -72,6 +72,7 @@ namespace DespesaDigital.Views.Forms.Modais
             this.txtPesquisa.Name = "txtPesquisa";
             this.txtPesquisa.Size = new System.Drawing.Size(741, 26);
             this.txtPesquisa.TabIndex = 56;
+            this.txtPesquisa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPesquisa_KeyPress);
             // 
             // label2
             // 
