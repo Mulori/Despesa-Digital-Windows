@@ -1,4 +1,5 @@
-﻿using DespesaDigital.Views.Forms.Departamento;
+﻿using DespesaDigital.Views.Forms.Categoria;
+using DespesaDigital.Views.Forms.Departamento;
 using DespesaDigital.Views.Forms.FormaPagamento;
 using DespesaDigital.Views.Forms.Fornecedor;
 using DespesaDigital.Views.Forms.Produtos;
@@ -73,6 +74,14 @@ namespace DespesaDigital.Views.Forms.Cadastros
         private void btnTipoDespesa_Click(object sender, EventArgs e)
         {
             using (var form = new frmPesquisarTipoDespesa())
+            {
+                form.ShowDialog();
+            }
+        }
+
+        private void btnCategoria_Click(object sender, EventArgs e)
+        {
+            using (var form = new frmPesquisarCategoria())
             {
                 form.ShowDialog();
             }

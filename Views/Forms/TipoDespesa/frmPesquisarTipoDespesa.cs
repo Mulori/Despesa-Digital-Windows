@@ -14,6 +14,7 @@ namespace DespesaDigital.Views.Forms.TipoDespesa
 
         void Inicializar()
         {
+            rdAtivos.Checked = true;
             dataGrid.DataSource = bllTipoDespesa.ListarTodasTipoDespesaPorStatus("A");
         }
 
@@ -56,6 +57,33 @@ namespace DespesaDigital.Views.Forms.TipoDespesa
             {
                 dataGrid.DataSource = bllTipoDespesa.ListarTodasTipoDespesaPorStatus("I");
             }
+        }
+
+        private void btnNovo_Click(object sender, EventArgs e)
+        {
+            using (var form = new frmNovoTipoDespesa(0))
+            {
+                form.ShowDialog();
+            }
+
+            Inicializar();
+        }
+
+        private void dataGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGrid.RowCount == 0)
+            {
+                return;
+            }
+
+            var codigo = Convert.ToInt32(dataGrid.CurrentRow.Cells[0].Value.ToString());
+
+            using (var form = new frmNovoTipoDespesa(codigo))
+            {
+                form.ShowDialog();
+            }
+
+            Inicializar();
         }
     }
 }
