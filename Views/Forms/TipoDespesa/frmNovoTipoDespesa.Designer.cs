@@ -1,7 +1,7 @@
 ﻿
-namespace DespesaDigital.Views.Forms.FormaPagamento
+namespace DespesaDigital.Views.Forms.TipoDespesa
 {
-    partial class frmNovaFormaPagamento
+    partial class frmNovoTipoDespesa
     {
         /// <summary>
         /// Required designer variable.
@@ -53,7 +53,7 @@ namespace DespesaDigital.Views.Forms.FormaPagamento
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(771, 84);
-            this.panel1.TabIndex = 50;
+            this.panel1.TabIndex = 57;
             // 
             // btnExcluir
             // 
@@ -107,59 +107,59 @@ namespace DespesaDigital.Views.Forms.FormaPagamento
             this.cmbStatus.Items.AddRange(new object[] {
             "Ativo",
             "Inativo"});
-            this.cmbStatus.Location = new System.Drawing.Point(569, 128);
+            this.cmbStatus.Location = new System.Drawing.Point(569, 131);
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(190, 28);
-            this.cmbStatus.TabIndex = 45;
+            this.cmbStatus.TabIndex = 52;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(565, 100);
+            this.label3.Location = new System.Drawing.Point(565, 103);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(68, 20);
-            this.label3.TabIndex = 49;
+            this.label3.TabIndex = 56;
             this.label3.Text = "Status: *";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(129, 100);
+            this.label2.Location = new System.Drawing.Point(129, 103);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(91, 20);
-            this.label2.TabIndex = 48;
+            this.label2.TabIndex = 55;
             this.label2.Text = "Descrição: *";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 100);
+            this.label1.Location = new System.Drawing.Point(7, 103);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 20);
-            this.label1.TabIndex = 47;
+            this.label1.TabIndex = 54;
             this.label1.Text = "Código:";
             // 
             // txtDescricao
             // 
-            this.txtDescricao.Location = new System.Drawing.Point(133, 128);
+            this.txtDescricao.Location = new System.Drawing.Point(133, 131);
             this.txtDescricao.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(427, 27);
-            this.txtDescricao.TabIndex = 43;
+            this.txtDescricao.TabIndex = 51;
             // 
             // txtCodigo
             // 
             this.txtCodigo.Enabled = false;
-            this.txtCodigo.Location = new System.Drawing.Point(11, 128);
+            this.txtCodigo.Location = new System.Drawing.Point(11, 131);
             this.txtCodigo.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(110, 27);
-            this.txtCodigo.TabIndex = 46;
+            this.txtCodigo.TabIndex = 53;
             // 
-            // frmNovaFormaPagamento
+            // frmNovoTipoDespesa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -174,9 +174,9 @@ namespace DespesaDigital.Views.Forms.FormaPagamento
             this.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "frmNovaFormaPagamento";
+            this.Name = "frmNovoTipoDespesa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cadastro de Formas de Pagamento";
+            this.Text = "Cadastro de Tipo de Despesa";
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

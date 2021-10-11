@@ -145,6 +145,18 @@
     <Compile Include="Views\Forms\Cadastros\frmCadastro.Designer.cs">
       <DependentUpon>frmCadastro.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Forms\Categoria\frmNovaCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\Categoria\frmNovaCategoria.Designer.cs">
+      <DependentUpon>frmNovaCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\Categoria\frmPesquisarCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\Categoria\frmPesquisarCategoria.Designer.cs">
+      <DependentUpon>frmPesquisarCategoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Forms\Departamento\frmNovoDepartamento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -253,6 +265,12 @@
     <Compile Include="Views\Forms\SolicitarAcesso\frmSolicitarAcesso.Designer.cs">
       <DependentUpon>frmSolicitarAcesso.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Forms\TipoDespesa\frmNovoTipoDespesa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\TipoDespesa\frmNovoTipoDespesa.Designer.cs">
+      <DependentUpon>frmNovoTipoDespesa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Forms\TipoDespesa\frmPesquisarTipoDespesa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -286,6 +304,12 @@
     </Compile>
     <EmbeddedResource Include="Views\Forms\Cadastros\frmCadastro.resx">
       <DependentUpon>frmCadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\Categoria\frmNovaCategoria.resx">
+      <DependentUpon>frmNovaCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\Categoria\frmPesquisarCategoria.resx">
+      <DependentUpon>frmPesquisarCategoria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\Departamento\frmNovoDepartamento.resx">
       <DependentUpon>frmNovoDepartamento.cs</DependentUpon>
@@ -340,6 +364,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\SolicitarAcesso\frmSolicitarAcesso.resx">
       <DependentUpon>frmSolicitarAcesso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\TipoDespesa\frmNovoTipoDespesa.resx">
+      <DependentUpon>frmNovoTipoDespesa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\TipoDespesa\frmPesquisarTipoDespesa.resx">
       <DependentUpon>frmPesquisarTipoDespesa.cs</DependentUpon>

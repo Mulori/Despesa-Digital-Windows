@@ -1,34 +1,28 @@
-﻿using DespesaDigital.Code.BLL.bllFormaPagamento;
+﻿using DespesaDigital.Code.BLL.bllCategoria;
 using DespesaDigital.Code.BLL.bllLogSistema;
-using DespesaDigital.Code.DTO.dtoFormaPagamento;
+using DespesaDigital.Code.DTO.dtoCategoria;
 using DespesaDigital.Core;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DespesaDigital.Views.Forms.FormaPagamento
+namespace DespesaDigital.Views.Forms.Categoria
 {
-    public partial class frmNovaFormaPagamento : Form
+    public partial class frmNovaCategoria : Form
     {
-        public int codigo_forma_pagamento { get; set; }
+        public int codigo_categoria { get; set; }
 
-        public frmNovaFormaPagamento(int _codigo_forma_pagamento)
+        public frmNovaCategoria(int _codigo_categoria)
         {
             InitializeComponent();
-            codigo_forma_pagamento = _codigo_forma_pagamento;
+            codigo_categoria = _codigo_categoria;
             Inicializa();
 
-            if (codigo_forma_pagamento > 0)
+            if (codigo_categoria > 0)
             {
-                var bll = bllFormaPagamento.FormaPagamentoPorCodigo(codigo_forma_pagamento);
+                var bll = bllCategoria.CategoriaPorCodigo(codigo_categoria);
                 txtCodigo.Text = bll.codigo.ToString();
                 txtDescricao.Text = bll.descricao;
+
                 cmbStatus.Text = bll.ativo;
 
                 btnIncluir.Enabled = false;
@@ -37,16 +31,20 @@ namespace DespesaDigital.Views.Forms.FormaPagamento
 
                 txtDescricao.Enabled = true;
                 cmbStatus.Enabled = true;
+
+                txtDescricao.Focus();
             }
             else
             {
-                btnIncluir.Enabled = true;
                 cmbStatus.Text = "Ativo";
+                btnIncluir.Enabled = true;
+                btnIncluir.Focus();
             }
         }
+
         void Inicializa()
         {
-            btnIncluir.Enabled = false;
+            btnIncluir.Enabled = true;
             btnSalvar.Enabled = false;
             btnExcluir.Enabled = false;
 
@@ -63,7 +61,6 @@ namespace DespesaDigital.Views.Forms.FormaPagamento
             txtDescricao.Text = "";
 
             txtDescricao.Enabled = true;
-            cmbStatus.Enabled = true;
 
             txtDescricao.Focus();
         }
@@ -76,8 +73,9 @@ namespace DespesaDigital.Views.Forms.FormaPagamento
                 return;
             }
 
-            var dto = new dtoFormaPagamento();
+            var dto = new dtoCategoria();
             dto.descricao = txtDescricao.Text.Trim();
+            dto.codigo_departamento = VariaveisGlobais.codigo_departamento;
 
             if (txtCodigo.Text.Length > 0)
             {
@@ -96,25 +94,25 @@ namespace DespesaDigital.Views.Forms.FormaPagamento
 
                 dto.codigo = Convert.ToInt32(txtCodigo.Text.Trim());
 
-                if (bllFormaPagamento.VerificaDescricaoAtual(dto.codigo) != txtDescricao.Text.Trim())
+                if (bllCategoria.VerificaDescricaoAtual(dto.codigo) != txtDescricao.Text.Trim())
                 {
-                    if (bllFormaPagamento.VerificaDescricaoExistente(txtDescricao.Text.Trim()))
+                    if (bllCategoria.VerificaDescricaoExistente(txtDescricao.Text.Trim()))
                     {
-                        corePopUp.exibirMensagem("Já existe uma forma de pagamento com esta descrição.", "Atenção");
+                        corePopUp.exibirMensagem("Já existe uma categoria com esta descrição.", "Atenção");
                         txtDescricao.Text = "";
                         txtDescricao.Focus();
                         return;
                     }
                 }
 
-                if (!bllFormaPagamento.Update(dto))
+                if (!bllCategoria.Update(dto))
                 {
                     corePopUp.exibirMensagem("Ocorreu um erro ao salvar o cadastro", "Atenção");
                     return;
                 }
                 else
                 {
-                    bllLogSistema.Insert($"Alterou informações do cadastro de forma de pagamento: [Codigo: [{txtCodigo.Text.Trim()}] Descrição: [{txtDescricao.Text.Trim()}]");
+                    bllLogSistema.Insert($"Alterou informações do cadastro de categoria: [Codigo: [{txtCodigo.Text.Trim()}] Nome: [{txtDescricao.Text.Trim()}] Status: [{cmbStatus.Text.Trim()}]");
 
                     corePopUp.exibirMensagem("Cadastro salvo com sucesso!", "Atenção");
                     Close();
@@ -125,24 +123,24 @@ namespace DespesaDigital.Views.Forms.FormaPagamento
             {
                 dto.ativo = "A";
 
-                if (bllFormaPagamento.VerificaDescricaoExistente(txtDescricao.Text.Trim()))
+                if (bllCategoria.VerificaDescricaoExistente(txtDescricao.Text.Trim()))
                 {
-                    corePopUp.exibirMensagem("Já existe uma forma de pagamento com esta descrição.", "Atenção");
+                    corePopUp.exibirMensagem("Já existe uma categoria com esta descrição.", "Atenção");
                     txtDescricao.Text = "";
                     txtDescricao.Focus();
                     return;
                 }
 
-                if (!bllFormaPagamento.Insert(dto))
+                if (!bllCategoria.Insert(dto))
                 {
                     corePopUp.exibirMensagem("Ocorreu um erro ao incluir o cadastro", "Atenção");
                     return;
                 }
                 else
                 {
-                    bllLogSistema.Insert($"Incluiu uma nova forma de pagamento: [Descrição: [{txtDescricao.Text.Trim()}]");
+                    bllLogSistema.Insert($"Incluiu uma nova categoria: [Nome: [{txtDescricao.Text.Trim()}]");
 
-                    corePopUp.exibirMensagem("Cadastro incluido com sucesso!", "Atenção");
+                    corePopUp.exibirMensagem("Categoria incluida com sucesso!", "Atenção");
                 }
             }
 
@@ -159,28 +157,29 @@ namespace DespesaDigital.Views.Forms.FormaPagamento
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
+
             if (txtCodigo.Text.Length == 0)
             {
-                corePopUp.exibirMensagem("Para excluir selecione uma forma de pagamento.", "Atenção");
+                corePopUp.exibirMensagem("Para excluir selecione uma categoria.", "Atenção");
                 return;
             }
 
-            if (!corePopUp.exibirPergunta("Atenção:", "Deseja excluir esta forma de pagamento?", 2))
+            if (!corePopUp.exibirPergunta("Atenção:", "Deseja excluir esta categoria?", 2))
             {
                 return;
             }
 
-            if (bllFormaPagamento.Delete(Convert.ToInt32(txtCodigo.Text)))
+            if (bllCategoria.Delete(Convert.ToInt32(txtCodigo.Text)))
             {
-                bllLogSistema.Insert($"Exclusão da forma de pagamento: [Codigo: [{txtCodigo.Text}] Descrição: [{txtDescricao.Text}] ");
+                bllLogSistema.Insert($"Exclusão de categoria: [Codigo: [{txtCodigo.Text}] Descrição: [{txtDescricao.Text}]");
 
-                corePopUp.exibirMensagem("Forma de pagamento excluido com sucesso!.", "Atenção");
+                corePopUp.exibirMensagem("Categoria excluida com sucesso!.", "Atenção");
                 Close();
                 return;
             }
             else
             {
-                corePopUp.exibirMensagem("Não foi possivel excluir a forma de pagamento.", "Atenção");
+                corePopUp.exibirMensagem("Não foi possivel excluir a categoria.", "Atenção");
                 return;
             }
         }
