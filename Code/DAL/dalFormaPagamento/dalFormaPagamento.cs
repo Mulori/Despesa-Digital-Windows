@@ -14,7 +14,7 @@ namespace DespesaDigital.Code.DAL.dalFormaPagamento
         {
             var list = new List<dtoFormaPagamento>();
 
-            var ssql = $"select * from forma_pagamento where ativo = '{status}' and UPPER(descricao) like UPPER('%{descricao}%')";
+            var ssql = $"select * from forma_pagamento where ativo = '{status}' and UPPER(descricao) like UPPER('%{descricao}%') order by descricao asc";
 
             using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
             using (var dr = cmd.ExecuteReader())
@@ -38,7 +38,7 @@ namespace DespesaDigital.Code.DAL.dalFormaPagamento
         {
             var list = new List<dtoFormaPagamento>();
 
-            var ssql = $"select * from forma_pagamento where ativo = '{status}'";
+            var ssql = $"select * from forma_pagamento where ativo = '{status}' order by descricao asc";
 
             using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
             using (var dr = cmd.ExecuteReader())
@@ -70,7 +70,7 @@ namespace DespesaDigital.Code.DAL.dalFormaPagamento
                 if (dr.Read())
                 {
                     dto.codigo = Convert.ToInt32(dr["codigo"]);
-                    dto.descricao = dr["setor"].ToString();
+                    dto.descricao = dr["descricao"].ToString();
                     dto.ativo = dr["ativo"].ToString() == "A" ? "Ativo" : "Inativo";
                 }
                 dr.Close();
@@ -141,7 +141,7 @@ namespace DespesaDigital.Code.DAL.dalFormaPagamento
             }
         }
 
-        public bool VerificaNomeExistente(string descricao)
+        public bool VerificaDescricaoExistente(string descricao)
         {
             var retorno = false;
 
@@ -160,7 +160,7 @@ namespace DespesaDigital.Code.DAL.dalFormaPagamento
             return retorno;
         }
 
-        public string VerificaCentroCustoAtual(int codigo)
+        public string VerificaDescricaoAtual(int codigo)
         {
             var retorno = "";
 

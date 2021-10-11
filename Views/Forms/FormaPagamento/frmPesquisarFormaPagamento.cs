@@ -14,6 +14,7 @@ namespace DespesaDigital.Views.Forms.FormaPagamento
 
         void Inicializar()
         {
+            rdAtivos.Checked = true;
             dataGrid.DataSource = bllFormaPagamento.ListarTodasFormasPagamentoPorStatus("A");
         }
 

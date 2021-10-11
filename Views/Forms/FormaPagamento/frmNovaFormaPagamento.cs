@@ -22,6 +22,7 @@ namespace DespesaDigital.Views.Forms.FormaPagamento
         {
             InitializeComponent();
             codigo_forma_pagamento = _codigo_forma_pagamento;
+            Inicializa();
 
             if (codigo_forma_pagamento > 0)
             {
@@ -92,25 +93,25 @@ namespace DespesaDigital.Views.Forms.FormaPagamento
 
                 dto.codigo = Convert.ToInt32(txtCodigo.Text.Trim());
 
-                if (bllSetor.VerificaCentroCustoAtual(dto.codigo) != txtDescricao.Text.Trim())
+                if (bllFormaPagamento.VerificaDescricaoAtual(dto.codigo) != txtDescricao.Text.Trim())
                 {
-                    if (bllSetor.VerificaCentroCustoExistente(txtDescricao.Text.Trim()))
+                    if (bllFormaPagamento.VerificaDescricaoExistente(txtDescricao.Text.Trim()))
                     {
-                        corePopUp.exibirMensagem("Já existe um setor com este centro de custo.", "Atenção");
+                        corePopUp.exibirMensagem("Já existe uma forma de pagamento com esta descrição.", "Atenção");
                         txtDescricao.Text = "";
                         txtDescricao.Focus();
                         return;
                     }
                 }
 
-                if (!bllSetor.Update(dto))
+                if (!bllFormaPagamento.Update(dto))
                 {
                     corePopUp.exibirMensagem("Ocorreu um erro ao salvar o cadastro", "Atenção");
                     return;
                 }
                 else
                 {
-                    bllLogSistema.Insert($"Alterou informações do cadastro de setor: [Codigo: [{txtCodigo.Text.Trim()}] Nome: [{txtNome.Text.Trim()}] Departamento: [{cmbDepartamento.Text.Trim()}]");
+                    bllLogSistema.Insert($"Alterou informações do cadastro de forma de pagamento: [Codigo: [{txtCodigo.Text.Trim()}] Descrição: [{txtDescricao.Text.Trim()}]");
 
                     corePopUp.exibirMensagem("Cadastro salvo com sucesso!", "Atenção");
                     Close();
@@ -119,30 +120,24 @@ namespace DespesaDigital.Views.Forms.FormaPagamento
             }
             else
             {
-                if (bllSetor.VerificaNomeExistente(txtDescricao.Text.Trim()))
+                dto.ativo = "A";
+
+                if (bllFormaPagamento.VerificaDescricaoExistente(txtDescricao.Text.Trim()))
                 {
-                    corePopUp.exibirMensagem("Já existe um setor com este nome.", "Atenção");
+                    corePopUp.exibirMensagem("Já existe uma forma de pagamento com esta descrição.", "Atenção");
                     txtDescricao.Text = "";
                     txtDescricao.Focus();
                     return;
                 }
 
-                if (bllSetor.VerificaCentroCustoExistente(txtDescricao.Text.Trim()))
-                {
-                    corePopUp.exibirMensagem("Já existe um setor com este centro de custo.", "Atenção");
-                    txtDescricao.Text = "";
-                    txtDescricao.Focus();
-                    return;
-                }
-
-                if (!bllSetor.Insert(dto))
+                if (!bllFormaPagamento.Insert(dto))
                 {
                     corePopUp.exibirMensagem("Ocorreu um erro ao incluir o cadastro", "Atenção");
                     return;
                 }
                 else
                 {
-                    bllLogSistema.Insert($"Incluiu um novo departamento: [Descrição: [{txtDescricao.Text.Trim()}]");
+                    bllLogSistema.Insert($"Incluiu uma nova forma de pagamento: [Descrição: [{txtDescricao.Text.Trim()}]");
 
                     corePopUp.exibirMensagem("Cadastro incluido com sucesso!", "Atenção");
                 }
