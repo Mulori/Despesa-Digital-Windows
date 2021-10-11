@@ -135,7 +135,7 @@ namespace DespesaDigital.Code.DAL.dalCategoria
                     cmd.ExecuteNonQuery();
                     return true;
                 }
-                catch (Exception e)
+                catch
                 {
                     return false;
                 }
@@ -176,7 +176,7 @@ namespace DespesaDigital.Code.DAL.dalCategoria
                     cmd.ExecuteNonQuery();
                     return true;
                 }
-                catch(Exception e)
+                catch
                 {
                     return false;
                 }
