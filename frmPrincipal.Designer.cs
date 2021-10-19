@@ -32,17 +32,17 @@ namespace DespesaDigital
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbVersao = new System.Windows.Forms.Label();
             this.btnCadastro = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnMinhaConta = new System.Windows.Forms.Button();
             this.btnCentroCusto = new System.Windows.Forms.Button();
             this.btnDespesa = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnLogout = new System.Windows.Forms.Button();
             this.lbNome = new System.Windows.Forms.Label();
             this.panelPrincipal = new System.Windows.Forms.Panel();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -89,16 +89,6 @@ namespace DespesaDigital
             this.btnCadastro.UseVisualStyleBackColor = true;
             this.btnCadastro.Click += new System.EventHandler(this.btnCadastro_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::DespesaDigital.Properties.Resources.logodespesadigital;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(173, 97);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // btnMinhaConta
             // 
             this.btnMinhaConta.Enabled = false;
@@ -126,9 +116,10 @@ namespace DespesaDigital
             this.btnCentroCusto.Name = "btnCentroCusto";
             this.btnCentroCusto.Size = new System.Drawing.Size(182, 52);
             this.btnCentroCusto.TabIndex = 1;
-            this.btnCentroCusto.Text = "Centro de Custo";
+            this.btnCentroCusto.Text = "Solicitações de Compras";
             this.btnCentroCusto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCentroCusto.UseVisualStyleBackColor = true;
+            this.btnCentroCusto.Click += new System.EventHandler(this.btnCentroCusto_Click);
             // 
             // btnDespesa
             // 
@@ -159,6 +150,26 @@ namespace DespesaDigital
             this.panel2.Size = new System.Drawing.Size(892, 64);
             this.panel2.TabIndex = 1;
             // 
+            // lbNome
+            // 
+            this.lbNome.AutoSize = true;
+            this.lbNome.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNome.Location = new System.Drawing.Point(15, 21);
+            this.lbNome.Name = "lbNome";
+            this.lbNome.Size = new System.Drawing.Size(86, 21);
+            this.lbNome.TabIndex = 0;
+            this.lbNome.Text = "Seu nome";
+            // 
+            // panelPrincipal
+            // 
+            this.panelPrincipal.BackColor = System.Drawing.SystemColors.Control;
+            this.panelPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelPrincipal.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelPrincipal.Location = new System.Drawing.Point(179, 64);
+            this.panelPrincipal.Name = "panelPrincipal";
+            this.panelPrincipal.Size = new System.Drawing.Size(892, 556);
+            this.panelPrincipal.TabIndex = 2;
+            // 
             // btnLogout
             // 
             this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -175,25 +186,15 @@ namespace DespesaDigital
             this.btnLogout.Visible = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
-            // lbNome
+            // pictureBox1
             // 
-            this.lbNome.AutoSize = true;
-            this.lbNome.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNome.Location = new System.Drawing.Point(15, 21);
-            this.lbNome.Name = "lbNome";
-            this.lbNome.Size = new System.Drawing.Size(86, 21);
-            this.lbNome.TabIndex = 0;
-            this.lbNome.Text = "Seu nome";
-            // 
-            // panelPrincipal
-            // 
-            this.panelPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(231)))), ((int)(((byte)(213)))));
-            this.panelPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelPrincipal.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelPrincipal.Location = new System.Drawing.Point(179, 64);
-            this.panelPrincipal.Name = "panelPrincipal";
-            this.panelPrincipal.Size = new System.Drawing.Size(892, 556);
-            this.panelPrincipal.TabIndex = 2;
+            this.pictureBox1.Image = global::DespesaDigital.Properties.Resources.logodespesadigital;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(173, 97);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // frmPrincipal
             // 
@@ -209,9 +210,9 @@ namespace DespesaDigital
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
