@@ -96,6 +96,7 @@
     <Compile Include="Code\BLL\bllProduto\bllProduto.cs" />
     <Compile Include="Code\BLL\bllSetorProduto\bllSetorProduto.cs" />
     <Compile Include="Code\BLL\bllSetor\bllSetor.cs" />
+    <Compile Include="Code\BLL\bllSolicitacaoCompra\bllSolicitacaoCompra.cs" />
     <Compile Include="Code\BLL\bllTipoDespesa\bllTipoDespesa.cs" />
     <Compile Include="Code\BLL\bllUsuarioAprovacao\bllUsuarioAprovacao.cs" />
     <Compile Include="Code\BLL\bllUsuario\bllUsuario.cs" />
@@ -111,6 +112,7 @@
     <Compile Include="Code\DAL\dalProduto\dalProduto.cs" />
     <Compile Include="Code\DAL\dalSetorProduto\dalSetorProduto.cs" />
     <Compile Include="Code\DAL\dalSetor\dalSetor.cs" />
+    <Compile Include="Code\DAL\dalSolicitacaoCompra\dalSolicitacaoCompra.cs" />
     <Compile Include="Code\DAL\dalTipoDespesa\dalTipoDespesa.cs" />
     <Compile Include="Code\DAL\dalUsuarioAprovacao\dalUsuarioAprovacao.cs" />
     <Compile Include="Code\DAL\dalUsuario\dalUsuario.cs" />
@@ -124,6 +126,7 @@
     <Compile Include="Code\DTO\dtoProduto\dtoProduto.cs" />
     <Compile Include="Code\DTO\dtoSetor\dtoSetor.cs" />
     <Compile Include="Code\DTO\dtoSetor\dtoSetorProduto.cs" />
+    <Compile Include="Code\DTO\dtoSolicitacaoCompra\dtoSolicitacaoCompra.cs" />
     <Compile Include="Code\DTO\dtoTipoDespesa\dtoTipoDespesa.cs" />
     <Compile Include="Code\DTO\dtoUsuario\dtoUsuario.cs" />
     <Compile Include="Code\DTO\dtoWebApi\dtoWebApiPaises.cs" />
@@ -259,6 +262,24 @@
     <Compile Include="Views\Forms\Setor\frmPesquisaSetor.Designer.cs">
       <DependentUpon>frmPesquisaSetor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Forms\SolicitacaoCompra\frmDetalheSolicitacaoCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\SolicitacaoCompra\frmDetalheSolicitacaoCompra.Designer.cs">
+      <DependentUpon>frmDetalheSolicitacaoCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\SolicitacaoCompra\frmPesquisarSolicitacaoCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\SolicitacaoCompra\frmPesquisarSolicitacaoCompra.Designer.cs">
+      <DependentUpon>frmPesquisarSolicitacaoCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\SolicitacaoCompra\frmSolicitacaoCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\SolicitacaoCompra\frmSolicitacaoCompra.Designer.cs">
+      <DependentUpon>frmSolicitacaoCompra.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Forms\SolicitarAcesso\frmSolicitarAcesso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -362,6 +383,15 @@
     <EmbeddedResource Include="Views\Forms\Setor\frmPesquisaSetor.resx">
       <DependentUpon>frmPesquisaSetor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\SolicitacaoCompra\frmDetalheSolicitacaoCompra.resx">
+      <DependentUpon>frmDetalheSolicitacaoCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\SolicitacaoCompra\frmPesquisarSolicitacaoCompra.resx">
+      <DependentUpon>frmPesquisarSolicitacaoCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\SolicitacaoCompra\frmSolicitacaoCompra.resx">
+      <DependentUpon>frmSolicitacaoCompra.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\SolicitarAcesso\frmSolicitarAcesso.resx">
       <DependentUpon>frmSolicitarAcesso.cs</DependentUpon>
     </EmbeddedResource>
@@ -391,7 +421,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\paper_pen.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logodespesadigital.png" />
   </ItemGroup>

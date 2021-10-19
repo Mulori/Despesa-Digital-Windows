@@ -188,7 +188,7 @@ namespace DespesaDigital.Code.DAL.dalCategoria
             var retorno = false;
 
             var ssql = $"select descricao from categoria where codigo_departamento = '{VariaveisGlobais.codigo_departamento}' " +
-                 $"and UPPER(descricao) = UPPER('{descricao}')";
+                 $"and UPPER(descricao) = UPPER('{descricao.Replace("'", string.Empty)}')";
 
             using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
             using (var dr = cmd.ExecuteReader())
