@@ -240,5 +240,23 @@ namespace DespesaDigital.Code.DAL.dalSolicitacaoCompra
                 }
             }
         }
+
+        public bool UsuarioAprovouRejeitou(long codigo_solicitacao, int codigo_gestor)
+        {
+            var ssql = $"insert into gestor_solicitacao VALUES ('{codigo_solicitacao}', '{codigo_gestor}')";
+
+            using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
+            {
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+        }
     }
 }

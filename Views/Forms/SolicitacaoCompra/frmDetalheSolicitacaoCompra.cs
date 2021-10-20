@@ -26,34 +26,31 @@ namespace DespesaDigital.Views.Forms.SolicitacaoCompra
         {
             var obj = bllSolicitacaoCompra.SolicitacaoPorCodigo(solicitacao_codigo);
 
-            string informacoes = "";
-            informacoes += $"Solicitação Nº: {obj.codigo}";
-            informacoes += $"{Environment.NewLine}Data da Solicitação: {obj.data_solicitacao.ToString("dd/MM/yyyy HH:mm:ss")}";
-            informacoes += $"{Environment.NewLine}Usuario: {obj.usuario}";
-            informacoes += $"{Environment.NewLine}Setor: {obj.s_codigo_setor}";
-            informacoes += $"{Environment.NewLine}Valor Solicitado: R${obj.valor.ToString("N2")}";
+            txtNumeroSolicitacao.Text = obj.codigo.ToString();
+            txtDataSolicitacao.Text = obj.data_solicitacao.ToString("dd/MM/yyyy HH:mm:ss");
+            txtUsuario.Text = obj.usuario;
+            txtSetor.Text = obj.s_codigo_setor;
+            txtValorSolicitado.Text = $"R${obj.valor.ToString("N2")}";
 
             switch (obj.status)
             {
                 case "Aprovado":
-                    informacoes += $"{Environment.NewLine}Status: Aprovado";
-                    btnAprovar.Enabled = false;
-                    btnRejeitar.Enabled = false;
+                    txtStatus.Text = "Aprovado";
+                    btnAprovar.Visible = false;
+                    btnRejeitar.Visible = false;
                     break;
                 case "Pendente":
-                    informacoes += $"{Environment.NewLine}Status: Pendente";
+                    txtStatus.Text = "Pendente";
                     break;
                 case "Rejeitado":
-                    btnAprovar.Enabled = false;
-                    btnRejeitar.Enabled = false;
-                    informacoes += $"{Environment.NewLine}Status: Rejeitado";
+                    btnAprovar.Visible = false;
+                    btnRejeitar.Visible = false;
+                    txtStatus.Text = "Rejeitado";
                     break;
             }
 
-            informacoes += $"{Environment.NewLine}{Environment.NewLine}Item: {obj.s_codigo_produto}";
-            informacoes += $"{Environment.NewLine}{Environment.NewLine}Observação/Motivo: {Environment.NewLine}{obj.motivo}";
-
-            txtInformacoes.Text = informacoes;
+            txtItem.Text = obj.s_codigo_produto;
+            txtObservacao.Text = obj.motivo;
 
             obj = null;
         }
@@ -67,6 +64,7 @@ namespace DespesaDigital.Views.Forms.SolicitacaoCompra
 
             if (bllSolicitacaoCompra.UpdateStatus(solicitacao_codigo, "A"))
             {
+                bllSolicitacaoCompra.UsuarioAprovouRejeitou(solicitacao_codigo, VariaveisGlobais.codigo_usuario);
                 bllLogSistema.Insert($"Aprovou uma solicitação de compra: [Codigo: [{solicitacao_codigo}]");
                 corePopUp.exibirMensagem("Solicitação aprovada com sucesso!", "Atenção");
                 this.Close();
@@ -87,6 +85,7 @@ namespace DespesaDigital.Views.Forms.SolicitacaoCompra
 
             if (bllSolicitacaoCompra.UpdateStatus(solicitacao_codigo, "R"))
             {
+                bllSolicitacaoCompra.UsuarioAprovouRejeitou(solicitacao_codigo, VariaveisGlobais.codigo_usuario);
                 bllLogSistema.Insert($"Rejeitou uma solicitação de compra: [Codigo: [{solicitacao_codigo}]");
                 corePopUp.exibirMensagem("Solicitação aprovada com sucesso!", "Atenção");
                 this.Close();
