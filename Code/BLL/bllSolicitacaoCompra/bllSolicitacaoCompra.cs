@@ -36,5 +36,11 @@ namespace DespesaDigital.Code.BLL.bllSolicitacaoCompra
             var dal = new dalSolicitacaoCompra();
             return dal.UpdateStatus(codigo_solicitacao, status);
         }
+
+        public static bool UsuarioAprovouRejeitou(long codigo_solicitacao, int codigo_gestor)
+        {
+            var dal = new dalSolicitacaoCompra();
+            return dal.UsuarioAprovouRejeitou(codigo_solicitacao, codigo_gestor);
+        }
     }
 }
