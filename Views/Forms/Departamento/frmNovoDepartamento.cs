@@ -21,7 +21,7 @@ namespace DespesaDigital.Views.Forms.Departamento
             InitializeComponent();
             Inicializa();
 
-            if(codigo_departamento > 0)
+            if (codigo_departamento > 0)
             {
                 var bll = bllDepartamento.DepartamentoPorCodigo(codigo_departamento);
                 txtCodigo.Text = bll.codigo.ToString();
@@ -39,7 +39,7 @@ namespace DespesaDigital.Views.Forms.Departamento
                 btnIncluir.Enabled = true;
             }
         }
-        
+
         void Inicializa()
         {
             btnIncluir.Enabled = false;
@@ -83,19 +83,30 @@ namespace DespesaDigital.Views.Forms.Departamento
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtNome.Text) || string.IsNullOrEmpty(txtDescricao.Text))
+            if (string.IsNullOrEmpty(txtNome.Text.Trim()) || string.IsNullOrEmpty(txtDescricao.Text.Trim()))
             {
                 corePopUp.exibirMensagem("Preencha todos os campos.", "Atenção");
                 return;
             }
 
-            var dto = new dtoDepartamento();            
+            var dto = new dtoDepartamento();
             dto.nome = txtNome.Text.Trim();
             dto.descricao = txtDescricao.Text.Trim();
 
-            if(txtCodigo.Text.Length > 0)
+            if (txtCodigo.Text.Length > 0)
             {
-                dto.codigo = Convert.ToInt32(txtCodigo.Text);
+                dto.codigo = Convert.ToInt32(txtCodigo.Text.Trim());
+
+                if (bllDepartamento.VerificaNomeAtual(dto.codigo) != txtNome.Text.Trim())
+                {
+                    if (bllDepartamento.VerificaNomeExistente(txtNome.Text.Trim()))
+                    {
+                        corePopUp.exibirMensagem("Já existe um departamento com este nome.", "Atenção");
+                        txtNome.Text = "";
+                        txtNome.Focus();
+                        return;
+                    }
+                }
 
                 if (!bllDepartamento.Update(dto))
                 {
@@ -104,7 +115,7 @@ namespace DespesaDigital.Views.Forms.Departamento
                 }
                 else
                 {
-                    bllLogSistema.Insert($"Alterou informações do cadastro de departamento: [Codigo: [{txtCodigo.Text}] Nome: [{txtNome}] Descrição: [{txtDescricao.Text}]");
+                    bllLogSistema.Insert($"Alterou informações do cadastro de departamento: [Codigo: [{txtCodigo.Text.Trim()}] Nome: [{txtNome.Text.Trim()}] Descrição: [{txtDescricao.Text.Trim()}]");
 
                     corePopUp.exibirMensagem("Cadastro salvo com sucesso!", "Atenção");
                     Close();
@@ -113,7 +124,7 @@ namespace DespesaDigital.Views.Forms.Departamento
             }
             else
             {
-                if (bllDepartamento.VerificaNomeExistente(txtNome.Text))
+                if (bllDepartamento.VerificaNomeExistente(txtNome.Text.Trim()))
                 {
                     corePopUp.exibirMensagem("Já existe um departamento com este nome.", "Atenção");
                     txtNome.Text = "";
@@ -128,12 +139,12 @@ namespace DespesaDigital.Views.Forms.Departamento
                 }
                 else
                 {
-                    bllLogSistema.Insert($"Incluiu um novo departamento: [Nome: [{txtNome}] Descrição: [{txtDescricao.Text}]");
+                    bllLogSistema.Insert($"Incluiu um novo departamento: [Nome: [{txtNome.Text.Trim()}] Descrição: [{txtDescricao.Text.Trim()}]");
 
                     corePopUp.exibirMensagem("Cadastro incluido com sucesso!", "Atenção");
                 }
             }
-            
+
 
             btnIncluir.Enabled = true;
             btnSalvar.Enabled = false;
@@ -148,20 +159,20 @@ namespace DespesaDigital.Views.Forms.Departamento
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            if(txtCodigo.Text.Length == 0)
+            if (txtCodigo.Text.Length == 0)
             {
                 corePopUp.exibirMensagem("Para excluir selecione um departamento.", "Atenção");
                 return;
             }
 
-            if(!corePopUp.exibirPergunta("Atenção:", "Deseja excluir este departamento?", 2))
+            if (!corePopUp.exibirPergunta("Atenção:", "Deseja excluir este departamento?", 2))
             {
                 return;
             }
 
             if (bllDepartamento.Delete(Convert.ToInt32(txtCodigo.Text)))
             {
-                bllLogSistema.Insert($"Exclusão do departamento: [Codigo: [{txtCodigo.Text}] Nome: [{txtNome}] Descrição: [{txtDescricao.Text}]");
+                bllLogSistema.Insert($"Exclusão do departamento: [Codigo: [{txtCodigo.Text.Trim()}] Nome: [{txtNome.Text.Trim()}] Descrição: [{txtDescricao.Text.Trim()}]");
 
                 corePopUp.exibirMensagem("Departamento excluido com sucesso!.", "Atenção");
                 Close();

@@ -1,6 +1,7 @@
 ﻿using DespesaDigital.Code.BLL.bllConexao;
 using DespesaDigital.Core;
 using DespesaDigital.Views.Forms.Cadastros;
+using DespesaDigital.Views.Forms.Despesa;
 using DespesaDigital.Views.Forms.Login;
 using DespesaDigital.Views.Forms.Mensagens;
 using DespesaDigital.Views.Forms.MinhaConta;
@@ -143,6 +144,21 @@ namespace DespesaDigital
             _objForm?.Close();
 
             _objForm = new frmSolicitacaoCompra
+            {
+                TopLevel = false,
+                FormBorderStyle = FormBorderStyle.None,
+                Dock = DockStyle.Fill
+            };
+
+            panelPrincipal.Controls.Add(_objForm);
+            _objForm.Show();
+        }
+
+        private void btnDespesa_Click(object sender, System.EventArgs e)
+        {
+            _objForm?.Close();
+
+            _objForm = new frmDespesa
             {
                 TopLevel = false,
                 FormBorderStyle = FormBorderStyle.None,
