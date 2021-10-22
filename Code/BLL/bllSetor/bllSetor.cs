@@ -78,5 +78,11 @@ namespace DespesaDigital.Code.BLL.bllSetor
             var dal = new dalSetor();
             return dal.VerificaCentroCustoAtual(codigo);
         }
+
+        public static string VerificaNomeAtual(int codigo)
+        {
+            var dal = new dalSetor();
+            return dal.VerificaNomeAtual(codigo);
+        }
     }
 }

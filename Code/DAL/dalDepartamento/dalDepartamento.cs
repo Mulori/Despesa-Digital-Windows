@@ -156,5 +156,24 @@ namespace DespesaDigital.Code.DAL.dalDepartamento
 
             return retorno;
         }
+
+        public string VerificaNomeAtual(int codigo)
+        {
+            var retorno = "";
+
+            var ssql = $"select nome from departamento where codigo = '{codigo}'";
+
+            using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
+            using (var dr = cmd.ExecuteReader())
+            {
+                if (dr.Read())
+                {
+                    retorno = string.IsNullOrEmpty(dr["nome"].ToString()) ? "" : dr["nome"].ToString();
+                }
+                dr.Close();
+            }
+
+            return retorno;
+        }
     }
 }

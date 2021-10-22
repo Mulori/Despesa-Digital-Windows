@@ -51,5 +51,10 @@ namespace DespesaDigital.Code.BLL.bllDepartamento
             var dal = new dalDepartamento();
             return dal.Delete(codigo);
         }
+        public static string VerificaNomeAtual(int codigo)
+        {
+            var dal = new dalDepartamento();
+            return dal.VerificaNomeAtual(codigo);
+        }
     }
 }

@@ -103,6 +103,17 @@ namespace DespesaDigital.Views.Forms.Setor
             {
                 dto.codigo = Convert.ToInt32(txtCodigo.Text.Trim());
 
+                if (bllSetor.VerificaNomeAtual(dto.codigo) != txtNome.Text.Trim())
+                {
+                    if (bllSetor.VerificaNomeExistente(txtNome.Text.Trim()))
+                    {
+                        corePopUp.exibirMensagem("Já existe um setor com este nome.", "Atenção");
+                        txtNome.Text = "";
+                        txtNome.Focus();
+                        return;
+                    }
+                }
+
                 if (bllSetor.VerificaCentroCustoAtual(dto.codigo) != txtCodCentroCusto.Text.Trim())
                 {
                     if (bllSetor.VerificaCentroCustoExistente(txtCodCentroCusto.Text.Trim()))

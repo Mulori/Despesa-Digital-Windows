@@ -159,35 +159,71 @@ namespace DespesaDigital.Code.DAL.dalSetor
 
         public bool Insert(dtoSetor dto)
         {
-            var ssql = "insert into setor (nome, codigo_departamento, codigo_centro_custo) values (@nome, @codigo_departamento, @codigo_centro_custo)";
+            var ssql = $"select NovoSetor('{dto.nome}', {dto.codigo_departamento}, '{dto.codigo_centro_custo}');";
 
-            using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
+            try
             {
-                cmd.Parameters.AddWithValue("@nome", dto.nome);
-                cmd.Parameters.AddWithValue("@codigo_departamento", dto.codigo_departamento);
-                cmd.Parameters.AddWithValue("@codigo_centro_custo", dto.codigo_centro_custo);
+                using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
+                using (var dr = cmd.ExecuteReader())
+                {
+                    if (dr.Read())
+                    {
+                        var retorno = long.Parse(dr["NovoSetor"].ToString());
+                    }
 
-                try
-                {
-                    cmd.ExecuteNonQuery();
-                    return true;
+                    dr.Close();
                 }
-                catch
-                {
-                    return false;
-                }
+
+                return true;
+            }
+            catch
+            {
+                return false;
             }
         }
 
+        //public bool Insert(dtoSetor dto)
+        //{
+        //    var ssql = "insert into setor (nome, codigo_departamento, codigo_centro_custo) values (@nome, @codigo_departamento, @codigo_centro_custo)";
+
+        //    using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
+        //    {
+        //        cmd.Parameters.AddWithValue("@nome", dto.nome);
+        //        cmd.Parameters.AddWithValue("@codigo_departamento", dto.codigo_departamento);
+        //        cmd.Parameters.AddWithValue("@codigo_centro_custo", dto.codigo_centro_custo);
+
+        //        try
+        //        {
+        //            cmd.ExecuteNonQuery();
+
+        //            ssql = $"insert into centro_custo (codigo_setor, descricao) VALUES ('{}', '{}') ";
+        //            var cmd2 = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn)
+        //            cmd2.ExecuteNonQuery();
+
+        //            return true;
+        //        }
+        //        catch
+        //        {
+        //            return false;
+        //        }
+        //    }
+        //}
+
         public bool Delete(int codigo)
         {
-            var ssql = $"delete from setor where codigo = '{codigo}'";
+
+            var ssql = $"delete from centro_custo where codigo_setor = '{codigo}'";            
 
             using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
             {
                 try
                 {
                     cmd.ExecuteNonQuery();
+
+                    ssql = $"delete from setor where codigo = '{codigo}'";
+                    var cmd2 = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn);
+                    cmd2.ExecuteNonQuery();
+
                     return true;
                 }
                 catch
@@ -211,6 +247,11 @@ namespace DespesaDigital.Code.DAL.dalSetor
                 try
                 {
                     cmd.ExecuteNonQuery();
+
+                    ssql = $"update centro_custo set descricao = '{dto.nome}' where codigo_setor = '{dto.codigo}'";
+                    var cmd2 = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn);
+                    cmd2.ExecuteNonQuery();
+
                     return true;
                 }
                 catch
@@ -232,6 +273,25 @@ namespace DespesaDigital.Code.DAL.dalSetor
                 if (dr.Read())
                 {
                     retorno = true;
+                }
+                dr.Close();
+            }
+
+            return retorno;
+        }
+
+        public string VerificaNomeAtual(int codigo)
+        {
+            var retorno = "";
+
+            var ssql = $"select nome from setor where codigo = '{codigo}'";
+
+            using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
+            using (var dr = cmd.ExecuteReader())
+            {
+                if (dr.Read())
+                {
+                    retorno = string.IsNullOrEmpty(dr["nome"].ToString()) ? "" : dr["nome"].ToString();
                 }
                 dr.Close();
             }
