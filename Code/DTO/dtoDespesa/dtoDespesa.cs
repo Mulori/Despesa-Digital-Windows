@@ -11,6 +11,7 @@ namespace DespesaDigital.Code.DTO.dtoDespesa
         public long codigo { get; set; }
         public DateTime data_hora_emissao { get; set; }
         public decimal valor { get; set; }
+        public string s_valor { get; set; }
         public string descricao { get; set; }
         public int codigo_tipo_despesa { get; set; }
         public int codigo_setor { get; set; }
