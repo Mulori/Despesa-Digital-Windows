@@ -87,6 +87,7 @@
     <Compile Include="Code\BLL\bllCategoria\bllCategoria.cs" />
     <Compile Include="Code\BLL\bllConexao\bllConexao.cs" />
     <Compile Include="Code\BLL\bllDepartamento\bllDepartamento.cs" />
+    <Compile Include="Code\BLL\bllDespesa\bllDespesa.cs" />
     <Compile Include="Code\BLL\bllFormaPagamento\bllFormaPagamento.cs" />
     <Compile Include="Code\BLL\bllFornecedor\bllFornecedor.cs" />
     <Compile Include="Code\BLL\bllFornecedor\bllFornecedorContato.cs" />
@@ -464,7 +465,6 @@
     <None Include="Resources\minimize.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Code\BLL\bllDespesa\" />
     <Folder Include="Code\BLL\bllImagem\" />
     <Folder Include="Code\DAL\dalImagem\" />
   </ItemGroup>
