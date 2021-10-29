@@ -24,5 +24,11 @@ namespace DespesaDigital.Code.BLL.bllDespesa
             var dal = new dalDespesa();
             return dal.ListarTodasDespesasPorData(inicial, final);
         }
+
+        public static dtoDespesa DespesaPorCodigo(long codigo_despesa)
+        {
+            var dal = new dalDespesa();
+            return dal.DespesaPorCodigo(codigo_despesa);
+        }
     }
 }

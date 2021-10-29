@@ -346,5 +346,22 @@ namespace DespesaDigital.Views.Forms.Despesa
 
             dataGrid.DataSource = bllDespesa.ListarTodasDespesas(inicial, final, codigo_forma_pagamento, codigo_tipo_despesa, codigo_setor);
         }
+
+        private void dataGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGrid.RowCount == 0)
+            {
+                return;
+            }
+
+            var codigo = Convert.ToInt32(dataGrid.CurrentRow.Cells[0].Value.ToString());
+
+            using (var form = new frmDetalheDespesa(codigo))
+            {
+                form.ShowDialog();
+            }
+
+            dataGrid.DataSource = bllDespesa.ListarTodasDespesasPorData(DateTime.Today, DateTime.Today);
+        }
     }
 }

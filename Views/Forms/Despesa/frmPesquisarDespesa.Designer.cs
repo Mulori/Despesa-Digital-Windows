@@ -29,8 +29,8 @@ namespace DespesaDigital.Views.Forms.Despesa
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnPesquisarData = new System.Windows.Forms.Button();
             this.cmbSetor = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -39,10 +39,6 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.mskDataInicial = new System.Windows.Forms.MaskedTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGrid = new System.Windows.Forms.DataGridView();
-            this.cmbTipoDespesa = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cmbFormaPagamento = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.s_valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,6 +52,10 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.codigo_tipo_despesa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigo_usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmbTipoDespesa = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cmbFormaPagamento = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -132,9 +132,9 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(379, 28);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 17);
+            this.label3.Size = new System.Drawing.Size(111, 17);
             this.label3.TabIndex = 24;
-            this.label3.Text = "Setor:";
+            this.label3.Text = "Centro de Custo:";
             // 
             // dataGrid
             // 
@@ -145,14 +145,14 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.dataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codigo,
@@ -168,61 +168,20 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.codigo_tipo_despesa,
             this.usuario,
             this.codigo_usuario});
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGrid.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGrid.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGrid.Location = new System.Drawing.Point(-1, 94);
             this.dataGrid.Name = "dataGrid";
             this.dataGrid.RowHeadersVisible = false;
             this.dataGrid.Size = new System.Drawing.Size(1419, 547);
             this.dataGrid.TabIndex = 19;
-            // 
-            // cmbTipoDespesa
-            // 
-            this.cmbTipoDespesa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTipoDespesa.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbTipoDespesa.FormattingEnabled = true;
-            this.cmbTipoDespesa.Location = new System.Drawing.Point(829, 45);
-            this.cmbTipoDespesa.Name = "cmbTipoDespesa";
-            this.cmbTipoDespesa.Size = new System.Drawing.Size(292, 25);
-            this.cmbTipoDespesa.TabIndex = 25;
-            this.cmbTipoDespesa.SelectedIndexChanged += new System.EventHandler(this.cmbTipoDespesa_SelectedIndexChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(826, 28);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(114, 17);
-            this.label4.TabIndex = 26;
-            this.label4.Text = "Tipo de Despesa:";
-            // 
-            // cmbFormaPagamento
-            // 
-            this.cmbFormaPagamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbFormaPagamento.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbFormaPagamento.FormattingEnabled = true;
-            this.cmbFormaPagamento.Location = new System.Drawing.Point(1142, 45);
-            this.cmbFormaPagamento.Name = "cmbFormaPagamento";
-            this.cmbFormaPagamento.Size = new System.Drawing.Size(236, 25);
-            this.cmbFormaPagamento.TabIndex = 27;
-            this.cmbFormaPagamento.SelectedIndexChanged += new System.EventHandler(this.cmbFormaPagamento_SelectedIndexChanged);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(1139, 28);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(144, 17);
-            this.label5.TabIndex = 28;
-            this.label5.Text = "Forma de Pagamento:";
+            this.dataGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_CellDoubleClick);
             // 
             // codigo
             // 
@@ -324,6 +283,48 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.codigo_usuario.HeaderText = "codigo_usuario";
             this.codigo_usuario.Name = "codigo_usuario";
             this.codigo_usuario.Visible = false;
+            // 
+            // cmbTipoDespesa
+            // 
+            this.cmbTipoDespesa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTipoDespesa.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTipoDespesa.FormattingEnabled = true;
+            this.cmbTipoDespesa.Location = new System.Drawing.Point(829, 45);
+            this.cmbTipoDespesa.Name = "cmbTipoDespesa";
+            this.cmbTipoDespesa.Size = new System.Drawing.Size(292, 25);
+            this.cmbTipoDespesa.TabIndex = 25;
+            this.cmbTipoDespesa.SelectedIndexChanged += new System.EventHandler(this.cmbTipoDespesa_SelectedIndexChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(826, 28);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(114, 17);
+            this.label4.TabIndex = 26;
+            this.label4.Text = "Tipo de Despesa:";
+            // 
+            // cmbFormaPagamento
+            // 
+            this.cmbFormaPagamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbFormaPagamento.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbFormaPagamento.FormattingEnabled = true;
+            this.cmbFormaPagamento.Location = new System.Drawing.Point(1142, 45);
+            this.cmbFormaPagamento.Name = "cmbFormaPagamento";
+            this.cmbFormaPagamento.Size = new System.Drawing.Size(236, 25);
+            this.cmbFormaPagamento.TabIndex = 27;
+            this.cmbFormaPagamento.SelectedIndexChanged += new System.EventHandler(this.cmbFormaPagamento_SelectedIndexChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(1139, 28);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(144, 17);
+            this.label5.TabIndex = 28;
+            this.label5.Text = "Forma de Pagamento:";
             // 
             // frmPesquisarDespesa
             // 
