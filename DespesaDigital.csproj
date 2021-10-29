@@ -88,10 +88,12 @@
     <Compile Include="Code\BLL\bllConexao\bllConexao.cs" />
     <Compile Include="Code\BLL\bllDepartamento\bllDepartamento.cs" />
     <Compile Include="Code\BLL\bllDespesa\bllDespesa.cs" />
+    <Compile Include="Code\BLL\bllDespesa\bllDespesaItens.cs" />
     <Compile Include="Code\BLL\bllFormaPagamento\bllFormaPagamento.cs" />
     <Compile Include="Code\BLL\bllFornecedor\bllFornecedor.cs" />
     <Compile Include="Code\BLL\bllFornecedor\bllFornecedorContato.cs" />
     <Compile Include="Code\BLL\bllFornecedor\bllFornecedorEndereco.cs" />
+    <Compile Include="Code\BLL\bllImagem\bllImagem.cs" />
     <Compile Include="Code\BLL\bllLogSistema\bllLogSistema.cs" />
     <Compile Include="Code\BLL\bllProdutoFornecedor\bllProdutoFornecedor.cs" />
     <Compile Include="Code\BLL\bllProduto\bllProduto.cs" />
@@ -105,10 +107,12 @@
     <Compile Include="Code\DAL\dalConexao\dalConexao.cs" />
     <Compile Include="Code\DAL\dalDepartamento\dalDepartamento.cs" />
     <Compile Include="Code\DAL\dalDespesa\dalDespesa.cs" />
+    <Compile Include="Code\DAL\dalDespesa\dalDespesaItens.cs" />
     <Compile Include="Code\DAL\dalFormaPagamento\dalFormaPagamento.cs" />
     <Compile Include="Code\DAL\dalFornecedor\dalFornecedor.cs" />
     <Compile Include="Code\DAL\dalFornecedor\dalFornecedorContato.cs" />
     <Compile Include="Code\DAL\dalFornecedor\dalFornecedorEndereco.cs" />
+    <Compile Include="Code\DAL\dalImagem\dalImagem.cs" />
     <Compile Include="Code\DAL\dalLogSistema\dalLogSistema.cs" />
     <Compile Include="Code\DAL\dalProdutoFornecedor\dalProdutoFornecedor.cs" />
     <Compile Include="Code\DAL\dalProduto\dalProduto.cs" />
@@ -121,6 +125,7 @@
     <Compile Include="Code\DTO\dtoCategoria\dtoCategoria.cs" />
     <Compile Include="Code\DTO\dtoDepartamento\dtoDepartamento.cs" />
     <Compile Include="Code\DTO\dtoDespesa\dtoDespesa.cs" />
+    <Compile Include="Code\DTO\dtoDespesa\dtoDespesaItens.cs" />
     <Compile Include="Code\DTO\dtoFormaPagamento\dtoFormaPagamento.cs" />
     <Compile Include="Code\DTO\dtoFornecedor\dtoFornecedor.cs" />
     <Compile Include="Code\DTO\dtoFornecedor\dtoFornecedorContato.cs" />
@@ -181,6 +186,18 @@
     </Compile>
     <Compile Include="Views\Forms\Despesa\frmDespesa.Designer.cs">
       <DependentUpon>frmDespesa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\Despesa\frmDetalheDespesa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\Despesa\frmDetalheDespesa.Designer.cs">
+      <DependentUpon>frmDetalheDespesa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\Despesa\frmImagemDespesa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\Despesa\frmImagemDespesa.Designer.cs">
+      <DependentUpon>frmImagemDespesa.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Forms\Despesa\frmPesquisarDespesa.cs">
       <SubType>Form</SubType>
@@ -357,6 +374,12 @@
     <EmbeddedResource Include="Views\Forms\Despesa\frmDespesa.resx">
       <DependentUpon>frmDespesa.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\Despesa\frmDetalheDespesa.resx">
+      <DependentUpon>frmDetalheDespesa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\Despesa\frmImagemDespesa.resx">
+      <DependentUpon>frmImagemDespesa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\Despesa\frmPesquisarDespesa.resx">
       <DependentUpon>frmPesquisarDespesa.cs</DependentUpon>
     </EmbeddedResource>
@@ -464,9 +487,6 @@
   <ItemGroup>
     <None Include="Resources\minimize.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Code\BLL\bllImagem\" />
-    <Folder Include="Code\DAL\dalImagem\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
