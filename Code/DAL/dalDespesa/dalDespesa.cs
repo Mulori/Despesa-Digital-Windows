@@ -1,8 +1,10 @@
-﻿using DespesaDigital.Code.DTO.dtoDespesa;
+﻿using DespesaDigital.Code.DTO.dtoDashboard;
+using DespesaDigital.Code.DTO.dtoDespesa;
 using DespesaDigital.Core;
 using Npgsql;
 using System;
 using System.Collections.Generic;
+using System.Data;
 
 namespace DespesaDigital.Code.DAL.dalDespesa
 {
@@ -182,6 +184,45 @@ namespace DespesaDigital.Code.DAL.dalDespesa
             }
 
             return list;
+        }
+
+        public bool UpdateDespesa(dtoDespesa dto)
+        {
+            var ssql = "update despesa set valor = @valor, descricao = @descricao, codigo_tipo_despesa = @codigo_tipo_despesa, " +
+                "codigo_forma_pagamento = @codigo_forma_pagamento where codigo = @codigo";
+
+            using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
+            {
+                cmd.Parameters.AddWithValue("@valor", dto.valor);
+                cmd.Parameters.AddWithValue("@descricao", dto.descricao);
+                cmd.Parameters.AddWithValue("@codigo_tipo_despesa", dto.codigo_tipo_despesa);
+                cmd.Parameters.AddWithValue("@codigo_forma_pagamento", dto.codigo_forma_pagamento);
+                cmd.Parameters.AddWithValue("@codigo", dto.codigo);
+
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+        }
+
+        public DataSet DashboardTodoPeriodo()
+        {
+            DataSet ds = new DataSet();
+
+            var ssql = "select sum(valor) as ValorDespesa, s.codigo, s.nome as CentrodeCusto from despesa d left join setor s on(d.codigo_setor = s.codigo) group by s.codigo, s.nome";
+
+            using (var ad = new NpgsqlDataAdapter(ssql, dalConexao.dalConexao.cnn))
+            {
+                ad.Fill(ds);
+            }
+
+            return ds;
         }
     }
 }

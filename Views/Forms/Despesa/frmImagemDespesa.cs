@@ -49,9 +49,17 @@ namespace DespesaDigital.Views.Forms.Despesa
                 path = folderBrowser.SelectedPath;
             }
 
+            if (path == "")
+                return;
+
             File.WriteAllBytes(path + $@"\imagem-despesa-{_codigo_despesa}-{DateTime.Now.ToString("ddMMyyyy-HHmmss")}.png", imagem);
 
             corePopUp.exibirMensagem("Imagem salva com sucesso!", "Atenção");
+        }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
