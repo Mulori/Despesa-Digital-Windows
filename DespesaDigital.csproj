@@ -123,6 +123,7 @@
     <Compile Include="Code\DAL\dalUsuarioAprovacao\dalUsuarioAprovacao.cs" />
     <Compile Include="Code\DAL\dalUsuario\dalUsuario.cs" />
     <Compile Include="Code\DTO\dtoCategoria\dtoCategoria.cs" />
+    <Compile Include="Code\DTO\dtoDashboard\dtoDashboard.cs" />
     <Compile Include="Code\DTO\dtoDepartamento\dtoDepartamento.cs" />
     <Compile Include="Code\DTO\dtoDespesa\dtoDespesa.cs" />
     <Compile Include="Code\DTO\dtoDespesa\dtoDespesaItens.cs" />
@@ -168,6 +169,12 @@
     </Compile>
     <Compile Include="Views\Forms\Categoria\frmPesquisarCategoria.Designer.cs">
       <DependentUpon>frmPesquisarCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\Dashboard\frmDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\Dashboard\frmDashboard.Designer.cs">
+      <DependentUpon>frmDashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Forms\Departamento\frmNovoDepartamento.cs">
       <SubType>Form</SubType>
@@ -364,6 +371,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\Categoria\frmPesquisarCategoria.resx">
       <DependentUpon>frmPesquisarCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\Dashboard\frmDashboard.resx">
+      <DependentUpon>frmDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\Departamento\frmNovoDepartamento.resx">
       <DependentUpon>frmNovoDepartamento.cs</DependentUpon>

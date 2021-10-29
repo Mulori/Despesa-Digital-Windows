@@ -30,6 +30,7 @@ namespace DespesaDigital
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnDashboard = new System.Windows.Forms.Button();
             this.lbVersao = new System.Windows.Forms.Label();
             this.btnCadastro = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -48,6 +49,7 @@ namespace DespesaDigital
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(56)))), ((int)(((byte)(64)))));
+            this.panel1.Controls.Add(this.btnDashboard);
             this.panel1.Controls.Add(this.lbVersao);
             this.panel1.Controls.Add(this.btnCadastro);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -59,6 +61,25 @@ namespace DespesaDigital
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(179, 620);
             this.panel1.TabIndex = 0;
+            // 
+            // btnDashboard
+            // 
+            this.btnDashboard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnDashboard.Enabled = false;
+            this.btnDashboard.FlatAppearance.BorderSize = 0;
+            this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDashboard.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDashboard.ForeColor = System.Drawing.Color.White;
+            this.btnDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDashboard.Location = new System.Drawing.Point(0, 136);
+            this.btnDashboard.Name = "btnDashboard";
+            this.btnDashboard.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnDashboard.Size = new System.Drawing.Size(182, 52);
+            this.btnDashboard.TabIndex = 4;
+            this.btnDashboard.Text = "Dashboard";
+            this.btnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDashboard.UseVisualStyleBackColor = true;
+            this.btnDashboard.Click += new System.EventHandler(this.button1_Click);
             // 
             // lbVersao
             // 
@@ -80,7 +101,7 @@ namespace DespesaDigital
             this.btnCadastro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastro.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastro.ForeColor = System.Drawing.Color.White;
-            this.btnCadastro.Location = new System.Drawing.Point(0, 239);
+            this.btnCadastro.Location = new System.Drawing.Point(0, 310);
             this.btnCadastro.Name = "btnCadastro";
             this.btnCadastro.Size = new System.Drawing.Size(182, 52);
             this.btnCadastro.TabIndex = 3;
@@ -106,7 +127,7 @@ namespace DespesaDigital
             this.btnMinhaConta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinhaConta.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMinhaConta.ForeColor = System.Drawing.Color.White;
-            this.btnMinhaConta.Location = new System.Drawing.Point(0, 297);
+            this.btnMinhaConta.Location = new System.Drawing.Point(0, 368);
             this.btnMinhaConta.Name = "btnMinhaConta";
             this.btnMinhaConta.Size = new System.Drawing.Size(182, 52);
             this.btnMinhaConta.TabIndex = 2;
@@ -122,7 +143,7 @@ namespace DespesaDigital
             this.btnCentroCusto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCentroCusto.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCentroCusto.ForeColor = System.Drawing.Color.White;
-            this.btnCentroCusto.Location = new System.Drawing.Point(0, 181);
+            this.btnCentroCusto.Location = new System.Drawing.Point(0, 252);
             this.btnCentroCusto.Name = "btnCentroCusto";
             this.btnCentroCusto.Size = new System.Drawing.Size(182, 52);
             this.btnCentroCusto.TabIndex = 1;
@@ -140,7 +161,7 @@ namespace DespesaDigital
             this.btnDespesa.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDespesa.ForeColor = System.Drawing.Color.White;
             this.btnDespesa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDespesa.Location = new System.Drawing.Point(0, 123);
+            this.btnDespesa.Location = new System.Drawing.Point(0, 194);
             this.btnDespesa.Name = "btnDespesa";
             this.btnDespesa.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnDespesa.Size = new System.Drawing.Size(182, 52);
@@ -231,6 +252,7 @@ namespace DespesaDigital
         private System.Windows.Forms.Button btnCadastro;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Label lbVersao;
+        private System.Windows.Forms.Button btnDashboard;
     }
 }
 

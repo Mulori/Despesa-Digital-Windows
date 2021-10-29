@@ -1,6 +1,7 @@
 ﻿using DespesaDigital.Code.BLL.bllConexao;
 using DespesaDigital.Core;
 using DespesaDigital.Views.Forms.Cadastros;
+using DespesaDigital.Views.Forms.Dashboard;
 using DespesaDigital.Views.Forms.Despesa;
 using DespesaDigital.Views.Forms.Login;
 using DespesaDigital.Views.Forms.Mensagens;
@@ -50,12 +51,14 @@ namespace DespesaDigital
                     btnMinhaConta.Enabled = true;
                     btnCentroCusto.Enabled = true;
                     btnCadastro.Enabled = true;
+                    btnDashboard.Enabled = true;
                     break;
                 case 3:
                     btnDespesa.Enabled = true;
                     btnMinhaConta.Enabled = true;
                     btnCentroCusto.Enabled = true;
                     btnCadastro.Enabled = true;
+                    btnDashboard.Enabled = true;
                     break;
             }
         }
@@ -159,6 +162,21 @@ namespace DespesaDigital
             _objForm?.Close();
 
             _objForm = new frmDespesa
+            {
+                TopLevel = false,
+                FormBorderStyle = FormBorderStyle.None,
+                Dock = DockStyle.Fill
+            };
+
+            panelPrincipal.Controls.Add(_objForm);
+            _objForm.Show();
+        }
+
+        private void button1_Click(object sender, System.EventArgs e)
+        {
+            _objForm?.Close();
+
+            _objForm = new frmDashboard
             {
                 TopLevel = false,
                 FormBorderStyle = FormBorderStyle.None,

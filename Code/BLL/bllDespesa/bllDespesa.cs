@@ -1,7 +1,9 @@
 ﻿using DespesaDigital.Code.DAL.dalDespesa;
+using DespesaDigital.Code.DTO.dtoDashboard;
 using DespesaDigital.Code.DTO.dtoDespesa;
 using System;
 using System.Collections.Generic;
+using System.Data;
 
 namespace DespesaDigital.Code.BLL.bllDespesa
 {
@@ -29,6 +31,18 @@ namespace DespesaDigital.Code.BLL.bllDespesa
         {
             var dal = new dalDespesa();
             return dal.DespesaPorCodigo(codigo_despesa);
+        }
+
+        public static bool UpdateDespesa(dtoDespesa dto)
+        {
+            var dal = new dalDespesa();
+            return dal.UpdateDespesa(dto);
+        }
+
+        public static DataSet DashboardTodoPeriodo()
+        {
+            var dal = new dalDespesa();
+            return dal.DashboardTodoPeriodo();
         }
     }
 }
