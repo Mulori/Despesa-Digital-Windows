@@ -213,6 +213,12 @@
     <Compile Include="Views\Forms\Despesa\frmNovaDespesa.Designer.cs">
       <DependentUpon>frmNovaDespesa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Forms\Despesa\frmPesquisaProdutoDespesa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\Despesa\frmPesquisaProdutoDespesa.Designer.cs">
+      <DependentUpon>frmPesquisaProdutoDespesa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Forms\Despesa\frmPesquisarDespesa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -399,6 +405,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\Despesa\frmNovaDespesa.resx">
       <DependentUpon>frmNovaDespesa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\Despesa\frmPesquisaProdutoDespesa.resx">
+      <DependentUpon>frmPesquisaProdutoDespesa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\Despesa\frmPesquisarDespesa.resx">
       <DependentUpon>frmPesquisarDespesa.cs</DependentUpon>

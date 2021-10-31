@@ -36,12 +36,12 @@ namespace DespesaDigital.Views.Forms.Produtos
             this.rdAtivos = new System.Windows.Forms.RadioButton();
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.dataGrid = new System.Windows.Forms.DataGridView();
-            this.btnNovo = new System.Windows.Forms.Button();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigo_categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnNovo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -131,22 +131,6 @@ namespace DespesaDigital.Views.Forms.Produtos
             this.dataGrid.TabIndex = 3;
             this.dataGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_CellDoubleClick);
             // 
-            // btnNovo
-            // 
-            this.btnNovo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNovo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
-            this.btnNovo.FlatAppearance.BorderSize = 0;
-            this.btnNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNovo.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNovo.ForeColor = System.Drawing.Color.White;
-            this.btnNovo.Location = new System.Drawing.Point(777, 37);
-            this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(112, 28);
-            this.btnNovo.TabIndex = 5;
-            this.btnNovo.Text = "Novo";
-            this.btnNovo.UseVisualStyleBackColor = false;
-            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
-            // 
             // codigo
             // 
             this.codigo.DataPropertyName = "codigo";
@@ -185,6 +169,22 @@ namespace DespesaDigital.Views.Forms.Produtos
             this.categoria.HeaderText = "Categoria:";
             this.categoria.Name = "categoria";
             this.categoria.ReadOnly = true;
+            // 
+            // btnNovo
+            // 
+            this.btnNovo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNovo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.btnNovo.FlatAppearance.BorderSize = 0;
+            this.btnNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNovo.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNovo.ForeColor = System.Drawing.Color.White;
+            this.btnNovo.Location = new System.Drawing.Point(777, 37);
+            this.btnNovo.Name = "btnNovo";
+            this.btnNovo.Size = new System.Drawing.Size(112, 28);
+            this.btnNovo.TabIndex = 5;
+            this.btnNovo.Text = "Novo";
+            this.btnNovo.UseVisualStyleBackColor = false;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // frmPesquisarProduto
             // 

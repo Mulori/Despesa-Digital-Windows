@@ -13,7 +13,7 @@ namespace DespesaDigital.Code.DAL.dalConexao
             {
                 //170.231.105.127
                 cnn = new NpgsqlConnection();
-                cnn.ConnectionString = $"Server=192.168.0.200;Port=8077;User Id=postgres;Password=190123;Database=despesadigital";
+                cnn.ConnectionString = $"Server=170.231.105.127;Port=8077;User Id=postgres;Password=190123;Database=despesadigital";
 
                 cnn.Open();
                 return true;
