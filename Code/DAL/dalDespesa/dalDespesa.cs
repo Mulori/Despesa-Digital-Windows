@@ -224,5 +224,33 @@ namespace DespesaDigital.Code.DAL.dalDespesa
 
             return ds;
         }
+
+        public List<dtoDashboard> DashboardPeriodoUmAno()
+        {
+            var list = new List<dtoDashboard>();
+
+            var ssql = "select extract(month from d.data_hora_emissao) as MM, " +
+                " extract(year from d.data_hora_emissao) as yyyy, sum(d.valor) as valor, d.codigo_setor, s.nome from despesa d inner join setor s on(d.codigo_setor = s.codigo) where " +
+                " d.data_hora_emissao BETWEEN CURRENT_DATE - '1 year'::interval AND CURRENT_DATE group by d.codigo_setor, MM, yyyy, s.nome order by yyyy, mm asc";
+
+            using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
+            using (var dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    var dto = new dtoDashboard();
+                    dto.i_mes = Convert.ToInt32(dr["MM"]);
+                    dto.i_ano = Convert.ToInt32(dr["yyyy"]);
+                    dto.valor = Convert.ToDecimal(dr["valor"]);
+                    dto.i_setor = Convert.ToInt32(dr["codigo_setor"]);
+                    dto.s_setor = dr["nome"].ToString();
+
+                    list.Add(dto);
+                }
+                dr.Close();
+            }
+
+            return list;
+        }
     }
 }

@@ -1,4 +1,6 @@
 ﻿using DespesaDigital.Code.BLL.bllConexao;
+using DespesaDigital.Code.BLL.bllDepartamento;
+using DespesaDigital.Code.BLL.bllSetor;
 using DespesaDigital.Core;
 using DespesaDigital.Views.Forms.Cadastros;
 using DespesaDigital.Views.Forms.Dashboard;
@@ -7,6 +9,8 @@ using DespesaDigital.Views.Forms.Login;
 using DespesaDigital.Views.Forms.Mensagens;
 using DespesaDigital.Views.Forms.MinhaConta;
 using DespesaDigital.Views.Forms.SolicitacaoCompra;
+using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace DespesaDigital
@@ -32,6 +36,7 @@ namespace DespesaDigital
 
             lbNome.Text = $"Olá, {VariaveisGlobais.nome_usuario}!";
             lbVersao.Text = Application.ProductVersion;
+            lbRodape.Text = $"Data e hora de login: {DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss")}     Departamento: {bllDepartamento.DepartamentoPorCodigo(VariaveisGlobais.codigo_departamento).nome}     Centro de Custo: {bllSetor.SetorPorCodigo(VariaveisGlobais.codigo_setor).nome}";
 
             setarNivelAcesso();
 
@@ -104,6 +109,12 @@ namespace DespesaDigital
 
         private void btnCadastro_Click(object sender, System.EventArgs e)
         {
+            btnCadastro.BackColor = Color.FromArgb(139, 178, 55); //Cor Selecionada
+            btnDashboard.BackColor = Color.FromArgb(43, 56, 64);
+            btnDespesa.BackColor = Color.FromArgb(43, 56, 64);
+            btnCentroCusto.BackColor = Color.FromArgb(43, 56, 64);
+            btnMinhaConta.BackColor = Color.FromArgb(43, 56, 64);
+
             _objForm?.Close();
 
             _objForm = new frmCadastro
@@ -129,6 +140,12 @@ namespace DespesaDigital
 
         private void btnMinhaConta_Click(object sender, System.EventArgs e)
         {
+            btnMinhaConta.BackColor = Color.FromArgb(139, 178, 55); //Cor Selecionada
+            btnDashboard.BackColor = Color.FromArgb(43, 56, 64);
+            btnDespesa.BackColor = Color.FromArgb(43, 56, 64);
+            btnCentroCusto.BackColor = Color.FromArgb(43, 56, 64);
+            btnCadastro.BackColor = Color.FromArgb(43, 56, 64);
+
             _objForm?.Close();
 
             _objForm = new frmMinhaConta
@@ -144,6 +161,12 @@ namespace DespesaDigital
 
         private void btnCentroCusto_Click(object sender, System.EventArgs e)
         {
+            btnCentroCusto.BackColor = Color.FromArgb(139, 178, 55); //Cor Selecionada
+            btnDashboard.BackColor = Color.FromArgb(43, 56, 64);
+            btnDespesa.BackColor = Color.FromArgb(43, 56, 64);
+            btnMinhaConta.BackColor = Color.FromArgb(43, 56, 64);
+            btnCadastro.BackColor = Color.FromArgb(43, 56, 64);
+
             _objForm?.Close();
 
             _objForm = new frmSolicitacaoCompra
@@ -159,6 +182,12 @@ namespace DespesaDigital
 
         private void btnDespesa_Click(object sender, System.EventArgs e)
         {
+            btnDespesa.BackColor = Color.FromArgb(139, 178, 55); //Cor Selecionada
+            btnDashboard.BackColor = Color.FromArgb(43, 56, 64);
+            btnCentroCusto.BackColor = Color.FromArgb(43, 56, 64);
+            btnMinhaConta.BackColor = Color.FromArgb(43, 56, 64);
+            btnCadastro.BackColor = Color.FromArgb(43, 56, 64);
+
             _objForm?.Close();
 
             _objForm = new frmDespesa
@@ -174,6 +203,12 @@ namespace DespesaDigital
 
         private void button1_Click(object sender, System.EventArgs e)
         {
+            btnDashboard.BackColor = Color.FromArgb(139, 178, 55); //Cor Selecionada
+            btnDespesa.BackColor = Color.FromArgb(43, 56, 64);
+            btnCentroCusto.BackColor = Color.FromArgb(43, 56, 64);
+            btnMinhaConta.BackColor = Color.FromArgb(43, 56, 64);
+            btnCadastro.BackColor = Color.FromArgb(43, 56, 64);
+
             _objForm?.Close();
 
             _objForm = new frmDashboard

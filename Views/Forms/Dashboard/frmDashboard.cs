@@ -1,4 +1,5 @@
 ﻿using DespesaDigital.Code.BLL.bllDespesa;
+using DespesaDigital.Core;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -15,6 +16,8 @@ namespace DespesaDigital.Views.Forms.Dashboard
 {
     public partial class frmDashboard : Form
     {
+        List<int> codigo_setor;
+
         public frmDashboard()
         {
             InitializeComponent();
@@ -23,57 +26,56 @@ namespace DespesaDigital.Views.Forms.Dashboard
 
         private void inicializar()
         {
+            //Grafico de Pizza
             chartValorDespesaPorSetor.DataSource = bllDespesa.DashboardTodoPeriodo();
-            chartValorDespesaPorSetor.Series["despesa"].XValueMember = "CentrodeCusto";
-            chartValorDespesaPorSetor.Series["despesa"].YValueMembers = "ValorDespesa";            
-            chartValorDespesaPorSetor.Titles.Add("Total de despesas por centro de custo");
-
-            //chartValorDespesaPorSetor.Series.Clear();
-            //chartValorDespesaPorSetor.Series.Add("despesa");
-            //chartValorDespesaPorSetor.Series.FindByName("despesa").ChartType = SeriesChartType.Pie;
-
-            //var list = bllDespesa.DashboardTodoPeriodo();
-            //foreach (var i in list)
-            //{
-            //    chartValorDespesaPorSetor.Series["despesa"].Points.AddXY(i.centro_custo, i.valor);
-            //}
-
-            //chartValorDespesaPorSetor.Titles.Add("Total de despesas por centro de custo");
-        }
-
-        private void timer_Tick(object sender, EventArgs e)
-        {
-            chartValorDespesaPorSetor.DataSource = bllDespesa.DashboardTodoPeriodo();
+            chartValorDespesaPorSetor.Series["despesa"].Label = "#PERCENT";
+            chartValorDespesaPorSetor.Series["despesa"].LegendText = "#AXISLABEL";
             chartValorDespesaPorSetor.Series["despesa"].XValueMember = "CentrodeCusto";
             chartValorDespesaPorSetor.Series["despesa"].YValueMembers = "ValorDespesa";
             chartValorDespesaPorSetor.Titles.Add("Total de despesas por centro de custo");
+
+            codigo_setor = new List<int>();
+
+            var list_ano = bllDespesa.DashboardPeriodoUmAno();
+
+            charSetorPorAno.ChartAreas["ChartArea1"].AxisX.Maximum = 0;
+
+            foreach (var mes in list_ano)
+            {
+                if (!existeRegistroLista(mes.i_setor))
+                {
+                    charSetorPorAno.Series.Add(mes.s_setor);
+                    charSetorPorAno.Series[mes.s_setor].ChartType = SeriesChartType.Spline;
+                    codigo_setor.Add(mes.i_setor);
+                }
+
+                if (charSetorPorAno.ChartAreas["ChartArea1"].AxisX.Maximum < Convert.ToDouble(mes.valor))
+                {
+                    charSetorPorAno.ChartAreas["ChartArea1"].AxisX.Maximum = Convert.ToDouble(mes.valor);
+                }
+
+                charSetorPorAno.ChartAreas["ChartArea1"].AxisX.Maximum = 100;
+                charSetorPorAno.Series[mes.s_setor].Points.AddXY(coreNumericToString.MesNumericoParaMesCaracter(mes.i_mes), mes.valor);
+            }
+            charSetorPorAno.Titles.Add("Levantamento de despesa no periodo de 1 ano");
         }
 
-        public class Record
+        public bool existeRegistroLista(int codigo)
         {
-            int id, age;
-            string name;
-            public Record(int id, string name, int age)
+            if(codigo_setor.Count == 0)
             {
-                this.id = id;
-                this.name = name;
-                this.age = age;
+                return false;
             }
-            public int ID
+
+            foreach (var setor in codigo_setor)
             {
-                get { return id; }
-                set { id = value; }
+                if (setor == codigo)
+                {
+                    return true;   
+                }
             }
-            public string Name
-            {
-                get { return name; }
-                set { name = value; }
-            }
-            public int Age
-            {
-                get { return age; }
-                set { age = value; }
-            }
+
+            return false;
         }
     }
 }

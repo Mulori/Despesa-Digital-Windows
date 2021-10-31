@@ -23,30 +23,20 @@ namespace DespesaDigital.Views.Forms.Despesa
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //string sQL = "select * from imagem";
-            //using (var command = new NpgsqlCommand(sQL, dalConexao.cnn))
-            //{
-            //    byte[] productImageByte = null;
-            //    var rdr = command.ExecuteReader();
-            //    if (rdr.Read())
-            //    {
-            //        productImageByte = (byte[])rdr[1];
-            //    }
-            //    rdr.Close();
-            //    if (productImageByte != null)
-            //    {
-            //        using (MemoryStream productImageStream = new System.IO.MemoryStream(productImageByte))
-            //        {
-            //            ImageConverter imageConverter = new System.Drawing.ImageConverter();
-            //            pictureBox1.Image = imageConverter.ConvertFrom(productImageByte) as System.Drawing.Image;
-            //        }
-            //    }
-            //}
+
         }
 
         private void btnVisualizarDespesas_Click(object sender, EventArgs e)
         {
             using (var form = new frmPesquisarDespesa())
+            {
+                form.ShowDialog();
+            }
+        }
+
+        private void btnNovaDespesa_Click(object sender, EventArgs e)
+        {
+            using (var form = new frmNovaDespesa())
             {
                 form.ShowDialog();
             }

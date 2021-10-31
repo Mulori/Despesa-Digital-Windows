@@ -59,7 +59,6 @@ namespace DespesaDigital.Views.Forms.SolicitacaoCompra
             this.Name = "frmSolicitacaoCompra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmSolicitacaoCompra";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
 
         }
