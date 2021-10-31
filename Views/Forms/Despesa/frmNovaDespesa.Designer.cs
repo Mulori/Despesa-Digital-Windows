@@ -30,9 +30,9 @@ namespace DespesaDigital.Views.Forms.Despesa
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnIncluir = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtObservacao = new System.Windows.Forms.TextBox();
@@ -45,13 +45,13 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lbFilePath = new System.Windows.Forms.Label();
-            this.btnAnexo = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
             this.cmbItem = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.lbQtdeCaracter = new System.Windows.Forms.Label();
+            this.btnAnexo = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,6 +67,20 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(795, 84);
             this.panel1.TabIndex = 48;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(249, 18);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(110, 54);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Sair";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // btnIncluir
             // 
@@ -96,20 +110,6 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.btnSalvar.TabIndex = 4;
             this.btnSalvar.Text = "Registrar";
             this.btnSalvar.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(249, 18);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(110, 54);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Sair";
-            this.button1.UseVisualStyleBackColor = false;
             // 
             // txtDescricao
             // 
@@ -235,25 +235,6 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.lbFilePath.TabIndex = 59;
             this.lbFilePath.Text = "Nenhum arquivo selecionado.";
             // 
-            // btnAnexo
-            // 
-            this.btnAnexo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAnexo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
-            this.btnAnexo.BackgroundImage = global::DespesaDigital.Properties.Resources.anexo1;
-            this.btnAnexo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnAnexo.FlatAppearance.BorderSize = 0;
-            this.btnAnexo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAnexo.ForeColor = System.Drawing.Color.White;
-            this.btnAnexo.Location = new System.Drawing.Point(681, 438);
-            this.btnAnexo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnAnexo.Name = "btnAnexo";
-            this.btnAnexo.Size = new System.Drawing.Size(99, 31);
-            this.btnAnexo.TabIndex = 6;
-            this.btnAnexo.Text = "Anexo";
-            this.btnAnexo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAnexo.UseVisualStyleBackColor = false;
-            this.btnAnexo.Click += new System.EventHandler(this.btnAnexo_Click);
-            // 
             // listView1
             // 
             this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -262,7 +243,7 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(12, 546);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(768, 185);
+            this.listView1.Size = new System.Drawing.Size(768, 128);
             this.listView1.TabIndex = 60;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
@@ -270,12 +251,13 @@ namespace DespesaDigital.Views.Forms.Despesa
             // 
             this.cmbItem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbItem.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbItem.FormattingEnabled = true;
             this.cmbItem.Location = new System.Drawing.Point(11, 511);
             this.cmbItem.Name = "cmbItem";
             this.cmbItem.Size = new System.Drawing.Size(769, 29);
             this.cmbItem.TabIndex = 62;
+            this.cmbItem.SelectedIndexChanged += new System.EventHandler(this.cmbItem_SelectedIndexChanged);
+            this.cmbItem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbItem_KeyDown);
             // 
             // label8
             // 
@@ -315,11 +297,30 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.lbQtdeCaracter.TabIndex = 64;
             this.lbQtdeCaracter.Text = "0/500";
             // 
+            // btnAnexo
+            // 
+            this.btnAnexo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAnexo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.btnAnexo.BackgroundImage = global::DespesaDigital.Properties.Resources.anexo1;
+            this.btnAnexo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnAnexo.FlatAppearance.BorderSize = 0;
+            this.btnAnexo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAnexo.ForeColor = System.Drawing.Color.White;
+            this.btnAnexo.Location = new System.Drawing.Point(681, 438);
+            this.btnAnexo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnAnexo.Name = "btnAnexo";
+            this.btnAnexo.Size = new System.Drawing.Size(99, 31);
+            this.btnAnexo.TabIndex = 6;
+            this.btnAnexo.Text = "Anexo";
+            this.btnAnexo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAnexo.UseVisualStyleBackColor = false;
+            this.btnAnexo.Click += new System.EventHandler(this.btnAnexo_Click);
+            // 
             // frmNovaDespesa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(795, 743);
+            this.ClientSize = new System.Drawing.Size(795, 686);
             this.Controls.Add(this.lbQtdeCaracter);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.cmbItem);
@@ -340,7 +341,7 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.Controls.Add(this.txtDescricao);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmNovaDespesa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nova Despesa";

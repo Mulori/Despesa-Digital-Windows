@@ -179,7 +179,7 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.dataGrid.Location = new System.Drawing.Point(-1, 94);
             this.dataGrid.Name = "dataGrid";
             this.dataGrid.RowHeadersVisible = false;
-            this.dataGrid.Size = new System.Drawing.Size(1419, 547);
+            this.dataGrid.Size = new System.Drawing.Size(1373, 547);
             this.dataGrid.TabIndex = 19;
             this.dataGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_CellDoubleClick);
             // 
@@ -330,7 +330,7 @@ namespace DespesaDigital.Views.Forms.Despesa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1416, 651);
+            this.ClientSize = new System.Drawing.Size(1370, 651);
             this.Controls.Add(this.cmbFormaPagamento);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cmbTipoDespesa);

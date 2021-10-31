@@ -1,18 +1,14 @@
 ﻿using DespesaDigital.Code.BLL.bllFormaPagamento;
+using DespesaDigital.Code.BLL.bllProduto;
 using DespesaDigital.Code.BLL.bllSetor;
 using DespesaDigital.Code.BLL.bllTipoDespesa;
 using DespesaDigital.Code.DTO.dtoFormaPagamento;
+using DespesaDigital.Code.DTO.dtoProduto;
 using DespesaDigital.Code.DTO.dtoSetor;
 using DespesaDigital.Code.DTO.dtoTipoDespesa;
 using DespesaDigital.Core;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DespesaDigital.Views.Forms.Despesa
@@ -110,6 +106,48 @@ namespace DespesaDigital.Views.Forms.Despesa
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             lbQtdeCaracter.Text = txtObservacao.Text.Length.ToString() + "/500";
+        }
+
+        private void cmbItem_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.F10:
+                    using (var form = new frmPesquisaProdutoDespesa())
+                    {
+                        form.ShowDialog();
+                    }
+                    break;
+                case Keys.Enter:
+                    var list = bllProduto.ListarTodosProdutosPorStatusDescricao("A", cmbItem.Text);
+
+                    if (list.Count == 0)
+                    {
+                        break;
+                    }
+
+                    CarregaListaItens(list);
+                    SendKeys.Send("{F4}");
+                    break;
+            }
+        }
+
+        private void cmbItem_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        void CarregaListaItens(List<dtoProduto> list)
+        {
+            Dictionary<string, string> comboSource = new Dictionary<string, string>();
+            foreach (var item in list)
+            {
+                comboSource.Add($"{item.codigo}", $"{item.descricao}");
+            }
+
+            cmbItem.DataSource = new BindingSource(comboSource, null);
+            cmbItem.DisplayMember = "Value";
+            cmbItem.ValueMember = "Key";
         }
     }
 }
