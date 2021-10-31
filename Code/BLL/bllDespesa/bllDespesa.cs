@@ -33,6 +33,11 @@ namespace DespesaDigital.Code.BLL.bllDespesa
             return dal.DespesaPorCodigo(codigo_despesa);
         }
 
+        internal static object DashboardPeriodoUmAnoPorSetor(object variveisglobais)
+        {
+            throw new NotImplementedException();
+        }
+
         public static bool UpdateDespesa(dtoDespesa dto)
         {
             var dal = new dalDespesa();
@@ -43,6 +48,12 @@ namespace DespesaDigital.Code.BLL.bllDespesa
         {
             var dal = new dalDespesa();
             return dal.DashboardTodoPeriodo();
+        }
+
+        public static List<dtoDashboard> DashboardPeriodoUmAno()
+        {
+            var dal = new dalDespesa();
+            return dal.DashboardPeriodoUmAno();
         }
     }
 }

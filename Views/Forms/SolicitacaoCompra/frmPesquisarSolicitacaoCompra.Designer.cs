@@ -32,16 +32,6 @@ namespace DespesaDigital.Views.Forms.SolicitacaoCompra
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGrid = new System.Windows.Forms.DataGridView();
-            this.rdPendentes = new System.Windows.Forms.RadioButton();
-            this.rdAprovados = new System.Windows.Forms.RadioButton();
-            this.rdRejeitados = new System.Windows.Forms.RadioButton();
-            this.mskDataInicial = new System.Windows.Forms.MaskedTextBox();
-            this.mskDataFinal = new System.Windows.Forms.MaskedTextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cmbSetor = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnPesquisarData = new System.Windows.Forms.Button();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,6 +43,16 @@ namespace DespesaDigital.Views.Forms.SolicitacaoCompra
             this.codigo_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigo_categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rdPendentes = new System.Windows.Forms.RadioButton();
+            this.rdAprovados = new System.Windows.Forms.RadioButton();
+            this.rdRejeitados = new System.Windows.Forms.RadioButton();
+            this.mskDataInicial = new System.Windows.Forms.MaskedTextBox();
+            this.mskDataFinal = new System.Windows.Forms.MaskedTextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cmbSetor = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnPesquisarData = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,6 +100,90 @@ namespace DespesaDigital.Views.Forms.SolicitacaoCompra
             this.dataGrid.Size = new System.Drawing.Size(1419, 547);
             this.dataGrid.TabIndex = 4;
             this.dataGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_CellDoubleClick);
+            // 
+            // codigo
+            // 
+            this.codigo.DataPropertyName = "codigo";
+            this.codigo.HeaderText = "Código:";
+            this.codigo.Name = "codigo";
+            this.codigo.ReadOnly = true;
+            // 
+            // status
+            // 
+            this.status.DataPropertyName = "data_solicitacao";
+            this.status.HeaderText = "Data/Hora:";
+            this.status.Name = "status";
+            this.status.ReadOnly = true;
+            this.status.Width = 160;
+            // 
+            // descricao
+            // 
+            this.descricao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.descricao.DataPropertyName = "motivo";
+            this.descricao.HeaderText = "Observação/Motivo:";
+            this.descricao.Name = "descricao";
+            this.descricao.ReadOnly = true;
+            // 
+            // s_valor
+            // 
+            this.s_valor.DataPropertyName = "s_valor";
+            this.s_valor.HeaderText = "Valor:";
+            this.s_valor.Name = "s_valor";
+            // 
+            // categoria
+            // 
+            this.categoria.DataPropertyName = "status";
+            this.categoria.HeaderText = "Status:";
+            this.categoria.Name = "categoria";
+            this.categoria.ReadOnly = true;
+            this.categoria.Width = 160;
+            // 
+            // item
+            // 
+            this.item.DataPropertyName = "s_codigo_produto";
+            this.item.HeaderText = "Item:";
+            this.item.Name = "item";
+            this.item.Width = 150;
+            // 
+            // s_codigo_setor
+            // 
+            this.s_codigo_setor.DataPropertyName = "s_codigo_setor";
+            this.s_codigo_setor.HeaderText = "Setor:";
+            this.s_codigo_setor.Name = "s_codigo_setor";
+            this.s_codigo_setor.ReadOnly = true;
+            this.s_codigo_setor.Width = 200;
+            // 
+            // codigo_setor
+            // 
+            this.codigo_setor.DataPropertyName = "codigo_setor";
+            this.codigo_setor.HeaderText = "codigo_setor";
+            this.codigo_setor.Name = "codigo_setor";
+            this.codigo_setor.ReadOnly = true;
+            this.codigo_setor.Visible = false;
+            // 
+            // codigo_produto
+            // 
+            this.codigo_produto.DataPropertyName = "codigo_produto";
+            this.codigo_produto.HeaderText = "codigo_produto";
+            this.codigo_produto.Name = "codigo_produto";
+            this.codigo_produto.ReadOnly = true;
+            this.codigo_produto.Visible = false;
+            // 
+            // codigo_categoria
+            // 
+            this.codigo_categoria.DataPropertyName = "valor";
+            this.codigo_categoria.HeaderText = "Valor:";
+            this.codigo_categoria.Name = "codigo_categoria";
+            this.codigo_categoria.ReadOnly = true;
+            this.codigo_categoria.Visible = false;
+            this.codigo_categoria.Width = 200;
+            // 
+            // usuario
+            // 
+            this.usuario.DataPropertyName = "usuario";
+            this.usuario.HeaderText = "usuario";
+            this.usuario.Name = "usuario";
+            this.usuario.Visible = false;
             // 
             // rdPendentes
             // 
@@ -196,9 +280,9 @@ namespace DespesaDigital.Views.Forms.SolicitacaoCompra
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(547, 47);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 17);
+            this.label3.Size = new System.Drawing.Size(111, 17);
             this.label3.TabIndex = 13;
-            this.label3.Text = "Setor:";
+            this.label3.Text = "Centro de Custo:";
             // 
             // btnPesquisarData
             // 
@@ -215,90 +299,6 @@ namespace DespesaDigital.Views.Forms.SolicitacaoCompra
             this.btnPesquisarData.Text = "Pesquisar";
             this.btnPesquisarData.UseVisualStyleBackColor = false;
             this.btnPesquisarData.Click += new System.EventHandler(this.btnPesquisarData_Click);
-            // 
-            // codigo
-            // 
-            this.codigo.DataPropertyName = "codigo";
-            this.codigo.HeaderText = "Código:";
-            this.codigo.Name = "codigo";
-            this.codigo.ReadOnly = true;
-            // 
-            // status
-            // 
-            this.status.DataPropertyName = "data_solicitacao";
-            this.status.HeaderText = "Data/Hora:";
-            this.status.Name = "status";
-            this.status.ReadOnly = true;
-            this.status.Width = 160;
-            // 
-            // descricao
-            // 
-            this.descricao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.descricao.DataPropertyName = "motivo";
-            this.descricao.HeaderText = "Observação/Motivo:";
-            this.descricao.Name = "descricao";
-            this.descricao.ReadOnly = true;
-            // 
-            // s_valor
-            // 
-            this.s_valor.DataPropertyName = "s_valor";
-            this.s_valor.HeaderText = "Valor:";
-            this.s_valor.Name = "s_valor";
-            // 
-            // categoria
-            // 
-            this.categoria.DataPropertyName = "status";
-            this.categoria.HeaderText = "Status:";
-            this.categoria.Name = "categoria";
-            this.categoria.ReadOnly = true;
-            this.categoria.Width = 160;
-            // 
-            // item
-            // 
-            this.item.DataPropertyName = "s_codigo_produto";
-            this.item.HeaderText = "Item:";
-            this.item.Name = "item";
-            this.item.Width = 150;
-            // 
-            // s_codigo_setor
-            // 
-            this.s_codigo_setor.DataPropertyName = "s_codigo_setor";
-            this.s_codigo_setor.HeaderText = "Setor:";
-            this.s_codigo_setor.Name = "s_codigo_setor";
-            this.s_codigo_setor.ReadOnly = true;
-            this.s_codigo_setor.Width = 200;
-            // 
-            // codigo_setor
-            // 
-            this.codigo_setor.DataPropertyName = "codigo_setor";
-            this.codigo_setor.HeaderText = "codigo_setor";
-            this.codigo_setor.Name = "codigo_setor";
-            this.codigo_setor.ReadOnly = true;
-            this.codigo_setor.Visible = false;
-            // 
-            // codigo_produto
-            // 
-            this.codigo_produto.DataPropertyName = "codigo_produto";
-            this.codigo_produto.HeaderText = "codigo_produto";
-            this.codigo_produto.Name = "codigo_produto";
-            this.codigo_produto.ReadOnly = true;
-            this.codigo_produto.Visible = false;
-            // 
-            // codigo_categoria
-            // 
-            this.codigo_categoria.DataPropertyName = "valor";
-            this.codigo_categoria.HeaderText = "Valor:";
-            this.codigo_categoria.Name = "codigo_categoria";
-            this.codigo_categoria.ReadOnly = true;
-            this.codigo_categoria.Visible = false;
-            this.codigo_categoria.Width = 200;
-            // 
-            // usuario
-            // 
-            this.usuario.DataPropertyName = "usuario";
-            this.usuario.HeaderText = "usuario";
-            this.usuario.Name = "usuario";
-            this.usuario.Visible = false;
             // 
             // frmPesquisarSolicitacaoCompra
             // 

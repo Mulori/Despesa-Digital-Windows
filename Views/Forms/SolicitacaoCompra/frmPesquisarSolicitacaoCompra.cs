@@ -40,10 +40,6 @@ namespace DespesaDigital.Views.Forms.SolicitacaoCompra
             else
             {
                 list = bllSetor.ListSetorPorCodigo(VariaveisGlobais.codigo_setor);
-            }
-
-            if (VariaveisGlobais.nivel_acesso < 3)
-            {
                 cmbSetor.Enabled = false;
             }
             
