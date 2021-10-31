@@ -83,5 +83,10 @@ namespace DespesaDigital.Views.Forms.FormaPagamento
 
             Inicializar();
         }
+
+        private void dataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
