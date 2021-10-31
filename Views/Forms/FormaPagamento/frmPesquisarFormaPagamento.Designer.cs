@@ -99,6 +99,7 @@ namespace DespesaDigital.Views.Forms.FormaPagamento
             this.dataGrid.RowHeadersVisible = false;
             this.dataGrid.Size = new System.Drawing.Size(854, 368);
             this.dataGrid.TabIndex = 13;
+            this.dataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_CellContentClick);
             this.dataGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_CellDoubleClick);
             // 
             // codigo

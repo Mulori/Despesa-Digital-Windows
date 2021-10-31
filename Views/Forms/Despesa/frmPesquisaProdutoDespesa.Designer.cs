@@ -78,7 +78,8 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.dataGrid.Name = "dataGrid";
             this.dataGrid.RowHeadersVisible = false;
             this.dataGrid.Size = new System.Drawing.Size(807, 309);
-            this.dataGrid.TabIndex = 20;
+            this.dataGrid.TabIndex = 1;
+            this.dataGrid.DoubleClick += new System.EventHandler(this.dataGrid_DoubleClick);
             // 
             // txtPesquisa
             // 
@@ -88,7 +89,7 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.txtPesquisa.Location = new System.Drawing.Point(12, 32);
             this.txtPesquisa.Name = "txtPesquisa";
             this.txtPesquisa.Size = new System.Drawing.Size(781, 27);
-            this.txtPesquisa.TabIndex = 21;
+            this.txtPesquisa.TabIndex = 0;
             this.txtPesquisa.TextChanged += new System.EventHandler(this.txtPesquisa_TextChanged);
             // 
             // label1
