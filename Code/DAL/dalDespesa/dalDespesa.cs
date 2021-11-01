@@ -186,6 +186,26 @@ namespace DespesaDigital.Code.DAL.dalDespesa
             return list;
         }
 
+        public long NovaDespesa(dtoDespesa obj)
+        {
+            long retorno = 0;
+
+            var ssql = $"select NovaDespesa('{Convert.ToDateTime(obj.data_hora_emissao).ToString("yyyy-MM-dd HH:mm:ss")}', '{obj.valor.ToString().Replace(",", ".")}', '{obj.descricao}', '{obj.codigo_tipo_despesa}', {obj.codigo_setor}, {obj.codigo_forma_pagamento}, {obj.codigo_usuario});";
+
+            using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
+            using (var dr = cmd.ExecuteReader())
+            {
+                if (dr.Read())
+                {
+                    retorno = long.Parse(dr["NovaDespesa"].ToString());
+                }
+
+                dr.Close();
+            }
+
+            return retorno;
+        }
+
         public bool UpdateDespesa(dtoDespesa dto)
         {
             var ssql = "update despesa set valor = @valor, descricao = @descricao, codigo_tipo_despesa = @codigo_tipo_despesa, " +
