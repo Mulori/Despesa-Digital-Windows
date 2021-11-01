@@ -55,5 +55,11 @@ namespace DespesaDigital.Code.BLL.bllDespesa
             var dal = new dalDespesa();
             return dal.DashboardPeriodoUmAno();
         }
+
+        public static long NovaDespesa(dtoDespesa obj)
+        {
+            var dal = new dalDespesa();
+            return dal.NovaDespesa(obj);
+        }
     }
 }

@@ -21,5 +21,6 @@ namespace DespesaDigital.Code.DTO.dtoDespesa
         public string s_codigo_forma_pagamento { get; set; }
         public string s_codigo_usuario { get; set; }
         public string s_codigo_tipo_despesa { get; set; }
+        public byte[] imagem { get; set; }
     }
 }

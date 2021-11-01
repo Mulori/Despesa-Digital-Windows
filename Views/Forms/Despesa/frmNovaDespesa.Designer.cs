@@ -31,7 +31,6 @@ namespace DespesaDigital.Views.Forms.Despesa
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
-            this.btnIncluir = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.txtValor = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -58,7 +57,6 @@ namespace DespesaDigital.Views.Forms.Despesa
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.btnIncluir);
             this.panel1.Controls.Add(this.btnSalvar);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -73,7 +71,7 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(249, 18);
+            this.button1.Location = new System.Drawing.Point(132, 14);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(110, 54);
@@ -81,28 +79,13 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.button1.Text = "Sair";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // btnIncluir
-            // 
-            this.btnIncluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
-            this.btnIncluir.FlatAppearance.BorderSize = 0;
-            this.btnIncluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIncluir.ForeColor = System.Drawing.Color.White;
-            this.btnIncluir.Location = new System.Drawing.Point(13, 18);
-            this.btnIncluir.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnIncluir.Name = "btnIncluir";
-            this.btnIncluir.Size = new System.Drawing.Size(110, 54);
-            this.btnIncluir.TabIndex = 0;
-            this.btnIncluir.Text = "Incluir";
-            this.btnIncluir.UseVisualStyleBackColor = false;
-            this.btnIncluir.Click += new System.EventHandler(this.btnIncluir_Click);
-            // 
             // btnSalvar
             // 
             this.btnSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
             this.btnSalvar.FlatAppearance.BorderSize = 0;
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalvar.ForeColor = System.Drawing.Color.White;
-            this.btnSalvar.Location = new System.Drawing.Point(131, 18);
+            this.btnSalvar.Location = new System.Drawing.Point(14, 14);
             this.btnSalvar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(110, 54);
@@ -343,7 +326,6 @@ namespace DespesaDigital.Views.Forms.Despesa
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnIncluir;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.TextBox txtValor;
         private System.Windows.Forms.Label label2;

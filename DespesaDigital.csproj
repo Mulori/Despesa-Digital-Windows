@@ -94,6 +94,7 @@
     <Compile Include="Code\BLL\bllFornecedor\bllFornecedorEndereco.cs" />
     <Compile Include="Code\BLL\bllImagem\bllImagem.cs" />
     <Compile Include="Code\BLL\bllLogSistema\bllLogSistema.cs" />
+    <Compile Include="Code\BLL\bllProdutoDespesa\bllProdutoDespesa.cs" />
     <Compile Include="Code\BLL\bllProdutoFornecedor\bllProdutoFornecedor.cs" />
     <Compile Include="Code\BLL\bllProduto\bllProduto.cs" />
     <Compile Include="Code\BLL\bllSetorProduto\bllSetorProduto.cs" />
@@ -113,6 +114,7 @@
     <Compile Include="Code\DAL\dalFornecedor\dalFornecedorEndereco.cs" />
     <Compile Include="Code\DAL\dalImagem\dalImagem.cs" />
     <Compile Include="Code\DAL\dalLogSistema\dalLogSistema.cs" />
+    <Compile Include="Code\DAL\dalProdutoDespesa\dalProdutoDespesa.cs" />
     <Compile Include="Code\DAL\dalProdutoFornecedor\dalProdutoFornecedor.cs" />
     <Compile Include="Code\DAL\dalProduto\dalProduto.cs" />
     <Compile Include="Code\DAL\dalSetorProduto\dalSetorProduto.cs" />
