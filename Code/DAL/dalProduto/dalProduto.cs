@@ -1,4 +1,5 @@
-﻿using DespesaDigital.Code.DTO.dtoProduto;
+﻿using DespesaDigital.Code.BLL.bllCategoria;
+using DespesaDigital.Code.DTO.dtoProduto;
 using DespesaDigital.Core;
 using Npgsql;
 using System;
@@ -255,6 +256,26 @@ namespace DespesaDigital.Code.DAL.dalProduto
                 {
                     retorno = string.IsNullOrEmpty(dr["codigo"].ToString()) ? 0 : Convert.ToInt32(dr["codigo"]);
                 }
+                dr.Close();
+            }
+
+            return retorno;
+        }
+
+        public int NovoProdutoRapido(string descricao, int codigo_setor)
+        {
+            var retorno = 0;
+
+            var ssql = $"select NovoProdutoRapido('{descricao}', '{bllCategoria.GetCategoriaOutros()}', '{codigo_setor}');";
+
+            using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
+            using (var dr = cmd.ExecuteReader())
+            {
+                if (dr.Read())
+                {
+                    retorno = int.Parse(dr["NovoProdutoRapido"].ToString());
+                }
+
                 dr.Close();
             }
 

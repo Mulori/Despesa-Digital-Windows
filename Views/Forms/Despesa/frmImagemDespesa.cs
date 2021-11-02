@@ -11,6 +11,7 @@ namespace DespesaDigital.Views.Forms.Despesa
     {
         public long _codigo_despesa { get; set; }
         public byte[] imagem { get; set; }
+        private bool bloqueia_visualizacao { get; set; }
         public frmImagemDespesa(long codigo_despesa)
         {
             InitializeComponent();
@@ -28,16 +29,32 @@ namespace DespesaDigital.Views.Forms.Despesa
             {
                 using (MemoryStream productImageStream = new MemoryStream(bImagem))
                 {
-                    ImageConverter imageConverter = new System.Drawing.ImageConverter();
-                    picImagem.Image = imageConverter.ConvertFrom(bImagem) as Image;
+                    try
+                    {
+                        ImageConverter imageConverter = new System.Drawing.ImageConverter();
+                        picImagem.Image = imageConverter.ConvertFrom(bImagem) as Image;
+                    }
+                    catch
+                    {
+                        linkSalvarComputador.Visible = true;
+                        bloqueia_visualizacao = true;
+                    }
                 }
+            }
+            else
+            {
+                corePopUp.exibirMensagem("Não foi encontrado nenhum arquivo para visualização.", "Atenção");
+                Close();
             }
         }
 
         private void btnGirar_Click_1(object sender, System.EventArgs e)
         {
+            if (bloqueia_visualizacao)
+                return;
+
             picImagem.Image.RotateFlip(RotateFlipType.Rotate90FlipNone);
-            picImagem.Refresh();
+            picImagem.Refresh();            
         }
 
         private void btnSalvar_Click(object sender, System.EventArgs e)
@@ -60,6 +77,28 @@ namespace DespesaDigital.Views.Forms.Despesa
         private void btnSair_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void linkSalvarComputador_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var path = "";
+
+            if (folderBrowser.ShowDialog() == DialogResult.OK)
+            {
+                path = folderBrowser.SelectedPath;
+            }
+
+            if (path == "")
+                return;
+
+            var format = bllImagem.ObterFormatoImagemDespesaPorCodigo(_codigo_despesa);
+            path = path + $@"\arquivo-despesa -{ _codigo_despesa}-{ DateTime.Now.ToString("ddMMyyyy-HHmmss")}.{format}";
+
+            FileStream Stream = new FileStream(path, FileMode.Create);
+            Stream.Write(imagem, 0, imagem.Length);
+            Stream.Close();
+
+            corePopUp.exibirMensagem("Arquivo salvo com sucesso!", "Atenção");
         }
     }
 }

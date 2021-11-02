@@ -35,6 +35,7 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.btnSalvar = new System.Windows.Forms.Button();
             this.picImagem = new System.Windows.Forms.PictureBox();
             this.folderBrowser = new System.Windows.Forms.FolderBrowserDialog();
+            this.linkSalvarComputador = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImagem)).BeginInit();
             this.SuspendLayout();
@@ -110,11 +111,27 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.picImagem.TabIndex = 20;
             this.picImagem.TabStop = false;
             // 
+            // linkSalvarComputador
+            // 
+            this.linkSalvarComputador.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.linkSalvarComputador.AutoSize = true;
+            this.linkSalvarComputador.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkSalvarComputador.Location = new System.Drawing.Point(230, 344);
+            this.linkSalvarComputador.Name = "linkSalvarComputador";
+            this.linkSalvarComputador.Size = new System.Drawing.Size(557, 17);
+            this.linkSalvarComputador.TabIndex = 21;
+            this.linkSalvarComputador.TabStop = true;
+            this.linkSalvarComputador.Text = "Este arquivo não da suporte a visualização. Clique aqui para salvar o arquivo no " +
+    "computador.";
+            this.linkSalvarComputador.Visible = false;
+            this.linkSalvarComputador.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkSalvarComputador_LinkClicked);
+            // 
             // frmImagemDespesa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1071, 631);
+            this.Controls.Add(this.linkSalvarComputador);
             this.Controls.Add(this.picImagem);
             this.Controls.Add(this.panel1);
             this.Name = "frmImagemDespesa";
@@ -123,6 +140,7 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picImagem)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -134,5 +152,6 @@ namespace DespesaDigital.Views.Forms.Despesa
         private System.Windows.Forms.PictureBox picImagem;
         private System.Windows.Forms.Button btnGirar;
         private System.Windows.Forms.FolderBrowserDialog folderBrowser;
+        private System.Windows.Forms.LinkLabel linkSalvarComputador;
     }
 }

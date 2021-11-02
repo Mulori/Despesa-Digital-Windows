@@ -52,5 +52,11 @@ namespace DespesaDigital.Code.BLL.bllCategoria
             var dal = new dalCategoria();
             return dal.VerificaDescricaoAtual(codigo);
         }
+
+        public static int GetCategoriaOutros()
+        {
+            var dal = new dalCategoria();
+            return dal.GetCategoriaOutros();
+        }
     }
 }

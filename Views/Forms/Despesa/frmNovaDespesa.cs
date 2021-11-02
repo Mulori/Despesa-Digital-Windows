@@ -21,10 +21,9 @@ namespace DespesaDigital.Views.Forms.Despesa
     public partial class frmNovaDespesa : Form
     {
         byte[] file_byte;
-        List<dtoProduto> list_prod_escolhido = new List<dtoProduto>();
+        string arquivo_formato;
         private List<dtoModalCheckListBox> listItens = new List<dtoModalCheckListBox>();
         private List<dtoModalCheckListBox> listItensBackup = new List<dtoModalCheckListBox>();
-
 
         public frmNovaDespesa()
         {
@@ -96,6 +95,8 @@ namespace DespesaDigital.Views.Forms.Despesa
 
                 MemoryStream tmpStream = new MemoryStream();
                 file_byte = File.ReadAllBytes(file);
+                var array_format = openFileDialog1.FileName.Split('.');
+                arquivo_formato = array_format[1];
                 tmpStream.Read(file_byte, 0, 100);
             }
         }
@@ -120,8 +121,8 @@ namespace DespesaDigital.Views.Forms.Despesa
 
         private async void btnSalvar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtValor.Text) || string.IsNullOrEmpty(cmbTipoDespesa.Text) || string.IsNullOrEmpty(cmbFormaPagamento.Text)
-              || string.IsNullOrEmpty(cmbSetor.Text) || string.IsNullOrEmpty(txtObservacao.Text))
+            if (string.IsNullOrEmpty(txtValor.Text.Trim()) || string.IsNullOrEmpty(cmbTipoDespesa.Text.Trim()) || string.IsNullOrEmpty(cmbFormaPagamento.Text.Trim())
+              || string.IsNullOrEmpty(cmbSetor.Text.Trim()) || string.IsNullOrEmpty(txtObservacao.Text.Trim()))
             {
                 corePopUp.exibirMensagem("Preencha todos os campos.", "Atenção");
                 return;
@@ -171,7 +172,10 @@ namespace DespesaDigital.Views.Forms.Despesa
 
             if (codigo_despesa > 0)
             {
-                await bllImagem.Insert(dto.imagem, codigo_despesa);
+                if (dto.imagem != null)
+                {
+                    await bllImagem.Insert(dto.imagem, codigo_despesa, arquivo_formato);
+                }
 
                 foreach (var item in listProduto)
                 {
@@ -182,6 +186,13 @@ namespace DespesaDigital.Views.Forms.Despesa
 
                 txtObservacao.Text = "";
                 txtValor.Text = "";
+                lbFilePath.Text = "Nenhum arquivo selecionado.";
+                chkListItens.DataSource = null;
+                txtPesquisaItem.Text = "";
+                file_byte = null;
+                arquivo_formato = "";
+                listItens = new List<dtoModalCheckListBox>();
+                listItensBackup = new List<dtoModalCheckListBox>();
             }
             else
             {
@@ -267,11 +278,13 @@ namespace DespesaDigital.Views.Forms.Despesa
             switch (e.KeyCode)
             {
                 case Keys.Enter:
-                    using (var form = new frmPesquisaProdutoDespesa(txtPesquisaItem.Text))
+                    using (var form = new frmPesquisaProdutoDespesa(txtPesquisaItem.Text.Trim()))
                     {
                         form.ShowDialog();
                         listItens = form.listReturn;
                         CarregaListaItensEscolhido(listItens);
+                        txtPesquisaItem.Text = "";
+                        txtPesquisaItem.Focus();
                     }
                     break;
             }

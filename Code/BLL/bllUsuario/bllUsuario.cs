@@ -53,5 +53,11 @@ namespace DespesaDigital.Code.BLL
             var dal = new dalUsuario();
             return dal.NovoUsuario(dto);
         }
+
+        public static List<dtoUsuario> ListarUsuariosPorSetor(int codigo_setor)
+        {
+            var dal = new dalUsuario();
+            return dal.ListarUsuariosPorSetor(codigo_setor);
+        }
     }
 }
