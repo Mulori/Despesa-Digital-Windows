@@ -221,5 +221,25 @@ namespace DespesaDigital.Code.DAL.dalCategoria
 
             return retorno;
         }
+
+        public int GetCategoriaOutros()
+        {
+            int retorno = 0;
+
+            var ssql = $"select codigo from categoria where descricao = 'Outros';";
+
+            using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
+            using (var dr = cmd.ExecuteReader())
+            {
+                if (dr.Read())
+                {
+                    retorno = int.Parse(dr["codigo"].ToString());
+                }
+
+                dr.Close();
+            }
+
+            return retorno;
+        }
     }
 }

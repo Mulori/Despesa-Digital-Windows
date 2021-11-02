@@ -50,6 +50,7 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.btnAnexo = new System.Windows.Forms.Button();
             this.chkListItens = new System.Windows.Forms.CheckedListBox();
             this.txtPesquisaItem = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -224,11 +225,9 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.label8.Location = new System.Drawing.Point(8, 430);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(781, 21);
+            this.label8.Size = new System.Drawing.Size(62, 21);
             this.label8.TabIndex = 61;
-            this.label8.Text = "Itens: *                                                                         " +
-    "                                                                            [Ent" +
-    "er Pesquisa]";
+            this.label8.Text = "Itens: *";
             // 
             // openFileDialog1
             // 
@@ -236,6 +235,7 @@ namespace DespesaDigital.Views.Forms.Despesa
             // 
             // lbQtdeCaracter
             // 
+            this.lbQtdeCaracter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbQtdeCaracter.AutoSize = true;
             this.lbQtdeCaracter.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbQtdeCaracter.Location = new System.Drawing.Point(710, 239);
@@ -282,17 +282,31 @@ namespace DespesaDigital.Views.Forms.Despesa
             // 
             // txtPesquisaItem
             // 
+            this.txtPesquisaItem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPesquisaItem.Location = new System.Drawing.Point(12, 454);
             this.txtPesquisaItem.Name = "txtPesquisaItem";
             this.txtPesquisaItem.Size = new System.Drawing.Size(768, 29);
             this.txtPesquisaItem.TabIndex = 66;
             this.txtPesquisaItem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPesquisaItem_KeyDown);
             // 
+            // label7
+            // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(647, 430);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(133, 21);
+            this.label7.TabIndex = 67;
+            this.label7.Text = "[Enter Pesquisa]";
+            // 
             // frmNovaDespesa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(795, 619);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.txtPesquisaItem);
             this.Controls.Add(this.chkListItens);
             this.Controls.Add(this.lbQtdeCaracter);
@@ -345,5 +359,6 @@ namespace DespesaDigital.Views.Forms.Despesa
         private System.Windows.Forms.Label lbQtdeCaracter;
         private System.Windows.Forms.CheckedListBox chkListItens;
         private System.Windows.Forms.TextBox txtPesquisaItem;
+        private System.Windows.Forms.Label label7;
     }
 }

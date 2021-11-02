@@ -11,10 +11,16 @@ namespace DespesaDigital.Code.BLL.bllImagem
             return dal.ObterByteImagemDespesaPorCodigo(codigo_despesa);
         }
 
-        public static async Task<int> Insert(byte[] file_byte, long codigo_despesa)
+        public static async Task<int> Insert(byte[] file_byte, long codigo_despesa, string formato)
         {
             var dal = new dalImagem();
-            return await dal.Insert(file_byte, codigo_despesa);
+            return await dal.Insert(file_byte, codigo_despesa, formato);
+        }
+
+        public static string ObterFormatoImagemDespesaPorCodigo(long codigo_despesa)
+        {
+            var dal = new dalImagem();
+            return dal.ObterFormatoImagemDespesaPorCodigo(codigo_despesa);
         }
     }
 }

@@ -316,5 +316,58 @@ namespace DespesaDigital.Code.DAL.dalUsuario
 
             return retorno;
         }
+
+        public List<dtoUsuario> ListarUsuariosPorSetor(int codigo_setor)
+        {
+            var ssql = $"select u.codigo, u.nome as usuario, u.sobrenome, u.email, u.nivel_acesso, u.ativo, s.nome as setor " +
+                $"from usuario u inner join setor s on(u.codigo_setor = s.codigo) where u.codigo_setor = '{codigo_setor}'";
+
+            var list = new List<dtoUsuario>();
+
+            using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
+            using (var dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    var dto = new dtoUsuario();
+                    dto.codigo = Convert.ToInt32(dr["codigo"]);
+                    dto.nome = dr["usuario"].ToString();
+                    dto.sobrenome = dr["sobrenome"].ToString();
+                    dto.email = dr["email"].ToString();
+
+                    switch (dr["nivel_acesso"].ToString())
+                    {
+                        case "1":
+                            dto.s_nivel_acesso = "Tecnico";
+                            break;
+                        case "2":
+                            dto.s_nivel_acesso = "Supervisor";
+                            break;
+                        case "3":
+                            dto.s_nivel_acesso = "Gestor";
+                            break;
+                    }
+
+                    switch (dr["ativo"].ToString())
+                    {
+                        case "A":
+                            dto.ativo = "Ativo";
+                            break;
+                        case "P":
+                            dto.ativo = "Pendente";
+                            break;
+                        case "I":
+                            dto.ativo = "Inativo";
+                            break;
+                    }
+
+                    dto.nome_setor = dr["setor"].ToString();
+
+                    list.Add(dto);
+                }
+                dr.Close();
+            }
+            return list;
+        }
     }
 }

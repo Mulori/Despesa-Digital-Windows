@@ -53,5 +53,11 @@ namespace DespesaDigital.Code.BLL.bllProduto
             var dal = new dalProduto();
             return dal.Delete(codigo);
         }
+
+        public static int NovoProdutoRapido(string descricao, int codigo_setor)
+        {
+            var dal = new dalProduto();
+            return dal.NovoProdutoRapido(descricao, codigo_setor);
+        }
     }
 }

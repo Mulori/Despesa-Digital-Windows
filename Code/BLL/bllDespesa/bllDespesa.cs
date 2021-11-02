@@ -61,5 +61,11 @@ namespace DespesaDigital.Code.BLL.bllDespesa
             var dal = new dalDespesa();
             return dal.NovaDespesa(obj);
         }
+
+        public static List<dtoDespesa> ListarTodasDespesas(DateTime inicial, DateTime final, int codigo_forma_pagamento, int codigo_tipo_despesa, int codigo_setor, int codigo_usuario)
+        {
+            var dal = new dalDespesa();
+            return dal.ListarTodasDespesas(inicial, final, codigo_forma_pagamento, codigo_tipo_despesa, codigo_setor, codigo_usuario);
+        }
     }
 }
