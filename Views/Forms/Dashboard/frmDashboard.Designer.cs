@@ -43,15 +43,12 @@ namespace DespesaDigital.Views.Forms.Dashboard
             // 
             // chartValorDespesaPorSetor
             // 
-            this.chartValorDespesaPorSetor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.chartValorDespesaPorSetor.BorderlineColor = System.Drawing.Color.Transparent;
             chartArea1.Name = "ChartArea1";
             this.chartValorDespesaPorSetor.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chartValorDespesaPorSetor.Legends.Add(legend1);
-            this.chartValorDespesaPorSetor.Location = new System.Drawing.Point(37, 41);
+            this.chartValorDespesaPorSetor.Location = new System.Drawing.Point(62, 41);
             this.chartValorDespesaPorSetor.Name = "chartValorDespesaPorSetor";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
@@ -68,15 +65,15 @@ namespace DespesaDigital.Views.Forms.Dashboard
             // 
             // charSetorPorAno
             // 
-            this.charSetorPorAno.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.charSetorPorAno.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             chartArea2.Name = "ChartArea1";
             this.charSetorPorAno.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
             this.charSetorPorAno.Legends.Add(legend2);
-            this.charSetorPorAno.Location = new System.Drawing.Point(622, 41);
+            this.charSetorPorAno.Location = new System.Drawing.Point(610, 41);
             this.charSetorPorAno.Name = "charSetorPorAno";
-            this.charSetorPorAno.Size = new System.Drawing.Size(739, 316);
+            this.charSetorPorAno.Size = new System.Drawing.Size(679, 316);
             this.charSetorPorAno.TabIndex = 1;
             this.charSetorPorAno.Text = "chart1";
             // 

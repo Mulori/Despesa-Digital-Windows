@@ -6,6 +6,12 @@ namespace DespesaDigital.Code.BLL
 {
     public class bllUsuario
     {
+        public static bool VerificaEmailExistente(string email)
+        {
+            var dal = new dalUsuario();
+            return dal.VerificaEmailExistente(email);
+        }
+
         public static dtoUsuario AutenticaUsuario(string email, string senha)
         {
             var dal = new dalUsuario();
@@ -58,6 +64,18 @@ namespace DespesaDigital.Code.BLL
         {
             var dal = new dalUsuario();
             return dal.ListarUsuariosPorSetor(codigo_setor);
+        }
+
+        public static bool UpdateEmail(int codigo_usuario, string email)
+        {
+            var dal = new dalUsuario();
+            return dal.UpdateEmail(codigo_usuario, email);
+        }
+
+        public static bool UpdateSenha(int codigo_usuario, string senha)
+        {
+            var dal = new dalUsuario();
+            return dal.UpdateSenha(codigo_usuario, senha);
         }
     }
 }

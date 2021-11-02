@@ -8,6 +8,25 @@ namespace DespesaDigital.Code.DAL.dalUsuario
 {
     public class dalUsuario
     {
+        public bool VerificaEmailExistente(string email)
+        {
+            var retorno = false;
+
+            var ssql = $"select email from usuario where UPPER(email) = UPPER('{email}')";
+
+            using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
+            using (var dr = cmd.ExecuteReader())
+            {
+                if (dr.Read())
+                {
+                    retorno = true;
+                }
+                dr.Close();
+            }
+
+            return retorno;
+        }
+
         public dtoUsuario AutenticaUsuario(string email, string senha)
         {
             var dto = new dtoUsuario();
@@ -161,7 +180,7 @@ namespace DespesaDigital.Code.DAL.dalUsuario
 
         public dtoUsuario UsuarioPorCodigo(int codigo)
         {
-            var ssql = $"select u.codigo, u.nome as usuario, u.sobrenome, u.email, u.nivel_acesso, u.ativo, s.nome as setor, d.nome as departamento " +
+            var ssql = $"select u.codigo, u.nome as usuario, u.sobrenome, u.email, u.nivel_acesso, u.ativo, s.nome as setor, d.nome as departamento, u.senha " +
                 $"from usuario u inner join setor s on(u.codigo_setor = s.codigo) inner join departamento d on(d.codigo = s.codigo_departamento) where u.codigo = '{codigo}'";
 
             if (VariaveisGlobais.nivel_acesso == 2)
@@ -211,6 +230,7 @@ namespace DespesaDigital.Code.DAL.dalUsuario
                             break;
                     }
 
+                    dto.senha = dr["senha"].ToString();
                     dto.nome_setor = dr["setor"].ToString();
                     dto.nome_departamento = dr["departamento"].ToString();
                 }
@@ -368,6 +388,42 @@ namespace DespesaDigital.Code.DAL.dalUsuario
                 dr.Close();
             }
             return list;
+        }
+
+        public bool UpdateEmail(int codigo_usuario, string email)
+        {
+            var ssql = $"update usuario set email = '{email}' where codigo = '{codigo_usuario}'";
+
+            using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
+            {
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+        }
+
+        public bool UpdateSenha(int codigo_usuario, string senha)
+        {
+            var ssql = $"update usuario set senha = md5('{senha}') where codigo = '{codigo_usuario}'";
+
+            using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
+            {
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
         }
     }
 }
