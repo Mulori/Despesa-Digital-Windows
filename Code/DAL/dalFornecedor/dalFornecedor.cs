@@ -180,7 +180,7 @@ namespace DespesaDigital.Code.DAL.dalFornecedor
         {
             var retorno = false;
 
-            var ssql = $"select razao_social from fornecedor where razao_social = '{razao_social}'";
+            var ssql = $"select razao_social from fornecedor where UPPER(razao_social) = UPPER('{razao_social}')";
 
             using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
             using (var dr = cmd.ExecuteReader())

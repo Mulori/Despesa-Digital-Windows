@@ -134,6 +134,7 @@ namespace DespesaDigital.Views.Forms.Categoria
             // 
             this.txtDescricao.Location = new System.Drawing.Point(132, 134);
             this.txtDescricao.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.txtDescricao.MaxLength = 100;
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(436, 27);
             this.txtDescricao.TabIndex = 1;

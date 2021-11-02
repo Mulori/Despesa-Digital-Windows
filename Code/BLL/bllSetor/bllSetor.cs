@@ -16,7 +16,7 @@ namespace DespesaDigital.Code.BLL.bllSetor
         public static string CodigoSetoresContatenado(int departamento)
         {
             var dal = new dalSetor();
-            return dal.CodigoSetoresContatenado(departamento);
+            return dal.CodigoSetoresConcatenado(departamento);
         }
 
         public static int CodigoDepartamentoPorCodigoSetor(int setor)
