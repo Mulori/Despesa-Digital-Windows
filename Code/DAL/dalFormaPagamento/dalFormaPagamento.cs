@@ -142,7 +142,7 @@ namespace DespesaDigital.Code.DAL.dalFormaPagamento
         {
             var retorno = false;
 
-            var ssql = $"select descricao from forma_pagamento where descricao = '{descricao}'";
+            var ssql = $"select descricao from forma_pagamento where UPPER(descricao) = UPPER('{descricao}')";
 
             using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
             using (var dr = cmd.ExecuteReader())

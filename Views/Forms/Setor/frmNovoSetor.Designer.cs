@@ -126,6 +126,7 @@ namespace DespesaDigital.Views.Forms.Setor
             // 
             this.txtNome.Location = new System.Drawing.Point(133, 136);
             this.txtNome.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.txtNome.MaxLength = 100;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(230, 27);
             this.txtNome.TabIndex = 2;

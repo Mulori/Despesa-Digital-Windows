@@ -142,7 +142,7 @@ namespace DespesaDigital.Code.DAL.dalDepartamento
         {
             var retorno = false;
 
-            var ssql = $"select nome from departamento where nome = '{nome}'";
+            var ssql = $"select nome from departamento where UPPER(nome) = UPPER('{nome}')";
 
             using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
             using (var dr = cmd.ExecuteReader())

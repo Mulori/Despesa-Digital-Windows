@@ -107,7 +107,7 @@ namespace DespesaDigital.Code.DAL.dalSetor
             return codigo;
         }
 
-        public string CodigoSetoresContatenado(int departamento)
+        public string CodigoSetoresConcatenado(int departamento)
         {
             var retorno = "";
 
@@ -182,33 +182,6 @@ namespace DespesaDigital.Code.DAL.dalSetor
             }
         }
 
-        //public bool Insert(dtoSetor dto)
-        //{
-        //    var ssql = "insert into setor (nome, codigo_departamento, codigo_centro_custo) values (@nome, @codigo_departamento, @codigo_centro_custo)";
-
-        //    using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
-        //    {
-        //        cmd.Parameters.AddWithValue("@nome", dto.nome);
-        //        cmd.Parameters.AddWithValue("@codigo_departamento", dto.codigo_departamento);
-        //        cmd.Parameters.AddWithValue("@codigo_centro_custo", dto.codigo_centro_custo);
-
-        //        try
-        //        {
-        //            cmd.ExecuteNonQuery();
-
-        //            ssql = $"insert into centro_custo (codigo_setor, descricao) VALUES ('{}', '{}') ";
-        //            var cmd2 = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn)
-        //            cmd2.ExecuteNonQuery();
-
-        //            return true;
-        //        }
-        //        catch
-        //        {
-        //            return false;
-        //        }
-        //    }
-        //}
-
         public bool Delete(int codigo)
         {
 
@@ -265,7 +238,7 @@ namespace DespesaDigital.Code.DAL.dalSetor
         {
             var retorno = false;
 
-            var ssql = $"select nome from setor where nome = '{nome}'";
+            var ssql = $"select nome from setor where UPPER(nome) = UPPER('{nome}')";
 
             using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
             using (var dr = cmd.ExecuteReader())
@@ -303,7 +276,7 @@ namespace DespesaDigital.Code.DAL.dalSetor
         {
             var retorno = false;
 
-            var ssql = $"select codigo_centro_custo from setor where codigo_centro_custo = '{codigo}'";
+            var ssql = $"select codigo_centro_custo from setor where UPPER(codigo_centro_custo) = UPPER('{codigo}')";
 
             using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
             using (var dr = cmd.ExecuteReader())

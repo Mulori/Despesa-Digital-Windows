@@ -146,6 +146,7 @@ namespace DespesaDigital.Views.Forms.FormaPagamento
             // 
             this.txtDescricao.Location = new System.Drawing.Point(133, 128);
             this.txtDescricao.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.txtDescricao.MaxLength = 100;
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(427, 27);
             this.txtDescricao.TabIndex = 43;

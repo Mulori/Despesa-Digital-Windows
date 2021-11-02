@@ -30,6 +30,8 @@ namespace DespesaDigital.Views.Forms.Departamento
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.btnIncluir = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -37,8 +39,6 @@ namespace DespesaDigital.Views.Forms.Departamento
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtCodigo = new System.Windows.Forms.TextBox();
-            this.btnIncluir = new System.Windows.Forms.Button();
-            this.btnExcluir = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,6 +54,36 @@ namespace DespesaDigital.Views.Forms.Departamento
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(771, 84);
             this.panel1.TabIndex = 33;
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.btnExcluir.FlatAppearance.BorderSize = 0;
+            this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcluir.ForeColor = System.Drawing.Color.White;
+            this.btnExcluir.Location = new System.Drawing.Point(249, 18);
+            this.btnExcluir.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(110, 54);
+            this.btnExcluir.TabIndex = 4;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = false;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            // 
+            // btnIncluir
+            // 
+            this.btnIncluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.btnIncluir.FlatAppearance.BorderSize = 0;
+            this.btnIncluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIncluir.ForeColor = System.Drawing.Color.White;
+            this.btnIncluir.Location = new System.Drawing.Point(13, 18);
+            this.btnIncluir.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnIncluir.Name = "btnIncluir";
+            this.btnIncluir.Size = new System.Drawing.Size(110, 54);
+            this.btnIncluir.TabIndex = 0;
+            this.btnIncluir.Text = "Incluir";
+            this.btnIncluir.UseVisualStyleBackColor = false;
+            this.btnIncluir.Click += new System.EventHandler(this.btnIncluir_Click);
             // 
             // btnSalvar
             // 
@@ -104,6 +134,7 @@ namespace DespesaDigital.Views.Forms.Departamento
             // 
             this.txtDescricao.Location = new System.Drawing.Point(380, 131);
             this.txtDescricao.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.txtDescricao.MaxLength = 1000;
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(376, 27);
             this.txtDescricao.TabIndex = 2;
@@ -113,6 +144,7 @@ namespace DespesaDigital.Views.Forms.Departamento
             // 
             this.txtNome.Location = new System.Drawing.Point(129, 131);
             this.txtNome.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.txtNome.MaxLength = 100;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(242, 27);
             this.txtNome.TabIndex = 1;
@@ -126,36 +158,6 @@ namespace DespesaDigital.Views.Forms.Departamento
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(110, 27);
             this.txtCodigo.TabIndex = 5;
-            // 
-            // btnIncluir
-            // 
-            this.btnIncluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
-            this.btnIncluir.FlatAppearance.BorderSize = 0;
-            this.btnIncluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIncluir.ForeColor = System.Drawing.Color.White;
-            this.btnIncluir.Location = new System.Drawing.Point(13, 18);
-            this.btnIncluir.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnIncluir.Name = "btnIncluir";
-            this.btnIncluir.Size = new System.Drawing.Size(110, 54);
-            this.btnIncluir.TabIndex = 0;
-            this.btnIncluir.Text = "Incluir";
-            this.btnIncluir.UseVisualStyleBackColor = false;
-            this.btnIncluir.Click += new System.EventHandler(this.btnIncluir_Click);
-            // 
-            // btnExcluir
-            // 
-            this.btnExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
-            this.btnExcluir.FlatAppearance.BorderSize = 0;
-            this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcluir.ForeColor = System.Drawing.Color.White;
-            this.btnExcluir.Location = new System.Drawing.Point(249, 18);
-            this.btnExcluir.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(110, 54);
-            this.btnExcluir.TabIndex = 4;
-            this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.UseVisualStyleBackColor = false;
-            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // frmNovoDepartamento
             // 
