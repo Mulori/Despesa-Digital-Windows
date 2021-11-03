@@ -85,6 +85,7 @@ namespace DespesaDigital.Views.Forms.Login
             VariaveisGlobais.nome_usuario = bll.nome;
             VariaveisGlobais.sobrenome_usuario = bll.sobrenome;
             VariaveisGlobais.nivel_acesso = bll.nivel_acesso;
+            VariaveisGlobais.senha = bll.senha;
             VariaveisGlobais.email_usuario = bll.email;
             VariaveisGlobais.codigo_departamento = bllSetor.CodigoDepartamentoPorCodigoSetor(bll.codigo_setor);
             VariaveisGlobais.setores_concatenados = bllSetor.CodigoSetoresContatenado(VariaveisGlobais.codigo_departamento);

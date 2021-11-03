@@ -141,6 +141,7 @@
     <Compile Include="Code\DTO\dtoTipoDespesa\dtoTipoDespesa.cs" />
     <Compile Include="Code\DTO\dtoUsuario\dtoUsuario.cs" />
     <Compile Include="Code\DTO\dtoWebApi\dtoWebApiPaises.cs" />
+    <Compile Include="Core\coreCrypt.cs" />
     <Compile Include="Core\coreFormat.cs" />
     <Compile Include="Core\coreMascaraMoeda.cs" />
     <Compile Include="Core\coreNumericToString.cs" />
@@ -280,6 +281,18 @@
     </Compile>
     <Compile Include="Views\Forms\Mensagens\frmPergunta.Designer.cs">
       <DependentUpon>frmPergunta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\MinhaConta\frmAlteraEmail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\MinhaConta\frmAlteraEmail.Designer.cs">
+      <DependentUpon>frmAlteraEmail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\MinhaConta\frmAlteraSenha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\MinhaConta\frmAlteraSenha.Designer.cs">
+      <DependentUpon>frmAlteraSenha.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Forms\MinhaConta\frmMinhaConta.cs">
       <SubType>Form</SubType>
@@ -440,6 +453,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\Mensagens\frmPergunta.resx">
       <DependentUpon>frmPergunta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\MinhaConta\frmAlteraEmail.resx">
+      <DependentUpon>frmAlteraEmail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\MinhaConta\frmAlteraSenha.resx">
+      <DependentUpon>frmAlteraSenha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\MinhaConta\frmMinhaConta.resx">
       <DependentUpon>frmMinhaConta.cs</DependentUpon>

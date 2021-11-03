@@ -147,6 +147,15 @@ namespace DespesaDigital.Views.Forms.SolicitarAcesso
                 return;
             }
 
+            if (bllUsuario.VerificaEmailExistente(txtEmail.Text.Trim()))
+            {
+                corePopUp.exibirMensagem("O e-mail informado já está cadastrado.", "Atenção");
+                txtReinserirEmail.Text = "";
+                txtEmail.Text = "";
+                txtEmail.Focus();
+                return;
+            }
+
             if (txtSenha.Text.Length < 4)
             {
                 corePopUp.exibirMensagem("A senha deve conter no minimo 4 caracteres!", "Atenção");

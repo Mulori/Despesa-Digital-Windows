@@ -30,47 +30,51 @@ namespace DespesaDigital.Views.Forms.MinhaConta
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.btnAlteraSenha = new System.Windows.Forms.Button();
+            this.btnAlteraEmail = new System.Windows.Forms.Button();
+            this.txtStatus = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.txtNivelAcesso = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtSetor = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtDepartamento = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtSenha = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtSobrenome = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox1.Controls.Add(this.textBox9);
+            this.groupBox1.Controls.Add(this.btnAlteraSenha);
+            this.groupBox1.Controls.Add(this.btnAlteraEmail);
+            this.groupBox1.Controls.Add(this.txtStatus);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.textBox8);
+            this.groupBox1.Controls.Add(this.txtNivelAcesso);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.textBox7);
+            this.groupBox1.Controls.Add(this.txtSetor);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.textBox6);
+            this.groupBox1.Controls.Add(this.txtDepartamento);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.txtSenha);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.txtEmail);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.txtSobrenome);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.txtNome);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtCodigo);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(54, 30);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -81,132 +85,66 @@ namespace DespesaDigital.Views.Forms.MinhaConta
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informações Pessoais:";
             // 
-            // label1
+            // btnAlteraSenha
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 57);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Codigo:";
+            this.btnAlteraSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.btnAlteraSenha.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnAlteraSenha.FlatAppearance.BorderSize = 0;
+            this.btnAlteraSenha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAlteraSenha.ForeColor = System.Drawing.Color.White;
+            this.btnAlteraSenha.Location = new System.Drawing.Point(572, 343);
+            this.btnAlteraSenha.Name = "btnAlteraSenha";
+            this.btnAlteraSenha.Size = new System.Drawing.Size(121, 26);
+            this.btnAlteraSenha.TabIndex = 19;
+            this.btnAlteraSenha.Text = "Alterar";
+            this.btnAlteraSenha.UseVisualStyleBackColor = false;
+            this.btnAlteraSenha.Click += new System.EventHandler(this.btnAlteraSenha_Click);
             // 
-            // textBox1
+            // btnAlteraEmail
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(25, 80);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(140, 20);
-            this.textBox1.TabIndex = 1;
+            this.btnAlteraEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.btnAlteraEmail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnAlteraEmail.FlatAppearance.BorderSize = 0;
+            this.btnAlteraEmail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAlteraEmail.ForeColor = System.Drawing.Color.White;
+            this.btnAlteraEmail.Location = new System.Drawing.Point(572, 271);
+            this.btnAlteraEmail.Name = "btnAlteraEmail";
+            this.btnAlteraEmail.Size = new System.Drawing.Size(121, 26);
+            this.btnAlteraEmail.TabIndex = 18;
+            this.btnAlteraEmail.Text = "Alterar";
+            this.btnAlteraEmail.UseVisualStyleBackColor = false;
+            this.btnAlteraEmail.Click += new System.EventHandler(this.btnAlteraEmail_Click);
             // 
-            // textBox2
+            // txtStatus
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Location = new System.Drawing.Point(25, 140);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(668, 20);
-            this.textBox2.TabIndex = 3;
+            this.txtStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtStatus.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtStatus.Enabled = false;
+            this.txtStatus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStatus.Location = new System.Drawing.Point(374, 562);
+            this.txtStatus.Name = "txtStatus";
+            this.txtStatus.Size = new System.Drawing.Size(319, 22);
+            this.txtStatus.TabIndex = 17;
             // 
-            // label2
+            // label9
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 117);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 20);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Nome:";
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(370, 539);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(57, 20);
+            this.label9.TabIndex = 16;
+            this.label9.Text = "Status:";
             // 
-            // textBox3
+            // txtNivelAcesso
             // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Location = new System.Drawing.Point(25, 203);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(668, 20);
-            this.textBox3.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 180);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 20);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Sobrenome";
-            // 
-            // textBox4
-            // 
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Location = new System.Drawing.Point(25, 271);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(668, 20);
-            this.textBox4.TabIndex = 7;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(21, 248);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 20);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "E-mail:";
-            // 
-            // textBox5
-            // 
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Location = new System.Drawing.Point(25, 343);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(668, 20);
-            this.textBox5.TabIndex = 9;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(21, 320);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 20);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Senha:";
-            // 
-            // textBox6
-            // 
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox6.Location = new System.Drawing.Point(25, 413);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(668, 20);
-            this.textBox6.TabIndex = 11;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(21, 390);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(115, 20);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Departamento:";
-            // 
-            // textBox7
-            // 
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox7.Location = new System.Drawing.Point(25, 487);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(668, 20);
-            this.textBox7.TabIndex = 13;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(21, 464);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(51, 20);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "Setor:";
-            // 
-            // textBox8
-            // 
-            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox8.Location = new System.Drawing.Point(25, 562);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(319, 20);
-            this.textBox8.TabIndex = 15;
+            this.txtNivelAcesso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtNivelAcesso.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNivelAcesso.Enabled = false;
+            this.txtNivelAcesso.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNivelAcesso.Location = new System.Drawing.Point(25, 562);
+            this.txtNivelAcesso.Name = "txtNivelAcesso";
+            this.txtNivelAcesso.Size = new System.Drawing.Size(319, 22);
+            this.txtNivelAcesso.TabIndex = 15;
             // 
             // label8
             // 
@@ -217,22 +155,146 @@ namespace DespesaDigital.Views.Forms.MinhaConta
             this.label8.TabIndex = 14;
             this.label8.Text = "Nivel de Acesso:";
             // 
-            // textBox9
+            // txtSetor
             // 
-            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox9.Location = new System.Drawing.Point(374, 562);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(319, 20);
-            this.textBox9.TabIndex = 17;
+            this.txtSetor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtSetor.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSetor.Enabled = false;
+            this.txtSetor.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSetor.Location = new System.Drawing.Point(25, 487);
+            this.txtSetor.Name = "txtSetor";
+            this.txtSetor.Size = new System.Drawing.Size(668, 22);
+            this.txtSetor.TabIndex = 13;
             // 
-            // label9
+            // label7
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(370, 539);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(57, 20);
-            this.label9.TabIndex = 16;
-            this.label9.Text = "Status:";
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(21, 464);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(51, 20);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Setor:";
+            // 
+            // txtDepartamento
+            // 
+            this.txtDepartamento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtDepartamento.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDepartamento.Enabled = false;
+            this.txtDepartamento.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDepartamento.Location = new System.Drawing.Point(25, 413);
+            this.txtDepartamento.Name = "txtDepartamento";
+            this.txtDepartamento.Size = new System.Drawing.Size(668, 22);
+            this.txtDepartamento.TabIndex = 11;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(21, 390);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(115, 20);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Departamento:";
+            // 
+            // txtSenha
+            // 
+            this.txtSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtSenha.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSenha.Enabled = false;
+            this.txtSenha.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSenha.Location = new System.Drawing.Point(25, 343);
+            this.txtSenha.Name = "txtSenha";
+            this.txtSenha.PasswordChar = '*';
+            this.txtSenha.Size = new System.Drawing.Size(541, 22);
+            this.txtSenha.TabIndex = 9;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(21, 320);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(55, 20);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Senha:";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEmail.Enabled = false;
+            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(25, 271);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(541, 22);
+            this.txtEmail.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(21, 248);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(57, 20);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "E-mail:";
+            // 
+            // txtSobrenome
+            // 
+            this.txtSobrenome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtSobrenome.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSobrenome.Enabled = false;
+            this.txtSobrenome.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSobrenome.Location = new System.Drawing.Point(25, 203);
+            this.txtSobrenome.Name = "txtSobrenome";
+            this.txtSobrenome.Size = new System.Drawing.Size(668, 22);
+            this.txtSobrenome.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(21, 180);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(93, 20);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Sobrenome:";
+            // 
+            // txtNome
+            // 
+            this.txtNome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNome.Enabled = false;
+            this.txtNome.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNome.Location = new System.Drawing.Point(25, 140);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(668, 22);
+            this.txtNome.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(21, 117);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(56, 20);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Nome:";
+            // 
+            // txtCodigo
+            // 
+            this.txtCodigo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtCodigo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCodigo.Enabled = false;
+            this.txtCodigo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigo.Location = new System.Drawing.Point(25, 80);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(140, 22);
+            this.txtCodigo.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(21, 57);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(62, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Codigo:";
             // 
             // frmMinhaConta
             // 
@@ -254,23 +316,25 @@ namespace DespesaDigital.Views.Forms.MinhaConta
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox txtStatus;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txtNivelAcesso;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtSetor;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtDepartamento;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtSobrenome;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnAlteraEmail;
+        private System.Windows.Forms.Button btnAlteraSenha;
     }
 }

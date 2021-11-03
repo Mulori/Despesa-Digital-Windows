@@ -26,6 +26,9 @@ namespace DespesaDigital.Views.Forms.Dashboard
 
         private void inicializar()
         {
+            charSetorPorAno.Size = new Size(1188, 480);
+            charSetorPorAno.Location = new Point(95, 41);
+
             //Grafico de Pizza
             chartValorDespesaPorSetor.DataSource = bllDespesa.DashboardTodoPeriodo();
             chartValorDespesaPorSetor.Series["despesa"].Label = "#PERCENT";
@@ -45,7 +48,8 @@ namespace DespesaDigital.Views.Forms.Dashboard
                 if (!existeRegistroLista(mes.i_setor))
                 {
                     charSetorPorAno.Series.Add(mes.s_setor);
-                    charSetorPorAno.Series[mes.s_setor].ChartType = SeriesChartType.Spline;
+                    charSetorPorAno.Series[mes.s_setor].ChartType = SeriesChartType.Column;
+                    
                     codigo_setor.Add(mes.i_setor);
                 }
 
@@ -54,7 +58,7 @@ namespace DespesaDigital.Views.Forms.Dashboard
                     charSetorPorAno.ChartAreas["ChartArea1"].AxisX.Maximum = Convert.ToDouble(mes.valor);
                 }
 
-                charSetorPorAno.ChartAreas["ChartArea1"].AxisX.Maximum = 100;
+                //charSetorPorAno.ChartAreas["ChartArea1"].AxisX.Maximum;
                 charSetorPorAno.Series[mes.s_setor].Points.AddXY(coreNumericToString.MesNumericoParaMesCaracter(mes.i_mes), mes.valor);
             }
             charSetorPorAno.Titles.Add("Levantamento de despesa no periodo de 1 ano");
