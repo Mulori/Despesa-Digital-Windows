@@ -221,5 +221,10 @@ namespace DespesaDigital
             panelPrincipal.Controls.Add(_objForm);
             _objForm.Show();
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Npgsql.NpgsqlConnection.ClearAllPools();
+        }
     }
 }

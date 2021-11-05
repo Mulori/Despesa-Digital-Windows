@@ -1,4 +1,5 @@
-﻿using Npgsql;
+﻿using DespesaDigital.Config;
+using Npgsql;
 using System.Data;
 
 namespace DespesaDigital.Code.DAL.dalConexao
@@ -12,8 +13,10 @@ namespace DespesaDigital.Code.DAL.dalConexao
             try
             {
                 //170.231.105.127
+
+                var server_net = ReadConfigServerNet.GetConfigServerNET();
                 cnn = new NpgsqlConnection();
-                cnn.ConnectionString = $"Server=170.231.105.127;Port=8077;User Id=postgres;Password=190123;Database=despesadigital";
+                cnn.ConnectionString = $"Server={server_net.IP};Port=8077;User Id=postgres;Password=190123;Database=despesadigital;CommandTimeout=500;";
 
                 cnn.Open();
                 return true;

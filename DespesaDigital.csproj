@@ -135,12 +135,14 @@
     <Compile Include="Code\DTO\dtoImagem\dtoImagem.cs" />
     <Compile Include="Code\DTO\dtoModal\dtoModalCheckListBox.cs" />
     <Compile Include="Code\DTO\dtoProduto\dtoProduto.cs" />
+    <Compile Include="Code\DTO\dtoServerNet\dtoServerNet.cs" />
     <Compile Include="Code\DTO\dtoSetor\dtoSetor.cs" />
     <Compile Include="Code\DTO\dtoSetor\dtoSetorProduto.cs" />
     <Compile Include="Code\DTO\dtoSolicitacaoCompra\dtoSolicitacaoCompra.cs" />
     <Compile Include="Code\DTO\dtoTipoDespesa\dtoTipoDespesa.cs" />
     <Compile Include="Code\DTO\dtoUsuario\dtoUsuario.cs" />
     <Compile Include="Code\DTO\dtoWebApi\dtoWebApiPaises.cs" />
+    <Compile Include="Config\ReadConfigServerNet.cs" />
     <Compile Include="Core\coreCrypt.cs" />
     <Compile Include="Core\coreFormat.cs" />
     <Compile Include="Core\coreMascaraMoeda.cs" />
@@ -502,6 +504,7 @@
     <EmbeddedResource Include="Views\Forms\Usuario\frmPesquisarUsuario.resx">
       <DependentUpon>frmPesquisarUsuario.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="server_net.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

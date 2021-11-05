@@ -27,11 +27,14 @@ namespace DespesaDigital.Views.Forms.Despesa
 
         public frmNovaDespesa()
         {
-            var list_forma_pagamento = bllFormaPagamento.ListarTodasFormasPagamentoPorStatus("A");
-            var list_tipo_despesa = bllTipoDespesa.ListarTodasTipoDespesaPorStatus("A");
+           
             InitializeComponent();
-            CarregaListaFormaPagamento(list_forma_pagamento);
+            
+            var list_tipo_despesa = bllTipoDespesa.ListarTodasTipoDespesaPorStatus("A");
+            var list_forma_pagamento = bllFormaPagamento.ListarTodasFormasPagamentoPorStatus("A");
             CarregaListaTipoDespesa(list_tipo_despesa);
+            CarregaListaFormaPagamento(list_forma_pagamento);
+            
 
             List<dtoSetor> list;
             if (VariaveisGlobais.nivel_acesso > 2)
