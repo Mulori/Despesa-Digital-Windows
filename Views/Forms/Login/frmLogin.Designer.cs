@@ -47,7 +47,9 @@ namespace DespesaDigital.Views.Forms.Login
             // 
             // panel1
             // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.lbVersao);
             this.panel1.Controls.Add(this.linkSolicitarAcesso);
             this.panel1.Controls.Add(this.btnEntrar);
             this.panel1.Controls.Add(this.label2);
@@ -55,9 +57,9 @@ namespace DespesaDigital.Views.Forms.Login
             this.panel1.Controls.Add(this.txtSenha);
             this.panel1.Controls.Add(this.txtEmail);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(227, 35);
+            this.panel1.Location = new System.Drawing.Point(290, 27);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(324, 414);
+            this.panel1.Size = new System.Drawing.Size(324, 433);
             this.panel1.TabIndex = 0;
             // 
             // linkSolicitarAcesso
@@ -160,11 +162,12 @@ namespace DespesaDigital.Views.Forms.Login
             // 
             // btnSair
             // 
+            this.btnSair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSair.BackgroundImage = global::DespesaDigital.Properties.Resources.exit;
             this.btnSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnSair.FlatAppearance.BorderSize = 0;
             this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSair.Location = new System.Drawing.Point(728, 12);
+            this.btnSair.Location = new System.Drawing.Point(842, 12);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(29, 24);
             this.btnSair.TabIndex = 1;
@@ -173,10 +176,12 @@ namespace DespesaDigital.Views.Forms.Login
             // 
             // lbVersao
             // 
+            this.lbVersao.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbVersao.AutoSize = true;
+            this.lbVersao.BackColor = System.Drawing.Color.Transparent;
             this.lbVersao.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbVersao.ForeColor = System.Drawing.Color.White;
-            this.lbVersao.Location = new System.Drawing.Point(367, 464);
+            this.lbVersao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.lbVersao.Location = new System.Drawing.Point(142, 407);
             this.lbVersao.Name = "lbVersao";
             this.lbVersao.Size = new System.Drawing.Size(43, 17);
             this.lbVersao.TabIndex = 2;
@@ -187,20 +192,21 @@ namespace DespesaDigital.Views.Forms.Login
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(56)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(769, 490);
-            this.Controls.Add(this.lbVersao);
+            this.BackgroundImage = global::DespesaDigital.Properties.Resources.coopercitrus_background;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(881, 472);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLogin";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

@@ -65,8 +65,7 @@ namespace DespesaDigital.Views.Forms.Dashboard
             // 
             // charSetorPorAno
             // 
-            this.charSetorPorAno.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.charSetorPorAno.Anchor = System.Windows.Forms.AnchorStyles.None;
             chartArea2.Name = "ChartArea1";
             this.charSetorPorAno.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
@@ -76,6 +75,7 @@ namespace DespesaDigital.Views.Forms.Dashboard
             this.charSetorPorAno.Size = new System.Drawing.Size(679, 316);
             this.charSetorPorAno.TabIndex = 1;
             this.charSetorPorAno.Text = "chart1";
+            this.charSetorPorAno.Visible = false;
             // 
             // frmDashboard
             // 

@@ -21,11 +21,6 @@ namespace DespesaDigital.Views.Forms.Despesa
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnVisualizarDespesas_Click(object sender, EventArgs e)
         {
             using (var form = new frmPesquisarDespesa())

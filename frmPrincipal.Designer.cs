@@ -34,27 +34,29 @@ namespace DespesaDigital
             this.btnDashboard = new System.Windows.Forms.Button();
             this.lbVersao = new System.Windows.Forms.Label();
             this.btnCadastro = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnMinhaConta = new System.Windows.Forms.Button();
             this.btnCentroCusto = new System.Windows.Forms.Button();
             this.btnDespesa = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnLogout = new System.Windows.Forms.Button();
             this.lbNome = new System.Windows.Forms.Label();
             this.panelPrincipal = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lbRodape = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnRelatorios = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panelPrincipal.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(56)))), ((int)(((byte)(64)))));
+            this.panel1.Controls.Add(this.btnRelatorios);
             this.panel1.Controls.Add(this.btnDashboard);
             this.panel1.Controls.Add(this.lbVersao);
             this.panel1.Controls.Add(this.btnCadastro);
@@ -108,7 +110,7 @@ namespace DespesaDigital
             this.btnCadastro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastro.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastro.ForeColor = System.Drawing.Color.White;
-            this.btnCadastro.Location = new System.Drawing.Point(0, 310);
+            this.btnCadastro.Location = new System.Drawing.Point(0, 365);
             this.btnCadastro.Name = "btnCadastro";
             this.btnCadastro.Size = new System.Drawing.Size(182, 52);
             this.btnCadastro.TabIndex = 3;
@@ -117,16 +119,6 @@ namespace DespesaDigital
             this.btnCadastro.UseVisualStyleBackColor = true;
             this.btnCadastro.Click += new System.EventHandler(this.btnCadastro_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::DespesaDigital.Properties.Resources.logodespesadigital;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(173, 97);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // btnMinhaConta
             // 
             this.btnMinhaConta.Enabled = false;
@@ -134,7 +126,7 @@ namespace DespesaDigital
             this.btnMinhaConta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinhaConta.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMinhaConta.ForeColor = System.Drawing.Color.White;
-            this.btnMinhaConta.Location = new System.Drawing.Point(0, 368);
+            this.btnMinhaConta.Location = new System.Drawing.Point(0, 423);
             this.btnMinhaConta.Name = "btnMinhaConta";
             this.btnMinhaConta.Size = new System.Drawing.Size(182, 52);
             this.btnMinhaConta.TabIndex = 2;
@@ -150,7 +142,7 @@ namespace DespesaDigital
             this.btnCentroCusto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCentroCusto.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCentroCusto.ForeColor = System.Drawing.Color.White;
-            this.btnCentroCusto.Location = new System.Drawing.Point(0, 252);
+            this.btnCentroCusto.Location = new System.Drawing.Point(0, 307);
             this.btnCentroCusto.Name = "btnCentroCusto";
             this.btnCentroCusto.Size = new System.Drawing.Size(182, 52);
             this.btnCentroCusto.TabIndex = 1;
@@ -188,22 +180,6 @@ namespace DespesaDigital
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(892, 64);
             this.panel2.TabIndex = 1;
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLogout.BackgroundImage = global::DespesaDigital.Properties.Resources.logout;
-            this.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnLogout.FlatAppearance.BorderSize = 0;
-            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.Location = new System.Drawing.Point(851, 21);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(29, 24);
-            this.btnLogout.TabIndex = 1;
-            this.btnLogout.UseVisualStyleBackColor = true;
-            this.btnLogout.Visible = false;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // lbNome
             // 
@@ -251,6 +227,51 @@ namespace DespesaDigital
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // btnLogout
+            // 
+            this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLogout.BackgroundImage = global::DespesaDigital.Properties.Resources.logout;
+            this.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Location = new System.Drawing.Point(851, 21);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(29, 24);
+            this.btnLogout.TabIndex = 1;
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Visible = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::DespesaDigital.Properties.Resources.logodespesadigital;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(173, 97);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnRelatorios
+            // 
+            this.btnRelatorios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnRelatorios.Enabled = false;
+            this.btnRelatorios.FlatAppearance.BorderSize = 0;
+            this.btnRelatorios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRelatorios.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRelatorios.ForeColor = System.Drawing.Color.White;
+            this.btnRelatorios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRelatorios.Location = new System.Drawing.Point(0, 252);
+            this.btnRelatorios.Name = "btnRelatorios";
+            this.btnRelatorios.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnRelatorios.Size = new System.Drawing.Size(182, 52);
+            this.btnRelatorios.TabIndex = 5;
+            this.btnRelatorios.Text = "Relatórios";
+            this.btnRelatorios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRelatorios.UseVisualStyleBackColor = true;
+            this.btnRelatorios.Click += new System.EventHandler(this.btnRelatorios_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -265,12 +286,12 @@ namespace DespesaDigital
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panelPrincipal.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -292,6 +313,7 @@ namespace DespesaDigital
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lbRodape;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button btnRelatorios;
     }
 }
 

@@ -45,6 +45,8 @@ namespace DespesaDigital.Views.Forms.Despesa
             {
                 corePopUp.exibirMensagem("Não foi encontrado nenhum arquivo para visualização.", "Atenção");
                 bloqueia_visualizacao = true;
+                btnSalvar.Enabled = false;
+                btnGirar.Enabled = false;                
             }
         }
 
