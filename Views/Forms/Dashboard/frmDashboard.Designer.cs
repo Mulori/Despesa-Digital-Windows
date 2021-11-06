@@ -56,7 +56,7 @@ namespace DespesaDigital.Views.Forms.Dashboard
             series1.Legend = "Legend1";
             series1.Name = "despesa";
             this.chartValorDespesaPorSetor.Series.Add(series1);
-            this.chartValorDespesaPorSetor.Size = new System.Drawing.Size(479, 316);
+            this.chartValorDespesaPorSetor.Size = new System.Drawing.Size(398, 278);
             this.chartValorDespesaPorSetor.TabIndex = 0;
             this.chartValorDespesaPorSetor.Text = "Valor de despesa por setor";
             title1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

@@ -19,7 +19,6 @@ namespace DespesaDigital.Report.rptDespesa
 
         private void frmRelDespesaPorDepartamento_Load(object sender, EventArgs e)
         {
-
             this.reportViewer1.RefreshReport();
         }
     }
