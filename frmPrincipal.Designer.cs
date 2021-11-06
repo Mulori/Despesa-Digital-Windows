@@ -30,7 +30,9 @@ namespace DespesaDigital
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnRelatorios = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.lbVersao = new System.Windows.Forms.Label();
             this.btnCadastro = new System.Windows.Forms.Button();
@@ -45,7 +47,6 @@ namespace DespesaDigital
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btnLogout = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnRelatorios = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelPrincipal.SuspendLayout();
@@ -69,6 +70,25 @@ namespace DespesaDigital
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(179, 620);
             this.panel1.TabIndex = 0;
+            // 
+            // btnRelatorios
+            // 
+            this.btnRelatorios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnRelatorios.Enabled = false;
+            this.btnRelatorios.FlatAppearance.BorderSize = 0;
+            this.btnRelatorios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRelatorios.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRelatorios.ForeColor = System.Drawing.Color.White;
+            this.btnRelatorios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRelatorios.Location = new System.Drawing.Point(0, 252);
+            this.btnRelatorios.Name = "btnRelatorios";
+            this.btnRelatorios.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnRelatorios.Size = new System.Drawing.Size(182, 52);
+            this.btnRelatorios.TabIndex = 5;
+            this.btnRelatorios.Text = "Relatórios";
+            this.btnRelatorios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRelatorios.UseVisualStyleBackColor = true;
+            this.btnRelatorios.Click += new System.EventHandler(this.btnRelatorios_Click);
             // 
             // btnDashboard
             // 
@@ -253,25 +273,6 @@ namespace DespesaDigital
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // btnRelatorios
-            // 
-            this.btnRelatorios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnRelatorios.Enabled = false;
-            this.btnRelatorios.FlatAppearance.BorderSize = 0;
-            this.btnRelatorios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRelatorios.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRelatorios.ForeColor = System.Drawing.Color.White;
-            this.btnRelatorios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRelatorios.Location = new System.Drawing.Point(0, 252);
-            this.btnRelatorios.Name = "btnRelatorios";
-            this.btnRelatorios.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnRelatorios.Size = new System.Drawing.Size(182, 52);
-            this.btnRelatorios.TabIndex = 5;
-            this.btnRelatorios.Text = "Relatórios";
-            this.btnRelatorios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRelatorios.UseVisualStyleBackColor = true;
-            this.btnRelatorios.Click += new System.EventHandler(this.btnRelatorios_Click);
-            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -280,6 +281,7 @@ namespace DespesaDigital
             this.Controls.Add(this.panelPrincipal);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Despesa Digital Coopercitrus";

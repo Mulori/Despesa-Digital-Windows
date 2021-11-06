@@ -31,6 +31,7 @@ namespace DespesaDigital.Views.Forms.FormaPagamento
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPesquisarFormaPagamento));
             this.label1 = new System.Windows.Forms.Label();
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.dataGrid = new System.Windows.Forms.DataGridView();
@@ -176,6 +177,7 @@ namespace DespesaDigital.Views.Forms.FormaPagamento
             this.Controls.Add(this.txtDescricao);
             this.Controls.Add(this.dataGrid);
             this.Controls.Add(this.btnNovo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPesquisarFormaPagamento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pesquisa de Formas de Pagamento";

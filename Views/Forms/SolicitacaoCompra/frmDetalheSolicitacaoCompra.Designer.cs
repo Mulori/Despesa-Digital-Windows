@@ -29,6 +29,7 @@ namespace DespesaDigital.Views.Forms.SolicitacaoCompra
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDetalheSolicitacaoCompra));
             this.btnRejeitar = new System.Windows.Forms.Button();
             this.btnAprovar = new System.Windows.Forms.Button();
             this.txtNumeroSolicitacao = new System.Windows.Forms.TextBox();
@@ -290,6 +291,7 @@ namespace DespesaDigital.Views.Forms.SolicitacaoCompra
             this.Controls.Add(this.txtNumeroSolicitacao);
             this.Controls.Add(this.btnAprovar);
             this.Controls.Add(this.btnRejeitar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmDetalheSolicitacaoCompra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Detalhe Solicitação de Compra";
