@@ -11,6 +11,25 @@ namespace DespesaDigital.Code.DAL.dalDespesa
 {
     public class dalDespesa
     {
+        public DataSet TodasDespesa()
+        {
+            DataSet ds = new DataSet();
+
+            var ssql = "select d.codigo, d.data_hora_emissao, d.valor, d.descricao, tp.descricao as tipo_despesa, s.nome as setor, fp.descricao as forma_pagamento, u.nome, u.sobrenome, d.descricao as motivo, ";
+            ssql += " d.codigo_tipo_despesa, d.codigo_forma_pagamento, d.codigo_setor, d.codigo_setor, d.codigo_usuario from despesa d";
+            ssql += " inner join tipodespesa tp on(d.codigo_tipo_despesa = tp.codigo) ";
+            ssql += " inner join setor s on(d.codigo_setor = s.codigo) ";
+            ssql += " inner join forma_pagamento fp ON (fp.codigo = d.codigo_forma_pagamento)";
+            ssql += " inner join usuario u on(d.codigo_usuario = u.codigo)";
+
+            using (var ad = new NpgsqlDataAdapter(ssql, dalConexao.dalConexao.cnn))
+            {
+                ad.Fill(ds);
+            }
+
+            return ds;
+        }
+
         public dtoDespesa DespesaPorCodigo(long codigo_despesa)
         {
             var dto = new dtoDespesa();
@@ -22,12 +41,6 @@ namespace DespesaDigital.Code.DAL.dalDespesa
             ssql += " inner join forma_pagamento fp ON (fp.codigo = d.codigo_forma_pagamento)";
             ssql += " inner join usuario u on(d.codigo_usuario = u.codigo)";
             ssql += $" where d.codigo = '{codigo_despesa}'";
-
-            //if (!bllConexao.Conectar())
-            //{
-            //    corePopUp.exibirMensagem("Não foi possivel estabelecer conexão \n com o servidor de banco de dados.", "Sem conexão!");
-            //    return dto;
-            //}
 
             using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
             using (var dr = cmd.ExecuteReader())

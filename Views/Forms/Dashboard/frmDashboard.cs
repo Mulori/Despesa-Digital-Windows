@@ -35,7 +35,7 @@ namespace DespesaDigital.Views.Forms.Dashboard
             chartValorDespesaPorSetor.Series["despesa"].LegendText = "#AXISLABEL";
             chartValorDespesaPorSetor.Series["despesa"].XValueMember = "CentrodeCusto";
             chartValorDespesaPorSetor.Series["despesa"].YValueMembers = "ValorDespesa";
-            chartValorDespesaPorSetor.Titles.Add("Total de despesas por centro de custo");
+            chartValorDespesaPorSetor.Titles.Add("Porcentagem de despesas por centro de custo");
 
             codigo_setor = new List<int>();
 

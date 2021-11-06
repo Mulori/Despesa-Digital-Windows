@@ -39,6 +39,8 @@ namespace DespesaDigital.Report.rptDespesa
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.ShowRefreshButton = false;
+            this.reportViewer1.ShowStopButton = false;
             this.reportViewer1.Size = new System.Drawing.Size(727, 475);
             this.reportViewer1.TabIndex = 0;
             // 
@@ -49,7 +51,9 @@ namespace DespesaDigital.Report.rptDespesa
             this.ClientSize = new System.Drawing.Size(727, 475);
             this.Controls.Add(this.reportViewer1);
             this.Name = "frmRelDespesaPorDepartamento";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Relátorio de despesa por departamento";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmRelDespesaPorDepartamento_Load);
             this.ResumeLayout(false);
 

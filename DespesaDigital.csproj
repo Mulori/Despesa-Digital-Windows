@@ -95,6 +95,7 @@
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -557,6 +558,19 @@
     <EmbeddedResource Include="Views\Forms\Usuario\frmPesquisarUsuario.resx">
       <DependentUpon>frmPesquisarUsuario.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\DespesaDigital.Code.DTO.dtoCategoria.dtoCategoria.datasource" />
+    <None Include="Properties\DataSources\DespesaDigital.Code.DTO.dtoDepartamento.dtoDepartamento.datasource" />
+    <None Include="Properties\DataSources\DespesaDigital.Code.DTO.dtoDespesa.dtoDespesa.datasource" />
+    <None Include="Properties\DataSources\DespesaDigital.Code.DTO.dtoDespesa.dtoDespesaItens.datasource" />
+    <None Include="Properties\DataSources\DespesaDigital.Code.DTO.dtoFormaPagamento.dtoFormaPagamento.datasource" />
+    <None Include="Properties\DataSources\DespesaDigital.Code.DTO.dtoFornecedor.dtoFornecedor.datasource" />
+    <None Include="Properties\DataSources\DespesaDigital.Code.DTO.dtoFornecedor.dtoFornecedorContato.datasource" />
+    <None Include="Properties\DataSources\DespesaDigital.Code.DTO.dtoFornecedor.dtoFornecedorEndereco.datasource" />
+    <None Include="Properties\DataSources\DespesaDigital.Code.DTO.dtoProduto.dtoProduto.datasource" />
+    <None Include="Properties\DataSources\DespesaDigital.Code.DTO.dtoSetor.dtoSetor.datasource" />
+    <None Include="Properties\DataSources\DespesaDigital.Code.DTO.dtoSetor.dtoSetorProduto.datasource" />
+    <None Include="Properties\DataSources\DespesaDigital.Code.DTO.dtoSolicitacaoCompra.dtoSolicitacaoCompra.datasource" />
+    <None Include="Properties\DataSources\DespesaDigital.Code.DTO.dtoTipoDespesa.dtoTipoDespesa.datasource" />
     <None Include="server_net.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -22,7 +22,7 @@ namespace DespesaDigital.Views.Forms.Relatorio.Despesa
         {
             using (var rel = new frmRelDespesaPorDepartamento())
             {
-                rel.Show();
+                rel.ShowDialog();
             }
         }
     }
