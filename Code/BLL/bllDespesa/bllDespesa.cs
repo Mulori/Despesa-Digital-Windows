@@ -9,6 +9,12 @@ namespace DespesaDigital.Code.BLL.bllDespesa
 {
     public class bllDespesa
     {
+        public static DataSet TodasDespesa()
+        {
+            var dal = new dalDespesa();
+            return dal.TodasDespesa();
+        }
+
         public static List<dtoDespesa> ListarTodasDespesasPorFormaPagamento(int codigo_forma_pagamento, DateTime inicial, DateTime final)
         {
             var dal = new dalDespesa();
