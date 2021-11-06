@@ -36,6 +36,27 @@
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.1.1.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.WebForms.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -135,12 +156,14 @@
     <Compile Include="Code\DTO\dtoImagem\dtoImagem.cs" />
     <Compile Include="Code\DTO\dtoModal\dtoModalCheckListBox.cs" />
     <Compile Include="Code\DTO\dtoProduto\dtoProduto.cs" />
+    <Compile Include="Code\DTO\dtoServerNet\dtoServerNet.cs" />
     <Compile Include="Code\DTO\dtoSetor\dtoSetor.cs" />
     <Compile Include="Code\DTO\dtoSetor\dtoSetorProduto.cs" />
     <Compile Include="Code\DTO\dtoSolicitacaoCompra\dtoSolicitacaoCompra.cs" />
     <Compile Include="Code\DTO\dtoTipoDespesa\dtoTipoDespesa.cs" />
     <Compile Include="Code\DTO\dtoUsuario\dtoUsuario.cs" />
     <Compile Include="Code\DTO\dtoWebApi\dtoWebApiPaises.cs" />
+    <Compile Include="Config\ReadConfigServerNet.cs" />
     <Compile Include="Core\coreCrypt.cs" />
     <Compile Include="Core\coreFormat.cs" />
     <Compile Include="Core\coreMascaraMoeda.cs" />
@@ -156,6 +179,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report\rptDespesa\frmRelDespesaPorDepartamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\rptDespesa\frmRelDespesaPorDepartamento.Designer.cs">
+      <DependentUpon>frmRelDespesaPorDepartamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Views\Forms\Cadastros\frmCadastro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -318,6 +348,18 @@
     <Compile Include="Views\Forms\Produtos\frmPesquisarProduto.Designer.cs">
       <DependentUpon>frmPesquisarProduto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Forms\Relatorio\Despesa\frmFiltroRelDespesaPorDepartamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\Relatorio\Despesa\frmFiltroRelDespesaPorDepartamento.Designer.cs">
+      <DependentUpon>frmFiltroRelDespesaPorDepartamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\Relatorio\frmRelatorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\Relatorio\frmRelatorio.Designer.cs">
+      <DependentUpon>frmRelatorio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Forms\Setor\frmNovoSetor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -391,6 +433,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Report\rptDespesa\frmRelDespesaPorDepartamento.resx">
+      <DependentUpon>frmRelDespesaPorDepartamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptDespesa\relDespesaPorDepartamento.rdlc" />
     <EmbeddedResource Include="Views\Forms\Cadastros\frmCadastro.resx">
       <DependentUpon>frmCadastro.cs</DependentUpon>
     </EmbeddedResource>
@@ -472,6 +518,12 @@
     <EmbeddedResource Include="Views\Forms\Produtos\frmPesquisarProduto.resx">
       <DependentUpon>frmPesquisarProduto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\Relatorio\Despesa\frmFiltroRelDespesaPorDepartamento.resx">
+      <DependentUpon>frmFiltroRelDespesaPorDepartamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\Relatorio\frmRelatorio.resx">
+      <DependentUpon>frmRelatorio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\Setor\frmNovoSetor.resx">
       <DependentUpon>frmNovoSetor.cs</DependentUpon>
     </EmbeddedResource>
@@ -502,6 +554,7 @@
     <EmbeddedResource Include="Views\Forms\Usuario\frmPesquisarUsuario.resx">
       <DependentUpon>frmPesquisarUsuario.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="server_net.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -542,6 +595,22 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\anexo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\coopercitrus_background.jpg" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

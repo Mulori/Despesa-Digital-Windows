@@ -1,4 +1,5 @@
-﻿using DespesaDigital.Code.DTO.dtoDashboard;
+﻿using DespesaDigital.Code.BLL.bllConexao;
+using DespesaDigital.Code.DTO.dtoDashboard;
 using DespesaDigital.Code.DTO.dtoDespesa;
 using DespesaDigital.Core;
 using Npgsql;
@@ -21,6 +22,12 @@ namespace DespesaDigital.Code.DAL.dalDespesa
             ssql += " inner join forma_pagamento fp ON (fp.codigo = d.codigo_forma_pagamento)";
             ssql += " inner join usuario u on(d.codigo_usuario = u.codigo)";
             ssql += $" where d.codigo = '{codigo_despesa}'";
+
+            //if (!bllConexao.Conectar())
+            //{
+            //    corePopUp.exibirMensagem("Não foi possivel estabelecer conexão \n com o servidor de banco de dados.", "Sem conexão!");
+            //    return dto;
+            //}
 
             using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
             using (var dr = cmd.ExecuteReader())
@@ -70,6 +77,12 @@ namespace DespesaDigital.Code.DAL.dalDespesa
             {
                 ssql += $" and fp.codigo = '{codigo_forma_pagamento}'";
             }
+
+            //if (!bllConexao.Conectar())
+            //{
+            //    corePopUp.exibirMensagem("Não foi possivel estabelecer conexão \n com o servidor de banco de dados.", "Sem conexão!");
+            //    return list;
+            //}
 
             using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
             using (var dr = cmd.ExecuteReader())
@@ -122,6 +135,12 @@ namespace DespesaDigital.Code.DAL.dalDespesa
             {
                 ssql += $" and tp.codigo = '{codigo_tipo_despesa}'";
             }
+
+            //if (!bllConexao.Conectar())
+            //{
+            //    corePopUp.exibirMensagem("Não foi possivel estabelecer conexão \n com o servidor de banco de dados.", "Sem conexão!");
+            //    return list;
+            //}
 
             using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
             using (var dr = cmd.ExecuteReader())
@@ -180,6 +199,12 @@ namespace DespesaDigital.Code.DAL.dalDespesa
                 ssql += $" and d.codigo_usuario = '{codigo_usuario}'";
             }
 
+            //if (!bllConexao.Conectar())
+            //{
+            //    corePopUp.exibirMensagem("Não foi possivel estabelecer conexão \n com o servidor de banco de dados.", "Sem conexão!");
+            //    return list;
+            //}
+
             using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
             using (var dr = cmd.ExecuteReader())
             {
@@ -226,6 +251,12 @@ namespace DespesaDigital.Code.DAL.dalDespesa
                 ssql += $" and d.codigo_setor = '{VariaveisGlobais.codigo_setor}'";
             }
 
+            //if (!bllConexao.Conectar())
+            //{
+            //    corePopUp.exibirMensagem("Não foi possivel estabelecer conexão \n com o servidor de banco de dados.", "Sem conexão!");
+            //    return list;
+            //}
+
             using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
             using (var dr = cmd.ExecuteReader())
             {
@@ -260,6 +291,12 @@ namespace DespesaDigital.Code.DAL.dalDespesa
 
             var ssql = $"select NovaDespesa('{Convert.ToDateTime(obj.data_hora_emissao).ToString("yyyy-MM-dd HH:mm:ss")}', '{obj.valor.ToString().Replace(",", ".")}', '{obj.descricao}', '{obj.codigo_tipo_despesa}', {obj.codigo_setor}, {obj.codigo_forma_pagamento}, {obj.codigo_usuario});";
 
+            //if (!bllConexao.Conectar())
+            //{
+            //    corePopUp.exibirMensagem("Não foi possivel estabelecer conexão \n com o servidor de banco de dados.", "Sem conexão!");
+            //    return list;
+            //}
+
             using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
             using (var dr = cmd.ExecuteReader())
             {
@@ -278,6 +315,12 @@ namespace DespesaDigital.Code.DAL.dalDespesa
         {
             var ssql = "update despesa set valor = @valor, descricao = @descricao, codigo_tipo_despesa = @codigo_tipo_despesa, " +
                 "codigo_forma_pagamento = @codigo_forma_pagamento where codigo = @codigo";
+
+            //if (!bllConexao.Conectar())
+            //{
+            //    corePopUp.exibirMensagem("Não foi possivel estabelecer conexão \n com o servidor de banco de dados.", "Sem conexão!");
+            //    return false;
+            //}
 
             using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
             {

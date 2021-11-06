@@ -29,6 +29,7 @@ namespace DespesaDigital
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.lbVersao = new System.Windows.Forms.Label();
@@ -39,20 +40,23 @@ namespace DespesaDigital
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbNome = new System.Windows.Forms.Label();
             this.panelPrincipal = new System.Windows.Forms.Panel();
-            this.btnLogout = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lbRodape = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnRelatorios = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelPrincipal.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(56)))), ((int)(((byte)(64)))));
+            this.panel1.Controls.Add(this.btnRelatorios);
             this.panel1.Controls.Add(this.btnDashboard);
             this.panel1.Controls.Add(this.lbVersao);
             this.panel1.Controls.Add(this.btnCadastro);
@@ -106,7 +110,7 @@ namespace DespesaDigital
             this.btnCadastro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastro.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastro.ForeColor = System.Drawing.Color.White;
-            this.btnCadastro.Location = new System.Drawing.Point(0, 310);
+            this.btnCadastro.Location = new System.Drawing.Point(0, 365);
             this.btnCadastro.Name = "btnCadastro";
             this.btnCadastro.Size = new System.Drawing.Size(182, 52);
             this.btnCadastro.TabIndex = 3;
@@ -122,7 +126,7 @@ namespace DespesaDigital
             this.btnMinhaConta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinhaConta.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMinhaConta.ForeColor = System.Drawing.Color.White;
-            this.btnMinhaConta.Location = new System.Drawing.Point(0, 368);
+            this.btnMinhaConta.Location = new System.Drawing.Point(0, 423);
             this.btnMinhaConta.Name = "btnMinhaConta";
             this.btnMinhaConta.Size = new System.Drawing.Size(182, 52);
             this.btnMinhaConta.TabIndex = 2;
@@ -138,7 +142,7 @@ namespace DespesaDigital
             this.btnCentroCusto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCentroCusto.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCentroCusto.ForeColor = System.Drawing.Color.White;
-            this.btnCentroCusto.Location = new System.Drawing.Point(0, 252);
+            this.btnCentroCusto.Location = new System.Drawing.Point(0, 307);
             this.btnCentroCusto.Name = "btnCentroCusto";
             this.btnCentroCusto.Size = new System.Drawing.Size(182, 52);
             this.btnCentroCusto.TabIndex = 1;
@@ -198,6 +202,31 @@ namespace DespesaDigital
             this.panelPrincipal.Size = new System.Drawing.Size(892, 556);
             this.panelPrincipal.TabIndex = 2;
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Silver;
+            this.panel3.Controls.Add(this.lbRodape);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(0, 522);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(892, 34);
+            this.panel3.TabIndex = 0;
+            // 
+            // lbRodape
+            // 
+            this.lbRodape.AutoSize = true;
+            this.lbRodape.Location = new System.Drawing.Point(5, 7);
+            this.lbRodape.Name = "lbRodape";
+            this.lbRodape.Size = new System.Drawing.Size(150, 20);
+            this.lbRodape.TabIndex = 0;
+            this.lbRodape.Text = "Informações de login";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // btnLogout
             // 
             this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -224,24 +253,24 @@ namespace DespesaDigital
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // panel3
+            // btnRelatorios
             // 
-            this.panel3.BackColor = System.Drawing.Color.Silver;
-            this.panel3.Controls.Add(this.lbRodape);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 522);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(892, 34);
-            this.panel3.TabIndex = 0;
-            // 
-            // lbRodape
-            // 
-            this.lbRodape.AutoSize = true;
-            this.lbRodape.Location = new System.Drawing.Point(5, 7);
-            this.lbRodape.Name = "lbRodape";
-            this.lbRodape.Size = new System.Drawing.Size(150, 20);
-            this.lbRodape.TabIndex = 0;
-            this.lbRodape.Text = "Informações de login";
+            this.btnRelatorios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnRelatorios.Enabled = false;
+            this.btnRelatorios.FlatAppearance.BorderSize = 0;
+            this.btnRelatorios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRelatorios.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRelatorios.ForeColor = System.Drawing.Color.White;
+            this.btnRelatorios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRelatorios.Location = new System.Drawing.Point(0, 252);
+            this.btnRelatorios.Name = "btnRelatorios";
+            this.btnRelatorios.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnRelatorios.Size = new System.Drawing.Size(182, 52);
+            this.btnRelatorios.TabIndex = 5;
+            this.btnRelatorios.Text = "Relatórios";
+            this.btnRelatorios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRelatorios.UseVisualStyleBackColor = true;
+            this.btnRelatorios.Click += new System.EventHandler(this.btnRelatorios_Click);
             // 
             // frmPrincipal
             // 
@@ -260,9 +289,9 @@ namespace DespesaDigital
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panelPrincipal.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -283,6 +312,8 @@ namespace DespesaDigital
         private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lbRodape;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button btnRelatorios;
     }
 }
 

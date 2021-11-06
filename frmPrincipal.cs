@@ -8,6 +8,7 @@ using DespesaDigital.Views.Forms.Despesa;
 using DespesaDigital.Views.Forms.Login;
 using DespesaDigital.Views.Forms.Mensagens;
 using DespesaDigital.Views.Forms.MinhaConta;
+using DespesaDigital.Views.Forms.Relatorio;
 using DespesaDigital.Views.Forms.SolicitacaoCompra;
 using System;
 using System.Drawing;
@@ -50,6 +51,7 @@ namespace DespesaDigital
                 case 1:
                     btnDespesa.Enabled = true;
                     btnMinhaConta.Enabled = true;
+                    btnRelatorios.Enabled = true;
                     break;
                 case 2:
                     btnDespesa.Enabled = true;
@@ -57,6 +59,7 @@ namespace DespesaDigital
                     btnCentroCusto.Enabled = true;
                     btnCadastro.Enabled = true;
                     btnDashboard.Enabled = true;
+                    btnRelatorios.Enabled = true;
                     break;
                 case 3:
                     btnDespesa.Enabled = true;
@@ -64,6 +67,7 @@ namespace DespesaDigital
                     btnCentroCusto.Enabled = true;
                     btnCadastro.Enabled = true;
                     btnDashboard.Enabled = true;
+                    btnRelatorios.Enabled = true;
                     break;
             }
         }
@@ -114,6 +118,7 @@ namespace DespesaDigital
             btnDespesa.BackColor = Color.FromArgb(43, 56, 64);
             btnCentroCusto.BackColor = Color.FromArgb(43, 56, 64);
             btnMinhaConta.BackColor = Color.FromArgb(43, 56, 64);
+            btnRelatorios.BackColor = Color.FromArgb(43, 56, 64);
 
             _objForm?.Close();
 
@@ -145,6 +150,7 @@ namespace DespesaDigital
             btnDespesa.BackColor = Color.FromArgb(43, 56, 64);
             btnCentroCusto.BackColor = Color.FromArgb(43, 56, 64);
             btnCadastro.BackColor = Color.FromArgb(43, 56, 64);
+            btnRelatorios.BackColor = Color.FromArgb(43, 56, 64);
 
             _objForm?.Close();
 
@@ -166,6 +172,8 @@ namespace DespesaDigital
             btnDespesa.BackColor = Color.FromArgb(43, 56, 64);
             btnMinhaConta.BackColor = Color.FromArgb(43, 56, 64);
             btnCadastro.BackColor = Color.FromArgb(43, 56, 64);
+            btnRelatorios.BackColor = Color.FromArgb(43, 56, 64);
+            btnRelatorios.BackColor = Color.FromArgb(43, 56, 64);
 
             _objForm?.Close();
 
@@ -187,6 +195,7 @@ namespace DespesaDigital
             btnCentroCusto.BackColor = Color.FromArgb(43, 56, 64);
             btnMinhaConta.BackColor = Color.FromArgb(43, 56, 64);
             btnCadastro.BackColor = Color.FromArgb(43, 56, 64);
+            btnRelatorios.BackColor = Color.FromArgb(43, 56, 64);
 
             _objForm?.Close();
 
@@ -208,10 +217,38 @@ namespace DespesaDigital
             btnCentroCusto.BackColor = Color.FromArgb(43, 56, 64);
             btnMinhaConta.BackColor = Color.FromArgb(43, 56, 64);
             btnCadastro.BackColor = Color.FromArgb(43, 56, 64);
+            btnRelatorios.BackColor = Color.FromArgb(43, 56, 64);
 
             _objForm?.Close();
 
             _objForm = new frmDashboard
+            {
+                TopLevel = false,
+                FormBorderStyle = FormBorderStyle.None,
+                Dock = DockStyle.Fill
+            };
+
+            panelPrincipal.Controls.Add(_objForm);
+            _objForm.Show();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Npgsql.NpgsqlConnection.ClearAllPools();
+        }
+
+        private void btnRelatorios_Click(object sender, EventArgs e)
+        {
+            btnRelatorios.BackColor = Color.FromArgb(139, 178, 55); //Cor Selecionada
+            btnDespesa.BackColor = Color.FromArgb(43, 56, 64);
+            btnCentroCusto.BackColor = Color.FromArgb(43, 56, 64);
+            btnMinhaConta.BackColor = Color.FromArgb(43, 56, 64);
+            btnCadastro.BackColor = Color.FromArgb(43, 56, 64);
+            btnDashboard.BackColor = Color.FromArgb(43, 56, 64);
+
+            _objForm?.Close();
+
+            _objForm = new frmRelatorio
             {
                 TopLevel = false,
                 FormBorderStyle = FormBorderStyle.None,

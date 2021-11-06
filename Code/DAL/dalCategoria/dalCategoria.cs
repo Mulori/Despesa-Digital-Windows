@@ -1,4 +1,5 @@
-﻿using DespesaDigital.Code.DTO.dtoCategoria;
+﻿using DespesaDigital.Code.BLL.bllConexao;
+using DespesaDigital.Code.DTO.dtoCategoria;
 using DespesaDigital.Core;
 using Npgsql;
 using System;
@@ -11,6 +12,12 @@ namespace DespesaDigital.Code.DAL.dalCategoria
         public List<dtoCategoria> ListarTodasCategoriasPorStatus(string status)
         {
             var list = new List<dtoCategoria>();
+
+            //if (!bllConexao.Conectar())
+            //{
+            //    corePopUp.exibirMensagem("Não foi possivel estabelecer conexão \n com o servidor de banco de dados.", "Sem conexão!");
+            //    return list;
+            //}
 
             var ssql = "select c.codigo, c.descricao, c.ativo, d.nome, c.codigo_departamento from categoria c " +
                 "inner join departamento d on(c.codigo_departamento = d.codigo)" +
@@ -43,12 +50,20 @@ namespace DespesaDigital.Code.DAL.dalCategoria
                 dr.Close();
             }
 
+           // bllConexao.Desconectar();
+
             return list;
         }
 
         public List<dtoCategoria> ListarTodasCategoriaPorStatusDescricao(string status, string descricao)
         {
             var list = new List<dtoCategoria>();
+
+            //if (!bllConexao.Conectar())
+            //{
+            //    corePopUp.exibirMensagem("Não foi possivel estabelecer conexão \n com o servidor de banco de dados.", "Sem conexão!");
+            //    return list;
+            //}
 
             var ssql = "select c.codigo, c.descricao, c.ativo, d.nome, c.codigo_departamento from categoria c " +
                  "inner join departamento d on(c.codigo_departamento = d.codigo)" +
@@ -82,12 +97,20 @@ namespace DespesaDigital.Code.DAL.dalCategoria
                 dr.Close();
             }
 
+           // bllConexao.Desconectar();
+
             return list;
         }
 
         public dtoCategoria CategoriaPorCodigo(int codigo)
         {
             var dto = new dtoCategoria();
+
+            //if (!bllConexao.Conectar())
+            //{
+            //    corePopUp.exibirMensagem("Não foi possivel estabelecer conexão \n com o servidor de banco de dados.", "Sem conexão!");
+            //    return dto;
+            //}
 
             var ssql = "select c.codigo, c.descricao, c.ativo, d.nome, c.codigo_departamento from categoria c " +
                "inner join departamento d on(c.codigo_departamento = d.codigo)" +
@@ -117,12 +140,20 @@ namespace DespesaDigital.Code.DAL.dalCategoria
                 dr.Close();
             }
 
+            //bllConexao.Desconectar();
+
             return dto;
         }
 
         public bool Insert(dtoCategoria dto)
         {
             var ssql = "insert into categoria (descricao, ativo, codigo_departamento) values (@descricao, @ativo, @codigo_departamento)";
+
+            //if (!bllConexao.Conectar())
+            //{
+            //    corePopUp.exibirMensagem("Não foi possivel estabelecer conexão \n com o servidor de banco de dados.", "Sem conexão!");
+            //    return false;
+            //}
 
             using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
             {
@@ -133,6 +164,7 @@ namespace DespesaDigital.Code.DAL.dalCategoria
                 try
                 {
                     cmd.ExecuteNonQuery();
+                   // bllConexao.Desconectar();
                     return true;
                 }
                 catch
@@ -146,11 +178,18 @@ namespace DespesaDigital.Code.DAL.dalCategoria
         {
             var ssql = $"delete from categoria where codigo = '{codigo}'";
 
+            //if (!bllConexao.Conectar())
+            //{
+            //    corePopUp.exibirMensagem("Não foi possivel estabelecer conexão \n com o servidor de banco de dados.", "Sem conexão!");
+            //    return false;
+            //}
+
             using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
             {
                 try
                 {
                     cmd.ExecuteNonQuery();
+                   // bllConexao.Desconectar();
                     return true;
                 }
                 catch
@@ -164,6 +203,12 @@ namespace DespesaDigital.Code.DAL.dalCategoria
         {
             var ssql = "update categoria set descricao = @descricao, ativo = @ativo, codigo_departamento = @codigo_departamento where codigo = @codigo";
 
+            //if (!bllConexao.Conectar())
+            //{
+            //    corePopUp.exibirMensagem("Não foi possivel estabelecer conexão \n com o servidor de banco de dados.", "Sem conexão!");
+            //    return false;
+            //}
+
             using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
             {
                 cmd.Parameters.AddWithValue("@codigo", dto.codigo);
@@ -174,6 +219,7 @@ namespace DespesaDigital.Code.DAL.dalCategoria
                 try
                 {
                     cmd.ExecuteNonQuery();
+                  //  bllConexao.Desconectar();
                     return true;
                 }
                 catch
@@ -186,6 +232,12 @@ namespace DespesaDigital.Code.DAL.dalCategoria
         public bool VerificaDescricaoExistente(string descricao)
         {
             var retorno = false;
+
+            //if (!bllConexao.Conectar())
+            //{
+            //    corePopUp.exibirMensagem("Não foi possivel estabelecer conexão \n com o servidor de banco de dados.", "Sem conexão!");
+            //    return false;
+            //}
 
             var ssql = $"select descricao from categoria where codigo_departamento = '{VariaveisGlobais.codigo_departamento}' " +
                  $"and UPPER(descricao) = UPPER('{descricao.Replace("'", string.Empty)}')";
@@ -200,6 +252,8 @@ namespace DespesaDigital.Code.DAL.dalCategoria
                 dr.Close();
             }
 
+            //bllConexao.Desconectar();
+
             return retorno;
         }
 
@@ -208,6 +262,12 @@ namespace DespesaDigital.Code.DAL.dalCategoria
             var retorno = "";
 
             var ssql = $"select descricao from categoria where codigo = '{codigo}'";
+
+            //if (!bllConexao.Conectar())
+            //{
+            //    corePopUp.exibirMensagem("Não foi possivel estabelecer conexão \n com o servidor de banco de dados.", "Sem conexão!");
+            //    return "";
+            //}
 
             using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
             using (var dr = cmd.ExecuteReader())
@@ -219,6 +279,8 @@ namespace DespesaDigital.Code.DAL.dalCategoria
                 dr.Close();
             }
 
+            //bllConexao.Desconectar();
+
             return retorno;
         }
 
@@ -227,6 +289,12 @@ namespace DespesaDigital.Code.DAL.dalCategoria
             int retorno = 0;
 
             var ssql = $"select codigo from categoria where descricao = 'Outros';";
+
+            //if (!bllConexao.Conectar())
+            //{
+            //    corePopUp.exibirMensagem("Não foi possivel estabelecer conexão \n com o servidor de banco de dados.", "Sem conexão!");
+            //    return 0;
+            //}
 
             using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
             using (var dr = cmd.ExecuteReader())
@@ -238,6 +306,8 @@ namespace DespesaDigital.Code.DAL.dalCategoria
 
                 dr.Close();
             }
+
+            //bllConexao.Desconectar();
 
             return retorno;
         }

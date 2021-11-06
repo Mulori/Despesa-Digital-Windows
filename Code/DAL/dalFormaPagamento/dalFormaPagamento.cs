@@ -35,22 +35,27 @@ namespace DespesaDigital.Code.DAL.dalFormaPagamento
         {
             var list = new List<dtoFormaPagamento>();
 
-            var ssql = $"select * from forma_pagamento where ativo = '{status}' order by descricao asc";
+            var ssql = $"select * from forma_pagamento where ativo = @status order by descricao asc";
 
             using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
-            using (var dr = cmd.ExecuteReader())
             {
-                while (dr.Read())
-                {
-                    var dto = new dtoFormaPagamento();
-                    dto.codigo = Convert.ToInt32(dr["codigo"]);
-                    dto.descricao = dr["descricao"].ToString();
-                    dto.ativo = dr["ativo"].ToString() == "A" ? "Ativo" : "Inativo";
+                cmd.Parameters.AddWithValue("@status", status);
 
-                    list.Add(dto);
+                using (var dr = cmd.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        var dto = new dtoFormaPagamento();
+                        dto.codigo = Convert.ToInt32(dr["codigo"]);
+                        dto.descricao = dr["descricao"].ToString();
+                        dto.ativo = dr["ativo"].ToString() == "A" ? "Ativo" : "Inativo";
+
+                        list.Add(dto);
+                    }
+                    dr.Close();
                 }
-                dr.Close();
             }
+            
 
             return list;
         }
