@@ -31,6 +31,7 @@ namespace DespesaDigital.Views.Forms.TipoDespesa
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPesquisarTipoDespesa));
             this.dataGrid = new System.Windows.Forms.DataGridView();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -174,6 +175,7 @@ namespace DespesaDigital.Views.Forms.TipoDespesa
             this.Controls.Add(this.txtDescricao);
             this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.dataGrid);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPesquisarTipoDespesa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pesquisa de Tipo de Despesa";

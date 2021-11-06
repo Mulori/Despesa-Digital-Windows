@@ -31,6 +31,7 @@ namespace DespesaDigital.Views.Forms.Produtos
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPesquisarProduto));
             this.label1 = new System.Windows.Forms.Label();
             this.rdInativos = new System.Windows.Forms.RadioButton();
             this.rdAtivos = new System.Windows.Forms.RadioButton();
@@ -197,6 +198,7 @@ namespace DespesaDigital.Views.Forms.Produtos
             this.Controls.Add(this.rdAtivos);
             this.Controls.Add(this.txtDescricao);
             this.Controls.Add(this.dataGrid);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPesquisarProduto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pesquisa de Produto";

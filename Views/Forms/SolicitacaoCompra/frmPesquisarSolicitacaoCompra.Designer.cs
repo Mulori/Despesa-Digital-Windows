@@ -31,6 +31,7 @@ namespace DespesaDigital.Views.Forms.SolicitacaoCompra
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPesquisarSolicitacaoCompra));
             this.dataGrid = new System.Windows.Forms.DataGridView();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -316,6 +317,7 @@ namespace DespesaDigital.Views.Forms.SolicitacaoCompra
             this.Controls.Add(this.rdPendentes);
             this.Controls.Add(this.rdAprovados);
             this.Controls.Add(this.dataGrid);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPesquisarSolicitacaoCompra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Visualizar Solicitações de Compras";

@@ -31,6 +31,7 @@ namespace DespesaDigital.Views.Forms.Fornecedor
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEnderecoFornecedor));
             this.dataGrid = new System.Windows.Forms.DataGridView();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.logradouro = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -354,6 +355,7 @@ namespace DespesaDigital.Views.Forms.Fornecedor
             this.Controls.Add(this.txtLogradouro);
             this.Controls.Add(this.dataGrid);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmEnderecoFornecedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

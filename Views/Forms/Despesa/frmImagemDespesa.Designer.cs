@@ -29,13 +29,14 @@ namespace DespesaDigital.Views.Forms.Despesa
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmImagemDespesa));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnGirar = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
-            this.picImagem = new System.Windows.Forms.PictureBox();
             this.folderBrowser = new System.Windows.Forms.FolderBrowserDialog();
             this.linkSalvarComputador = new System.Windows.Forms.LinkLabel();
+            this.picImagem = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImagem)).BeginInit();
             this.SuspendLayout();
@@ -101,16 +102,6 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
-            // picImagem
-            // 
-            this.picImagem.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picImagem.Location = new System.Drawing.Point(0, 75);
-            this.picImagem.Name = "picImagem";
-            this.picImagem.Size = new System.Drawing.Size(1071, 556);
-            this.picImagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picImagem.TabIndex = 20;
-            this.picImagem.TabStop = false;
-            // 
             // linkSalvarComputador
             // 
             this.linkSalvarComputador.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -126,6 +117,16 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.linkSalvarComputador.Visible = false;
             this.linkSalvarComputador.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkSalvarComputador_LinkClicked);
             // 
+            // picImagem
+            // 
+            this.picImagem.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picImagem.Location = new System.Drawing.Point(0, 75);
+            this.picImagem.Name = "picImagem";
+            this.picImagem.Size = new System.Drawing.Size(1071, 556);
+            this.picImagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picImagem.TabIndex = 20;
+            this.picImagem.TabStop = false;
+            // 
             // frmImagemDespesa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -134,6 +135,7 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.Controls.Add(this.linkSalvarComputador);
             this.Controls.Add(this.picImagem);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmImagemDespesa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Imagem da Despesa";

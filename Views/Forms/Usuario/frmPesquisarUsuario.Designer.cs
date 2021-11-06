@@ -31,12 +31,8 @@ namespace DespesaDigital.Views.Forms.Usuario
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPesquisarUsuario));
             this.dataGrid = new System.Windows.Forms.DataGridView();
-            this.rdAtivos = new System.Windows.Forms.RadioButton();
-            this.rdInativos = new System.Windows.Forms.RadioButton();
-            this.rdPendentes = new System.Windows.Forms.RadioButton();
-            this.txtNome = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sobrenome = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,6 +44,11 @@ namespace DespesaDigital.Views.Forms.Usuario
             this.codigo_setor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nivel_acesso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nome_departamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rdAtivos = new System.Windows.Forms.RadioButton();
+            this.rdInativos = new System.Windows.Forms.RadioButton();
+            this.rdPendentes = new System.Windows.Forms.RadioButton();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,65 +96,6 @@ namespace DespesaDigital.Views.Forms.Usuario
             this.dataGrid.Size = new System.Drawing.Size(917, 405);
             this.dataGrid.TabIndex = 0;
             this.dataGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_CellDoubleClick);
-            // 
-            // rdAtivos
-            // 
-            this.rdAtivos.AutoSize = true;
-            this.rdAtivos.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdAtivos.Location = new System.Drawing.Point(79, 13);
-            this.rdAtivos.Name = "rdAtivos";
-            this.rdAtivos.Size = new System.Drawing.Size(64, 21);
-            this.rdAtivos.TabIndex = 1;
-            this.rdAtivos.Text = "Ativos";
-            this.rdAtivos.UseVisualStyleBackColor = true;
-            this.rdAtivos.CheckedChanged += new System.EventHandler(this.rdAtivos_CheckedChanged);
-            // 
-            // rdInativos
-            // 
-            this.rdInativos.AutoSize = true;
-            this.rdInativos.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdInativos.Location = new System.Drawing.Point(79, 36);
-            this.rdInativos.Name = "rdInativos";
-            this.rdInativos.Size = new System.Drawing.Size(74, 21);
-            this.rdInativos.TabIndex = 2;
-            this.rdInativos.Text = "Inativos";
-            this.rdInativos.UseVisualStyleBackColor = true;
-            this.rdInativos.CheckedChanged += new System.EventHandler(this.rdInativos_CheckedChanged);
-            // 
-            // rdPendentes
-            // 
-            this.rdPendentes.AutoSize = true;
-            this.rdPendentes.Checked = true;
-            this.rdPendentes.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdPendentes.Location = new System.Drawing.Point(78, 59);
-            this.rdPendentes.Name = "rdPendentes";
-            this.rdPendentes.Size = new System.Drawing.Size(90, 21);
-            this.rdPendentes.TabIndex = 3;
-            this.rdPendentes.TabStop = true;
-            this.rdPendentes.Text = "Pendentes";
-            this.rdPendentes.UseVisualStyleBackColor = true;
-            this.rdPendentes.CheckedChanged += new System.EventHandler(this.rdPendentes_CheckedChanged);
-            // 
-            // txtNome
-            // 
-            this.txtNome.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNome.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNome.Location = new System.Drawing.Point(193, 36);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(626, 29);
-            this.txtNome.TabIndex = 4;
-            this.txtNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNome_KeyPress);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(189, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(145, 20);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Pesquise por Nome:";
             // 
             // codigo
             // 
@@ -238,6 +180,65 @@ namespace DespesaDigital.Views.Forms.Usuario
             this.nome_departamento.ReadOnly = true;
             this.nome_departamento.Visible = false;
             // 
+            // rdAtivos
+            // 
+            this.rdAtivos.AutoSize = true;
+            this.rdAtivos.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdAtivos.Location = new System.Drawing.Point(79, 13);
+            this.rdAtivos.Name = "rdAtivos";
+            this.rdAtivos.Size = new System.Drawing.Size(64, 21);
+            this.rdAtivos.TabIndex = 1;
+            this.rdAtivos.Text = "Ativos";
+            this.rdAtivos.UseVisualStyleBackColor = true;
+            this.rdAtivos.CheckedChanged += new System.EventHandler(this.rdAtivos_CheckedChanged);
+            // 
+            // rdInativos
+            // 
+            this.rdInativos.AutoSize = true;
+            this.rdInativos.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdInativos.Location = new System.Drawing.Point(79, 36);
+            this.rdInativos.Name = "rdInativos";
+            this.rdInativos.Size = new System.Drawing.Size(74, 21);
+            this.rdInativos.TabIndex = 2;
+            this.rdInativos.Text = "Inativos";
+            this.rdInativos.UseVisualStyleBackColor = true;
+            this.rdInativos.CheckedChanged += new System.EventHandler(this.rdInativos_CheckedChanged);
+            // 
+            // rdPendentes
+            // 
+            this.rdPendentes.AutoSize = true;
+            this.rdPendentes.Checked = true;
+            this.rdPendentes.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdPendentes.Location = new System.Drawing.Point(78, 59);
+            this.rdPendentes.Name = "rdPendentes";
+            this.rdPendentes.Size = new System.Drawing.Size(90, 21);
+            this.rdPendentes.TabIndex = 3;
+            this.rdPendentes.TabStop = true;
+            this.rdPendentes.Text = "Pendentes";
+            this.rdPendentes.UseVisualStyleBackColor = true;
+            this.rdPendentes.CheckedChanged += new System.EventHandler(this.rdPendentes_CheckedChanged);
+            // 
+            // txtNome
+            // 
+            this.txtNome.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtNome.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNome.Location = new System.Drawing.Point(193, 36);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(626, 29);
+            this.txtNome.TabIndex = 4;
+            this.txtNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNome_KeyPress);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(189, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(145, 20);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Pesquise por Nome:";
+            // 
             // frmPesquisarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -250,6 +251,7 @@ namespace DespesaDigital.Views.Forms.Usuario
             this.Controls.Add(this.rdInativos);
             this.Controls.Add(this.rdAtivos);
             this.Controls.Add(this.dataGrid);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPesquisarUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pesquisa de Usuários";
