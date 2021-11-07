@@ -6,47 +6,57 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.46175cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>3.06147cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.87042cm</Width>
+              <Width>2.91154cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>3.50244cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.42948cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>3.54654cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>3.72875cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>0.66615cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox10">
+                    <Textbox Name="Textbox5">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>codigo</Value>
-                              <Style />
+                              <Value>Lançamento:</Value>
+                              <Style>
+                                <FontFamily>Segoe UI</FontFamily>
+                                <Color>White</Color>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox10</rd:DefaultName>
+                      <rd:DefaultName>Textbox5</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>#1f282d</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -57,26 +67,30 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox12">
+                    <Textbox Name="Textbox7">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>data hora emissao</Value>
-                              <Style />
+                              <Value>Emissão:</Value>
+                              <Style>
+                                <FontFamily>Segoe UI</FontFamily>
+                                <Color>White</Color>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox12</rd:DefaultName>
+                      <rd:DefaultName>Textbox7</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>#1f282d</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -87,26 +101,30 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox14">
+                    <Textbox Name="Textbox9">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>descricao</Value>
-                              <Style />
+                              <Value>Valor:</Value>
+                              <Style>
+                                <FontFamily>Segoe UI</FontFamily>
+                                <Color>White</Color>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox14</rd:DefaultName>
+                      <rd:DefaultName>Textbox9</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>#1f282d</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -117,26 +135,30 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox16">
+                    <Textbox Name="Textbox13">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>s valor</Value>
-                              <Style />
+                              <Value>Forma Pagamento:</Value>
+                              <Style>
+                                <FontFamily>Segoe UI</FontFamily>
+                                <Color>White</Color>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox16</rd:DefaultName>
+                      <rd:DefaultName>Textbox13</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>#1f282d</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -147,26 +169,98 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox18">
+                    <Textbox Name="Textbox15">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>codigo usuario</Value>
-                              <Style />
+                              <Value>Tipo Despesa:</Value>
+                              <Style>
+                                <FontFamily>Segoe UI</FontFamily>
+                                <Color>White</Color>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox18</rd:DefaultName>
+                      <rd:DefaultName>Textbox15</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>#1f282d</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox11">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Centro de Custo:</Value>
+                              <Style>
+                                <FontFamily>Segoe UI</FontFamily>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox11</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>#1f282d</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox17">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Colaborador:</Value>
+                              <Style>
+                                <FontFamily>Segoe UI</FontFamily>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox17</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>#1f282d</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -178,7 +272,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>0.66615cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -220,7 +314,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!data_hora_emissao.Value</Value>
-                              <Style />
+                              <Style>
+                                <Format>g</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -242,21 +338,54 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="descricao">
+                    <Textbox Name="valor">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!descricao.Value</Value>
+                              <Value>=Fields!valor.Value</Value>
+                              <Style>
+                                <Format>'R$' 0.00;('R$' 0.00)</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>valor</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>pt-BR</rd:FormatSymbolCulture>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="descricao_forma_pagamento">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!descricao_forma_pagamento.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>descricao</rd:DefaultName>
+                      <rd:DefaultName>descricao_forma_pagamento</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -272,21 +401,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="s_valor">
+                    <Textbox Name="descricao_tipo_despesa">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!s_valor.Value</Value>
+                              <Value>=Fields!descricao_tipo_despesa.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>s_valor</rd:DefaultName>
+                      <rd:DefaultName>descricao_tipo_despesa</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -302,21 +431,51 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="codigo_usuario">
+                    <Textbox Name="nome_setor">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!codigo_usuario.Value</Value>
+                              <Value>=Fields!nome_setor.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>codigo_usuario</rd:DefaultName>
+                      <rd:DefaultName>nome_setor</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="nome_usuario">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!nome_usuario.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>nome_usuario</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -341,6 +500,8 @@
             <TablixMember />
             <TablixMember />
             <TablixMember />
+            <TablixMember />
+            <TablixMember />
           </TablixMembers>
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
@@ -353,11 +514,9 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>dsDespesas1</DataSetName>
-        <Top>2.22222cm</Top>
-        <Left>1.00224cm</Left>
-        <Height>1.2cm</Height>
-        <Width>12.87042cm</Width>
+        <DataSetName>dsDespesasPorDepartamento</DataSetName>
+        <Height>1.33229cm</Height>
+        <Width>21.64197cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -365,10 +524,10 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>3.36398in</Height>
+    <Height>0.52452in</Height>
     <Style />
   </Body>
-  <Width>7.64968in</Width>
+  <Width>8.52046in</Width>
   <Page>
     <PageHeader>
       <Height>2.56356cm</Height>
@@ -382,7 +541,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Relatório de Despesa por Departamento</Value>
+                  <Value>Relatório de Despesas por Departamento</Value>
                   <Style>
                     <FontFamily>Segoe UI</FontFamily>
                     <FontSize>14pt</FontSize>
@@ -399,7 +558,7 @@
           <Top>0.43738cm</Top>
           <Left>4.56917cm</Left>
           <Height>1.38535cm</Height>
-          <Width>13.37933cm</Width>
+          <Width>17.0728cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -448,7 +607,7 @@
           <Top>1.59314cm</Top>
           <Left>4.675cm</Left>
           <Height>0.6cm</Height>
-          <Width>13.23822cm</Width>
+          <Width>16.96697cm</Width>
           <ZIndex>2</ZIndex>
           <Style>
             <Border>
@@ -481,7 +640,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=Globals!TotalPages</Value>
+                  <Value>="Pagina: " &amp; Globals!PageNumber &amp; "/" &amp; Globals!TotalPages</Value>
                   <Style />
                 </TextRun>
               </TextRuns>
@@ -490,9 +649,9 @@
           </Paragraphs>
           <rd:DefaultName>Textbox3</rd:DefaultName>
           <Top>0.17639cm</Top>
-          <Left>15.07808cm</Left>
+          <Left>17.91322cm</Left>
           <Height>0.6cm</Height>
-          <Width>2.5cm</Width>
+          <Width>3.72875cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -529,33 +688,24 @@
       </ConnectionProperties>
       <rd:DataSourceID>ed937a78-6de4-41fe-9b87-a73abde48f23</rd:DataSourceID>
     </DataSource>
+    <DataSource Name="DespesaDigitalCodeDTOdtoDespesa1">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>1565fe2e-2071-48e6-8430-d17c2defa0c0</rd:DataSourceID>
+    </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="dsDespesas1">
+    <DataSet Name="dsDespesasPorDepartamento">
       <Query>
-        <DataSourceName>DespesaDigitalCodeDTOdtoDespesa</DataSourceName>
+        <DataSourceName>DespesaDigitalCodeDTOdtoDespesa1</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
         <Field Name="codigo">
           <DataField>codigo</DataField>
           <rd:TypeName>System.Int64</rd:TypeName>
-        </Field>
-        <Field Name="codigo_forma_pagamento">
-          <DataField>codigo_forma_pagamento</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="codigo_setor">
-          <DataField>codigo_setor</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="codigo_tipo_despesa">
-          <DataField>codigo_tipo_despesa</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="codigo_usuario">
-          <DataField>codigo_usuario</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="data_hora_emissao">
           <DataField>data_hora_emissao</DataField>
@@ -565,28 +715,20 @@
           <DataField>descricao</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="imagem">
-          <DataField>imagem</DataField>
-          <rd:TypeName>System.Byte[]</rd:TypeName>
-        </Field>
-        <Field Name="s_codigo_forma_pagamento">
-          <DataField>s_codigo_forma_pagamento</DataField>
+        <Field Name="descricao_forma_pagamento">
+          <DataField>descricao_forma_pagamento</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="s_codigo_setor">
-          <DataField>s_codigo_setor</DataField>
+        <Field Name="descricao_tipo_despesa">
+          <DataField>descricao_tipo_despesa</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="s_codigo_tipo_despesa">
-          <DataField>s_codigo_tipo_despesa</DataField>
+        <Field Name="nome_setor">
+          <DataField>nome_setor</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="s_codigo_usuario">
-          <DataField>s_codigo_usuario</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="s_valor">
-          <DataField>s_valor</DataField>
+        <Field Name="nome_usuario">
+          <DataField>nome_usuario</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="valor">
@@ -596,8 +738,8 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DespesaDigital.Code.DTO.dtoDespesa</rd:DataSetName>
-        <rd:TableName>dtoDespesa</rd:TableName>
-        <rd:ObjectDataSourceType>DespesaDigital.Code.DTO.dtoDespesa.dtoDespesa, DespesaDigital, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+        <rd:TableName>dtoRelDespesaPorDepartamento</rd:TableName>
+        <rd:ObjectDataSourceType>DespesaDigital.Code.DTO.dtoDespesa.dtoRelDespesaPorDepartamento, DespesaDigital, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

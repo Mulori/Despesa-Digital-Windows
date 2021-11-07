@@ -1,4 +1,5 @@
-﻿using DespesaDigital.Report.rptDespesa;
+﻿using DespesaDigital.Core;
+using DespesaDigital.Report.rptDespesa;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,11 +17,53 @@ namespace DespesaDigital.Views.Forms.Relatorio.Despesa
         public frmFiltroRelDespesaPorDepartamento()
         {
             InitializeComponent();
+
+            mskInicial.Text = DateTime.Today.ToString("dd/MM/yyyy");
+            mskFinal.Text = DateTime.Today.ToString("dd/MM/yyyy");
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnVisualizar_Click(object sender, EventArgs e)
         {
-            using (var rel = new frmRelDespesaPorDepartamento())
+            DateTime inicial;
+            DateTime final;
+
+            try
+            {
+                inicial = Convert.ToDateTime(mskInicial.Text);
+            }
+            catch
+            {
+                corePopUp.exibirMensagem("A data inicial não é valida.", "Atenção");
+                mskInicial.Mask = "";
+                mskInicial.Text = "";
+                mskInicial.Mask = "__/__/____";
+
+                mskInicial.Focus();
+                return;
+            }
+
+            try
+            {
+                final = Convert.ToDateTime(mskFinal.Text);
+            }
+            catch
+            {
+                corePopUp.exibirMensagem("A data final não é valida.", "Atenção");
+                mskFinal.Mask = "";
+                mskFinal.Text = "";
+                mskFinal.Mask = "__/__/____";
+
+                mskFinal.Focus();
+                return;
+            }
+
+            if (inicial > final)
+            {
+                corePopUp.exibirMensagem("A data inicial não pode ser menor que a data final.", "Atenção");
+                return;
+            }
+
+            using (var rel = new frmRelDespesaPorDepartamento(inicial, final))
             {
                 rel.ShowDialog();
             }

@@ -153,6 +153,7 @@
     <Compile Include="Code\DTO\dtoDepartamento\dtoDepartamento.cs" />
     <Compile Include="Code\DTO\dtoDespesa\dtoDespesa.cs" />
     <Compile Include="Code\DTO\dtoDespesa\dtoDespesaItens.cs" />
+    <Compile Include="Code\DTO\dtoDespesa\dtoRelDespesaPorDepartamento.cs" />
     <Compile Include="Code\DTO\dtoFormaPagamento\dtoFormaPagamento.cs" />
     <Compile Include="Code\DTO\dtoFornecedor\dtoFornecedor.cs" />
     <Compile Include="Code\DTO\dtoFornecedor\dtoFornecedorContato.cs" />
@@ -562,6 +563,7 @@
     <None Include="Properties\DataSources\DespesaDigital.Code.DTO.dtoDepartamento.dtoDepartamento.datasource" />
     <None Include="Properties\DataSources\DespesaDigital.Code.DTO.dtoDespesa.dtoDespesa.datasource" />
     <None Include="Properties\DataSources\DespesaDigital.Code.DTO.dtoDespesa.dtoDespesaItens.datasource" />
+    <None Include="Properties\DataSources\DespesaDigital.Code.DTO.dtoDespesa.dtoRelDespesaPorDepartamento.datasource" />
     <None Include="Properties\DataSources\DespesaDigital.Code.DTO.dtoFormaPagamento.dtoFormaPagamento.datasource" />
     <None Include="Properties\DataSources\DespesaDigital.Code.DTO.dtoFornecedor.dtoFornecedor.datasource" />
     <None Include="Properties\DataSources\DespesaDigital.Code.DTO.dtoFornecedor.dtoFornecedorContato.datasource" />
