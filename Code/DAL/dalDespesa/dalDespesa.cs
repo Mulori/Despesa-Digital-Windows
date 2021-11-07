@@ -11,16 +11,23 @@ namespace DespesaDigital.Code.DAL.dalDespesa
 {
     public class dalDespesa
     {
-        public DataSet TodasDespesa()
+        #region Relatorios
+        public DataSet relTodasDespesasPorDepartamentoData(DateTime inicio, DateTime fim)
         {
             DataSet ds = new DataSet();
 
-            var ssql = "select d.codigo, d.data_hora_emissao, d.valor, d.descricao, tp.descricao as tipo_despesa, s.nome as setor, fp.descricao as forma_pagamento, u.nome, u.sobrenome, d.descricao as motivo, ";
-            ssql += " d.codigo_tipo_despesa, d.codigo_forma_pagamento, d.codigo_setor, d.codigo_setor, d.codigo_usuario from despesa d";
+            var ssql = "select d.codigo, d.data_hora_emissao, d.valor, d.descricao, tp.descricao as descricao_tipo_despesa, s.nome as nome_setor, fp.descricao as descricao_forma_pagamento, u.nome || ' ' || u.sobrenome as nome_usuario from despesa d";
             ssql += " inner join tipodespesa tp on(d.codigo_tipo_despesa = tp.codigo) ";
             ssql += " inner join setor s on(d.codigo_setor = s.codigo) ";
             ssql += " inner join forma_pagamento fp ON (fp.codigo = d.codigo_forma_pagamento)";
             ssql += " inner join usuario u on(d.codigo_usuario = u.codigo)";
+            ssql += $" where s.codigo_departamento = '{VariaveisGlobais.codigo_departamento}'";
+            ssql += $" and d.data_hora_emissao between '{inicio.ToString("yyyy-MM-dd") + " 00:00:00.000"}' and '{fim.ToString("yyyy-MM-dd") + " 23:59:59.000"}'";
+
+            if (VariaveisGlobais.nivel_acesso == 2)
+            {
+                ssql += $" and d.codigo_setor = '{VariaveisGlobais.codigo_setor}'";
+            }
 
             using (var ad = new NpgsqlDataAdapter(ssql, dalConexao.dalConexao.cnn))
             {
@@ -29,6 +36,8 @@ namespace DespesaDigital.Code.DAL.dalDespesa
 
             return ds;
         }
+        #endregion
+
 
         public dtoDespesa DespesaPorCodigo(long codigo_despesa)
         {
