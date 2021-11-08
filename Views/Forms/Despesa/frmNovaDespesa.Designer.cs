@@ -103,6 +103,8 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(252, 29);
             this.txtValor.TabIndex = 49;
+            this.txtValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValor_KeyPress);
+            this.txtValor.Leave += new System.EventHandler(this.txtValor_Leave);
             // 
             // label2
             // 

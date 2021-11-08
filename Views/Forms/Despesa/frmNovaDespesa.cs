@@ -162,6 +162,7 @@ namespace DespesaDigital.Views.Forms.Despesa
 
             var dto = new dtoDespesa();
             var s_valor = txtValor.Text.Trim().Replace(".", string.Empty);
+            s_valor = s_valor.Replace("R$", "").Replace(" ", "");
             dto.valor = Convert.ToDecimal(s_valor);
             dto.data_hora_emissao = DateTime.Now;
             dto.codigo_forma_pagamento = Convert.ToInt32(((KeyValuePair<string, string>)cmbFormaPagamento.SelectedItem).Key);
@@ -290,6 +291,44 @@ namespace DespesaDigital.Views.Forms.Despesa
                         txtPesquisaItem.Focus();
                     }
                     break;
+            }
+        }
+
+        private void txtValor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
+            {
+                e.Handled = true;
+                corePopUp.exibirMensagem("Este campo aceita somente números e vírgula", "Atenção");
+            }
+
+            if (e.KeyChar == (char)Keys.Delete)
+            {
+                txtValor.Text = "";
+            }
+
+            if (e.KeyChar == (char)Keys.Back)
+            {
+                txtValor.Text = "";
+            }
+        }
+
+        private void txtValor_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(txtValor.Text))
+                {
+                    return;
+                }
+
+                System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("pt-BR");
+                txtValor.Text = string.Format("{0:C}", Convert.ToDouble(txtValor.Text));
+            }
+            catch
+            {
+                corePopUp.exibirMensagem("Ocorreu um erro ao converter o valor para moeda, verifique o campo valor!", "Erro de conversão");
+                txtValor.Text = "";
             }
         }
     }

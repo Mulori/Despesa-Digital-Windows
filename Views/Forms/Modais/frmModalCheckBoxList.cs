@@ -52,6 +52,12 @@ namespace DespesaDigital.Views.Forms.Modais
                         listSetor = bllSetor.TodosSetoresPorDepartamento(VariaveisGlobais.codigo_departamento);
                     }
 
+                    if (listSetor.Count == 0)
+                    {
+                        corePopUp.exibirMensagem("Nenhum setor cadastrado para este departamento", "Atenção");
+                        return;
+                    }
+
                     Dictionary<string, string> comboSourceSetor = new Dictionary<string, string>();
                     foreach (var item in listSetor)
                     {
@@ -65,6 +71,12 @@ namespace DespesaDigital.Views.Forms.Modais
                 case 2: //Lista Todos os Fornecedores
 
                     var listFornecedor = bllFornecedor.ListarTodosFornecedores();
+
+                    if(listFornecedor.Count == 0)
+                    {
+                        corePopUp.exibirMensagem("Nenhum fornecedor cadastrado para este departamento", "Atenção");
+                        return;
+                    }
 
                     Dictionary<string, string> comboSourceFornecedor = new Dictionary<string, string>();
                     foreach (var item in listFornecedor)
@@ -136,8 +148,13 @@ namespace DespesaDigital.Views.Forms.Modais
 
                         List<dtoSetor> listSetor = new List<dtoSetor>();
 
-                        listSetor = bllSetor.ListSetorPorNome(txtPesquisa.Text);                        
-                        
+                        listSetor = bllSetor.ListSetorPorNome(txtPesquisa.Text);
+
+                        if (listSetor.Count == 0)
+                        {
+                            return;
+                        }
+
                         Dictionary<string, string> comboSourceSetor = new Dictionary<string, string>();
                         foreach (var item in listSetor)
                         {
@@ -151,6 +168,11 @@ namespace DespesaDigital.Views.Forms.Modais
                     case 2: //Lista Todos os Fornecedores
 
                         var listFornecedor = bllFornecedor.ListarTodosFornecedoresPorRazaoSocial(txtPesquisa.Text);
+
+                        if (listFornecedor.Count == 0)
+                        {
+                            return;
+                        }
 
                         Dictionary<string, string> comboSourceFornecedor = new Dictionary<string, string>();
                         foreach (var item in listFornecedor)
