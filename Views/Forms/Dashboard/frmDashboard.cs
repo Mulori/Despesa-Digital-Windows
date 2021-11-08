@@ -1,17 +1,9 @@
 ﻿using DespesaDigital.Code.BLL.bllDespesa;
 using DespesaDigital.Code.BLL.bllSetor;
 using DespesaDigital.Core;
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Forms.DataVisualization.Charting;
 
 namespace DespesaDigital.Views.Forms.Dashboard
 {
@@ -37,7 +29,7 @@ namespace DespesaDigital.Views.Forms.Dashboard
             chartValorDespesaPorSetor.Series["despesa"].XValueMember = "CentrodeCusto";
             chartValorDespesaPorSetor.Series["despesa"].YValueMembers = "ValorDespesa";
             charDespesaNosUltimo6Meses.Titles.Add($"Porcentagem de despesas dos ultimos 6 meses do centro de custo {bllSetor.SetorPorCodigo(VariaveisGlobais.codigo_setor).nome}");
-            chartValorDespesaPorSetor.Titles.Add("Porcentagem de despesas por centro de custo");
+            //chartValorDespesaPorSetor.Titles.Add("Porcentagem de despesas por centro de custo");
 
             //Grafico de Pizza 2
             charDespesaNosUltimo6Meses.DataSource = bllDespesa.DashboardTodoPeriodo();
