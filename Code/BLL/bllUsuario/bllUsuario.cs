@@ -77,5 +77,11 @@ namespace DespesaDigital.Code.BLL
             var dal = new dalUsuario();
             return dal.UpdateSenha(codigo_usuario, senha);
         }
+
+        public static int DashboardTotalUsuario()
+        {
+            var dal = new dalUsuario();
+            return dal.DashboardTotalUsuario();
+        }
     }
 }

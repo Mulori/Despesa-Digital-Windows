@@ -425,5 +425,32 @@ namespace DespesaDigital.Code.DAL.dalUsuario
                 }
             }
         }
+
+        public int DashboardTotalUsuario()
+        {
+            int total = 0;
+
+            var ssql = "select count(*) as quantidade from usuario u " +
+                " inner join setor s on(u.codigo_setor = s.codigo)" +
+                " inner join departamento dp on(s.codigo_departamento = dp.codigo)" +
+                $" where dp.codigo = '{VariaveisGlobais.codigo_departamento}'";
+
+            if (VariaveisGlobais.nivel_acesso < 3)
+            {
+                ssql += $" and u.codigo_setor = '{VariaveisGlobais.codigo_setor}'";
+            }
+
+            using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
+            using (var dr = cmd.ExecuteReader())
+            {
+                if (dr.Read())
+                {
+                    total = string.IsNullOrEmpty(dr["quantidade"].ToString()) ? 0 : Convert.ToInt32(dr["quantidade"]);
+                }
+                dr.Close();
+            }
+
+            return total;
+        }
     }
 }

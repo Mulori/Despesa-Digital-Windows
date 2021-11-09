@@ -90,7 +90,7 @@ namespace DespesaDigital.Code.DAL.dalDespesa
             ssql += $" where s.codigo_departamento = '{VariaveisGlobais.codigo_departamento}'";
             ssql += $" and d.data_hora_emissao between '{inicial.ToString("yyyy-MM-dd") + " 00:00:00.000"}' and '{final.ToString("yyyy-MM-dd") + " 23:59:59.000"}'";
 
-            if (VariaveisGlobais.nivel_acesso == 2)
+            if (VariaveisGlobais.nivel_acesso < 3)
             {
                 ssql += $" and d.codigo_setor = '{VariaveisGlobais.codigo_setor}'";
             }
@@ -99,12 +99,6 @@ namespace DespesaDigital.Code.DAL.dalDespesa
             {
                 ssql += $" and fp.codigo = '{codigo_forma_pagamento}'";
             }
-
-            //if (!bllConexao.Conectar())
-            //{
-            //    corePopUp.exibirMensagem("Não foi possivel estabelecer conexão \n com o servidor de banco de dados.", "Sem conexão!");
-            //    return list;
-            //}
 
             using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
             using (var dr = cmd.ExecuteReader())
@@ -157,12 +151,6 @@ namespace DespesaDigital.Code.DAL.dalDespesa
             {
                 ssql += $" and tp.codigo = '{codigo_tipo_despesa}'";
             }
-
-            //if (!bllConexao.Conectar())
-            //{
-            //    corePopUp.exibirMensagem("Não foi possivel estabelecer conexão \n com o servidor de banco de dados.", "Sem conexão!");
-            //    return list;
-            //}
 
             using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
             using (var dr = cmd.ExecuteReader())
@@ -221,12 +209,6 @@ namespace DespesaDigital.Code.DAL.dalDespesa
                 ssql += $" and d.codigo_usuario = '{codigo_usuario}'";
             }
 
-            //if (!bllConexao.Conectar())
-            //{
-            //    corePopUp.exibirMensagem("Não foi possivel estabelecer conexão \n com o servidor de banco de dados.", "Sem conexão!");
-            //    return list;
-            //}
-
             using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
             using (var dr = cmd.ExecuteReader())
             {
@@ -268,16 +250,10 @@ namespace DespesaDigital.Code.DAL.dalDespesa
             ssql += $" where s.codigo_departamento = '{VariaveisGlobais.codigo_departamento}'";
             ssql += $" and d.data_hora_emissao between '{inicial.ToString("yyyy-MM-dd") + " 00:00:00.000"}' and '{final.ToString("yyyy-MM-dd") + " 23:59:59.000"}'";
 
-            if (VariaveisGlobais.nivel_acesso == 2)
+            if (VariaveisGlobais.nivel_acesso < 3)
             {
                 ssql += $" and d.codigo_setor = '{VariaveisGlobais.codigo_setor}'";
             }
-
-            //if (!bllConexao.Conectar())
-            //{
-            //    corePopUp.exibirMensagem("Não foi possivel estabelecer conexão \n com o servidor de banco de dados.", "Sem conexão!");
-            //    return list;
-            //}
 
             using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
             using (var dr = cmd.ExecuteReader())
@@ -313,12 +289,6 @@ namespace DespesaDigital.Code.DAL.dalDespesa
 
             var ssql = $"select NovaDespesa('{Convert.ToDateTime(obj.data_hora_emissao).ToString("yyyy-MM-dd HH:mm:ss")}', '{obj.valor.ToString().Replace(",", ".")}', '{obj.descricao}', '{obj.codigo_tipo_despesa}', {obj.codigo_setor}, {obj.codigo_forma_pagamento}, {obj.codigo_usuario});";
 
-            //if (!bllConexao.Conectar())
-            //{
-            //    corePopUp.exibirMensagem("Não foi possivel estabelecer conexão \n com o servidor de banco de dados.", "Sem conexão!");
-            //    return list;
-            //}
-
             using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
             using (var dr = cmd.ExecuteReader())
             {
@@ -337,12 +307,6 @@ namespace DespesaDigital.Code.DAL.dalDespesa
         {
             var ssql = "update despesa set valor = @valor, descricao = @descricao, codigo_tipo_despesa = @codigo_tipo_despesa, " +
                 "codigo_forma_pagamento = @codigo_forma_pagamento where codigo = @codigo";
-
-            //if (!bllConexao.Conectar())
-            //{
-            //    corePopUp.exibirMensagem("Não foi possivel estabelecer conexão \n com o servidor de banco de dados.", "Sem conexão!");
-            //    return false;
-            //}
 
             using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
             {
@@ -404,6 +368,98 @@ namespace DespesaDigital.Code.DAL.dalDespesa
             }
 
             return list;
+        }
+
+        public decimal DashboardTotalDespesa()
+        {
+            decimal total = 0;
+
+            var ssql = "select sum(valor) as valor from despesa d " +
+                " inner join setor s on(d.codigo_setor = s.codigo)" +
+                " inner join departamento dp on(s.codigo_departamento = dp.codigo)" +
+                $" where dp.codigo = '{VariaveisGlobais.codigo_departamento}' and data_hora_emissao >= '{DateTime.Today.AddDays(-1).ToString("yyyy-MM-dd")} {DateTime.Now.Hour}:{DateTime.Now.Minute}:{DateTime.Now.Second}'";
+
+            if (VariaveisGlobais.nivel_acesso < 3)
+            {
+                ssql += $" and d.codigo_setor = '{VariaveisGlobais.codigo_setor}'";
+            }
+
+            using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
+            using (var dr = cmd.ExecuteReader())
+            {
+                if (dr.Read())
+                {
+                    total = string.IsNullOrEmpty(dr["valor"].ToString()) ? 0 : Convert.ToDecimal(dr["valor"]);
+                }
+                dr.Close();
+            }
+
+            return total;
+        }
+
+        public List<object> DashboardQuantidadeDespesa()
+        {
+            var list = new List<object>();
+
+            var ssql = "select count(d.codigo) as quantidade, d.codigo_setor, s.nome  from despesa d  " +
+                " inner join setor s on(d.codigo_setor = s.codigo)" +
+                " inner join departamento dp on(s.codigo_departamento = dp.codigo) " +
+                $" where dp.codigo = '{VariaveisGlobais.codigo_departamento}'";
+
+            if (VariaveisGlobais.nivel_acesso < 3)
+            {
+                ssql += $" and d.codigo_setor = '{VariaveisGlobais.codigo_setor}'";
+            }
+
+            ssql += "  group by d.codigo_setor, s.nome";
+
+            using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
+            using (var dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    object total = new
+                    {
+                        quantidade = string.IsNullOrEmpty(dr["quantidade"].ToString()) ? 0 : Convert.ToInt32(dr["quantidade"]),
+                        codigo_setor = string.IsNullOrEmpty(dr["codigo_setor"].ToString()) ? 0 : Convert.ToInt32(dr["codigo_setor"]),
+                        nome = string.IsNullOrEmpty(dr["nome"].ToString()) ? "" : dr["nome"].ToString()
+                    };
+
+                    list.Add(total);
+                }
+                dr.Close();
+            }
+
+            return list;
+        }
+
+        public decimal DashboardValorUltimaDespesa()
+        {
+            decimal ultimo = 0;
+
+            var ssql = "select d.valor from despesa d " +
+                " inner join setor s on(d.codigo_setor = s.codigo)" +
+                " inner join departamento dp on(s.codigo_departamento = dp.codigo)" +
+                $" where dp.codigo = '{VariaveisGlobais.codigo_departamento}'";
+
+            if (VariaveisGlobais.nivel_acesso < 3)
+            {
+                ssql += $" and d.codigo_setor = '{VariaveisGlobais.codigo_setor}'";
+            }
+
+            ssql += " order by d.codigo desc limit 1";
+
+            using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
+            using (var dr = cmd.ExecuteReader())
+            {
+                if (dr.Read())
+                {
+                    ultimo = string.IsNullOrEmpty(dr["valor"].ToString()) ? 0 : Convert.ToDecimal(dr["valor"]);
+                }
+                dr.Close();
+            }
+
+            return ultimo;
         }
     }
 }
