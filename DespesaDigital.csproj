@@ -618,6 +618,9 @@
   <ItemGroup>
     <None Include="Resources\coopercitrus_background.jpg" />
     <Content Include="iCONE.ico" />
+    <None Include="Resources\icon_grafico.png" />
+    <None Include="Resources\user_ico.png" />
+    <None Include="Resources\relogio_ico.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

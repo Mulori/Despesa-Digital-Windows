@@ -73,5 +73,23 @@ namespace DespesaDigital.Code.BLL.bllDespesa
             var dal = new dalDespesa();
             return dal.ListarTodasDespesas(inicial, final, codigo_forma_pagamento, codigo_tipo_despesa, codigo_setor, codigo_usuario);
         }
+
+        public static decimal DashboardTotalDespesa()
+        {
+            var dal = new dalDespesa();
+            return dal.DashboardTotalDespesa();
+        }
+
+        public static List<object> DashboardQuantidadeDespesa()
+        {
+            var dal = new dalDespesa();
+            return dal.DashboardQuantidadeDespesa();
+        }
+
+        public static decimal DashboardValorUltimaDespesa()
+        {
+            var dal = new dalDespesa();
+            return dal.DashboardValorUltimaDespesa();
+        }
     }
 }
