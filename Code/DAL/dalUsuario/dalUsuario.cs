@@ -433,7 +433,7 @@ namespace DespesaDigital.Code.DAL.dalUsuario
             var ssql = "select count(*) as quantidade from usuario u " +
                 " inner join setor s on(u.codigo_setor = s.codigo)" +
                 " inner join departamento dp on(s.codigo_departamento = dp.codigo)" +
-                $" where dp.codigo = '{VariaveisGlobais.codigo_departamento}'";
+                $" where dp.codigo = '{VariaveisGlobais.codigo_departamento}' and u.ativo = 'A'";
 
             if (VariaveisGlobais.nivel_acesso < 3)
             {
