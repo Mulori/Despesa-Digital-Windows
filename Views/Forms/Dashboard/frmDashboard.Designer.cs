@@ -30,111 +30,120 @@ namespace DespesaDigital.Views.Forms.Dashboard
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title7 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title8 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDashboard));
             this.chartValorDespesaPorSetor = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.charDespesaNosUltimo6Meses = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnTotalDespesa = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lbTotalDespesa = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnColaboradores = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lbTotalUsuario = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pnTotalGrafico = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.pnQuantidadeDespesa = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.pnUltimaDespesa = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.lblValorUltimaDespesa = new System.Windows.Forms.Label();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.chartValorDespesaPorSetor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.charDespesaNosUltimo6Meses)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.panel5.SuspendLayout();
+            this.pnTotalDespesa.SuspendLayout();
+            this.pnColaboradores.SuspendLayout();
+            this.pnTotalGrafico.SuspendLayout();
+            this.pnQuantidadeDespesa.SuspendLayout();
+            this.pnUltimaDespesa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // chartValorDespesaPorSetor
             // 
             this.chartValorDespesaPorSetor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.chartValorDespesaPorSetor.BorderlineColor = System.Drawing.Color.Transparent;
-            chartArea7.Name = "ChartArea1";
-            this.chartValorDespesaPorSetor.ChartAreas.Add(chartArea7);
-            legend7.Name = "Legend1";
-            this.chartValorDespesaPorSetor.Legends.Add(legend7);
+            chartArea1.Name = "ChartArea1";
+            this.chartValorDespesaPorSetor.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartValorDespesaPorSetor.Legends.Add(legend1);
             this.chartValorDespesaPorSetor.Location = new System.Drawing.Point(7, 80);
             this.chartValorDespesaPorSetor.Name = "chartValorDespesaPorSetor";
             this.chartValorDespesaPorSetor.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
-            series7.ChartArea = "ChartArea1";
-            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series7.Legend = "Legend1";
-            series7.Name = "despesa";
-            this.chartValorDespesaPorSetor.Series.Add(series7);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series1.Legend = "Legend1";
+            series1.Name = "despesa";
+            this.chartValorDespesaPorSetor.Series.Add(series1);
             this.chartValorDespesaPorSetor.Size = new System.Drawing.Size(294, 227);
             this.chartValorDespesaPorSetor.TabIndex = 0;
             this.chartValorDespesaPorSetor.Text = "Valor de despesa por setor";
-            title7.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title7.Name = "Total de despesas por centro de custo (R$)";
-            this.chartValorDespesaPorSetor.Titles.Add(title7);
+            title1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title1.Name = "Total de despesas por centro de custo (R$)";
+            this.chartValorDespesaPorSetor.Titles.Add(title1);
+            this.chartValorDespesaPorSetor.MouseDown += new System.Windows.Forms.MouseEventHandler(this.chartValorDespesaPorSetor_MouseDown);
+            this.chartValorDespesaPorSetor.MouseMove += new System.Windows.Forms.MouseEventHandler(this.chartValorDespesaPorSetor_MouseMove);
+            this.chartValorDespesaPorSetor.MouseUp += new System.Windows.Forms.MouseEventHandler(this.chartValorDespesaPorSetor_MouseUp);
             // 
             // charDespesaNosUltimo6Meses
             // 
             this.charDespesaNosUltimo6Meses.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.charDespesaNosUltimo6Meses.BorderlineColor = System.Drawing.Color.Transparent;
-            chartArea8.Name = "ChartArea1";
-            this.charDespesaNosUltimo6Meses.ChartAreas.Add(chartArea8);
-            legend8.Name = "Legend1";
-            this.charDespesaNosUltimo6Meses.Legends.Add(legend8);
+            chartArea2.Name = "ChartArea1";
+            this.charDespesaNosUltimo6Meses.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.charDespesaNosUltimo6Meses.Legends.Add(legend2);
             this.charDespesaNosUltimo6Meses.Location = new System.Drawing.Point(7, 80);
             this.charDespesaNosUltimo6Meses.Name = "charDespesaNosUltimo6Meses";
-            series8.ChartArea = "ChartArea1";
-            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series8.Legend = "Legend1";
-            series8.Name = "despesa";
-            this.charDespesaNosUltimo6Meses.Series.Add(series8);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series2.Legend = "Legend1";
+            series2.Name = "despesa";
+            this.charDespesaNosUltimo6Meses.Series.Add(series2);
             this.charDespesaNosUltimo6Meses.Size = new System.Drawing.Size(296, 227);
             this.charDespesaNosUltimo6Meses.TabIndex = 2;
             this.charDespesaNosUltimo6Meses.Text = "Valor de despesa por setor";
-            title8.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title8.Name = "Total de despesas por centro de custo (R$)";
-            this.charDespesaNosUltimo6Meses.Titles.Add(title8);
+            title2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title2.Name = "Total de despesas por centro de custo (R$)";
+            this.charDespesaNosUltimo6Meses.Titles.Add(title2);
+            this.charDespesaNosUltimo6Meses.MouseDown += new System.Windows.Forms.MouseEventHandler(this.charDespesaNosUltimo6Meses_MouseDown);
+            this.charDespesaNosUltimo6Meses.MouseMove += new System.Windows.Forms.MouseEventHandler(this.charDespesaNosUltimo6Meses_MouseMove);
+            this.charDespesaNosUltimo6Meses.MouseUp += new System.Windows.Forms.MouseEventHandler(this.charDespesaNosUltimo6Meses_MouseUp);
             // 
-            // panel1
+            // pnTotalDespesa
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.lbTotalDespesa);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(309, 117);
-            this.panel1.TabIndex = 3;
+            this.pnTotalDespesa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.pnTotalDespesa.Controls.Add(this.label3);
+            this.pnTotalDespesa.Controls.Add(this.label2);
+            this.pnTotalDespesa.Controls.Add(this.lbTotalDespesa);
+            this.pnTotalDespesa.Controls.Add(this.pictureBox1);
+            this.pnTotalDespesa.Location = new System.Drawing.Point(12, 12);
+            this.pnTotalDespesa.Name = "pnTotalDespesa";
+            this.pnTotalDespesa.Size = new System.Drawing.Size(309, 117);
+            this.pnTotalDespesa.TabIndex = 3;
+            this.pnTotalDespesa.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnTotalDespesa_MouseDown);
+            this.pnTotalDespesa.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnTotalDespesa_MouseMove);
+            this.pnTotalDespesa.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnTotalDespesa_MouseUp);
             // 
             // label3
             // 
@@ -169,27 +178,20 @@ namespace DespesaDigital.Views.Forms.Dashboard
             this.lbTotalDespesa.TabIndex = 4;
             this.lbTotalDespesa.Text = "R$ 0,00";
             // 
-            // pictureBox1
+            // pnColaboradores
             // 
-            this.pictureBox1.Image = global::DespesaDigital.Properties.Resources.icon_grafico;
-            this.pictureBox1.Location = new System.Drawing.Point(187, 8);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(115, 102);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(146)))), ((int)(((byte)(222)))));
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.lbTotalUsuario);
-            this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Location = new System.Drawing.Point(361, 12);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(309, 117);
-            this.panel2.TabIndex = 7;
+            this.pnColaboradores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(146)))), ((int)(((byte)(222)))));
+            this.pnColaboradores.Controls.Add(this.label1);
+            this.pnColaboradores.Controls.Add(this.label4);
+            this.pnColaboradores.Controls.Add(this.lbTotalUsuario);
+            this.pnColaboradores.Controls.Add(this.pictureBox2);
+            this.pnColaboradores.Location = new System.Drawing.Point(361, 12);
+            this.pnColaboradores.Name = "pnColaboradores";
+            this.pnColaboradores.Size = new System.Drawing.Size(309, 117);
+            this.pnColaboradores.TabIndex = 7;
+            this.pnColaboradores.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnColaboradores_MouseDown);
+            this.pnColaboradores.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnColaboradores_MouseMove);
+            this.pnColaboradores.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnColaboradores_MouseUp);
             // 
             // label1
             // 
@@ -224,39 +226,21 @@ namespace DespesaDigital.Views.Forms.Dashboard
             this.lbTotalUsuario.TabIndex = 4;
             this.lbTotalUsuario.Text = "0";
             // 
-            // pictureBox2
+            // pnTotalGrafico
             // 
-            this.pictureBox2.Image = global::DespesaDigital.Properties.Resources.user_ico;
-            this.pictureBox2.Location = new System.Drawing.Point(187, 8);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(115, 102);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
-            // panel3
-            // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel3.Controls.Add(this.chartValorDespesaPorSetor);
-            this.panel3.Controls.Add(this.pictureBox3);
-            this.panel3.Controls.Add(this.label6);
-            this.panel3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel3.Location = new System.Drawing.Point(12, 207);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(309, 314);
-            this.panel3.TabIndex = 8;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(19, 17);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(40, 42);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 7;
-            this.pictureBox3.TabStop = false;
+            this.pnTotalGrafico.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pnTotalGrafico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.pnTotalGrafico.Controls.Add(this.chartValorDespesaPorSetor);
+            this.pnTotalGrafico.Controls.Add(this.pictureBox3);
+            this.pnTotalGrafico.Controls.Add(this.label6);
+            this.pnTotalGrafico.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnTotalGrafico.Location = new System.Drawing.Point(12, 207);
+            this.pnTotalGrafico.Name = "pnTotalGrafico";
+            this.pnTotalGrafico.Size = new System.Drawing.Size(309, 314);
+            this.pnTotalGrafico.TabIndex = 8;
+            this.pnTotalGrafico.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnTotalGrafico_MouseDown);
+            this.pnTotalGrafico.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnTotalGrafico_MouseMove);
+            this.pnTotalGrafico.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnTotalGrafico_MouseUp);
             // 
             // label5
             // 
@@ -271,18 +255,21 @@ namespace DespesaDigital.Views.Forms.Dashboard
     "ntros de custos em todo o período.";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel4
+            // pnQuantidadeDespesa
             // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel4.Controls.Add(this.pictureBox4);
-            this.panel4.Controls.Add(this.charDespesaNosUltimo6Meses);
-            this.panel4.Controls.Add(this.label5);
-            this.panel4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel4.Location = new System.Drawing.Point(361, 207);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(309, 314);
-            this.panel4.TabIndex = 9;
+            this.pnQuantidadeDespesa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pnQuantidadeDespesa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.pnQuantidadeDespesa.Controls.Add(this.pictureBox4);
+            this.pnQuantidadeDespesa.Controls.Add(this.charDespesaNosUltimo6Meses);
+            this.pnQuantidadeDespesa.Controls.Add(this.label5);
+            this.pnQuantidadeDespesa.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnQuantidadeDespesa.Location = new System.Drawing.Point(361, 207);
+            this.pnQuantidadeDespesa.Name = "pnQuantidadeDespesa";
+            this.pnQuantidadeDespesa.Size = new System.Drawing.Size(309, 314);
+            this.pnQuantidadeDespesa.TabIndex = 9;
+            this.pnQuantidadeDespesa.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnQuantidadeDespesa_MouseDown);
+            this.pnQuantidadeDespesa.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnQuantidadeDespesa_MouseMove);
+            this.pnQuantidadeDespesa.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnQuantidadeDespesa_MouseUp);
             // 
             // label6
             // 
@@ -297,28 +284,20 @@ namespace DespesaDigital.Views.Forms.Dashboard
     "\r\ncustos em todo o período.";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureBox4
+            // pnUltimaDespesa
             // 
-            this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(19, 18);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(40, 42);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 8;
-            this.pictureBox4.TabStop = false;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(184)))), ((int)(((byte)(111)))));
-            this.panel5.Controls.Add(this.label7);
-            this.panel5.Controls.Add(this.label8);
-            this.panel5.Controls.Add(this.lblValorUltimaDespesa);
-            this.panel5.Controls.Add(this.pictureBox5);
-            this.panel5.Location = new System.Drawing.Point(709, 12);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(309, 117);
-            this.panel5.TabIndex = 7;
+            this.pnUltimaDespesa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(184)))), ((int)(((byte)(111)))));
+            this.pnUltimaDespesa.Controls.Add(this.label7);
+            this.pnUltimaDespesa.Controls.Add(this.label8);
+            this.pnUltimaDespesa.Controls.Add(this.lblValorUltimaDespesa);
+            this.pnUltimaDespesa.Controls.Add(this.pictureBox5);
+            this.pnUltimaDespesa.Location = new System.Drawing.Point(709, 12);
+            this.pnUltimaDespesa.Name = "pnUltimaDespesa";
+            this.pnUltimaDespesa.Size = new System.Drawing.Size(309, 117);
+            this.pnUltimaDespesa.TabIndex = 7;
+            this.pnUltimaDespesa.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnUltimaDespesa_MouseDown);
+            this.pnUltimaDespesa.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnUltimaDespesa_MouseMove);
+            this.pnUltimaDespesa.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnUltimaDespesa_MouseUp);
             // 
             // label7
             // 
@@ -353,6 +332,12 @@ namespace DespesaDigital.Views.Forms.Dashboard
             this.lblValorUltimaDespesa.TabIndex = 4;
             this.lblValorUltimaDespesa.Text = "R$ 0,00";
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 5000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // pictureBox5
             // 
             this.pictureBox5.Image = global::DespesaDigital.Properties.Resources.relogio_ico;
@@ -363,11 +348,47 @@ namespace DespesaDigital.Views.Forms.Dashboard
             this.pictureBox5.TabIndex = 0;
             this.pictureBox5.TabStop = false;
             // 
-            // timer1
+            // pictureBox2
             // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 5000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.pictureBox2.Image = global::DespesaDigital.Properties.Resources.user_ico;
+            this.pictureBox2.Location = new System.Drawing.Point(187, 8);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(115, 102);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::DespesaDigital.Properties.Resources.icon_grafico;
+            this.pictureBox1.Location = new System.Drawing.Point(187, 8);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(115, 102);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(19, 17);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(40, 42);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 7;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(19, 18);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(40, 42);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 8;
+            this.pictureBox4.TabStop = false;
             // 
             // frmDashboard
             // 
@@ -375,32 +396,32 @@ namespace DespesaDigital.Views.Forms.Dashboard
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1383, 568);
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.pnUltimaDespesa);
+            this.Controls.Add(this.pnColaboradores);
+            this.Controls.Add(this.pnTotalDespesa);
+            this.Controls.Add(this.pnTotalGrafico);
+            this.Controls.Add(this.pnQuantidadeDespesa);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmDashboard";
             ((System.ComponentModel.ISupportInitialize)(this.chartValorDespesaPorSetor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.charDespesaNosUltimo6Meses)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
+            this.pnTotalDespesa.ResumeLayout(false);
+            this.pnTotalDespesa.PerformLayout();
+            this.pnColaboradores.ResumeLayout(false);
+            this.pnColaboradores.PerformLayout();
+            this.pnTotalGrafico.ResumeLayout(false);
+            this.pnTotalGrafico.PerformLayout();
+            this.pnQuantidadeDespesa.ResumeLayout(false);
+            this.pnQuantidadeDespesa.PerformLayout();
+            this.pnUltimaDespesa.ResumeLayout(false);
+            this.pnUltimaDespesa.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -409,23 +430,23 @@ namespace DespesaDigital.Views.Forms.Dashboard
 
         private System.Windows.Forms.DataVisualization.Charting.Chart chartValorDespesaPorSetor;
         private System.Windows.Forms.DataVisualization.Charting.Chart charDespesaNosUltimo6Meses;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnTotalDespesa;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbTotalDespesa;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel pnColaboradores;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lbTotalUsuario;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel pnTotalGrafico;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel pnQuantidadeDespesa;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel pnUltimaDespesa;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblValorUltimaDespesa;
