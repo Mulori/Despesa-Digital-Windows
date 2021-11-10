@@ -31,10 +31,11 @@ namespace DespesaDigital.Views.Forms.Relatorio
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.despesasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.despesasPorDepartamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.solicitaçõesDeComprasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.colaboradoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.despesasPorDepartamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelRelatorio = new System.Windows.Forms.Panel();
+            this.despesasPorColaboradorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,10 +56,18 @@ namespace DespesaDigital.Views.Forms.Relatorio
             // despesasToolStripMenuItem
             // 
             this.despesasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.despesasPorDepartamentoToolStripMenuItem});
+            this.despesasPorDepartamentoToolStripMenuItem,
+            this.despesasPorColaboradorToolStripMenuItem});
             this.despesasToolStripMenuItem.Name = "despesasToolStripMenuItem";
             this.despesasToolStripMenuItem.Size = new System.Drawing.Size(86, 24);
             this.despesasToolStripMenuItem.Text = "Despesas";
+            // 
+            // despesasPorDepartamentoToolStripMenuItem
+            // 
+            this.despesasPorDepartamentoToolStripMenuItem.Name = "despesasPorDepartamentoToolStripMenuItem";
+            this.despesasPorDepartamentoToolStripMenuItem.Size = new System.Drawing.Size(277, 24);
+            this.despesasPorDepartamentoToolStripMenuItem.Text = "Despesas por Departamento";
+            this.despesasPorDepartamentoToolStripMenuItem.Click += new System.EventHandler(this.despesasPorDepartamentoToolStripMenuItem_Click);
             // 
             // solicitaçõesDeComprasToolStripMenuItem
             // 
@@ -72,13 +81,6 @@ namespace DespesaDigital.Views.Forms.Relatorio
             this.colaboradoresToolStripMenuItem.Size = new System.Drawing.Size(122, 24);
             this.colaboradoresToolStripMenuItem.Text = "Colaboradores";
             // 
-            // despesasPorDepartamentoToolStripMenuItem
-            // 
-            this.despesasPorDepartamentoToolStripMenuItem.Name = "despesasPorDepartamentoToolStripMenuItem";
-            this.despesasPorDepartamentoToolStripMenuItem.Size = new System.Drawing.Size(277, 24);
-            this.despesasPorDepartamentoToolStripMenuItem.Text = "Despesas por Departamento";
-            this.despesasPorDepartamentoToolStripMenuItem.Click += new System.EventHandler(this.despesasPorDepartamentoToolStripMenuItem_Click);
-            // 
             // panelRelatorio
             // 
             this.panelRelatorio.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -86,6 +88,13 @@ namespace DespesaDigital.Views.Forms.Relatorio
             this.panelRelatorio.Name = "panelRelatorio";
             this.panelRelatorio.Size = new System.Drawing.Size(1223, 549);
             this.panelRelatorio.TabIndex = 1;
+            // 
+            // despesasPorColaboradorToolStripMenuItem
+            // 
+            this.despesasPorColaboradorToolStripMenuItem.Name = "despesasPorColaboradorToolStripMenuItem";
+            this.despesasPorColaboradorToolStripMenuItem.Size = new System.Drawing.Size(277, 24);
+            this.despesasPorColaboradorToolStripMenuItem.Text = "Despesas por Colaborador";
+            this.despesasPorColaboradorToolStripMenuItem.Click += new System.EventHandler(this.despesasPorColaboradorToolStripMenuItem_Click);
             // 
             // frmRelatorio
             // 
@@ -115,5 +124,6 @@ namespace DespesaDigital.Views.Forms.Relatorio
         private System.Windows.Forms.ToolStripMenuItem colaboradoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem despesasPorDepartamentoToolStripMenuItem;
         private System.Windows.Forms.Panel panelRelatorio;
+        private System.Windows.Forms.ToolStripMenuItem despesasPorColaboradorToolStripMenuItem;
     }
 }

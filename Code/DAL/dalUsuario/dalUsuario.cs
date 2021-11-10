@@ -180,7 +180,7 @@ namespace DespesaDigital.Code.DAL.dalUsuario
 
         public dtoUsuario UsuarioPorCodigo(int codigo)
         {
-            var ssql = $"select u.codigo, u.nome as usuario, u.sobrenome, u.email, u.nivel_acesso, u.ativo, s.nome as setor, d.nome as departamento, u.senha " +
+            var ssql = $"select u.codigo, u.nome as usuario, u.sobrenome, u.email, u.nivel_acesso, u.ativo, s.nome as setor, d.nome as departamento, u.senha, u.codigo_setor " +
                 $"from usuario u inner join setor s on(u.codigo_setor = s.codigo) inner join departamento d on(d.codigo = s.codigo_departamento) where u.codigo = '{codigo}'";
 
             if (VariaveisGlobais.nivel_acesso == 2)
@@ -231,6 +231,7 @@ namespace DespesaDigital.Code.DAL.dalUsuario
                     }
 
                     dto.senha = dr["senha"].ToString();
+                    dto.codigo_setor = Convert.ToInt32(dr["codigo_setor"]);
                     dto.nome_setor = dr["setor"].ToString();
                     dto.nome_departamento = dr["departamento"].ToString();
                 }
@@ -337,10 +338,63 @@ namespace DespesaDigital.Code.DAL.dalUsuario
             return retorno;
         }
 
+        public List<dtoUsuario> ListarUsuariosPorDepartamento(int codigo_departamento)
+        {
+            var ssql = $"select u.codigo, u.nome as usuario, u.sobrenome, u.email, u.nivel_acesso, u.ativo, s.nome as setor " +
+                $"from usuario u inner join setor s on(u.codigo_setor = s.codigo) inner join departamento d on(s.codigo_departamento = d.codigo) where d.codigo = '{codigo_departamento}' and u.ativo = 'A' order by u.nome asc";
+
+            var list = new List<dtoUsuario>();
+
+            using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
+            using (var dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    var dto = new dtoUsuario();
+                    dto.codigo = Convert.ToInt32(dr["codigo"]);
+                    dto.nome = dr["usuario"].ToString();
+                    dto.sobrenome = dr["sobrenome"].ToString();
+                    dto.email = dr["email"].ToString();
+
+                    switch (dr["nivel_acesso"].ToString())
+                    {
+                        case "1":
+                            dto.s_nivel_acesso = "Tecnico";
+                            break;
+                        case "2":
+                            dto.s_nivel_acesso = "Supervisor";
+                            break;
+                        case "3":
+                            dto.s_nivel_acesso = "Gestor";
+                            break;
+                    }
+
+                    switch (dr["ativo"].ToString())
+                    {
+                        case "A":
+                            dto.ativo = "Ativo";
+                            break;
+                        case "P":
+                            dto.ativo = "Pendente";
+                            break;
+                        case "I":
+                            dto.ativo = "Inativo";
+                            break;
+                    }
+
+                    dto.nome_setor = dr["setor"].ToString();
+
+                    list.Add(dto);
+                }
+                dr.Close();
+            }
+            return list;
+        }
+
         public List<dtoUsuario> ListarUsuariosPorSetor(int codigo_setor)
         {
             var ssql = $"select u.codigo, u.nome as usuario, u.sobrenome, u.email, u.nivel_acesso, u.ativo, s.nome as setor " +
-                $"from usuario u inner join setor s on(u.codigo_setor = s.codigo) where u.codigo_setor = '{codigo_setor}'";
+                $"from usuario u inner join setor s on(u.codigo_setor = s.codigo) where u.codigo_setor = '{codigo_setor}' and u.ativo = 'A' order by u.nome asc";
 
             var list = new List<dtoUsuario>();
 

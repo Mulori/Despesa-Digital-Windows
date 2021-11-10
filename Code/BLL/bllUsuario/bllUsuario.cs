@@ -60,6 +60,12 @@ namespace DespesaDigital.Code.BLL
             return dal.NovoUsuario(dto);
         }
 
+        public static List<dtoUsuario> ListarUsuariosPorDepartamento(int codigo_departamento)
+        {
+            var dal = new dalUsuario();
+            return dal.ListarUsuariosPorDepartamento(codigo_departamento);
+        }
+
         public static List<dtoUsuario> ListarUsuariosPorSetor(int codigo_setor)
         {
             var dal = new dalUsuario();

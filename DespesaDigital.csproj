@@ -184,6 +184,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report\rptDespesa\frmRelDespesaPorColaborador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\rptDespesa\frmRelDespesaPorColaborador.Designer.cs">
+      <DependentUpon>frmRelDespesaPorColaborador.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\rptDespesa\frmRelDespesaPorDepartamento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -353,6 +359,12 @@
     <Compile Include="Views\Forms\Produtos\frmPesquisarProduto.Designer.cs">
       <DependentUpon>frmPesquisarProduto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Forms\Relatorio\Despesa\frmFiltroRelDespesaPorColaborador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\Relatorio\Despesa\frmFiltroRelDespesaPorColaborador.Designer.cs">
+      <DependentUpon>frmFiltroRelDespesaPorColaborador.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Forms\Relatorio\Despesa\frmFiltroRelDespesaPorDepartamento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -438,9 +450,13 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Report\rptDespesa\frmRelDespesaPorColaborador.resx">
+      <DependentUpon>frmRelDespesaPorColaborador.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\rptDespesa\frmRelDespesaPorDepartamento.resx">
       <DependentUpon>frmRelDespesaPorDepartamento.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptDespesa\relDespesaPorColaborador.rdlc" />
     <EmbeddedResource Include="Report\rptDespesa\relDespesaPorDepartamento.rdlc" />
     <EmbeddedResource Include="Views\Forms\Cadastros\frmCadastro.resx">
       <DependentUpon>frmCadastro.cs</DependentUpon>
@@ -522,6 +538,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\Produtos\frmPesquisarProduto.resx">
       <DependentUpon>frmPesquisarProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\Relatorio\Despesa\frmFiltroRelDespesaPorColaborador.resx">
+      <DependentUpon>frmFiltroRelDespesaPorColaborador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\Relatorio\Despesa\frmFiltroRelDespesaPorDepartamento.resx">
       <DependentUpon>frmFiltroRelDespesaPorDepartamento.cs</DependentUpon>

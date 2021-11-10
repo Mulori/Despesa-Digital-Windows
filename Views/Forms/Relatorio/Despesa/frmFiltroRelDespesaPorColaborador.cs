@@ -1,18 +1,51 @@
-﻿using DespesaDigital.Core;
+﻿using DespesaDigital.Code.BLL;
+using DespesaDigital.Code.DTO;
+using DespesaDigital.Core;
 using DespesaDigital.Report.rptDespesa;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DespesaDigital.Views.Forms.Relatorio.Despesa
 {
-    public partial class frmFiltroRelDespesaPorDepartamento : Form
+    public partial class frmFiltroRelDespesaPorColaborador : Form
     {
-        public frmFiltroRelDespesaPorDepartamento()
+        public frmFiltroRelDespesaPorColaborador()
         {
             InitializeComponent();
 
             mskInicial.Text = DateTime.Today.ToString("dd/MM/yyyy");
             mskFinal.Text = DateTime.Today.ToString("dd/MM/yyyy");
+
+            if(VariaveisGlobais.nivel_acesso > 2)
+            {
+                var list = bllUsuario.ListarUsuariosPorDepartamento(VariaveisGlobais.codigo_departamento);
+                CarregaListaColaboradores(list);
+            }
+            else
+            {
+                var list = bllUsuario.ListarUsuariosPorSetor(VariaveisGlobais.codigo_setor);
+                CarregaListaColaboradores(list);
+            }
+        }
+
+        void CarregaListaColaboradores(List<dtoUsuario> list)
+        {
+            Dictionary<string, string> comboSource = new Dictionary<string, string>();
+            foreach (var item in list)
+            {
+                comboSource.Add($"{item.codigo}", $"{item.nome} {item.sobrenome}");
+            }
+
+            cmbColaborador.DataSource = new BindingSource(comboSource, null);
+            cmbColaborador.DisplayMember = "Value";
+            cmbColaborador.ValueMember = "Key";
         }
 
         private void btnVisualizar_Click(object sender, EventArgs e)
@@ -56,40 +89,12 @@ namespace DespesaDigital.Views.Forms.Relatorio.Despesa
                 return;
             }
 
-            using (var rel = new frmRelDespesaPorDepartamento(inicial, final))
+            var codigo_usuario = Convert.ToInt32(((KeyValuePair<string, string>)cmbColaborador.SelectedItem).Key);
+
+            using (var rel = new frmRelDespesaPorColaborador(inicial, final, codigo_usuario))
             {
                 rel.ShowDialog();
             }
-        }
-
-        private void mskInicial_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void mskFinal_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }
