@@ -1,4 +1,6 @@
-﻿using DespesaDigital.Core;
+﻿using DespesaDigital.Code.BLL;
+using DespesaDigital.Code.DTO;
+using DespesaDigital.Core;
 using DespesaDigital.Report.rptDespesa;
 using System;
 using System.Collections.Generic;
@@ -20,6 +22,30 @@ namespace DespesaDigital.Views.Forms.Relatorio.Despesa
 
             mskInicial.Text = DateTime.Today.ToString("dd/MM/yyyy");
             mskFinal.Text = DateTime.Today.ToString("dd/MM/yyyy");
+
+            if(VariaveisGlobais.nivel_acesso > 2)
+            {
+                var list = bllUsuario.ListarUsuariosPorDepartamento(VariaveisGlobais.codigo_departamento);
+                CarregaListaColaboradores(list);
+            }
+            else
+            {
+                var list = bllUsuario.ListarUsuariosPorSetor(VariaveisGlobais.codigo_setor);
+                CarregaListaColaboradores(list);
+            }
+        }
+
+        void CarregaListaColaboradores(List<dtoUsuario> list)
+        {
+            Dictionary<string, string> comboSource = new Dictionary<string, string>();
+            foreach (var item in list)
+            {
+                comboSource.Add($"{item.codigo}", $"{item.nome} {item.sobrenome}");
+            }
+
+            cmbColaborador.DataSource = new BindingSource(comboSource, null);
+            cmbColaborador.DisplayMember = "Value";
+            cmbColaborador.ValueMember = "Key";
         }
 
         private void btnVisualizar_Click(object sender, EventArgs e)
@@ -63,7 +89,9 @@ namespace DespesaDigital.Views.Forms.Relatorio.Despesa
                 return;
             }
 
-            using (var rel = new frmRelDespesaPorColaborador(inicial, final, 130))
+            var codigo_usuario = Convert.ToInt32(((KeyValuePair<string, string>)cmbColaborador.SelectedItem).Key);
+
+            using (var rel = new frmRelDespesaPorColaborador(inicial, final, codigo_usuario))
             {
                 rel.ShowDialog();
             }

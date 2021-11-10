@@ -1,5 +1,6 @@
 ﻿using DespesaDigital.Code.BLL;
 using DespesaDigital.Code.BLL.bllDespesa;
+using DespesaDigital.Code.BLL.bllSetor;
 using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
@@ -29,14 +30,15 @@ namespace DespesaDigital.Report.rptDespesa
 
         private void frmRelDespesaPorColaborador_Load(object sender, EventArgs e)
         {
-            var usuario = bllUsuario.UsuarioPorCodigo(codigo_usuario);            
+            var usuario = bllUsuario.UsuarioPorCodigo(codigo_usuario);
+            var centro_custo = bllSetor.SetorPorCodigo(usuario.codigo_setor);
 
             var list = bllDespesa.RelDespesaPorColaborador(inicio, fim, codigo_usuario, usuario.codigo_setor);
             DataTable customerTable = list.Tables[0];
-            this.reportViewer1.LocalReport.SetParameters(new ReportParameter("txtColaborador", "Murilo"));
-
+            this.reportViewer1.LocalReport.SetParameters(new ReportParameter("nomeColaborador", usuario.codigo + " - " + usuario.nome + " " + usuario.sobrenome));
+            this.reportViewer1.LocalReport.SetParameters(new ReportParameter("centroCusto", centro_custo.nome));
+            this.reportViewer1.LocalReport.SetParameters(new ReportParameter("periodo", inicio.ToString("dd/MM/yyyy") + " Até " + fim.ToString("dd/MM/yyyy")));
             this.reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("dtSet", customerTable));
-
             this.reportViewer1.RefreshReport();
         }
     }

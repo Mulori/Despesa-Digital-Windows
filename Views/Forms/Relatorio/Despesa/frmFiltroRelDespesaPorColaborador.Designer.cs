@@ -37,7 +37,7 @@ namespace DespesaDigital.Views.Forms.Relatorio.Despesa
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbColaborador = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -131,7 +131,7 @@ namespace DespesaDigital.Views.Forms.Relatorio.Despesa
             this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox2.BackColor = System.Drawing.SystemColors.Control;
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.comboBox1);
+            this.groupBox2.Controls.Add(this.cmbColaborador);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(30, 185);
             this.groupBox2.Name = "groupBox2";
@@ -140,13 +140,14 @@ namespace DespesaDigital.Views.Forms.Relatorio.Despesa
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Filtro por Colaborador";
             // 
-            // comboBox1
+            // cmbColaborador
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(66, 64);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(285, 29);
-            this.comboBox1.TabIndex = 0;
+            this.cmbColaborador.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbColaborador.FormattingEnabled = true;
+            this.cmbColaborador.Location = new System.Drawing.Point(66, 64);
+            this.cmbColaborador.Name = "cmbColaborador";
+            this.cmbColaborador.Size = new System.Drawing.Size(285, 29);
+            this.cmbColaborador.TabIndex = 0;
             // 
             // label4
             // 
@@ -192,6 +193,6 @@ namespace DespesaDigital.Views.Forms.Relatorio.Despesa
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbColaborador;
     }
 }
