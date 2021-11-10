@@ -1,13 +1,20 @@
 ﻿using DespesaDigital.Core;
 using DespesaDigital.Report.rptDespesa;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DespesaDigital.Views.Forms.Relatorio.Despesa
 {
-    public partial class frmFiltroRelDespesaPorDepartamento : Form
+    public partial class frmFiltroRelDespesaPorColaborador : Form
     {
-        public frmFiltroRelDespesaPorDepartamento()
+        public frmFiltroRelDespesaPorColaborador()
         {
             InitializeComponent();
 
@@ -56,40 +63,10 @@ namespace DespesaDigital.Views.Forms.Relatorio.Despesa
                 return;
             }
 
-            using (var rel = new frmRelDespesaPorDepartamento(inicial, final))
+            using (var rel = new frmRelDespesaPorColaborador(inicial, final, 130))
             {
                 rel.ShowDialog();
             }
-        }
-
-        private void mskInicial_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void mskFinal_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }

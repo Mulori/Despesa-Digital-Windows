@@ -180,7 +180,7 @@ namespace DespesaDigital.Code.DAL.dalUsuario
 
         public dtoUsuario UsuarioPorCodigo(int codigo)
         {
-            var ssql = $"select u.codigo, u.nome as usuario, u.sobrenome, u.email, u.nivel_acesso, u.ativo, s.nome as setor, d.nome as departamento, u.senha " +
+            var ssql = $"select u.codigo, u.nome as usuario, u.sobrenome, u.email, u.nivel_acesso, u.ativo, s.nome as setor, d.nome as departamento, u.senha, u.codigo_setor " +
                 $"from usuario u inner join setor s on(u.codigo_setor = s.codigo) inner join departamento d on(d.codigo = s.codigo_departamento) where u.codigo = '{codigo}'";
 
             if (VariaveisGlobais.nivel_acesso == 2)
@@ -231,6 +231,7 @@ namespace DespesaDigital.Code.DAL.dalUsuario
                     }
 
                     dto.senha = dr["senha"].ToString();
+                    dto.codigo_setor = Convert.ToInt32(dr["codigo_setor"]);
                     dto.nome_setor = dr["setor"].ToString();
                     dto.nome_departamento = dr["departamento"].ToString();
                 }

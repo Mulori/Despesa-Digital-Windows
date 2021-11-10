@@ -27,5 +27,20 @@ namespace DespesaDigital.Views.Forms.Relatorio
             panelRelatorio.Controls.Add(_objForm);
             _objForm.Show();
         }
+
+        private void despesasPorColaboradorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _objForm?.Close();
+
+            _objForm = new frmFiltroRelDespesaPorColaborador
+            {
+                TopLevel = false,
+                FormBorderStyle = FormBorderStyle.None,
+                Dock = DockStyle.Fill
+            };
+
+            panelRelatorio.Controls.Add(_objForm);
+            _objForm.Show();
+        }
     }
 }
