@@ -479,5 +479,36 @@ namespace DespesaDigital.Code.DAL.dalDespesa
 
             return ds;
         }
+
+        public DataSet RelDespesaPorCentroCusto(DateTime inicio, DateTime fim, int codigo_setor, int codigo_forma_pagamento, int codigo_tipo_despesa)
+        {
+            var ds = new DataSet();
+
+            var ssql = "select d.codigo, d.data_hora_emissao, d.valor, d.descricao, fp.descricao as descricao_forma_pagamento, tp.descricao as descricao_tipo_despesa, u.nome || ' ' || u.sobrenome as nome_usuario from despesa d" +
+                " inner join forma_pagamento fp on(d.codigo_forma_pagamento = fp.codigo)" +
+                " inner join tipodespesa tp on(d.codigo_tipo_despesa = tp.codigo)" +
+                " inner join usuario u on(d.codigo_usuario = u.codigo)" +
+                $" where d.data_hora_emissao between '{inicio.ToString("yyyy-MM-dd")} 00:00:00' and '{fim.ToString("yyyy-MM-dd")} 23:59:59'" +
+                $" and d.codigo_setor = '{codigo_setor}'";
+
+            if(codigo_forma_pagamento != -1)
+            {
+                ssql += $" and d.codigo_forma_pagamento = '{codigo_forma_pagamento}'";
+            }
+
+            if (codigo_tipo_despesa != -1)
+            {
+                ssql += $" and d.codigo_tipo_despesa = '{codigo_tipo_despesa}'";
+            }
+
+            ssql += " order by d.data_hora_emissao asc";
+
+            using (var ad = new NpgsqlDataAdapter(ssql, dalConexao.dalConexao.cnn))
+            {
+                ad.Fill(ds);
+            }
+
+            return ds;
+        }
     }
 }

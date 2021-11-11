@@ -29,7 +29,7 @@ namespace DespesaDigital.Views.Forms.Relatorio.Despesa
                 corePopUp.exibirMensagem("A data inicial não é valida.", "Atenção");
                 mskInicial.Mask = "";
                 mskInicial.Text = "";
-                mskInicial.Mask = "__/__/____";
+                mskInicial.Mask = "##/##/####";
 
                 mskInicial.Focus();
                 return;
@@ -44,7 +44,7 @@ namespace DespesaDigital.Views.Forms.Relatorio.Despesa
                 corePopUp.exibirMensagem("A data final não é valida.", "Atenção");
                 mskFinal.Mask = "";
                 mskFinal.Text = "";
-                mskFinal.Mask = "__/__/____";
+                mskFinal.Mask = "##/##/####";
 
                 mskFinal.Focus();
                 return;

@@ -42,5 +42,35 @@ namespace DespesaDigital.Views.Forms.Relatorio
             panelRelatorio.Controls.Add(_objForm);
             _objForm.Show();
         }
+
+        private void despesasPorCentroDeCustoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _objForm?.Close();
+
+            _objForm = new frmFiltroRelDespesaPorCentroCusto
+            {
+                TopLevel = false,
+                FormBorderStyle = FormBorderStyle.None,
+                Dock = DockStyle.Fill
+            };
+
+            panelRelatorio.Controls.Add(_objForm);
+            _objForm.Show();
+        }
+
+        private void despesasPorCodigoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _objForm?.Close();
+
+            _objForm = new frmFiltroRelDespesaPorCodigo
+            {
+                TopLevel = false,
+                FormBorderStyle = FormBorderStyle.None,
+                Dock = DockStyle.Fill
+            };
+
+            panelRelatorio.Controls.Add(_objForm);
+            _objForm.Show();
+        }
     }
 }

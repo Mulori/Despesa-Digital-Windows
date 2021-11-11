@@ -97,5 +97,11 @@ namespace DespesaDigital.Code.BLL.bllDespesa
             var dal = new dalDespesa();
             return dal.RelDespesaPorColaborador(inicio, fim, codigo_usuario, codigo_setor);
         }
+
+        public static DataSet RelDespesaPorCentroCusto(DateTime inicio, DateTime fim, int codigo_setor, int codigo_forma_pagamento, int codigo_tipo_despesa)
+        {
+            var dal = new dalDespesa();
+            return dal.RelDespesaPorCentroCusto(inicio, fim, codigo_setor, codigo_forma_pagamento, codigo_tipo_despesa);
+        }
     }
 }
