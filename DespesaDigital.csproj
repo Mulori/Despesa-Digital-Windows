@@ -184,6 +184,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report\rptDespesa\frmRelDespesaPorCentroCusto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\rptDespesa\frmRelDespesaPorCentroCusto.Designer.cs">
+      <DependentUpon>frmRelDespesaPorCentroCusto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\rptDespesa\frmRelDespesaPorCodigo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\rptDespesa\frmRelDespesaPorCodigo.Designer.cs">
+      <DependentUpon>frmRelDespesaPorCodigo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\rptDespesa\frmRelDespesaPorColaborador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -359,6 +371,18 @@
     <Compile Include="Views\Forms\Produtos\frmPesquisarProduto.Designer.cs">
       <DependentUpon>frmPesquisarProduto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Forms\Relatorio\Despesa\frmFiltroRelDespesaPorCentroCusto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\Relatorio\Despesa\frmFiltroRelDespesaPorCentroCusto.Designer.cs">
+      <DependentUpon>frmFiltroRelDespesaPorCentroCusto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\Relatorio\Despesa\frmFiltroRelDespesaPorCodigo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\Relatorio\Despesa\frmFiltroRelDespesaPorCodigo.Designer.cs">
+      <DependentUpon>frmFiltroRelDespesaPorCodigo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Forms\Relatorio\Despesa\frmFiltroRelDespesaPorColaborador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -450,12 +474,20 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Report\rptDespesa\frmRelDespesaPorCentroCusto.resx">
+      <DependentUpon>frmRelDespesaPorCentroCusto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptDespesa\frmRelDespesaPorCodigo.resx">
+      <DependentUpon>frmRelDespesaPorCodigo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\rptDespesa\frmRelDespesaPorColaborador.resx">
       <DependentUpon>frmRelDespesaPorColaborador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\rptDespesa\frmRelDespesaPorDepartamento.resx">
       <DependentUpon>frmRelDespesaPorDepartamento.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptDespesa\relDespesaPorCentroCusto.rdlc" />
+    <EmbeddedResource Include="Report\rptDespesa\relDespesaPorCodigo.rdlc" />
     <EmbeddedResource Include="Report\rptDespesa\relDespesaPorColaborador.rdlc" />
     <EmbeddedResource Include="Report\rptDespesa\relDespesaPorDepartamento.rdlc" />
     <EmbeddedResource Include="Views\Forms\Cadastros\frmCadastro.resx">
@@ -538,6 +570,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\Produtos\frmPesquisarProduto.resx">
       <DependentUpon>frmPesquisarProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\Relatorio\Despesa\frmFiltroRelDespesaPorCentroCusto.resx">
+      <DependentUpon>frmFiltroRelDespesaPorCentroCusto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\Relatorio\Despesa\frmFiltroRelDespesaPorCodigo.resx">
+      <DependentUpon>frmFiltroRelDespesaPorCodigo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\Relatorio\Despesa\frmFiltroRelDespesaPorColaborador.resx">
       <DependentUpon>frmFiltroRelDespesaPorColaborador.cs</DependentUpon>

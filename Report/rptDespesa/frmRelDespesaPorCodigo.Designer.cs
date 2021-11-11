@@ -1,7 +1,7 @@
 ﻿
 namespace DespesaDigital.Report.rptDespesa
 {
-    partial class frmRelDespesaPorDepartamento
+    partial class frmRelDespesaPorCodigo
     {
         /// <summary>
         /// Required designer variable.
@@ -29,34 +29,32 @@ namespace DespesaDigital.Report.rptDespesa
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRelDespesaPorDepartamento));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRelDespesaPorCodigo));
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SuspendLayout();
             // 
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "DespesaDigital.Report.rptDespesa.relDespesaPorDepartamento.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "DespesaDigital.Report.rptDespesa.relDespesaPorCodigo.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.ShowRefreshButton = false;
-            this.reportViewer1.ShowStopButton = false;
-            this.reportViewer1.Size = new System.Drawing.Size(727, 475);
+            this.reportViewer1.Size = new System.Drawing.Size(800, 450);
             this.reportViewer1.TabIndex = 0;
             // 
-            // frmRelDespesaPorDepartamento
+            // frmRelDespesaPorCodigo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(727, 475);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.reportViewer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frmRelDespesaPorDepartamento";
+            this.Name = "frmRelDespesaPorCodigo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Relátorio de despesa por departamento";
+            this.Text = "Relatório de Despesa por Código";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.frmRelDespesaPorDepartamento_Load);
+            this.Load += new System.EventHandler(this.frmRelDespesaPorCodigo_Load);
             this.ResumeLayout(false);
 
         }
