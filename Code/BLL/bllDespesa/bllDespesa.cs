@@ -103,5 +103,11 @@ namespace DespesaDigital.Code.BLL.bllDespesa
             var dal = new dalDespesa();
             return dal.RelDespesaPorCentroCusto(inicio, fim, codigo_setor, codigo_forma_pagamento, codigo_tipo_despesa);
         }
+
+        public static dtoRelDespesaPorCodigo RelDespesaPorCodigo(long codigo_despesa)
+        {
+            var dal = new dalDespesa();
+            return dal.RelDespesaPorCodigo(codigo_despesa);
+        }
     }
 }
