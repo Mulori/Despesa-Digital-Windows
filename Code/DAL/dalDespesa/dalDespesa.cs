@@ -142,7 +142,7 @@ namespace DespesaDigital.Code.DAL.dalDespesa
             ssql += $" and d.data_hora_emissao between '{inicial.ToString("yyyy-MM-dd") + " 00:00:00.000"}' and '{final.ToString("yyyy-MM-dd") + " 23:59:59.000"}'";
             ssql += $" and s.codigo = '{codigo_setor}'";
 
-            if(codigo_forma_pagamento != -1)
+            if (codigo_forma_pagamento != -1)
             {
                 ssql += $" and fp.codigo = '{codigo_forma_pagamento}'";
             }
@@ -491,7 +491,7 @@ namespace DespesaDigital.Code.DAL.dalDespesa
                 $" where d.data_hora_emissao between '{inicio.ToString("yyyy-MM-dd")} 00:00:00' and '{fim.ToString("yyyy-MM-dd")} 23:59:59'" +
                 $" and d.codigo_setor = '{codigo_setor}'";
 
-            if(codigo_forma_pagamento != -1)
+            if (codigo_forma_pagamento != -1)
             {
                 ssql += $" and d.codigo_forma_pagamento = '{codigo_forma_pagamento}'";
             }
@@ -509,6 +509,47 @@ namespace DespesaDigital.Code.DAL.dalDespesa
             }
 
             return ds;
+        }
+
+        public dtoRelDespesaPorCodigo RelDespesaPorCodigo(long codigo_despesa)
+        {
+
+            var dto = new dtoRelDespesaPorCodigo();
+
+            var ssql = "select d.codigo, d.data_hora_emissao, d.valor, u.nome || ' ' || u.sobrenome as nomeUsuario," +
+                " fp.descricao as forma_pag, tp.descricao as tipo_desp," +
+                " s.nome as setor, dp.nome as depart, d.descricao from despesa d" +
+                " inner join setor s on s.codigo = d.codigo_setor" +
+                " inner join forma_pagamento fp on fp.codigo = d.codigo_forma_pagamento" +
+                " inner join tipodespesa tp on tp.codigo = d.codigo_tipo_despesa" +
+                " inner join usuario u on u.codigo = d.codigo_usuario" +
+                " inner join departamento dp on dp.codigo = s.codigo_departamento" +
+                $" where d.codigo = '{codigo_despesa}'";
+
+            if (VariaveisGlobais.nivel_acesso < 3)
+            {
+                ssql += $" and d.codigo_setor = '{VariaveisGlobais.codigo_setor}'";
+            }
+
+            using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
+            using (var dr = cmd.ExecuteReader())
+            {
+                if (dr.Read())
+                {
+                    dto.codigo = Convert.ToInt64(dr["codigo"]);
+                    dto.data_hora_emissao = Convert.ToDateTime(dr["data_hora_emissao"]);
+                    dto.valor = Convert.ToDecimal(dr["valor"]);
+                    dto.usuario = dr["nomeUsuario"].ToString();
+                    dto.forma_paramento = dr["forma_pag"].ToString();
+                    dto.tipo = dr["tipo_desp"].ToString();
+                    dto.setor = dr["setor"].ToString();
+                    dto.departamento = dr["depart"].ToString();
+                    dto.descricao = dr["descricao"].ToString();
+                }
+                dr.Close();
+            }
+
+            return dto;
         }
     }
 }

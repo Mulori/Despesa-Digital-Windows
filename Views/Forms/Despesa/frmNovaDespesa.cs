@@ -1,6 +1,7 @@
 ﻿using DespesaDigital.Code.BLL.bllDespesa;
 using DespesaDigital.Code.BLL.bllFormaPagamento;
 using DespesaDigital.Code.BLL.bllImagem;
+using DespesaDigital.Code.BLL.bllLogSistema;
 using DespesaDigital.Code.BLL.bllProdutoDespesa;
 using DespesaDigital.Code.BLL.bllSetor;
 using DespesaDigital.Code.BLL.bllTipoDespesa;
@@ -186,6 +187,7 @@ namespace DespesaDigital.Views.Forms.Despesa
                     bllProdutoDespesa.Insert(codigo_despesa, item.codigo);
                 }
 
+                bllLogSistema.Insert($"Inclusão de nova despesa: Nº{codigo_despesa} - Valor:{dto.valor} - Descricao:{dto.descricao}");
                 corePopUp.exibirMensagem("Despesa registrada com sucesso!", "Atenção");
 
                 txtObservacao.Text = "";

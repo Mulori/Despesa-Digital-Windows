@@ -17,12 +17,14 @@
                         <Value>Lançamento: </Value>
                         <Style>
                           <FontFamily>Segoe UI</FontFamily>
+                          <FontWeight>Bold</FontWeight>
                         </Style>
                       </TextRun>
                       <TextRun>
                         <Value>=Parameters!codigo.Value</Value>
                         <Style>
                           <FontFamily>Segoe UI</FontFamily>
+                          <FontWeight>Bold</FontWeight>
                         </Style>
                       </TextRun>
                     </TextRuns>
@@ -32,7 +34,7 @@
                 <rd:DefaultName>Textbox5</rd:DefaultName>
                 <Left>0.82021cm</Left>
                 <Height>0.6cm</Height>
-                <Width>13.48021cm</Width>
+                <Width>17.13146cm</Width>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -48,7 +50,7 @@
             <Top>0.51125cm</Top>
             <Left>0.77406cm</Left>
             <Height>0.6cm</Height>
-            <Width>14.96188cm</Width>
+            <Width>17.95167cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -68,6 +70,7 @@
                         <Value>Emissão: </Value>
                         <Style>
                           <FontFamily>Segoe UI</FontFamily>
+                          <FontWeight>Bold</FontWeight>
                           <Format>f</Format>
                         </Style>
                       </TextRun>
@@ -75,6 +78,7 @@
                         <Value>=Parameters!data_hora.Value</Value>
                         <Style>
                           <FontFamily>Segoe UI</FontFamily>
+                          <FontWeight>Bold</FontWeight>
                           <Format>f</Format>
                         </Style>
                       </TextRun>
@@ -85,7 +89,7 @@
                 <rd:DefaultName>Textbox5</rd:DefaultName>
                 <Left>0.7838cm</Left>
                 <Height>0.6cm</Height>
-                <Width>13.51662cm</Width>
+                <Width>17.16787cm</Width>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -101,7 +105,7 @@
             <Top>1.28764cm</Top>
             <Left>0.77406cm</Left>
             <Height>0.6cm</Height>
-            <Width>14.96188cm</Width>
+            <Width>17.95167cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -122,6 +126,7 @@
                         <Value>Valor: </Value>
                         <Style>
                           <FontFamily>Segoe UI</FontFamily>
+                          <FontWeight>Bold</FontWeight>
                           <Format>'R$' 0.00;('R$' 0.00)</Format>
                         </Style>
                       </TextRun>
@@ -129,6 +134,7 @@
                         <Value>=Parameters!valor.Value</Value>
                         <Style>
                           <FontFamily>Segoe UI</FontFamily>
+                          <FontWeight>Bold</FontWeight>
                           <Format>'R$' 0.00;('R$' 0.00)</Format>
                         </Style>
                       </TextRun>
@@ -139,7 +145,7 @@
                 <rd:DefaultName>Textbox5</rd:DefaultName>
                 <Left>0.82021cm</Left>
                 <Height>0.6cm</Height>
-                <Width>13.48021cm</Width>
+                <Width>17.13146cm</Width>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -156,7 +162,7 @@
             <Top>2.06403cm</Top>
             <Left>0.77406cm</Left>
             <Height>0.6cm</Height>
-            <Width>14.96188cm</Width>
+            <Width>17.95167cm</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
@@ -177,12 +183,14 @@
                         <Value>Tipo de Despesa: </Value>
                         <Style>
                           <FontFamily>Segoe UI</FontFamily>
+                          <FontWeight>Bold</FontWeight>
                         </Style>
                       </TextRun>
                       <TextRun>
                         <Value>=Parameters!tipo_despesa.Value</Value>
                         <Style>
                           <FontFamily>Segoe UI</FontFamily>
+                          <FontWeight>Bold</FontWeight>
                         </Style>
                       </TextRun>
                     </TextRuns>
@@ -192,7 +200,7 @@
                 <rd:DefaultName>Textbox5</rd:DefaultName>
                 <Left>0.82021cm</Left>
                 <Height>0.6cm</Height>
-                <Width>13.48021cm</Width>
+                <Width>17.13146cm</Width>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -208,7 +216,7 @@
             <Top>4.39319cm</Top>
             <Left>0.77406cm</Left>
             <Height>0.6cm</Height>
-            <Width>14.96188cm</Width>
+            <Width>17.95167cm</Width>
             <ZIndex>3</ZIndex>
             <Style>
               <Border>
@@ -229,12 +237,14 @@
                         <Value>Colaborador: </Value>
                         <Style>
                           <FontFamily>Segoe UI</FontFamily>
+                          <FontWeight>Bold</FontWeight>
                         </Style>
                       </TextRun>
                       <TextRun>
                         <Value>=Parameters!usuario.Value</Value>
                         <Style>
                           <FontFamily>Segoe UI</FontFamily>
+                          <FontWeight>Bold</FontWeight>
                         </Style>
                       </TextRun>
                     </TextRuns>
@@ -244,7 +254,7 @@
                 <rd:DefaultName>Textbox5</rd:DefaultName>
                 <Left>0.82021cm</Left>
                 <Height>0.6cm</Height>
-                <Width>13.48021cm</Width>
+                <Width>17.13146cm</Width>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -260,7 +270,7 @@
             <Top>2.84042cm</Top>
             <Left>0.77406cm</Left>
             <Height>0.6cm</Height>
-            <Width>14.96188cm</Width>
+            <Width>17.95167cm</Width>
             <ZIndex>4</ZIndex>
             <Style>
               <Border>
@@ -281,12 +291,14 @@
                         <Value>Forma de Pagamento: </Value>
                         <Style>
                           <FontFamily>Segoe UI</FontFamily>
+                          <FontWeight>Bold</FontWeight>
                         </Style>
                       </TextRun>
                       <TextRun>
                         <Value>=Parameters!forma_pagamento.Value</Value>
                         <Style>
                           <FontFamily>Segoe UI</FontFamily>
+                          <FontWeight>Bold</FontWeight>
                         </Style>
                       </TextRun>
                     </TextRuns>
@@ -296,7 +308,7 @@
                 <rd:DefaultName>Textbox5</rd:DefaultName>
                 <Left>0.82021cm</Left>
                 <Height>0.6cm</Height>
-                <Width>13.48021cm</Width>
+                <Width>17.13146cm</Width>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -312,7 +324,7 @@
             <Top>3.58153cm</Top>
             <Left>0.77406cm</Left>
             <Height>0.63528cm</Height>
-            <Width>14.96188cm</Width>
+            <Width>17.95167cm</Width>
             <ZIndex>5</ZIndex>
             <Style>
               <Border>
@@ -333,12 +345,14 @@
                         <Value>Centro de Custo: </Value>
                         <Style>
                           <FontFamily>Segoe UI</FontFamily>
+                          <FontWeight>Bold</FontWeight>
                         </Style>
                       </TextRun>
                       <TextRun>
                         <Value>=Parameters!centro_custo.Value</Value>
                         <Style>
                           <FontFamily>Segoe UI</FontFamily>
+                          <FontWeight>Bold</FontWeight>
                         </Style>
                       </TextRun>
                     </TextRuns>
@@ -348,7 +362,7 @@
                 <rd:DefaultName>Textbox5</rd:DefaultName>
                 <Left>0.82021cm</Left>
                 <Height>0.6cm</Height>
-                <Width>13.48021cm</Width>
+                <Width>17.13146cm</Width>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -364,7 +378,7 @@
             <Top>5.16958cm</Top>
             <Left>0.77406cm</Left>
             <Height>0.6cm</Height>
-            <Width>14.96188cm</Width>
+            <Width>17.95167cm</Width>
             <ZIndex>6</ZIndex>
             <Style>
               <Border>
@@ -385,12 +399,14 @@
                         <Value>Departamento: </Value>
                         <Style>
                           <FontFamily>Segoe UI</FontFamily>
+                          <FontWeight>Bold</FontWeight>
                         </Style>
                       </TextRun>
                       <TextRun>
                         <Value>=Parameters!departamento.Value</Value>
                         <Style>
                           <FontFamily>Segoe UI</FontFamily>
+                          <FontWeight>Bold</FontWeight>
                         </Style>
                       </TextRun>
                     </TextRuns>
@@ -400,7 +416,7 @@
                 <rd:DefaultName>Textbox5</rd:DefaultName>
                 <Left>0.82021cm</Left>
                 <Height>0.6cm</Height>
-                <Width>13.48021cm</Width>
+                <Width>17.13146cm</Width>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -416,7 +432,7 @@
             <Top>5.94597cm</Top>
             <Left>0.77406cm</Left>
             <Height>0.6cm</Height>
-            <Width>14.96188cm</Width>
+            <Width>17.95167cm</Width>
             <ZIndex>7</ZIndex>
             <Style>
               <Border>
@@ -437,12 +453,14 @@
                         <Value>Descrição: </Value>
                         <Style>
                           <FontFamily>Segoe UI</FontFamily>
+                          <FontWeight>Bold</FontWeight>
                         </Style>
                       </TextRun>
                       <TextRun>
                         <Value>=Parameters!descricao.Value</Value>
                         <Style>
                           <FontFamily>Segoe UI</FontFamily>
+                          <FontWeight>Bold</FontWeight>
                         </Style>
                       </TextRun>
                     </TextRuns>
@@ -450,10 +468,9 @@
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox5</rd:DefaultName>
-                <Top>0cm</Top>
                 <Left>0.82021cm</Left>
                 <Height>1.63188cm</Height>
-                <Width>13.48021cm</Width>
+                <Width>17.13146cm</Width>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -469,7 +486,7 @@
             <Top>7.49875cm</Top>
             <Left>0.77406cm</Left>
             <Height>1.63188cm</Height>
-            <Width>14.96188cm</Width>
+            <Width>17.95167cm</Width>
             <ZIndex>8</ZIndex>
             <Style>
               <Border>
@@ -490,12 +507,14 @@
                         <Value>Itens: </Value>
                         <Style>
                           <FontFamily>Segoe UI</FontFamily>
+                          <FontWeight>Bold</FontWeight>
                         </Style>
                       </TextRun>
                       <TextRun>
                         <Value>=Parameters!itens.Value</Value>
                         <Style>
                           <FontFamily>Segoe UI</FontFamily>
+                          <FontWeight>Bold</FontWeight>
                         </Style>
                       </TextRun>
                     </TextRuns>
@@ -503,9 +522,9 @@
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox5</rd:DefaultName>
-                <Left>0.82021cm</Left>
+                <Left>0.85662cm</Left>
                 <Height>1.63188cm</Height>
-                <Width>13.4438cm</Width>
+                <Width>17.09505cm</Width>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -519,9 +538,9 @@
             </ReportItems>
             <KeepTogether>true</KeepTogether>
             <Top>9.30702cm</Top>
-            <Left>0.81047cm</Left>
+            <Left>0.77406cm</Left>
             <Height>1.63188cm</Height>
-            <Width>14.96188cm</Width>
+            <Width>17.95167cm</Width>
             <ZIndex>9</ZIndex>
             <Style>
               <Border>
@@ -542,12 +561,14 @@
                         <Value>Contém Comprovante: </Value>
                         <Style>
                           <FontFamily>Segoe UI</FontFamily>
+                          <FontWeight>Bold</FontWeight>
                         </Style>
                       </TextRun>
                       <TextRun>
                         <Value>=Parameters!comprovante.Value</Value>
                         <Style>
                           <FontFamily>Segoe UI</FontFamily>
+                          <FontWeight>Bold</FontWeight>
                         </Style>
                       </TextRun>
                     </TextRuns>
@@ -557,7 +578,7 @@
                 <rd:DefaultName>Textbox5</rd:DefaultName>
                 <Left>0.82021cm</Left>
                 <Height>0.6cm</Height>
-                <Width>13.48021cm</Width>
+                <Width>17.13146cm</Width>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -573,7 +594,7 @@
             <Top>6.72236cm</Top>
             <Left>0.77406cm</Left>
             <Height>0.6cm</Height>
-            <Width>14.96188cm</Width>
+            <Width>17.95167cm</Width>
             <ZIndex>10</ZIndex>
             <Style>
               <Border>
@@ -591,7 +612,7 @@
           <BackgroundColor>WhiteSmoke</BackgroundColor>
         </Style>
       </Body>
-      <Width>6.5in</Width>
+      <Width>7.75in</Width>
       <Page>
         <PageHeader>
           <Height>2.5812cm</Height>
@@ -602,7 +623,8 @@
               <Source>Embedded</Source>
               <Value>logodespesadigital</Value>
               <Sizing>FitProportional</Sizing>
-              <Top>0.10514cm</Top>
+              <Top>0.18162cm</Top>
+              <Left>0.30868cm</Left>
               <Height>2.39958cm</Height>
               <Width>4.23403cm</Width>
               <Style>
@@ -633,9 +655,9 @@
               </Paragraphs>
               <rd:DefaultName>Textbox3</rd:DefaultName>
               <Top>0.50202cm</Top>
-              <Left>5.44724cm</Left>
+              <Left>4.7191cm</Left>
               <Height>0.89104cm</Height>
-              <Width>9.06167cm</Width>
+              <Width>14.82684cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
@@ -671,19 +693,22 @@
                       </Style>
                     </TextRun>
                   </TextRuns>
-                  <Style />
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox4</rd:DefaultName>
               <Top>1.56945cm</Top>
-              <Left>4.78578cm</Left>
+              <Left>4.75438cm</Left>
               <Height>0.6cm</Height>
-              <Width>10.59625cm</Width>
+              <Width>14.79156cm</Width>
               <ZIndex>2</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
                 </Border>
+                <VerticalAlign>Middle</VerticalAlign>
                 <PaddingLeft>2pt</PaddingLeft>
                 <PaddingRight>2pt</PaddingRight>
                 <PaddingTop>2pt</PaddingTop>
@@ -711,10 +736,10 @@
         </PageFooter>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>
-        <LeftMargin>2cm</LeftMargin>
-        <RightMargin>2cm</RightMargin>
-        <TopMargin>2cm</TopMargin>
-        <BottomMargin>2cm</BottomMargin>
+        <LeftMargin>0.5cm</LeftMargin>
+        <RightMargin>0.5cm</RightMargin>
+        <TopMargin>0.5cm</TopMargin>
+        <BottomMargin>0.5cm</BottomMargin>
         <ColumnSpacing>0.13cm</ColumnSpacing>
         <Style />
       </Page>

@@ -153,6 +153,7 @@
     <Compile Include="Code\DTO\dtoDepartamento\dtoDepartamento.cs" />
     <Compile Include="Code\DTO\dtoDespesa\dtoDespesa.cs" />
     <Compile Include="Code\DTO\dtoDespesa\dtoDespesaItens.cs" />
+    <Compile Include="Code\DTO\dtoDespesa\dtoRelDespesaPorCodigo.cs" />
     <Compile Include="Code\DTO\dtoDespesa\dtoRelDespesaPorDepartamento.cs" />
     <Compile Include="Code\DTO\dtoFormaPagamento\dtoFormaPagamento.cs" />
     <Compile Include="Code\DTO\dtoFornecedor\dtoFornecedor.cs" />
