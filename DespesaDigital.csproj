@@ -402,6 +402,12 @@
     <Compile Include="Views\Forms\Relatorio\frmRelatorio.Designer.cs">
       <DependentUpon>frmRelatorio.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Forms\Relatorio\Item\frmFiltroRelItensMaisAdquiridos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\Relatorio\Item\frmFiltroRelItensMaisAdquiridos.Designer.cs">
+      <DependentUpon>frmFiltroRelItensMaisAdquiridos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Forms\Setor\frmNovoSetor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -586,6 +592,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\Relatorio\frmRelatorio.resx">
       <DependentUpon>frmRelatorio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\Relatorio\Item\frmFiltroRelItensMaisAdquiridos.resx">
+      <DependentUpon>frmFiltroRelItensMaisAdquiridos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\Setor\frmNovoSetor.resx">
       <DependentUpon>frmNovoSetor.cs</DependentUpon>

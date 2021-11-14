@@ -33,11 +33,13 @@ namespace DespesaDigital.Views.Forms.Relatorio
             this.despesasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.despesasPorDepartamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.despesasPorColaboradorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.despesasPorCentroDeCustoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.despesasPorCodigoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.solicitaçõesDeComprasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.colaboradoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelRelatorio = new System.Windows.Forms.Panel();
-            this.despesasPorCentroDeCustoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.despesasPorCodigoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.itensToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.relatórioDeItensMaisAdquiridosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +49,8 @@ namespace DespesaDigital.Views.Forms.Relatorio
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.despesasToolStripMenuItem,
             this.solicitaçõesDeComprasToolStripMenuItem,
-            this.colaboradoresToolStripMenuItem});
+            this.colaboradoresToolStripMenuItem,
+            this.itensToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 3, 0, 3);
@@ -80,6 +83,20 @@ namespace DespesaDigital.Views.Forms.Relatorio
             this.despesasPorColaboradorToolStripMenuItem.Text = "Despesas por Colaborador";
             this.despesasPorColaboradorToolStripMenuItem.Click += new System.EventHandler(this.despesasPorColaboradorToolStripMenuItem_Click);
             // 
+            // despesasPorCentroDeCustoToolStripMenuItem
+            // 
+            this.despesasPorCentroDeCustoToolStripMenuItem.Name = "despesasPorCentroDeCustoToolStripMenuItem";
+            this.despesasPorCentroDeCustoToolStripMenuItem.Size = new System.Drawing.Size(287, 24);
+            this.despesasPorCentroDeCustoToolStripMenuItem.Text = "Despesas por Centro de Custo";
+            this.despesasPorCentroDeCustoToolStripMenuItem.Click += new System.EventHandler(this.despesasPorCentroDeCustoToolStripMenuItem_Click);
+            // 
+            // despesasPorCodigoToolStripMenuItem
+            // 
+            this.despesasPorCodigoToolStripMenuItem.Name = "despesasPorCodigoToolStripMenuItem";
+            this.despesasPorCodigoToolStripMenuItem.Size = new System.Drawing.Size(287, 24);
+            this.despesasPorCodigoToolStripMenuItem.Text = "Despesas por Código";
+            this.despesasPorCodigoToolStripMenuItem.Click += new System.EventHandler(this.despesasPorCodigoToolStripMenuItem_Click);
+            // 
             // solicitaçõesDeComprasToolStripMenuItem
             // 
             this.solicitaçõesDeComprasToolStripMenuItem.Name = "solicitaçõesDeComprasToolStripMenuItem";
@@ -100,19 +117,20 @@ namespace DespesaDigital.Views.Forms.Relatorio
             this.panelRelatorio.Size = new System.Drawing.Size(1223, 549);
             this.panelRelatorio.TabIndex = 1;
             // 
-            // despesasPorCentroDeCustoToolStripMenuItem
+            // itensToolStripMenuItem
             // 
-            this.despesasPorCentroDeCustoToolStripMenuItem.Name = "despesasPorCentroDeCustoToolStripMenuItem";
-            this.despesasPorCentroDeCustoToolStripMenuItem.Size = new System.Drawing.Size(287, 24);
-            this.despesasPorCentroDeCustoToolStripMenuItem.Text = "Despesas por Centro de Custo";
-            this.despesasPorCentroDeCustoToolStripMenuItem.Click += new System.EventHandler(this.despesasPorCentroDeCustoToolStripMenuItem_Click);
+            this.itensToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.relatórioDeItensMaisAdquiridosToolStripMenuItem});
+            this.itensToolStripMenuItem.Name = "itensToolStripMenuItem";
+            this.itensToolStripMenuItem.Size = new System.Drawing.Size(56, 24);
+            this.itensToolStripMenuItem.Text = "Itens";
             // 
-            // despesasPorCodigoToolStripMenuItem
+            // relatórioDeItensMaisAdquiridosToolStripMenuItem
             // 
-            this.despesasPorCodigoToolStripMenuItem.Name = "despesasPorCodigoToolStripMenuItem";
-            this.despesasPorCodigoToolStripMenuItem.Size = new System.Drawing.Size(287, 24);
-            this.despesasPorCodigoToolStripMenuItem.Text = "Despesas por Código";
-            this.despesasPorCodigoToolStripMenuItem.Click += new System.EventHandler(this.despesasPorCodigoToolStripMenuItem_Click);
+            this.relatórioDeItensMaisAdquiridosToolStripMenuItem.Name = "relatórioDeItensMaisAdquiridosToolStripMenuItem";
+            this.relatórioDeItensMaisAdquiridosToolStripMenuItem.Size = new System.Drawing.Size(320, 24);
+            this.relatórioDeItensMaisAdquiridosToolStripMenuItem.Text = "Relatório de Itens mais Adquiridos";
+            this.relatórioDeItensMaisAdquiridosToolStripMenuItem.Click += new System.EventHandler(this.relatórioDeItensMaisAdquiridosToolStripMenuItem_Click);
             // 
             // frmRelatorio
             // 
@@ -145,5 +163,7 @@ namespace DespesaDigital.Views.Forms.Relatorio
         private System.Windows.Forms.ToolStripMenuItem despesasPorColaboradorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem despesasPorCentroDeCustoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem despesasPorCodigoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem itensToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem relatórioDeItensMaisAdquiridosToolStripMenuItem;
     }
 }

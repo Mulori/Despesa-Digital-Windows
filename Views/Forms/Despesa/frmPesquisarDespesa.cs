@@ -8,6 +8,7 @@ using DespesaDigital.Code.DTO.dtoFormaPagamento;
 using DespesaDigital.Code.DTO.dtoSetor;
 using DespesaDigital.Code.DTO.dtoTipoDespesa;
 using DespesaDigital.Core;
+using DespesaDigital.Views.Forms.Relatorio.Despesa;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -406,12 +407,22 @@ namespace DespesaDigital.Views.Forms.Despesa
 
             var codigo = Convert.ToInt32(dataGrid.CurrentRow.Cells[0].Value.ToString());
 
-            using (var form = new frmDetalheDespesa(codigo))
-            {
-                form.ShowDialog();
-            }
+            var FormOpen = Application.OpenForms["frmFiltroRelDespesaPorCodigo"];
 
-            dataGrid.DataSource = bllDespesa.ListarTodasDespesasPorData(DateTime.Today, DateTime.Today);
+            if (FormOpen != null)
+            {
+                VariaveisGlobais.codigo_despesa_pesquisa = codigo;
+                Close();
+            }
+            else
+            {
+                using (var form = new frmDetalheDespesa(codigo))
+                {
+                    form.ShowDialog();
+                }
+
+                dataGrid.DataSource = bllDespesa.ListarTodasDespesasPorData(DateTime.Today, DateTime.Today);
+            }
         }
 
         private void cmbColaborador_SelectedIndexChanged(object sender, EventArgs e)
