@@ -1,6 +1,7 @@
 ﻿using DespesaDigital.Code.BLL.bllDespesa;
 using DespesaDigital.Core;
 using DespesaDigital.Report.rptDespesa;
+using DespesaDigital.Views.Forms.Despesa;
 using System;
 using System.Windows.Forms;
 
@@ -11,6 +12,7 @@ namespace DespesaDigital.Views.Forms.Relatorio.Despesa
         public frmFiltroRelDespesaPorCodigo()
         {
             InitializeComponent();
+            txtCodigo.Focus();
         }
 
         private void btnVisualizar_Click(object sender, EventArgs e)
@@ -39,6 +41,19 @@ namespace DespesaDigital.Views.Forms.Relatorio.Despesa
             {
                 e.Handled = true;
                 corePopUp.exibirMensagem("Este campo aceita somente números", "Atenção");
+            }
+        }
+
+        private void txtCodigo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.F10)
+            {
+                using (var form = new frmPesquisarDespesa())
+                {
+                    form.ShowDialog();
+                    txtCodigo.Text = "";
+                    txtCodigo.Text = VariaveisGlobais.codigo_despesa_pesquisa.ToString();
+                }
             }
         }
     }

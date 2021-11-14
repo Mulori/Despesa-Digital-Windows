@@ -1,7 +1,9 @@
 ﻿using DespesaDigital.Code.DTO.dtoDespesa;
+using DespesaDigital.Core;
 using Npgsql;
 using System;
 using System.Collections.Generic;
+using System.Data;
 
 namespace DespesaDigital.Code.DAL.dalDespesa
 {
@@ -30,6 +32,32 @@ namespace DespesaDigital.Code.DAL.dalDespesa
             }
 
             return list;
+        }
+
+        public DataSet RelProdutosMaisAdquiridos(int codigo_categoria)
+        {
+            var ds = new DataSet();
+
+            var ssql = $"select pd.codigo_produto, p.descricao, count(codigo_produto) as qtd from produto_despesa pd  " +
+                $" left join produto p on(pd.codigo_produto = p.codigo)" +
+                $" left join categoria c on(c.codigo = p.codigo_categoria)" +
+                $" where c.codigo_departamento = '{VariaveisGlobais.codigo_departamento}'";
+
+
+            if (codigo_categoria != -1)
+            {
+                ssql += $" and c.codigo = '{codigo_categoria}'";
+            }
+
+            ssql += $" group by pd.codigo_produto, p.descricao order by qtd desc";
+
+
+            using (var ad = new NpgsqlDataAdapter(ssql, dalConexao.dalConexao.cnn))
+            {
+                ad.Fill(ds);
+            }
+
+            return ds;
         }
     }
 }
