@@ -37,9 +37,10 @@ namespace DespesaDigital.Views.Forms.Relatorio
             this.despesasPorCodigoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.solicitaçõesDeComprasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.colaboradoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panelRelatorio = new System.Windows.Forms.Panel();
             this.itensToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.relatórioDeItensMaisAdquiridosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panelRelatorio = new System.Windows.Forms.Panel();
+            this.relatórioDeColaboradoresCadastradosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -105,17 +106,11 @@ namespace DespesaDigital.Views.Forms.Relatorio
             // 
             // colaboradoresToolStripMenuItem
             // 
+            this.colaboradoresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.relatórioDeColaboradoresCadastradosToolStripMenuItem});
             this.colaboradoresToolStripMenuItem.Name = "colaboradoresToolStripMenuItem";
             this.colaboradoresToolStripMenuItem.Size = new System.Drawing.Size(122, 24);
             this.colaboradoresToolStripMenuItem.Text = "Colaboradores";
-            // 
-            // panelRelatorio
-            // 
-            this.panelRelatorio.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelRelatorio.Location = new System.Drawing.Point(0, 30);
-            this.panelRelatorio.Name = "panelRelatorio";
-            this.panelRelatorio.Size = new System.Drawing.Size(1223, 549);
-            this.panelRelatorio.TabIndex = 1;
             // 
             // itensToolStripMenuItem
             // 
@@ -131,6 +126,21 @@ namespace DespesaDigital.Views.Forms.Relatorio
             this.relatórioDeItensMaisAdquiridosToolStripMenuItem.Size = new System.Drawing.Size(320, 24);
             this.relatórioDeItensMaisAdquiridosToolStripMenuItem.Text = "Relatório de Itens mais Adquiridos";
             this.relatórioDeItensMaisAdquiridosToolStripMenuItem.Click += new System.EventHandler(this.relatórioDeItensMaisAdquiridosToolStripMenuItem_Click);
+            // 
+            // panelRelatorio
+            // 
+            this.panelRelatorio.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelRelatorio.Location = new System.Drawing.Point(0, 30);
+            this.panelRelatorio.Name = "panelRelatorio";
+            this.panelRelatorio.Size = new System.Drawing.Size(1223, 549);
+            this.panelRelatorio.TabIndex = 1;
+            // 
+            // relatórioDeColaboradoresCadastradosToolStripMenuItem
+            // 
+            this.relatórioDeColaboradoresCadastradosToolStripMenuItem.Name = "relatórioDeColaboradoresCadastradosToolStripMenuItem";
+            this.relatórioDeColaboradoresCadastradosToolStripMenuItem.Size = new System.Drawing.Size(358, 24);
+            this.relatórioDeColaboradoresCadastradosToolStripMenuItem.Text = "Relatório de Colaboradores Cadastrados";
+            this.relatórioDeColaboradoresCadastradosToolStripMenuItem.Click += new System.EventHandler(this.relatórioDeColaboradoresCadastradosToolStripMenuItem_Click);
             // 
             // frmRelatorio
             // 
@@ -165,5 +175,6 @@ namespace DespesaDigital.Views.Forms.Relatorio
         private System.Windows.Forms.ToolStripMenuItem despesasPorCodigoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem itensToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem relatórioDeItensMaisAdquiridosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem relatórioDeColaboradoresCadastradosToolStripMenuItem;
     }
 }

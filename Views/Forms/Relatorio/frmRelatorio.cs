@@ -1,5 +1,6 @@
 ﻿using DespesaDigital.Views.Forms.Relatorio.Despesa;
 using DespesaDigital.Views.Forms.Relatorio.Item;
+using DespesaDigital.Views.Forms.Relatorio.Usuario;
 using System;
 using System.Windows.Forms;
 
@@ -79,6 +80,21 @@ namespace DespesaDigital.Views.Forms.Relatorio
             _objForm?.Close();
 
             _objForm = new frmFiltroRelItensMaisAdquiridos
+            {
+                TopLevel = false,
+                FormBorderStyle = FormBorderStyle.None,
+                Dock = DockStyle.Fill
+            };
+
+            panelRelatorio.Controls.Add(_objForm);
+            _objForm.Show();
+        }
+
+        private void relatórioDeColaboradoresCadastradosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _objForm?.Close();
+
+            _objForm = new frmFiltroRelColaboradoresCadastrados
             {
                 TopLevel = false,
                 FormBorderStyle = FormBorderStyle.None,

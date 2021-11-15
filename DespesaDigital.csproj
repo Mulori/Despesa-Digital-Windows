@@ -216,6 +216,12 @@
     <Compile Include="Report\rptItem\frmRelItensMaisAdquiridos.Designer.cs">
       <DependentUpon>frmRelItensMaisAdquiridos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\rptUsuario\frmRelColaboradoresCadastrados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\rptUsuario\frmRelColaboradoresCadastrados.Designer.cs">
+      <DependentUpon>frmRelColaboradoresCadastrados.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Views\Forms\Cadastros\frmCadastro.cs">
       <SubType>Form</SubType>
@@ -415,6 +421,12 @@
     <Compile Include="Views\Forms\Relatorio\Item\frmFiltroRelItensMaisAdquiridos.Designer.cs">
       <DependentUpon>frmFiltroRelItensMaisAdquiridos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Forms\Relatorio\Usuario\frmFiltroRelColaboradoresCadastrados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\Relatorio\Usuario\frmFiltroRelColaboradoresCadastrados.Designer.cs">
+      <DependentUpon>frmFiltroRelColaboradoresCadastrados.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Forms\Setor\frmNovoSetor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -508,6 +520,10 @@
       <DependentUpon>frmRelItensMaisAdquiridos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\rptItem\relItensMaisAdquiridos.rdlc" />
+    <EmbeddedResource Include="Report\rptUsuario\frmRelColaboradoresCadastrados.resx">
+      <DependentUpon>frmRelColaboradoresCadastrados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptUsuario\relColaboradoresCadastrados.rdlc" />
     <EmbeddedResource Include="Views\Forms\Cadastros\frmCadastro.resx">
       <DependentUpon>frmCadastro.cs</DependentUpon>
     </EmbeddedResource>
@@ -606,6 +622,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\Relatorio\Item\frmFiltroRelItensMaisAdquiridos.resx">
       <DependentUpon>frmFiltroRelItensMaisAdquiridos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\Relatorio\Usuario\frmFiltroRelColaboradoresCadastrados.resx">
+      <DependentUpon>frmFiltroRelColaboradoresCadastrados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\Setor\frmNovoSetor.resx">
       <DependentUpon>frmNovoSetor.cs</DependentUpon>

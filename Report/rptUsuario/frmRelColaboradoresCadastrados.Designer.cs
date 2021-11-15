@@ -1,7 +1,7 @@
 ﻿
-namespace DespesaDigital.Report.rptItem
+namespace DespesaDigital.Report.rptUsuario
 {
-    partial class frmRelItensMaisAdquiridos
+    partial class frmRelColaboradoresCadastrados
     {
         /// <summary>
         /// Required designer variable.
@@ -29,44 +29,32 @@ namespace DespesaDigital.Report.rptItem
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRelItensMaisAdquiridos));
-            this.dtoRelItensMaisAdquiridosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRelColaboradoresCadastrados));
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            ((System.ComponentModel.ISupportInitialize)(this.dtoRelItensMaisAdquiridosBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dtoRelItensMaisAdquiridosBindingSource
-            // 
-            this.dtoRelItensMaisAdquiridosBindingSource.DataSource = typeof(DespesaDigital.Code.DTO.dtoDespesa.dtoRelItensMaisAdquiridos);
             // 
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "dsItensAdquiridos";
-            reportDataSource1.Value = this.dtoRelItensMaisAdquiridosBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "DespesaDigital.Report.rptItem.relItensMaisAdquiridos.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "DespesaDigital.Report.rptUsuario.relColaboradoresCadastrados.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(800, 450);
             this.reportViewer1.TabIndex = 0;
             // 
-            // frmRelItensMaisAdquiridos
+            // frmRelColaboradoresCadastrados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.reportViewer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frmRelItensMaisAdquiridos";
+            this.Name = "frmRelColaboradoresCadastrados";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Relatório de Itens mais Adquiridos";
+            this.Text = "Relatório de Colaboradores Cadastrados";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.frmRelItensMaisAdquiridos_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dtoRelItensMaisAdquiridosBindingSource)).EndInit();
+            this.Load += new System.EventHandler(this.frmRelColaboradoresCadastrados_Load);
             this.ResumeLayout(false);
 
         }
@@ -74,6 +62,5 @@ namespace DespesaDigital.Report.rptItem
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private System.Windows.Forms.BindingSource dtoRelItensMaisAdquiridosBindingSource;
     }
 }
