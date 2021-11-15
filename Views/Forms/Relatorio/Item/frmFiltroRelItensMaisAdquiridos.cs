@@ -1,12 +1,7 @@
 ﻿using DespesaDigital.Code.BLL.bllCategoria;
+using DespesaDigital.Report.rptItem;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DespesaDigital.Views.Forms.Relatorio.Item
@@ -35,6 +30,16 @@ namespace DespesaDigital.Views.Forms.Relatorio.Item
                 cmbCategoria.DataSource = new BindingSource(comboSource, null);
                 cmbCategoria.DisplayMember = "Value";
                 cmbCategoria.ValueMember = "Key";
+            }
+        }
+
+        private void btnVisualizar_Click(object sender, EventArgs e)
+        {
+            var codigo_categoria = Convert.ToInt32(((KeyValuePair<string, string>)cmbCategoria.SelectedItem).Key);
+
+            using (var rel = new frmRelItensMaisAdquiridos(codigo_categoria))
+            {
+                rel.ShowDialog();
             }
         }
     }

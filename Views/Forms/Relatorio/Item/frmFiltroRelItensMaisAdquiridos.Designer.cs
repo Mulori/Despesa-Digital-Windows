@@ -30,10 +30,10 @@ namespace DespesaDigital.Views.Forms.Relatorio.Item
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnVisualizar = new System.Windows.Forms.Button();
-            this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,6 +50,15 @@ namespace DespesaDigital.Views.Forms.Relatorio.Item
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Categoria";
+            // 
+            // cmbCategoria
+            // 
+            this.cmbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCategoria.FormattingEnabled = true;
+            this.cmbCategoria.Location = new System.Drawing.Point(48, 65);
+            this.cmbCategoria.Name = "cmbCategoria";
+            this.cmbCategoria.Size = new System.Drawing.Size(324, 29);
+            this.cmbCategoria.TabIndex = 8;
             // 
             // label2
             // 
@@ -87,15 +96,7 @@ namespace DespesaDigital.Views.Forms.Relatorio.Item
             this.btnVisualizar.TabIndex = 17;
             this.btnVisualizar.Text = "Visualizar Relatório";
             this.btnVisualizar.UseVisualStyleBackColor = false;
-            // 
-            // cmbCategoria
-            // 
-            this.cmbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCategoria.FormattingEnabled = true;
-            this.cmbCategoria.Location = new System.Drawing.Point(48, 65);
-            this.cmbCategoria.Name = "cmbCategoria";
-            this.cmbCategoria.Size = new System.Drawing.Size(324, 29);
-            this.cmbCategoria.TabIndex = 8;
+            this.btnVisualizar.Click += new System.EventHandler(this.btnVisualizar_Click);
             // 
             // frmFiltroRelItensMaisAdquiridos
             // 
