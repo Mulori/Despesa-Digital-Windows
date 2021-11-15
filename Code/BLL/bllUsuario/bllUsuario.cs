@@ -1,6 +1,7 @@
 ﻿using DespesaDigital.Code.DAL.dalUsuario;
 using DespesaDigital.Code.DTO;
 using System.Collections.Generic;
+using System.Data;
 
 namespace DespesaDigital.Code.BLL
 {
@@ -88,6 +89,12 @@ namespace DespesaDigital.Code.BLL
         {
             var dal = new dalUsuario();
             return dal.DashboardTotalUsuario();
+        }
+
+        public static DataSet RelColaboradoresCadastrados(int nivel_acesso, string ativo, int codigo_setor)
+        {
+            var dal = new dalUsuario();
+            return dal.RelColaboradoresCadastrados(nivel_acesso, ativo, codigo_setor);
         }
     }
 }
