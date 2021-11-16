@@ -2,6 +2,7 @@
 using DespesaDigital.Code.DTO.dtoSolicitacaoCompra;
 using System;
 using System.Collections.Generic;
+using System.Data;
 
 namespace DespesaDigital.Code.BLL.bllSolicitacaoCompra
 {
@@ -41,6 +42,12 @@ namespace DespesaDigital.Code.BLL.bllSolicitacaoCompra
         {
             var dal = new dalSolicitacaoCompra();
             return dal.UsuarioAprovouRejeitou(codigo_solicitacao, codigo_gestor);
+        }
+
+        public static DataSet RelSolicitacao(DateTime inicio, DateTime fim, int codigo_setor, int codigo_usuario)
+        {
+            var dal = new dalSolicitacaoCompra();
+            return dal.RelSolicitacao(inicio, fim, codigo_setor, codigo_usuario);
         }
     }
 }
