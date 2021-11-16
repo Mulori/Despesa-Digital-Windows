@@ -3,6 +3,7 @@ using DespesaDigital.Core;
 using Npgsql;
 using System;
 using System.Collections.Generic;
+using System.Data;
 
 namespace DespesaDigital.Code.DAL.dalSolicitacaoCompra
 {
@@ -257,6 +258,42 @@ namespace DespesaDigital.Code.DAL.dalSolicitacaoCompra
                     return false;
                 }
             }
+        }
+
+        public DataSet RelSolicitacao(DateTime inicio, DateTime fim, int codigo_setor, int codigo_usuario)
+        {
+            var ds = new DataSet();
+
+            var ssql = "select so.codigo, so.data_solicitacao, so.motivo, so.valor, uso.nome || ' ' || uso.sobrenome as usuario_solicitacao, " +
+                " CASE  WHEN so.status = 'A' THEN 'Aprovado' WHEN so.status = 'R' THEN 'Rejeitado' WHEN so.status = 'P' THEN 'Pendente' END as status," +
+                " gso.nome || ' ' || gso.sobrenome as usuario_aprovacao, se.nome as setor, p.descricao as item from solicitacao so" +
+                " inner join setor se on(so.codigo_setor = se.codigo)" +
+                " left join usuario_solicitacao us on(so.codigo = us.codigo_solicitacao)" +
+                " left join gestor_solicitacao gs on(so.codigo = gs.codigo_solicitacao)" +
+                " left join usuario uso on(us.codigo_usuario = uso.codigo)" +
+                " left join usuario gso on(gs.codigo_usuario = gso.codigo)" +
+                " left join produto p on(so.codigo_produto = p.codigo)" +
+                $" where so.data_solicitacao between '{inicio.ToString("yyyy-MM-dd")} 00:00:00' and '{fim.ToString("yyyy-MM-dd")} 23:59:59'" +
+                $" and se.codigo_departamento = '{VariaveisGlobais.codigo_departamento}'";                
+
+            if (codigo_setor != -1)
+            {
+                ssql += $" and so.codigo_setor = '{codigo_setor}'";
+            }
+
+            if (codigo_usuario != -1)
+            {
+                ssql += $" and us.codigo_usuario = '{codigo_usuario}'";
+            }
+
+            ssql += " order by so.data_solicitacao asc";
+
+            using (var ad = new NpgsqlDataAdapter(ssql, dalConexao.dalConexao.cnn))
+            {
+                ad.Fill(ds);
+            }
+
+            return ds;
         }
     }
 }

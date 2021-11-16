@@ -172,6 +172,7 @@ namespace DespesaDigital.Views.Forms.Relatorio.Usuario
             this.btnVisualizar.TabIndex = 23;
             this.btnVisualizar.Text = "Visualizar Relatório";
             this.btnVisualizar.UseVisualStyleBackColor = false;
+            this.btnVisualizar.Click += new System.EventHandler(this.btnVisualizar_Click);
             // 
             // frmFiltroRelColaboradoresCadastrados
             // 

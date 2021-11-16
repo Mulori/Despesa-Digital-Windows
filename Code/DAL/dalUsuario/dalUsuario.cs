@@ -513,7 +513,7 @@ namespace DespesaDigital.Code.DAL.dalUsuario
             var ds = new DataSet();
 
             var ssql = $"select u.codigo, u.nome, u.sobrenome, u.email, CASE  WHEN nivel_acesso = '3' THEN 'Gestor'  WHEN nivel_acesso = '2' THEN 'Supervisor' WHEN nivel_acesso = '1' THEN 'Técnico'" +
-                $" ELSE 'Não Definido' END as s_nivel_acesso, CASE  WHEN ativo = 'A' THEN 'Ativo' WHEN ativo = 'I' THEN 'Inativo' WHEN ativo = 'P' THEN 'Pendente' END as s_ativo, s.nome, ua.datahora" +
+                $" ELSE 'Não Definido' END as s_nivel_acesso, CASE  WHEN ativo = 'A' THEN 'Ativo' WHEN ativo = 'I' THEN 'Inativo' WHEN ativo = 'P' THEN 'Pendente' END as s_ativo, s.nome as setor, ua.datahora" +
                 $" from usuario u inner join setor s on(u.codigo_setor = s.codigo) inner join departamento d on(s.codigo_departamento = d.codigo) left join usuario_aprovacao ua on(u.codigo = ua.codigo_usuario)" +                
                 $" where d.codigo = '{VariaveisGlobais.codigo_departamento}'";
 
@@ -532,7 +532,7 @@ namespace DespesaDigital.Code.DAL.dalUsuario
                 ssql += $" and u.codigo_setor = '{codigo_setor}'";
             }
 
-            ssql += $" order by u.nome, u.sobrenome asc";
+            ssql += $" and ativo <> 'P' order by u.nome, u.sobrenome asc";
 
             using (var ad = new NpgsqlDataAdapter(ssql, dalConexao.dalConexao.cnn))
             {

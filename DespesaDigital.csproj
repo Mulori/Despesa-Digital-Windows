@@ -166,8 +166,10 @@
     <Compile Include="Code\DTO\dtoServerNet\dtoServerNet.cs" />
     <Compile Include="Code\DTO\dtoSetor\dtoSetor.cs" />
     <Compile Include="Code\DTO\dtoSetor\dtoSetorProduto.cs" />
+    <Compile Include="Code\DTO\dtoSolicitacaoCompra\dtoRelSolicitacaoCompra.cs" />
     <Compile Include="Code\DTO\dtoSolicitacaoCompra\dtoSolicitacaoCompra.cs" />
     <Compile Include="Code\DTO\dtoTipoDespesa\dtoTipoDespesa.cs" />
+    <Compile Include="Code\DTO\dtoUsuario\dtoRelUsuario.cs" />
     <Compile Include="Code\DTO\dtoUsuario\dtoUsuario.cs" />
     <Compile Include="Code\DTO\dtoWebApi\dtoWebApiPaises.cs" />
     <Compile Include="Config\ReadConfigServerNet.cs" />
@@ -215,6 +217,12 @@
     </Compile>
     <Compile Include="Report\rptItem\frmRelItensMaisAdquiridos.Designer.cs">
       <DependentUpon>frmRelItensMaisAdquiridos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\rptSolicitacoesCompra\frmRelSolicitacoesCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\rptSolicitacoesCompra\frmRelSolicitacoesCompras.Designer.cs">
+      <DependentUpon>frmRelSolicitacoesCompras.cs</DependentUpon>
     </Compile>
     <Compile Include="Report\rptUsuario\frmRelColaboradoresCadastrados.cs">
       <SubType>Form</SubType>
@@ -421,6 +429,12 @@
     <Compile Include="Views\Forms\Relatorio\Item\frmFiltroRelItensMaisAdquiridos.Designer.cs">
       <DependentUpon>frmFiltroRelItensMaisAdquiridos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Forms\Relatorio\Solicitacao\frmFiltroRelSolicitacoesCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\Relatorio\Solicitacao\frmFiltroRelSolicitacoesCompra.Designer.cs">
+      <DependentUpon>frmFiltroRelSolicitacoesCompra.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Forms\Relatorio\Usuario\frmFiltroRelColaboradoresCadastrados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -520,6 +534,10 @@
       <DependentUpon>frmRelItensMaisAdquiridos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\rptItem\relItensMaisAdquiridos.rdlc" />
+    <EmbeddedResource Include="Report\rptSolicitacoesCompra\frmRelSolicitacoesCompras.resx">
+      <DependentUpon>frmRelSolicitacoesCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptSolicitacoesCompra\relSolicitacoesCompra.rdlc" />
     <EmbeddedResource Include="Report\rptUsuario\frmRelColaboradoresCadastrados.resx">
       <DependentUpon>frmRelColaboradoresCadastrados.cs</DependentUpon>
     </EmbeddedResource>
@@ -623,6 +641,9 @@
     <EmbeddedResource Include="Views\Forms\Relatorio\Item\frmFiltroRelItensMaisAdquiridos.resx">
       <DependentUpon>frmFiltroRelItensMaisAdquiridos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\Relatorio\Solicitacao\frmFiltroRelSolicitacoesCompra.resx">
+      <DependentUpon>frmFiltroRelSolicitacoesCompra.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\Relatorio\Usuario\frmFiltroRelColaboradoresCadastrados.resx">
       <DependentUpon>frmFiltroRelColaboradoresCadastrados.cs</DependentUpon>
     </EmbeddedResource>
@@ -667,6 +688,8 @@
     <None Include="Properties\DataSources\DespesaDigital.Code.DTO.dtoFornecedor.dtoFornecedorContato.datasource" />
     <None Include="Properties\DataSources\DespesaDigital.Code.DTO.dtoFornecedor.dtoFornecedorEndereco.datasource" />
     <None Include="Properties\DataSources\DespesaDigital.Code.DTO.dtoProduto.dtoProduto.datasource" />
+    <None Include="Properties\DataSources\DespesaDigital.Code.DTO.dtoRelSolicitacaoCompra.datasource" />
+    <None Include="Properties\DataSources\DespesaDigital.Code.DTO.dtoRelUsuario.datasource" />
     <None Include="Properties\DataSources\DespesaDigital.Code.DTO.dtoSetor.dtoSetor.datasource" />
     <None Include="Properties\DataSources\DespesaDigital.Code.DTO.dtoSetor.dtoSetorProduto.datasource" />
     <None Include="Properties\DataSources\DespesaDigital.Code.DTO.dtoSolicitacaoCompra.dtoSolicitacaoCompra.datasource" />
@@ -733,5 +756,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

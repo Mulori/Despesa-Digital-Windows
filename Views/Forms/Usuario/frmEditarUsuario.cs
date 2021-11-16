@@ -47,7 +47,7 @@ namespace DespesaDigital.Views.Forms.Usuario
         {
             if(VariaveisGlobais.nivel_acesso == 2)
             {
-                cmbNivel.Items.Add("Tecnico");
+                cmbNivel.Items.Add("Técnico");
                 cmbNivel.Items.Add("Supervisor");
 
                 cmbDepartamento.Enabled = false;
@@ -55,7 +55,7 @@ namespace DespesaDigital.Views.Forms.Usuario
             }
             else if(VariaveisGlobais.nivel_acesso == 3)
             {
-                cmbNivel.Items.Add("Tecnico");
+                cmbNivel.Items.Add("Técnico");
                 cmbNivel.Items.Add("Supervisor");
                 cmbNivel.Items.Add("Gestor");
             }

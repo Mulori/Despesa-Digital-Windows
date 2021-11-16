@@ -1,6 +1,8 @@
 ﻿using DespesaDigital.Code.BLL.bllSetor;
 using DespesaDigital.Code.DTO.dtoSetor;
 using DespesaDigital.Core;
+using DespesaDigital.Report.rptUsuario;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -68,6 +70,18 @@ namespace DespesaDigital.Views.Forms.Relatorio.Usuario
             cmbSetor.DataSource = new BindingSource(comboSource, null);
             cmbSetor.DisplayMember = "Value";
             cmbSetor.ValueMember = "Key";
+        }
+
+        private void btnVisualizar_Click(object sender, System.EventArgs e)
+        {
+            var codigo_setor = Convert.ToInt32(((KeyValuePair<string, string>)cmbSetor.SelectedItem).Key);
+            var codigo_nivel_acesso = Convert.ToInt32(((KeyValuePair<string, string>)cmbNivelAcesso.SelectedItem).Key);
+            var codigo_status = ((KeyValuePair<string, string>)cmbStatus.SelectedItem).Key;
+
+            using (var rel = new frmRelColaboradoresCadastrados(codigo_setor, codigo_status, codigo_nivel_acesso))
+            {
+                rel.ShowDialog();
+            }
         }
     }
 }
