@@ -20,6 +20,12 @@ namespace DespesaDigital.Views.Forms.Dashboard
 
         private void inicializar()
         {
+            if(VariaveisGlobais.nivel_acesso < 3)
+            {
+                pnTotalGrafico.Visible = false;
+                pnQuantidadeDespesa.Visible = false;
+            }
+
             try
             {
                 var total = bllDespesa.DashboardTotalDespesa();

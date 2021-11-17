@@ -141,7 +141,7 @@ namespace DespesaDigital.Views.Forms.Usuario
 
             switch (cmbNivel.Text)
             {
-                case "Tecnico":
+                case "Técnico":
                     dto.nivel_acesso = 1;
                     break;
                 case "Supervisor":

@@ -1,9 +1,7 @@
 ﻿using DespesaDigital.Code.DAL.dalLogSistema;
+using DespesaDigital.Code.DTO.dtoLogSistema;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DespesaDigital.Code.BLL.bllLogSistema
 {
@@ -13,6 +11,12 @@ namespace DespesaDigital.Code.BLL.bllLogSistema
         {
             var dal = new dalLogSistema();
             return dal.Insert(descricao);
+        }
+
+        public static List<dtoLogSistema> SelecionarLogs(DateTime inicio, DateTime fim, string email)
+        {
+            var dal = new dalLogSistema();
+            return dal.SelecionarLogs(inicio, fim, email);
         }
     }
 }

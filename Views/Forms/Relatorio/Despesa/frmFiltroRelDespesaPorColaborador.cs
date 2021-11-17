@@ -17,16 +17,19 @@ namespace DespesaDigital.Views.Forms.Relatorio.Despesa
             mskInicial.Text = DateTime.Today.ToString("dd/MM/yyyy");
             mskFinal.Text = DateTime.Today.ToString("dd/MM/yyyy");
 
-            if(VariaveisGlobais.nivel_acesso > 2)
+            if(VariaveisGlobais.nivel_acesso != 1)
             {
-                var list = bllUsuario.ListarUsuariosPorDepartamento(VariaveisGlobais.codigo_departamento);
-                CarregaListaColaboradores(list);
-            }
-            else
-            {
-                var list = bllUsuario.ListarUsuariosPorSetor(VariaveisGlobais.codigo_setor);
-                CarregaListaColaboradores(list);
-            }
+                if (VariaveisGlobais.nivel_acesso > 2)
+                {
+                    var list = bllUsuario.ListarUsuariosPorDepartamento(VariaveisGlobais.codigo_departamento);
+                    CarregaListaColaboradores(list);
+                }
+                else
+                {
+                    var list = bllUsuario.ListarUsuariosPorSetor(VariaveisGlobais.codigo_setor);
+                    CarregaListaColaboradores(list);
+                }
+            }           
         }
 
         void CarregaListaColaboradores(List<dtoUsuario> list)
@@ -83,9 +86,9 @@ namespace DespesaDigital.Views.Forms.Relatorio.Despesa
                 return;
             }
 
-            var codigo_usuario = Convert.ToInt32(((KeyValuePair<string, string>)cmbColaborador.SelectedItem).Key);
+            var codigo_usuario = VariaveisGlobais.nivel_acesso > 1 ? Convert.ToInt32(((KeyValuePair<string, string>)cmbColaborador.SelectedItem).Key) : 0;
 
-            using (var rel = new frmRelDespesaPorColaborador(inicial, final, codigo_usuario))
+            using (var rel = new frmRelDespesaPorColaborador(inicial, final, VariaveisGlobais.nivel_acesso > 1 ? codigo_usuario : VariaveisGlobais.codigo_usuario))
             {
                 rel.ShowDialog();
             }

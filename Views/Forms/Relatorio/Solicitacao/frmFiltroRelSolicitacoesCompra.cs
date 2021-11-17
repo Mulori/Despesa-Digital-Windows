@@ -68,6 +68,12 @@ namespace DespesaDigital.Views.Forms.Relatorio.Solicitacao
         void CarregaListaColaboradores(List<dtoUsuario> list)
         {
             Dictionary<string, string> comboSource = new Dictionary<string, string>();
+
+            if (VariaveisGlobais.nivel_acesso > 2)
+            {
+                comboSource.Add($"-1", $"Todos");
+            }
+
             foreach (var item in list)
             {
                 comboSource.Add($"{item.codigo}", $"{item.nome} {item.sobrenome}");

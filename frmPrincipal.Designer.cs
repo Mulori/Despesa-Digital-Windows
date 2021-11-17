@@ -45,6 +45,7 @@ namespace DespesaDigital
             this.panel3 = new System.Windows.Forms.Panel();
             this.lbRodape = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnFerramentas = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
@@ -57,6 +58,7 @@ namespace DespesaDigital
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(56)))), ((int)(((byte)(64)))));
+            this.panel1.Controls.Add(this.btnFerramentas);
             this.panel1.Controls.Add(this.btnRelatorios);
             this.panel1.Controls.Add(this.btnDashboard);
             this.panel1.Controls.Add(this.lbVersao);
@@ -247,6 +249,22 @@ namespace DespesaDigital
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // btnFerramentas
+            // 
+            this.btnFerramentas.Enabled = false;
+            this.btnFerramentas.FlatAppearance.BorderSize = 0;
+            this.btnFerramentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFerramentas.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFerramentas.ForeColor = System.Drawing.Color.White;
+            this.btnFerramentas.Location = new System.Drawing.Point(0, 481);
+            this.btnFerramentas.Name = "btnFerramentas";
+            this.btnFerramentas.Size = new System.Drawing.Size(182, 52);
+            this.btnFerramentas.TabIndex = 6;
+            this.btnFerramentas.Text = "Ferramentas";
+            this.btnFerramentas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFerramentas.UseVisualStyleBackColor = true;
+            this.btnFerramentas.Click += new System.EventHandler(this.btnFerramentas_Click);
+            // 
             // btnLogout
             // 
             this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -316,6 +334,7 @@ namespace DespesaDigital
         private System.Windows.Forms.Label lbRodape;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button btnRelatorios;
+        private System.Windows.Forms.Button btnFerramentas;
     }
 }
 

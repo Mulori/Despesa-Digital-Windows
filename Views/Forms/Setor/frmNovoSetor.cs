@@ -198,7 +198,7 @@ namespace DespesaDigital.Views.Forms.Setor
 
             if (bllSetor.Delete(Convert.ToInt32(txtCodigo.Text)))
             {
-                bllLogSistema.Insert($"Exclusão do setor: [Codigo: [{txtCodigo.Text}] Nome: [{txtNome}] Departamento: [{cmbDepartamento.Text}]");
+                bllLogSistema.Insert($"Exclusão do setor: [Codigo: [{txtCodigo.Text}] Nome: [{txtNome.Text}] Departamento: [{cmbDepartamento.Text}]");
 
                 corePopUp.exibirMensagem("Setor excluido com sucesso!.", "Atenção");
                 Close();

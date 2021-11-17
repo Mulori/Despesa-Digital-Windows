@@ -5,6 +5,7 @@ using DespesaDigital.Core;
 using DespesaDigital.Views.Forms.Cadastros;
 using DespesaDigital.Views.Forms.Dashboard;
 using DespesaDigital.Views.Forms.Despesa;
+using DespesaDigital.Views.Forms.Ferramentas;
 using DespesaDigital.Views.Forms.Login;
 using DespesaDigital.Views.Forms.Mensagens;
 using DespesaDigital.Views.Forms.MinhaConta;
@@ -41,7 +42,7 @@ namespace DespesaDigital
 
             setarNivelAcesso();
 
-            this.MinimumSize = new System.Drawing.Size(1087, 659);            
+            this.MinimumSize = new Size(1087, 659);            
         }
 
         void setarNivelAcesso()
@@ -68,6 +69,7 @@ namespace DespesaDigital
                     btnCadastro.Enabled = true;
                     btnDashboard.Enabled = true;
                     btnRelatorios.Enabled = true;
+                    btnFerramentas.Enabled = true;
                     break;
             }
         }
@@ -119,6 +121,7 @@ namespace DespesaDigital
             btnCentroCusto.BackColor = Color.FromArgb(43, 56, 64);
             btnMinhaConta.BackColor = Color.FromArgb(43, 56, 64);
             btnRelatorios.BackColor = Color.FromArgb(43, 56, 64);
+            btnFerramentas.BackColor = Color.FromArgb(43, 56, 64);
 
             _objForm?.Close();
 
@@ -151,6 +154,7 @@ namespace DespesaDigital
             btnCentroCusto.BackColor = Color.FromArgb(43, 56, 64);
             btnCadastro.BackColor = Color.FromArgb(43, 56, 64);
             btnRelatorios.BackColor = Color.FromArgb(43, 56, 64);
+            btnFerramentas.BackColor = Color.FromArgb(43, 56, 64);
 
             _objForm?.Close();
 
@@ -174,6 +178,7 @@ namespace DespesaDigital
             btnCadastro.BackColor = Color.FromArgb(43, 56, 64);
             btnRelatorios.BackColor = Color.FromArgb(43, 56, 64);
             btnRelatorios.BackColor = Color.FromArgb(43, 56, 64);
+            btnFerramentas.BackColor = Color.FromArgb(43, 56, 64);
 
             _objForm?.Close();
 
@@ -196,6 +201,7 @@ namespace DespesaDigital
             btnMinhaConta.BackColor = Color.FromArgb(43, 56, 64);
             btnCadastro.BackColor = Color.FromArgb(43, 56, 64);
             btnRelatorios.BackColor = Color.FromArgb(43, 56, 64);
+            btnFerramentas.BackColor = Color.FromArgb(43, 56, 64);
 
             _objForm?.Close();
 
@@ -218,6 +224,7 @@ namespace DespesaDigital
             btnMinhaConta.BackColor = Color.FromArgb(43, 56, 64);
             btnCadastro.BackColor = Color.FromArgb(43, 56, 64);
             btnRelatorios.BackColor = Color.FromArgb(43, 56, 64);
+            btnFerramentas.BackColor = Color.FromArgb(43, 56, 64);
 
             _objForm?.Close();
 
@@ -245,10 +252,34 @@ namespace DespesaDigital
             btnMinhaConta.BackColor = Color.FromArgb(43, 56, 64);
             btnCadastro.BackColor = Color.FromArgb(43, 56, 64);
             btnDashboard.BackColor = Color.FromArgb(43, 56, 64);
+            btnFerramentas.BackColor = Color.FromArgb(43, 56, 64);
 
             _objForm?.Close();
 
             _objForm = new frmRelatorio
+            {
+                TopLevel = false,
+                FormBorderStyle = FormBorderStyle.None,
+                Dock = DockStyle.Fill
+            };
+
+            panelPrincipal.Controls.Add(_objForm);
+            _objForm.Show();
+        }
+
+        private void btnFerramentas_Click(object sender, EventArgs e)
+        {
+            btnFerramentas.BackColor = Color.FromArgb(139, 178, 55); //Cor Selecionada
+            btnDespesa.BackColor = Color.FromArgb(43, 56, 64);
+            btnCentroCusto.BackColor = Color.FromArgb(43, 56, 64);
+            btnMinhaConta.BackColor = Color.FromArgb(43, 56, 64);
+            btnCadastro.BackColor = Color.FromArgb(43, 56, 64);
+            btnDashboard.BackColor = Color.FromArgb(43, 56, 64);
+            btnRelatorios.BackColor = Color.FromArgb(43, 56, 64);
+
+            _objForm?.Close();
+
+            _objForm = new frmFerramentasPrincipal
             {
                 TopLevel = false,
                 FormBorderStyle = FormBorderStyle.None,

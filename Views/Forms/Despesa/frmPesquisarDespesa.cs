@@ -50,11 +50,19 @@ namespace DespesaDigital.Views.Forms.Despesa
             CarregaListaSetores(list);
 
             cmbSetor.Text = bllSetor.SetorPorCodigo(VariaveisGlobais.codigo_setor).nome;
-            dataGrid.DataSource = bllDespesa.ListarTodasDespesasPorData(DateTime.Today, DateTime.Today);
+
+            if (VariaveisGlobais.nivel_acesso > 1)
+            {
+                dataGrid.DataSource = bllDespesa.ListarTodasDespesasPorData(DateTime.Today, DateTime.Today);
+            }
 
             var codigo_setor = Convert.ToInt32(((KeyValuePair<string, string>)cmbSetor.SelectedItem).Key);
-            var list_colaboradores = bllUsuario.ListarUsuariosPorSetor(codigo_setor);
-            CarregaListaColaboradores(list_colaboradores);
+
+            if (VariaveisGlobais.nivel_acesso > 1)
+            {
+                var list_colaboradores = bllUsuario.ListarUsuariosPorSetor(codigo_setor);
+                CarregaListaColaboradores(list_colaboradores);
+            }    
         }
 
         void CarregaListaSetores(List<dtoSetor> list)
@@ -250,7 +258,7 @@ namespace DespesaDigital.Views.Forms.Despesa
             }
             else
             {
-                dataGrid.DataSource = bllDespesa.ListarTodasDespesas(inicial, final, codigo_forma_pagamento, codigo_tipo_despesa, codigo_setor, codigo_usuario);
+                dataGrid.DataSource = bllDespesa.ListarTodasDespesas(inicial, final, codigo_forma_pagamento, codigo_tipo_despesa, codigo_setor, VariaveisGlobais.nivel_acesso > 1 ? codigo_usuario : VariaveisGlobais.codigo_usuario);
             }
         }
 
@@ -322,7 +330,7 @@ namespace DespesaDigital.Views.Forms.Despesa
             }
             else
             {
-                dataGrid.DataSource = bllDespesa.ListarTodasDespesas(inicial, final, codigo_forma_pagamento, codigo_tipo_despesa, codigo_setor, codigo_usuario);
+                dataGrid.DataSource = bllDespesa.ListarTodasDespesas(inicial, final, codigo_forma_pagamento, codigo_tipo_despesa, codigo_setor, VariaveisGlobais.nivel_acesso > 1 ? codigo_usuario : VariaveisGlobais.codigo_usuario);
             }
         }
 
@@ -394,7 +402,7 @@ namespace DespesaDigital.Views.Forms.Despesa
             }
             else
             {
-                dataGrid.DataSource = bllDespesa.ListarTodasDespesas(inicial, final, codigo_forma_pagamento, codigo_tipo_despesa, codigo_setor, codigo_usuario);
+                dataGrid.DataSource = bllDespesa.ListarTodasDespesas(inicial, final, codigo_forma_pagamento, codigo_tipo_despesa, codigo_setor, VariaveisGlobais.nivel_acesso > 1 ? codigo_usuario : VariaveisGlobais.codigo_usuario);
             }
         }
 
@@ -494,7 +502,7 @@ namespace DespesaDigital.Views.Forms.Despesa
             }
             else
             {
-                dataGrid.DataSource = bllDespesa.ListarTodasDespesas(inicial, final, codigo_forma_pagamento, codigo_tipo_despesa, codigo_setor, codigo_usuario);
+                dataGrid.DataSource = bllDespesa.ListarTodasDespesas(inicial, final, codigo_forma_pagamento, codigo_tipo_despesa, codigo_setor, VariaveisGlobais.nivel_acesso > 1 ? codigo_usuario : VariaveisGlobais.codigo_usuario);
             }           
         }
     }
