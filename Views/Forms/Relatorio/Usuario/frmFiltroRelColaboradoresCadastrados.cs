@@ -20,11 +20,13 @@ namespace DespesaDigital.Views.Forms.Relatorio.Usuario
             }
             else
             {
+                cmbSetor.Enabled = false;
                 list = bllSetor.ListSetorPorCodigo(VariaveisGlobais.codigo_setor);
             }
             CarregaListaSetores(list);
             CarregaListaStatus();
             CarregaListaNivelAcesso();
+
         }
         void CarregaListaNivelAcesso()
         {

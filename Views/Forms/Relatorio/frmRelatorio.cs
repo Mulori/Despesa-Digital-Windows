@@ -1,4 +1,5 @@
-﻿using DespesaDigital.Views.Forms.Relatorio.Despesa;
+﻿using DespesaDigital.Core;
+using DespesaDigital.Views.Forms.Relatorio.Despesa;
 using DespesaDigital.Views.Forms.Relatorio.Item;
 using DespesaDigital.Views.Forms.Relatorio.Solicitacao;
 using DespesaDigital.Views.Forms.Relatorio.Usuario;
@@ -14,6 +15,29 @@ namespace DespesaDigital.Views.Forms.Relatorio
         public frmRelatorio()
         {
             InitializeComponent();
+
+            switch (VariaveisGlobais.nivel_acesso)
+            {
+                case 1:
+                    despesasPorColaboradorToolStripMenuItem.Enabled = true;
+                    break;
+                case 2:
+                    despesasPorColaboradorToolStripMenuItem.Enabled = true;
+                    despesasPorCentroDeCustoToolStripMenuItem.Enabled = true;
+                    despesasPorCodigoToolStripMenuItem.Enabled = true;
+                    relatórioDeSolicitaçõesDeComprasToolStripMenuItem.Enabled = true;
+                    relatórioDeColaboradoresCadastradosToolStripMenuItem.Enabled = true;
+                    break;
+                case 3:
+                    despesasPorDepartamentoToolStripMenuItem.Enabled = true;
+                    despesasPorColaboradorToolStripMenuItem.Enabled = true;
+                    despesasPorCentroDeCustoToolStripMenuItem.Enabled = true;
+                    despesasPorCodigoToolStripMenuItem.Enabled = true;
+                    relatórioDeSolicitaçõesDeComprasToolStripMenuItem.Enabled = true;
+                    relatórioDeColaboradoresCadastradosToolStripMenuItem.Enabled = true;
+                    relatórioDeItensMaisAdquiridosToolStripMenuItem.Enabled = true;
+                    break;
+            }
         }
 
         private void despesasPorDepartamentoToolStripMenuItem_Click(object sender, EventArgs e)

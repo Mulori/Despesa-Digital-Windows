@@ -161,6 +161,7 @@
     <Compile Include="Code\DTO\dtoFornecedor\dtoFornecedorContato.cs" />
     <Compile Include="Code\DTO\dtoFornecedor\dtoFornecedorEndereco.cs" />
     <Compile Include="Code\DTO\dtoImagem\dtoImagem.cs" />
+    <Compile Include="Code\DTO\dtoLogSistema\dtoLogSistema.cs" />
     <Compile Include="Code\DTO\dtoModal\dtoModalCheckListBox.cs" />
     <Compile Include="Code\DTO\dtoProduto\dtoProduto.cs" />
     <Compile Include="Code\DTO\dtoServerNet\dtoServerNet.cs" />
@@ -302,6 +303,18 @@
     </Compile>
     <Compile Include="Views\Forms\Despesa\frmPesquisarDespesa.Designer.cs">
       <DependentUpon>frmPesquisarDespesa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\Ferramentas\frmFerramentasPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\Ferramentas\frmFerramentasPrincipal.Designer.cs">
+      <DependentUpon>frmFerramentasPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\Ferramentas\LogSistema\frmLogSistema.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\Ferramentas\LogSistema\frmLogSistema.Designer.cs">
+      <DependentUpon>frmLogSistema.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Forms\FormaPagamento\frmNovaFormaPagamento.cs">
       <SubType>Form</SubType>
@@ -578,6 +591,12 @@
     <EmbeddedResource Include="Views\Forms\Despesa\frmPesquisarDespesa.resx">
       <DependentUpon>frmPesquisarDespesa.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\Ferramentas\frmFerramentasPrincipal.resx">
+      <DependentUpon>frmFerramentasPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\Ferramentas\LogSistema\frmLogSistema.resx">
+      <DependentUpon>frmLogSistema.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\FormaPagamento\frmNovaFormaPagamento.resx">
       <DependentUpon>frmNovaFormaPagamento.cs</DependentUpon>
     </EmbeddedResource>
@@ -742,6 +761,8 @@
     <None Include="Resources\icon_grafico.png" />
     <None Include="Resources\user_ico.png" />
     <None Include="Resources\relogio_ico.png" />
+    <None Include="Resources\magnifier.png" />
+    <None Include="Resources\magnifier %281%29.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
