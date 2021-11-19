@@ -29,8 +29,8 @@ namespace DespesaDigital.Views.Forms.Despesa
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -48,15 +48,17 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.dataGrid = new System.Windows.Forms.DataGridView();
-            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigo_despesa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label9 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSair = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnImagem = new System.Windows.Forms.Button();
             this.lbQtdeCaracter = new System.Windows.Forms.Label();
+            this.btnIncluirProduto = new System.Windows.Forms.Button();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigo_despesa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -113,7 +115,7 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.txtValor.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtValor.Location = new System.Drawing.Point(573, 148);
             this.txtValor.Name = "txtValor";
-            this.txtValor.Size = new System.Drawing.Size(290, 22);
+            this.txtValor.Size = new System.Drawing.Size(294, 22);
             this.txtValor.TabIndex = 5;
             this.txtValor.Leave += new System.EventHandler(this.txtValor_Leave);
             // 
@@ -182,7 +184,7 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.txtColaborador.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtColaborador.Location = new System.Drawing.Point(483, 99);
             this.txtColaborador.Name = "txtColaborador";
-            this.txtColaborador.Size = new System.Drawing.Size(380, 22);
+            this.txtColaborador.Size = new System.Drawing.Size(384, 22);
             this.txtColaborador.TabIndex = 2;
             // 
             // label6
@@ -204,7 +206,7 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.txtCentroCusto.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCentroCusto.Location = new System.Drawing.Point(10, 204);
             this.txtCentroCusto.Name = "txtCentroCusto";
-            this.txtCentroCusto.Size = new System.Drawing.Size(852, 22);
+            this.txtCentroCusto.Size = new System.Drawing.Size(857, 22);
             this.txtCentroCusto.TabIndex = 6;
             // 
             // label7
@@ -228,7 +230,7 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.txtDescricao.MaxLength = 500;
             this.txtDescricao.Multiline = true;
             this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(852, 99);
+            this.txtDescricao.Size = new System.Drawing.Size(857, 99);
             this.txtDescricao.TabIndex = 7;
             this.txtDescricao.TextChanged += new System.EventHandler(this.txtDescricao_TextChanged);
             // 
@@ -252,60 +254,41 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.dataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
             this.codigo,
             this.descricao,
             this.codigo_despesa});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGrid.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGrid.Enabled = false;
-            this.dataGrid.Location = new System.Drawing.Point(11, 378);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGrid.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGrid.Location = new System.Drawing.Point(11, 388);
             this.dataGrid.Margin = new System.Windows.Forms.Padding(2);
             this.dataGrid.Name = "dataGrid";
             this.dataGrid.RowHeadersVisible = false;
-            this.dataGrid.Size = new System.Drawing.Size(856, 310);
+            this.dataGrid.Size = new System.Drawing.Size(860, 300);
             this.dataGrid.TabIndex = 16;
-            // 
-            // codigo
-            // 
-            this.codigo.DataPropertyName = "codigo_item";
-            this.codigo.HeaderText = "Código:";
-            this.codigo.Name = "codigo";
-            // 
-            // descricao
-            // 
-            this.descricao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.descricao.DataPropertyName = "descricao";
-            this.descricao.HeaderText = "Descrição";
-            this.descricao.Name = "descricao";
-            // 
-            // codigo_despesa
-            // 
-            this.codigo_despesa.DataPropertyName = "codigo_despesa";
-            this.codigo_despesa.HeaderText = "codigo_despesa";
-            this.codigo_despesa.Name = "codigo_despesa";
-            this.codigo_despesa.Visible = false;
+            this.dataGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_CellDoubleClick);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(13, 355);
+            this.label9.Location = new System.Drawing.Point(7, 365);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(51, 21);
@@ -322,7 +305,7 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(875, 65);
+            this.panel1.Size = new System.Drawing.Size(879, 65);
             this.panel1.TabIndex = 18;
             // 
             // btnSair
@@ -384,11 +367,62 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.lbQtdeCaracter.TabIndex = 19;
             this.lbQtdeCaracter.Text = "0/500";
             // 
+            // btnIncluirProduto
+            // 
+            this.btnIncluirProduto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.btnIncluirProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnIncluirProduto.FlatAppearance.BorderSize = 0;
+            this.btnIncluirProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIncluirProduto.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIncluirProduto.ForeColor = System.Drawing.Color.White;
+            this.btnIncluirProduto.Location = new System.Drawing.Point(734, 363);
+            this.btnIncluirProduto.Margin = new System.Windows.Forms.Padding(2);
+            this.btnIncluirProduto.Name = "btnIncluirProduto";
+            this.btnIncluirProduto.Size = new System.Drawing.Size(133, 21);
+            this.btnIncluirProduto.TabIndex = 11;
+            this.btnIncluirProduto.Text = "Adicionar Item";
+            this.btnIncluirProduto.UseVisualStyleBackColor = false;
+            this.btnIncluirProduto.Visible = false;
+            this.btnIncluirProduto.Click += new System.EventHandler(this.btnIncluirProduto_Click);
+            // 
+            // id
+            // 
+            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // codigo
+            // 
+            this.codigo.DataPropertyName = "codigo_item";
+            this.codigo.HeaderText = "Código:";
+            this.codigo.Name = "codigo";
+            this.codigo.ReadOnly = true;
+            // 
+            // descricao
+            // 
+            this.descricao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.descricao.DataPropertyName = "descricao";
+            this.descricao.HeaderText = "Descrição";
+            this.descricao.Name = "descricao";
+            this.descricao.ReadOnly = true;
+            // 
+            // codigo_despesa
+            // 
+            this.codigo_despesa.DataPropertyName = "codigo_despesa";
+            this.codigo_despesa.HeaderText = "codigo_despesa";
+            this.codigo_despesa.Name = "codigo_despesa";
+            this.codigo_despesa.ReadOnly = true;
+            this.codigo_despesa.Visible = false;
+            // 
             // frmDetalheDespesa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(875, 729);
+            this.ClientSize = new System.Drawing.Size(879, 729);
+            this.Controls.Add(this.btnIncluirProduto);
             this.Controls.Add(this.lbQtdeCaracter);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label9);
@@ -446,9 +480,11 @@ namespace DespesaDigital.Views.Forms.Despesa
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnImagem;
+        private System.Windows.Forms.Label lbQtdeCaracter;
+        private System.Windows.Forms.Button btnIncluirProduto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn descricao;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo_despesa;
-        private System.Windows.Forms.Label lbQtdeCaracter;
     }
 }

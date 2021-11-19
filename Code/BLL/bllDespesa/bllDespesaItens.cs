@@ -18,5 +18,11 @@ namespace DespesaDigital.Code.BLL.bllDespesa
             var dal = new dalDespesaItens();
             return dal.RelProdutosMaisAdquiridos(codigo_categoria);
         }
+
+        public static bool Delete(int codigo)
+        {
+            var dal = new dalDespesaItens();
+            return dal.Delete(codigo);
+        }
     }
 }
