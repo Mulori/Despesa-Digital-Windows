@@ -1,6 +1,7 @@
 ﻿using DespesaDigital.Code.BLL.bllDespesa;
 using DespesaDigital.Code.BLL.bllFormaPagamento;
 using DespesaDigital.Code.BLL.bllLogSistema;
+using DespesaDigital.Code.BLL.bllProdutoDespesa;
 using DespesaDigital.Code.BLL.bllTipoDespesa;
 using DespesaDigital.Code.DTO.dtoDespesa;
 using DespesaDigital.Code.DTO.dtoFormaPagamento;
@@ -96,6 +97,7 @@ namespace DespesaDigital.Views.Forms.Despesa
                 cmbFormaPagamento.Enabled = true;
                 txtValor.Enabled = true;
                 txtDescricao.Enabled = true;
+                btnIncluirProduto.Visible = true;
 
                 cmbTipoDespesa.Focus();
                 SendKeys.Send("{F4}");
@@ -130,6 +132,7 @@ namespace DespesaDigital.Views.Forms.Despesa
                     cmbFormaPagamento.Enabled = false;
                     txtValor.Enabled = false;
                     txtDescricao.Enabled = false;
+                    btnIncluirProduto.Visible = false;
                 }                
             }            
         }
@@ -145,6 +148,74 @@ namespace DespesaDigital.Views.Forms.Despesa
         private void txtDescricao_TextChanged(object sender, EventArgs e)
         {
             lbQtdeCaracter.Text = txtDescricao.Text.Length.ToString() + "/500";
+        }
+
+        private void dataGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (btnEditar.Text == "Editar")
+            {
+                return;
+            }
+
+            try
+            {
+                var codigo_id_produto_despesa = Convert.ToInt32(dataGrid.CurrentRow.Cells[0].Value.ToString());
+
+                if(!corePopUp.exibirPergunta("Atenção","Deseja remover este item?", 2))
+                {
+                    return;
+                }
+
+                if (bllDespesaItens.Delete(codigo_id_produto_despesa))
+                {
+                    corePopUp.exibirMensagem("Item removido com sucesso!", "Atenção");
+                    bllLogSistema.Insert($"Item removido com sucesso: Despesa:{codigo_despesa_} Cod. Produto: {codigo_id_produto_despesa}");
+                    dataGrid.DataSource = bllDespesaItens.ListarTodoProdutoDespesaPorCodigo(codigo_despesa_);
+                }
+                else
+                {
+                    corePopUp.exibirMensagem("Ocorreu um problema ao remover o item.", "Atenção");
+                }
+            }
+            catch
+            {
+
+            }            
+        }
+
+        private void btnIncluirProduto_Click(object sender, EventArgs e)
+        {
+            using (var form = new frmPesquisaProdutoDespesa(""))
+            {
+                form.ShowDialog();
+                try
+                {
+                    var codigo_item = form.listReturn[0].codigo;
+                    var descricao_item = form.listReturn[0].descricao;
+
+                    if (codigo_item == 0)
+                    {
+                        return;
+                    }
+                                
+                    if (bllProdutoDespesa.Insert(codigo_despesa_, codigo_item) != 0)
+                    {
+                        corePopUp.exibirMensagem("Item incluido com sucesso!", "Atenção");
+                        bllLogSistema.Insert($"Item incluido com sucesso: Despesa:{codigo_despesa_} Cod. Produto: {codigo_item} Descrição: {descricao_item}");
+                        dataGrid.DataSource = bllDespesaItens.ListarTodoProdutoDespesaPorCodigo(codigo_despesa_);
+                    }
+                    else
+                    {
+                        corePopUp.exibirMensagem("Ocorreu um problema ao incluir o item.", "Atenção");
+                    }
+
+                    dataGrid.DataSource = bllDespesaItens.ListarTodoProdutoDespesaPorCodigo(codigo_despesa_);
+                }
+                catch
+                {
+
+                }               
+            }
         }
     }
 }

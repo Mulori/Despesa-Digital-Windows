@@ -13,7 +13,7 @@ namespace DespesaDigital.Code.DAL.dalDespesa
         {
             var list = new List<dtoDespesaItens>();
 
-            var ssql = $"select pd.codigo_despesa, pd.codigo_produto, p.descricao from produto_despesa pd " +
+            var ssql = $"select pd.codigo_despesa, pd.codigo_produto, pd.id, p.descricao from produto_despesa pd " +
                 $"inner join produto p on(pd.codigo_produto = p.codigo) where pd.codigo_despesa = '{codigo_despesa}' order by p.descricao asc";
 
             using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
@@ -25,6 +25,7 @@ namespace DespesaDigital.Code.DAL.dalDespesa
                     dto.codigo_despesa = Convert.ToInt32(dr["codigo_despesa"]);
                     dto.codigo_item = Convert.ToInt32(dr["codigo_produto"]);
                     dto.descricao = dr["descricao"].ToString();
+                    dto.id = Convert.ToInt64(dr["id"]);
 
                     list.Add(dto);
                 }
@@ -58,6 +59,24 @@ namespace DespesaDigital.Code.DAL.dalDespesa
             }
 
             return ds;
+        }
+
+        public bool Delete(int codigo)
+        {
+            var ssql = $"delete from produto_despesa where id = '{codigo}'";
+
+            using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
+            {
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
         }
     }
 }
