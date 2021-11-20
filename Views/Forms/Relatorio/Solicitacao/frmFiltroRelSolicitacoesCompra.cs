@@ -4,6 +4,7 @@ using DespesaDigital.Code.DTO;
 using DespesaDigital.Code.DTO.dtoSetor;
 using DespesaDigital.Core;
 using DespesaDigital.Report.rptSolicitacoesCompra;
+using DespesaDigital.Views.Forms.Usuario;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -131,6 +132,19 @@ namespace DespesaDigital.Views.Forms.Relatorio.Solicitacao
             using (var rel = new frmRelSolicitacoesCompras(inicial, final, codigo_setor, codigo_usuario))
             {
                 rel.ShowDialog();
+            }
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            using (var form = new frmPesquisarUsuario())
+            {
+                form.ShowDialog();
+                if (VariaveisGlobais.nome_usuario_relatorio_colaborador != null)
+                {
+                    cmbColaborador.Text = VariaveisGlobais.nome_usuario_relatorio_colaborador.ToString();
+                }
+                VariaveisGlobais.nome_usuario_relatorio_colaborador = null;
             }
         }
     }

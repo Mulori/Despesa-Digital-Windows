@@ -20,6 +20,8 @@ namespace DespesaDigital.Core
         public static string fornecedores_concatenados { get; set; }
         public static string senha { get; set; }
         public static long codigo_despesa_pesquisa { get; set; }
+        public static string nome_usuario_relatorio_colaborador { get; set; }
+        public static int codigo_usuario_relatorio_colaborador { get; set; }
         #endregion 
 
         #region mensagem
