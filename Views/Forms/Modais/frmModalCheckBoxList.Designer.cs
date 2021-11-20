@@ -81,9 +81,9 @@ namespace DespesaDigital.Views.Forms.Modais
             this.label2.Location = new System.Drawing.Point(9, 36);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 20);
+            this.label2.Size = new System.Drawing.Size(92, 20);
             this.label2.TabIndex = 57;
-            this.label2.Text = "Pesquisar:";
+            this.label2.Text = "Pesquisar: *";
             // 
             // btnPronto
             // 

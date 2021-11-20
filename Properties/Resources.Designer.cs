@@ -133,6 +133,16 @@ namespace DespesaDigital.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap left_arrow {
+            get {
+                object obj = ResourceManager.GetObject("left-arrow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logodespesadigital {
             get {
                 object obj = ResourceManager.GetObject("logodespesadigital", resourceCulture);
@@ -196,6 +206,16 @@ namespace DespesaDigital.Properties {
         internal static System.Drawing.Bitmap relogio_ico {
             get {
                 object obj = ResourceManager.GetObject("relogio_ico", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap right_arrow {
+            get {
+                object obj = ResourceManager.GetObject("right-arrow", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -110,6 +110,12 @@ namespace DespesaDigital.Views.Forms.Despesa
                     return;
                 }
 
+                if (dataGrid.Rows.Count < 1)
+                {
+                    corePopUp.exibirMensagem("Selecione ao menos 1 item.", "Atenção");
+                    return;
+                }
+
                 var dto = new dtoDespesa();
                 dto.codigo = Convert.ToInt64(txtCodigo.Text);
                 var s_valor = txtValor.Text.Trim().Replace(".", string.Empty);

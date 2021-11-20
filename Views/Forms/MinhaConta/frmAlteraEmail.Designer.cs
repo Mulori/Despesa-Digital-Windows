@@ -45,9 +45,9 @@ namespace DespesaDigital.Views.Forms.MinhaConta
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(11, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 17);
+            this.label1.Size = new System.Drawing.Size(93, 17);
             this.label1.TabIndex = 0;
-            this.label1.Text = "E-mail novo:";
+            this.label1.Text = "E-mail novo: *";
             // 
             // txtEmail
             // 
@@ -69,9 +69,9 @@ namespace DespesaDigital.Views.Forms.MinhaConta
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(11, 92);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(154, 17);
+            this.label2.Size = new System.Drawing.Size(164, 17);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Confirme o novo e-mail:";
+            this.label2.Text = "Confirme o novo e-mail: *";
             // 
             // txtSenha
             // 
@@ -87,9 +87,9 @@ namespace DespesaDigital.Views.Forms.MinhaConta
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(11, 166);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 17);
+            this.label3.Size = new System.Drawing.Size(105, 17);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Insira a senha:";
+            this.label3.Text = "Insira a senha: *";
             // 
             // btnAlterar
             // 
@@ -134,7 +134,7 @@ namespace DespesaDigital.Views.Forms.MinhaConta
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmAlteraEmail";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alteração de e-mail";

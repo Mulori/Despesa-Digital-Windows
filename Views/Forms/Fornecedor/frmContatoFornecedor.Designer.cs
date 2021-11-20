@@ -109,9 +109,9 @@ namespace DespesaDigital.Views.Forms.Fornecedor
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(9, 100);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(115, 17);
+            this.label7.Size = new System.Drawing.Size(129, 17);
             this.label7.TabIndex = 52;
-            this.label7.Text = "Telefone/Celular:";
+            this.label7.Text = "Telefone/Celular:  *";
             // 
             // mskContato
             // 

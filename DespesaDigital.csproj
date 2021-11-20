@@ -763,6 +763,8 @@
     <None Include="Resources\relogio_ico.png" />
     <None Include="Resources\magnifier.png" />
     <None Include="Resources\magnifier %281%29.png" />
+    <None Include="Resources\right-arrow.png" />
+    <None Include="Resources\left-arrow.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

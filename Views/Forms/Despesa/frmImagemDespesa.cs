@@ -1,6 +1,8 @@
 ﻿using DespesaDigital.Code.BLL.bllImagem;
+using DespesaDigital.Code.DTO.dtoImagem;
 using DespesaDigital.Core;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
@@ -12,30 +14,44 @@ namespace DespesaDigital.Views.Forms.Despesa
         public long _codigo_despesa { get; set; }
         public byte[] imagem { get; set; }
         private bool bloqueia_visualizacao { get; set; }
+        private int quantidade_arquivos { get; set; }
+        private int index_visualizacao { get; set; }
+
+        private List<long> imagens_visualizadas;
+        private List<dtoImagem> bImagensList;
+
         public frmImagemDespesa(long codigo_despesa)
         {
             InitializeComponent();
-            InicializarImagem(codigo_despesa);
+
+            quantidade_arquivos = 0;
+            bImagensList = new List<dtoImagem>();
+            bImagensList = bllImagem.ObterByteImagemDespesaPorCodigo(codigo_despesa);
+            InicializarImagem(bImagensList);
             _codigo_despesa = codigo_despesa;
         }
 
-        private void InicializarImagem(long codigo_despesa)
-        {
-            var bImagem = bllImagem.ObterByteImagemDespesaPorCodigo(codigo_despesa);
+        private void InicializarImagem(List<dtoImagem> bImagem)
+        {            
+            quantidade_arquivos = bImagem.Count;
 
-            imagem = bImagem;
+            imagem = bImagem[0].b_dados_imagem;
 
-            if (bImagem != null)
+            if (bImagem.Count > 0)
             {
-                using (MemoryStream productImageStream = new MemoryStream(bImagem))
+                index_visualizacao = 1;
+
+                using (MemoryStream productImageStream = new MemoryStream(bImagem[0].b_dados_imagem))
                 {
+
                     try
                     {
-                        ImageConverter imageConverter = new System.Drawing.ImageConverter();
-                        picImagem.Image = imageConverter.ConvertFrom(bImagem) as Image;
+                        ImageConverter imageConverter = new ImageConverter();
+                        picImagem.Image = imageConverter.ConvertFrom(bImagem[0].b_dados_imagem) as Image;
                     }
                     catch
                     {
+                        picImagem.Image = null;
                         linkSalvarComputador.Visible = true;
                         bloqueia_visualizacao = true;
                     }
@@ -101,6 +117,94 @@ namespace DespesaDigital.Views.Forms.Despesa
             Stream.Close();
 
             corePopUp.exibirMensagem("Arquivo salvo com sucesso!", "Atenção");
+        }
+
+        private void btnAvanca_Click(object sender, EventArgs e)
+        {
+            if(index_visualizacao >= quantidade_arquivos)
+            {
+                index_visualizacao = 1;
+            }
+            else
+            {
+                index_visualizacao++;
+            }
+
+            imagem =  bImagensList[index_visualizacao - 1].b_dados_imagem;
+
+            if (bImagensList.Count > 0)
+            {
+
+                using (MemoryStream productImageStream = new MemoryStream(bImagensList[index_visualizacao -1].b_dados_imagem))
+                {
+
+                    try
+                    {
+                        ImageConverter imageConverter = new ImageConverter();
+                        picImagem.Image = imageConverter.ConvertFrom(bImagensList[index_visualizacao - 1].b_dados_imagem) as Image;
+
+                        linkSalvarComputador.Visible = false;
+                        bloqueia_visualizacao = false;
+                    }
+                    catch
+                    {
+                        picImagem.Image = null;
+                        linkSalvarComputador.Visible = true;
+                        bloqueia_visualizacao = true;
+                    }
+                }
+            }
+            else
+            {
+                corePopUp.exibirMensagem("Não foi encontrado nenhum arquivo para visualização.", "Atenção");
+                bloqueia_visualizacao = true;
+                btnSalvar.Enabled = false;
+                btnGirar.Enabled = false;
+            }
+        }
+
+        private void btnRetrocede_Click(object sender, EventArgs e)
+        {
+            if (index_visualizacao <= 1)
+            {
+                index_visualizacao = quantidade_arquivos;
+            }
+            else
+            {
+                index_visualizacao--;
+            }
+
+            imagem = bImagensList[index_visualizacao -1].b_dados_imagem;
+
+            if (bImagensList.Count > 0)
+            {
+
+                using (MemoryStream productImageStream = new MemoryStream(bImagensList[index_visualizacao -1].b_dados_imagem))
+                {
+
+                    try
+                    {
+                        ImageConverter imageConverter = new ImageConverter();
+                        picImagem.Image = imageConverter.ConvertFrom(bImagensList[index_visualizacao -1].b_dados_imagem) as Image;
+
+                        linkSalvarComputador.Visible = false;
+                        bloqueia_visualizacao = false;
+                    }
+                    catch
+                    {
+                        picImagem.Image = null;
+                        linkSalvarComputador.Visible = true;
+                        bloqueia_visualizacao = true;
+                    }
+                }
+            }
+            else
+            {
+                corePopUp.exibirMensagem("Não foi encontrado nenhum arquivo para visualização.", "Atenção");
+                bloqueia_visualizacao = true;
+                btnSalvar.Enabled = false;
+                btnGirar.Enabled = false;
+            }
         }
     }
 }
