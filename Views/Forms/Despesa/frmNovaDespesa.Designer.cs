@@ -44,7 +44,6 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.cmbSetor = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.lbFilePath = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.lbQtdeCaracter = new System.Windows.Forms.Label();
@@ -52,6 +51,8 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.chkListItens = new System.Windows.Forms.CheckedListBox();
             this.txtPesquisaItem = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.chkListFiles = new System.Windows.Forms.CheckedListBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -125,7 +126,7 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.txtObservacao.MaxLength = 500;
             this.txtObservacao.Multiline = true;
             this.txtObservacao.Name = "txtObservacao";
-            this.txtObservacao.Size = new System.Drawing.Size(767, 121);
+            this.txtObservacao.Size = new System.Drawing.Size(767, 102);
             this.txtObservacao.TabIndex = 50;
             this.txtObservacao.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -203,29 +204,18 @@ namespace DespesaDigital.Views.Forms.Despesa
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(13, 393);
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(8, 379);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(125, 17);
+            this.label6.Size = new System.Drawing.Size(173, 21);
             this.label6.TabIndex = 58;
-            this.label6.Text = "Arquivo em anexo:";
-            // 
-            // lbFilePath
-            // 
-            this.lbFilePath.AutoSize = true;
-            this.lbFilePath.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFilePath.Location = new System.Drawing.Point(135, 395);
-            this.lbFilePath.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbFilePath.Name = "lbFilePath";
-            this.lbFilePath.Size = new System.Drawing.Size(166, 15);
-            this.lbFilePath.TabIndex = 59;
-            this.lbFilePath.Text = "Nenhum arquivo selecionado.";
+            this.label6.Text = "Arquivo(s) em anexo:";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(8, 430);
+            this.label8.Location = new System.Drawing.Point(8, 480);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(62, 21);
@@ -258,7 +248,7 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.btnAnexo.FlatAppearance.BorderSize = 0;
             this.btnAnexo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAnexo.ForeColor = System.Drawing.Color.White;
-            this.btnAnexo.Location = new System.Drawing.Point(681, 393);
+            this.btnAnexo.Location = new System.Drawing.Point(680, 374);
             this.btnAnexo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAnexo.Name = "btnAnexo";
             this.btnAnexo.Size = new System.Drawing.Size(99, 31);
@@ -277,7 +267,7 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.chkListItens.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.chkListItens.ForeColor = System.Drawing.Color.White;
             this.chkListItens.FormattingEnabled = true;
-            this.chkListItens.Location = new System.Drawing.Point(13, 491);
+            this.chkListItens.Location = new System.Drawing.Point(13, 539);
             this.chkListItens.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.chkListItens.Name = "chkListItens";
             this.chkListItens.Size = new System.Drawing.Size(768, 120);
@@ -287,7 +277,7 @@ namespace DespesaDigital.Views.Forms.Despesa
             // 
             this.txtPesquisaItem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPesquisaItem.Location = new System.Drawing.Point(12, 454);
+            this.txtPesquisaItem.Location = new System.Drawing.Point(12, 504);
             this.txtPesquisaItem.Name = "txtPesquisaItem";
             this.txtPesquisaItem.Size = new System.Drawing.Size(768, 29);
             this.txtPesquisaItem.TabIndex = 66;
@@ -297,24 +287,48 @@ namespace DespesaDigital.Views.Forms.Despesa
             // 
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(647, 430);
+            this.label7.Location = new System.Drawing.Point(647, 480);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(133, 21);
             this.label7.TabIndex = 67;
             this.label7.Text = "[Enter Pesquisa]";
             // 
+            // chkListFiles
+            // 
+            this.chkListFiles.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.chkListFiles.BackColor = System.Drawing.SystemColors.Control;
+            this.chkListFiles.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.chkListFiles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(56)))), ((int)(((byte)(64)))));
+            this.chkListFiles.FormattingEnabled = true;
+            this.chkListFiles.Location = new System.Drawing.Point(12, 408);
+            this.chkListFiles.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.chkListFiles.Name = "chkListFiles";
+            this.chkListFiles.Size = new System.Drawing.Size(768, 72);
+            this.chkListFiles.TabIndex = 68;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(8, 384);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(675, 21);
+            this.label9.TabIndex = 69;
+            this.label9.Text = "_________________________________________________________________________________" +
+    "______________";
+            // 
             // frmNovaDespesa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(795, 619);
+            this.ClientSize = new System.Drawing.Size(795, 676);
+            this.Controls.Add(this.chkListFiles);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtPesquisaItem);
             this.Controls.Add(this.chkListItens);
             this.Controls.Add(this.lbQtdeCaracter);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.lbFilePath);
             this.Controls.Add(this.btnAnexo);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -328,6 +342,7 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtValor);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label9);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5);
@@ -357,12 +372,13 @@ namespace DespesaDigital.Views.Forms.Despesa
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnAnexo;
-        private System.Windows.Forms.Label lbFilePath;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Label lbQtdeCaracter;
         private System.Windows.Forms.CheckedListBox chkListItens;
         private System.Windows.Forms.TextBox txtPesquisaItem;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.CheckedListBox chkListFiles;
+        private System.Windows.Forms.Label label9;
     }
 }
