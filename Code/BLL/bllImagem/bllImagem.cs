@@ -1,11 +1,13 @@
 ﻿using DespesaDigital.Code.DAL.dalImagem;
+using DespesaDigital.Code.DTO.dtoImagem;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace DespesaDigital.Code.BLL.bllImagem
 {
     public class bllImagem
     {
-        public static byte[] ObterByteImagemDespesaPorCodigo(long codigo_despesa)
+        public static List<dtoImagem> ObterByteImagemDespesaPorCodigo(long codigo_despesa)
         {
             var dal = new dalImagem();
             return dal.ObterByteImagemDespesaPorCodigo(codigo_despesa);

@@ -48,6 +48,10 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.dataGrid = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigo_despesa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label9 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSair = new System.Windows.Forms.Button();
@@ -55,10 +59,6 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.btnImagem = new System.Windows.Forms.Button();
             this.lbQtdeCaracter = new System.Windows.Forms.Label();
             this.btnIncluirProduto = new System.Windows.Forms.Button();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigo_despesa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -70,9 +70,9 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.label1.Location = new System.Drawing.Point(7, 75);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 21);
+            this.label1.Size = new System.Drawing.Size(143, 21);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Lançamento Nº:";
+            this.label1.Text = "Lançamento Nº: *";
             // 
             // txtCodigo
             // 
@@ -92,9 +92,9 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.label2.Location = new System.Drawing.Point(265, 75);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(192, 21);
+            this.label2.Size = new System.Drawing.Size(203, 21);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Data/Hora Lançamento:";
+            this.label2.Text = "Data/Hora Lançamento: *";
             // 
             // mskData
             // 
@@ -126,9 +126,9 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.label3.Location = new System.Drawing.Point(569, 124);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 21);
+            this.label3.Size = new System.Drawing.Size(66, 21);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Valor:";
+            this.label3.Text = "Valor: *";
             // 
             // cmbTipoDespesa
             // 
@@ -149,9 +149,9 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.label4.Location = new System.Drawing.Point(7, 124);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(138, 21);
+            this.label4.Size = new System.Drawing.Size(149, 21);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Tipo de Despesa:";
+            this.label4.Text = "Tipo de Despesa: *";
             // 
             // label5
             // 
@@ -160,9 +160,9 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.label5.Location = new System.Drawing.Point(300, 124);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(177, 21);
+            this.label5.Size = new System.Drawing.Size(188, 21);
             this.label5.TabIndex = 9;
-            this.label5.Text = "Forma de Pagamento:";
+            this.label5.Text = "Forma de Pagamento: *";
             // 
             // cmbFormaPagamento
             // 
@@ -194,9 +194,9 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.label6.Location = new System.Drawing.Point(479, 75);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(110, 21);
+            this.label6.Size = new System.Drawing.Size(121, 21);
             this.label6.TabIndex = 10;
-            this.label6.Text = "Colaborador:";
+            this.label6.Text = "Colaborador: *";
             // 
             // txtCentroCusto
             // 
@@ -216,9 +216,9 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.label7.Location = new System.Drawing.Point(7, 180);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(135, 21);
+            this.label7.Size = new System.Drawing.Size(146, 21);
             this.label7.TabIndex = 12;
-            this.label7.Text = "Centro de Custo:";
+            this.label7.Text = "Centro de Custo: *";
             // 
             // txtDescricao
             // 
@@ -241,9 +241,9 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.label8.Location = new System.Drawing.Point(6, 229);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(88, 21);
+            this.label8.Size = new System.Drawing.Size(99, 21);
             this.label8.TabIndex = 14;
-            this.label8.Text = "Descrição:";
+            this.label8.Text = "Descrição: *";
             // 
             // dataGrid
             // 
@@ -284,6 +284,38 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.dataGrid.TabIndex = 16;
             this.dataGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_CellDoubleClick);
             // 
+            // id
+            // 
+            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // codigo
+            // 
+            this.codigo.DataPropertyName = "codigo_item";
+            this.codigo.HeaderText = "Código:";
+            this.codigo.Name = "codigo";
+            this.codigo.ReadOnly = true;
+            // 
+            // descricao
+            // 
+            this.descricao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.descricao.DataPropertyName = "descricao";
+            this.descricao.HeaderText = "Descrição";
+            this.descricao.Name = "descricao";
+            this.descricao.ReadOnly = true;
+            // 
+            // codigo_despesa
+            // 
+            this.codigo_despesa.DataPropertyName = "codigo_despesa";
+            this.codigo_despesa.HeaderText = "codigo_despesa";
+            this.codigo_despesa.Name = "codigo_despesa";
+            this.codigo_despesa.ReadOnly = true;
+            this.codigo_despesa.Visible = false;
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -291,9 +323,9 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.label9.Location = new System.Drawing.Point(7, 365);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(51, 21);
+            this.label9.Size = new System.Drawing.Size(62, 21);
             this.label9.TabIndex = 17;
-            this.label9.Text = "Itens:";
+            this.label9.Text = "Itens: *";
             // 
             // panel1
             // 
@@ -384,38 +416,6 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.btnIncluirProduto.UseVisualStyleBackColor = false;
             this.btnIncluirProduto.Visible = false;
             this.btnIncluirProduto.Click += new System.EventHandler(this.btnIncluirProduto_Click);
-            // 
-            // id
-            // 
-            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            // 
-            // codigo
-            // 
-            this.codigo.DataPropertyName = "codigo_item";
-            this.codigo.HeaderText = "Código:";
-            this.codigo.Name = "codigo";
-            this.codigo.ReadOnly = true;
-            // 
-            // descricao
-            // 
-            this.descricao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.descricao.DataPropertyName = "descricao";
-            this.descricao.HeaderText = "Descrição";
-            this.descricao.Name = "descricao";
-            this.descricao.ReadOnly = true;
-            // 
-            // codigo_despesa
-            // 
-            this.codigo_despesa.DataPropertyName = "codigo_despesa";
-            this.codigo_despesa.HeaderText = "codigo_despesa";
-            this.codigo_despesa.Name = "codigo_despesa";
-            this.codigo_despesa.ReadOnly = true;
-            this.codigo_despesa.Visible = false;
             // 
             // frmDetalheDespesa
             // 

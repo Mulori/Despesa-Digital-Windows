@@ -85,9 +85,9 @@ namespace DespesaDigital.Views.Forms.MinhaConta
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(11, 166);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(129, 17);
+            this.label3.Size = new System.Drawing.Size(139, 17);
             this.label3.TabIndex = 12;
-            this.label3.Text = "Insira a senha atual:";
+            this.label3.Text = "Insira a senha atual: *";
             // 
             // txtConfirmeSenha
             // 
@@ -105,9 +105,9 @@ namespace DespesaDigital.Views.Forms.MinhaConta
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(11, 92);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(151, 17);
+            this.label2.Size = new System.Drawing.Size(161, 17);
             this.label2.TabIndex = 10;
-            this.label2.Text = "Confirme a nova senha:";
+            this.label2.Text = "Confirme a nova senha: *";
             // 
             // txtSenha
             // 
@@ -125,9 +125,9 @@ namespace DespesaDigital.Views.Forms.MinhaConta
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(11, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 17);
+            this.label1.Size = new System.Drawing.Size(93, 17);
             this.label1.TabIndex = 8;
-            this.label1.Text = "Nova senha:";
+            this.label1.Text = "Nova senha: *";
             // 
             // frmAlteraSenha
             // 

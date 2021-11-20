@@ -127,72 +127,72 @@ namespace DespesaDigital.Views.Forms.Usuario
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 90);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 20);
+            this.label1.Size = new System.Drawing.Size(73, 20);
             this.label1.TabIndex = 8;
-            this.label1.Text = "Código:";
+            this.label1.Text = "Código: *";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(123, 90);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 20);
+            this.label2.Size = new System.Drawing.Size(66, 20);
             this.label2.TabIndex = 9;
-            this.label2.Text = "Nome:";
+            this.label2.Text = "Nome: *";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(372, 90);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 20);
+            this.label3.Size = new System.Drawing.Size(103, 20);
             this.label3.TabIndex = 10;
-            this.label3.Text = "Sobrenome:";
+            this.label3.Text = "Sobrenome: *";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(12, 148);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 20);
+            this.label4.Size = new System.Drawing.Size(67, 20);
             this.label4.TabIndex = 11;
-            this.label4.Text = "E-mail:";
+            this.label4.Text = "E-mail: *";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(372, 148);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(95, 20);
+            this.label5.Size = new System.Drawing.Size(110, 20);
             this.label5.TabIndex = 12;
-            this.label5.Text = "Nivel Acesso";
+            this.label5.Text = "Nivel Acesso: *";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(501, 147);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(54, 20);
+            this.label6.Size = new System.Drawing.Size(65, 20);
             this.label6.TabIndex = 13;
-            this.label6.Text = "Status:";
+            this.label6.Text = "Status: *";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(12, 208);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(112, 20);
+            this.label7.Size = new System.Drawing.Size(123, 20);
             this.label7.TabIndex = 14;
-            this.label7.Text = "Departamento:";
+            this.label7.Text = "Departamento: *";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(372, 208);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(50, 20);
+            this.label8.Size = new System.Drawing.Size(61, 20);
             this.label8.TabIndex = 15;
-            this.label8.Text = "Setor:";
+            this.label8.Text = "Setor: *";
             // 
             // panel1
             // 

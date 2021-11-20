@@ -1,26 +1,32 @@
-﻿using Npgsql;
+﻿using DespesaDigital.Code.DTO.dtoImagem;
+using Npgsql;
+using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace DespesaDigital.Code.DAL.dalImagem
 {
     public class dalImagem
     {
-        public byte[] ObterByteImagemDespesaPorCodigo(long codigo_despesa)
+        public List<dtoImagem> ObterByteImagemDespesaPorCodigo(long codigo_despesa)
         {
-            byte[] productImageByte = null;
+            var list = new List<dtoImagem>();
 
-            var ssql = $"select dados_imagem from imagem where codigo_despesa = '{codigo_despesa}'";
+            var ssql = $"select dados_imagem, codigo from imagem where codigo_despesa = '{codigo_despesa}'";
             using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
             using (var dr = cmd.ExecuteReader())
             {
-                if (dr.Read())
+                while (dr.Read())
                 {
-                    productImageByte = (byte[])dr["dados_imagem"];
+                    var dto = new dtoImagem();
+                    dto.b_dados_imagem = (byte[])dr["dados_imagem"];
+                    dto.codigo = Convert.ToInt64(dr["codigo"]);
+                    list.Add(dto);
                 }
                 dr.Close();
             }
 
-            return productImageByte;
+            return list;
         }
 
         public string ObterFormatoImagemDespesaPorCodigo(long codigo_despesa)

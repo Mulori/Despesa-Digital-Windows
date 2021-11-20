@@ -36,6 +36,8 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.btnSalvar = new System.Windows.Forms.Button();
             this.folderBrowser = new System.Windows.Forms.FolderBrowserDialog();
             this.linkSalvarComputador = new System.Windows.Forms.LinkLabel();
+            this.btnRetrocede = new System.Windows.Forms.Button();
+            this.btnAvanca = new System.Windows.Forms.Button();
             this.picImagem = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImagem)).BeginInit();
@@ -117,6 +119,38 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.linkSalvarComputador.Visible = false;
             this.linkSalvarComputador.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkSalvarComputador_LinkClicked);
             // 
+            // btnRetrocede
+            // 
+            this.btnRetrocede.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnRetrocede.BackColor = System.Drawing.Color.White;
+            this.btnRetrocede.FlatAppearance.BorderSize = 0;
+            this.btnRetrocede.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRetrocede.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRetrocede.Image = global::DespesaDigital.Properties.Resources.left_arrow;
+            this.btnRetrocede.Location = new System.Drawing.Point(11, 333);
+            this.btnRetrocede.Name = "btnRetrocede";
+            this.btnRetrocede.Size = new System.Drawing.Size(39, 38);
+            this.btnRetrocede.TabIndex = 23;
+            this.btnRetrocede.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnRetrocede.UseVisualStyleBackColor = false;
+            this.btnRetrocede.Click += new System.EventHandler(this.btnRetrocede_Click);
+            // 
+            // btnAvanca
+            // 
+            this.btnAvanca.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnAvanca.BackColor = System.Drawing.Color.White;
+            this.btnAvanca.FlatAppearance.BorderSize = 0;
+            this.btnAvanca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAvanca.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAvanca.Image = global::DespesaDigital.Properties.Resources.right_arrow;
+            this.btnAvanca.Location = new System.Drawing.Point(1020, 333);
+            this.btnAvanca.Name = "btnAvanca";
+            this.btnAvanca.Size = new System.Drawing.Size(39, 38);
+            this.btnAvanca.TabIndex = 22;
+            this.btnAvanca.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAvanca.UseVisualStyleBackColor = false;
+            this.btnAvanca.Click += new System.EventHandler(this.btnAvanca_Click);
+            // 
             // picImagem
             // 
             this.picImagem.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -132,6 +166,8 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1071, 631);
+            this.Controls.Add(this.btnRetrocede);
+            this.Controls.Add(this.btnAvanca);
             this.Controls.Add(this.linkSalvarComputador);
             this.Controls.Add(this.picImagem);
             this.Controls.Add(this.panel1);
@@ -155,5 +191,7 @@ namespace DespesaDigital.Views.Forms.Despesa
         private System.Windows.Forms.Button btnGirar;
         private System.Windows.Forms.FolderBrowserDialog folderBrowser;
         private System.Windows.Forms.LinkLabel linkSalvarComputador;
+        private System.Windows.Forms.Button btnAvanca;
+        private System.Windows.Forms.Button btnRetrocede;
     }
 }

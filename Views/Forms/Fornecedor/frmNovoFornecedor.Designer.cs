@@ -140,9 +140,9 @@ namespace DespesaDigital.Views.Forms.Fornecedor
             this.label4.Location = new System.Drawing.Point(294, 116);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(99, 20);
+            this.label4.Size = new System.Drawing.Size(110, 20);
             this.label4.TabIndex = 51;
-            this.label4.Text = "Razão Social:";
+            this.label4.Text = "Razão Social: *";
             // 
             // txtRazaoSocial
             // 
@@ -159,9 +159,9 @@ namespace DespesaDigital.Views.Forms.Fornecedor
             this.label2.Location = new System.Drawing.Point(129, 116);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 20);
+            this.label2.Size = new System.Drawing.Size(60, 20);
             this.label2.TabIndex = 48;
-            this.label2.Text = "CNPJ:";
+            this.label2.Text = "CNPJ: *";
             // 
             // label1
             // 
@@ -169,9 +169,9 @@ namespace DespesaDigital.Views.Forms.Fornecedor
             this.label1.Location = new System.Drawing.Point(7, 116);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 20);
+            this.label1.Size = new System.Drawing.Size(77, 20);
             this.label1.TabIndex = 47;
-            this.label1.Text = "Código:";
+            this.label1.Text = "Código:  *";
             // 
             // txtCodigo
             // 

@@ -175,9 +175,9 @@ namespace DespesaDigital.Views.Forms.Produtos
             this.label1.Location = new System.Drawing.Point(7, 111);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 20);
+            this.label1.Size = new System.Drawing.Size(73, 20);
             this.label1.TabIndex = 44;
-            this.label1.Text = "Código:";
+            this.label1.Text = "Código: *";
             // 
             // txtDescricao
             // 

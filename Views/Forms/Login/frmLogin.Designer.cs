@@ -30,6 +30,7 @@ namespace DespesaDigital.Views.Forms.Login
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbVersao = new System.Windows.Forms.Label();
             this.linkSolicitarAcesso = new System.Windows.Forms.LinkLabel();
             this.btnEntrar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -39,7 +40,6 @@ namespace DespesaDigital.Views.Forms.Login
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnSair = new System.Windows.Forms.Button();
-            this.lbVersao = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -61,6 +61,19 @@ namespace DespesaDigital.Views.Forms.Login
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(324, 433);
             this.panel1.TabIndex = 0;
+            // 
+            // lbVersao
+            // 
+            this.lbVersao.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbVersao.AutoSize = true;
+            this.lbVersao.BackColor = System.Drawing.Color.Transparent;
+            this.lbVersao.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbVersao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.lbVersao.Location = new System.Drawing.Point(142, 407);
+            this.lbVersao.Name = "lbVersao";
+            this.lbVersao.Size = new System.Drawing.Size(43, 17);
+            this.lbVersao.TabIndex = 2;
+            this.lbVersao.Text = "label3";
             // 
             // linkSolicitarAcesso
             // 
@@ -97,9 +110,9 @@ namespace DespesaDigital.Views.Forms.Login
             this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(15, 235);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 20);
+            this.label2.Size = new System.Drawing.Size(66, 20);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Senha:";
+            this.label2.Text = "Senha: *";
             // 
             // label1
             // 
@@ -107,9 +120,9 @@ namespace DespesaDigital.Views.Forms.Login
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(15, 162);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 20);
+            this.label1.Size = new System.Drawing.Size(68, 20);
             this.label1.TabIndex = 3;
-            this.label1.Text = "E-mail:";
+            this.label1.Text = "E-mail: *";
             // 
             // txtSenha
             // 
@@ -173,19 +186,6 @@ namespace DespesaDigital.Views.Forms.Login
             this.btnSair.TabIndex = 1;
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
-            // 
-            // lbVersao
-            // 
-            this.lbVersao.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbVersao.AutoSize = true;
-            this.lbVersao.BackColor = System.Drawing.Color.Transparent;
-            this.lbVersao.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbVersao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
-            this.lbVersao.Location = new System.Drawing.Point(142, 407);
-            this.lbVersao.Name = "lbVersao";
-            this.lbVersao.Size = new System.Drawing.Size(43, 17);
-            this.lbVersao.TabIndex = 2;
-            this.lbVersao.Text = "label3";
             // 
             // frmLogin
             // 
