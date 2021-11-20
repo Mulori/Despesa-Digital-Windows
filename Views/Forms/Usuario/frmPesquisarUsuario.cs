@@ -18,9 +18,10 @@ namespace DespesaDigital.Views.Forms.Usuario
 
         void Inicializar()
         {
-            var FormOpen = Application.OpenForms["frmFiltroRelDespesaPorColaborador"];
+            var FormOpen1 = Application.OpenForms["frmFiltroRelDespesaPorColaborador"];
+            var FormOpen2 = Application.OpenForms["frmFiltroRelSolicitacoesCompra"];            
 
-            if (FormOpen != null)
+            if (FormOpen1 != null || FormOpen2 != null)
             {
                 dataGrid.DataSource = bllUsuario.ListarUsuariosPorStatus("A");
                 rdPendentes.Enabled = false;
@@ -138,9 +139,10 @@ namespace DespesaDigital.Views.Forms.Usuario
             var nome =dataGrid.CurrentRow.Cells[1].Value.ToString();
             var sobrenome = dataGrid.CurrentRow.Cells[2].Value.ToString();
 
-            var FormOpen = Application.OpenForms["frmFiltroRelDespesaPorColaborador"];
+            var FormOpen1 = Application.OpenForms["frmFiltroRelDespesaPorColaborador"];
+            var FormOpen2 = Application.OpenForms["frmFiltroRelSolicitacoesCompra"];
 
-            if (FormOpen != null)
+            if (FormOpen1 != null || FormOpen2 != null)
             {
                 VariaveisGlobais.codigo_usuario_relatorio_colaborador = codigo;
                 VariaveisGlobais.nome_usuario_relatorio_colaborador = nome + " " + sobrenome;
