@@ -29,11 +29,11 @@ namespace DespesaDigital.Code.DAL.dalImagem
             return list;
         }
 
-        public string ObterFormatoImagemDespesaPorCodigo(long codigo_despesa)
+        public string ObterFormatoImagemDespesaPorCodigo(long codigo_despesa, long codigo)
         {
             string productImageFormat = null;
 
-            var ssql = $"select formato from imagem where codigo_despesa = '{codigo_despesa}'";
+            var ssql = $"select formato from imagem where codigo_despesa = '{codigo_despesa}' and codigo = '{codigo}'";
             using (var cmd = new NpgsqlCommand(ssql, dalConexao.dalConexao.cnn))
             using (var dr = cmd.ExecuteReader())
             {

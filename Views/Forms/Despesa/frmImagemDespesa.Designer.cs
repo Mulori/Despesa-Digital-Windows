@@ -39,6 +39,7 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.btnRetrocede = new System.Windows.Forms.Button();
             this.btnAvanca = new System.Windows.Forms.Button();
             this.picImagem = new System.Windows.Forms.PictureBox();
+            this.lblImagemVisualizando = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImagem)).BeginInit();
             this.SuspendLayout();
@@ -46,6 +47,7 @@ namespace DespesaDigital.Views.Forms.Despesa
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.panel1.Controls.Add(this.lblImagemVisualizando);
             this.panel1.Controls.Add(this.btnGirar);
             this.panel1.Controls.Add(this.btnSair);
             this.panel1.Controls.Add(this.btnSalvar);
@@ -161,6 +163,18 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.picImagem.TabIndex = 20;
             this.picImagem.TabStop = false;
             // 
+            // lblImagemVisualizando
+            // 
+            this.lblImagemVisualizando.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblImagemVisualizando.AutoSize = true;
+            this.lblImagemVisualizando.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblImagemVisualizando.ForeColor = System.Drawing.Color.White;
+            this.lblImagemVisualizando.Location = new System.Drawing.Point(1003, 20);
+            this.lblImagemVisualizando.Name = "lblImagemVisualizando";
+            this.lblImagemVisualizando.Size = new System.Drawing.Size(46, 30);
+            this.lblImagemVisualizando.TabIndex = 3;
+            this.lblImagemVisualizando.Text = "0/0";
+            // 
             // frmImagemDespesa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -176,6 +190,7 @@ namespace DespesaDigital.Views.Forms.Despesa
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Imagem da Despesa";
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImagem)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -193,5 +208,6 @@ namespace DespesaDigital.Views.Forms.Despesa
         private System.Windows.Forms.LinkLabel linkSalvarComputador;
         private System.Windows.Forms.Button btnAvanca;
         private System.Windows.Forms.Button btnRetrocede;
+        private System.Windows.Forms.Label lblImagemVisualizando;
     }
 }

@@ -7,6 +7,7 @@ using DespesaDigital.Code.BLL.bllSetor;
 using DespesaDigital.Code.BLL.bllTipoDespesa;
 using DespesaDigital.Code.DTO.dtoDespesa;
 using DespesaDigital.Code.DTO.dtoFormaPagamento;
+using DespesaDigital.Code.DTO.dtoImagem;
 using DespesaDigital.Code.DTO.dtoModal;
 using DespesaDigital.Code.DTO.dtoProduto;
 using DespesaDigital.Code.DTO.dtoSetor;
@@ -95,13 +96,21 @@ namespace DespesaDigital.Views.Forms.Despesa
             if (dr == DialogResult.OK)
             {
                 var file = openFileDialog1.FileName;
-                lbFilePath.Text = file;
 
-                MemoryStream tmpStream = new MemoryStream();
-                file_byte = File.ReadAllBytes(file);
-                var array_format = openFileDialog1.FileName.Split('.');
-                arquivo_formato = array_format[1];
-                tmpStream.Read(file_byte, 0, 100);
+                chkListFiles.Items.Add(file);
+
+                for (int i = 0; i < chkListFiles.Items.Count; i++)
+                {
+                    chkListFiles.SetItemChecked(i, true);
+                }
+
+                //lbFilePath.Text = file;
+
+                //MemoryStream tmpStream = new MemoryStream();
+                //file_byte = File.ReadAllBytes(file);
+                //var array_format = openFileDialog1.FileName.Split('.');
+                //arquivo_formato = array_format[array_format.Length -1];
+                //tmpStream.Read(file_byte, 0, 100);
             }
         }
 
@@ -132,7 +141,34 @@ namespace DespesaDigital.Views.Forms.Despesa
                 return;
             }
 
-            if (lbFilePath.Text == "Nenhum arquivo selecionado.")
+
+            bool contem_anexo = false;
+            List<dtoImagem> listImagens = new List<dtoImagem>();
+            for (int i = 0; i <= (chkListFiles.Items.Count - 1); i++)
+            {
+                var atributos = chkListFiles.Items[i];
+
+                if (chkListFiles.GetItemChecked(i))
+                {
+                    var dto_imagem = new dtoImagem();
+
+                    MemoryStream tmpStream = new MemoryStream();
+                    file_byte = File.ReadAllBytes(atributos.ToString());
+                    tmpStream.Read(file_byte, 0, 100);
+
+                    var array_format = atributos.ToString().Split('.');
+                    arquivo_formato = array_format[array_format.Length - 1];
+
+                    dto_imagem.b_dados_imagem = file_byte;
+                    dto_imagem.formato = arquivo_formato;
+                    dto_imagem.dados_imagem = atributos.ToString();
+                    listImagens.Add(dto_imagem);
+
+                    contem_anexo = true;
+                }
+            }
+
+            if (!contem_anexo)
             {
                 if (!corePopUp.exibirPergunta("Atenção", "Nenhum comprovante foi anexado, deseja continuar e registrar?", 2))
                 {
@@ -177,9 +213,12 @@ namespace DespesaDigital.Views.Forms.Despesa
 
             if (codigo_despesa > 0)
             {
-                if (dto.imagem != null)
+                if (listImagens.Count > 0)
                 {
-                    await bllImagem.Insert(dto.imagem, codigo_despesa, arquivo_formato);
+                    foreach(var i in listImagens)
+                    {
+                        await bllImagem.Insert(i.b_dados_imagem, codigo_despesa, i.formato);
+                    }                   
                 }
 
                 foreach (var item in listProduto)
@@ -192,13 +231,13 @@ namespace DespesaDigital.Views.Forms.Despesa
 
                 txtObservacao.Text = "";
                 txtValor.Text = "";
-                lbFilePath.Text = "Nenhum arquivo selecionado.";
                 chkListItens.DataSource = null;
                 txtPesquisaItem.Text = "";
                 file_byte = null;
                 arquivo_formato = "";
                 listItens = new List<dtoModalCheckListBox>();
                 listItensBackup = new List<dtoModalCheckListBox>();
+                chkListFiles.Items.Clear();
             }
             else
             {

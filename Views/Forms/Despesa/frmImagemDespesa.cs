@@ -1,4 +1,5 @@
 ﻿using DespesaDigital.Code.BLL.bllImagem;
+using DespesaDigital.Code.BLL.bllLogSistema;
 using DespesaDigital.Code.DTO.dtoImagem;
 using DespesaDigital.Core;
 using System;
@@ -16,9 +17,8 @@ namespace DespesaDigital.Views.Forms.Despesa
         private bool bloqueia_visualizacao { get; set; }
         private int quantidade_arquivos { get; set; }
         private int index_visualizacao { get; set; }
-
-        private List<long> imagens_visualizadas;
         private List<dtoImagem> bImagensList;
+        private bool primeira_visualizacao { get; set; }
 
         public frmImagemDespesa(long codigo_despesa)
         {
@@ -35,15 +35,17 @@ namespace DespesaDigital.Views.Forms.Despesa
         {            
             quantidade_arquivos = bImagem.Count;
 
-            imagem = bImagem[0].b_dados_imagem;
+            lblImagemVisualizando.Text = "1/" + quantidade_arquivos.ToString();            
 
             if (bImagem.Count > 0)
             {
+                imagem = bImagem[0].b_dados_imagem;
+
                 index_visualizacao = 1;
 
                 using (MemoryStream productImageStream = new MemoryStream(bImagem[0].b_dados_imagem))
                 {
-
+                    primeira_visualizacao = true;
                     try
                     {
                         ImageConverter imageConverter = new ImageConverter();
@@ -62,7 +64,9 @@ namespace DespesaDigital.Views.Forms.Despesa
                 corePopUp.exibirMensagem("Não foi encontrado nenhum arquivo para visualização.", "Atenção");
                 bloqueia_visualizacao = true;
                 btnSalvar.Enabled = false;
-                btnGirar.Enabled = false;                
+                btnGirar.Enabled = false;
+                btnAvanca.Enabled = false;
+                btnRetrocede.Enabled = false;
             }
         }
 
@@ -89,6 +93,8 @@ namespace DespesaDigital.Views.Forms.Despesa
 
             File.WriteAllBytes(path + $@"\imagem-despesa-{_codigo_despesa}-{DateTime.Now.ToString("ddMMyyyy-HHmmss")}.png", imagem);
 
+            bllLogSistema.Insert($"Exportou o arquivo da despesa de codigo: {_codigo_despesa} para o seguinte diretorio: {path}");
+
             corePopUp.exibirMensagem("Imagem salva com sucesso!", "Atenção");
         }
 
@@ -109,14 +115,34 @@ namespace DespesaDigital.Views.Forms.Despesa
             if (path == "")
                 return;
 
-            var format = bllImagem.ObterFormatoImagemDespesaPorCodigo(_codigo_despesa);
+            string format = "";
+
+            if (primeira_visualizacao)
+            {
+                format = bllImagem.ObterFormatoImagemDespesaPorCodigo(_codigo_despesa, bImagensList[0].codigo);
+            }
+            else
+            {
+                format = bllImagem.ObterFormatoImagemDespesaPorCodigo(_codigo_despesa, bImagensList[index_visualizacao -1].codigo);
+            }
+
+            primeira_visualizacao = false;
+
             path = path + $@"\arquivo-despesa -{ _codigo_despesa}-{ DateTime.Now.ToString("ddMMyyyy-HHmmss")}.{format}";
 
-            FileStream Stream = new FileStream(path, FileMode.Create);
-            Stream.Write(imagem, 0, imagem.Length);
-            Stream.Close();
+            bllLogSistema.Insert($"Exportou o arquivo da despesa de codigo: {_codigo_despesa} para o seguinte diretorio: {path}");
 
-            corePopUp.exibirMensagem("Arquivo salvo com sucesso!", "Atenção");
+            try
+            {
+                FileStream Stream = new FileStream(path, FileMode.Create);
+                Stream.Write(imagem, 0, imagem.Length);
+                Stream.Close();
+                corePopUp.exibirMensagem("Arquivo salvo com sucesso!", "Atenção");
+            }
+            catch
+            {
+                corePopUp.exibirMensagem("Ocorreu um problema ao salvar o arquivo no diretorio escolhido. \nVerifique se você possui permissão!", "Atenção");
+            }            
         }
 
         private void btnAvanca_Click(object sender, EventArgs e)
@@ -134,6 +160,8 @@ namespace DespesaDigital.Views.Forms.Despesa
 
             if (bImagensList.Count > 0)
             {
+                lblImagemVisualizando.Text = index_visualizacao +"/" + quantidade_arquivos.ToString();
+                primeira_visualizacao = false;
 
                 using (MemoryStream productImageStream = new MemoryStream(bImagensList[index_visualizacao -1].b_dados_imagem))
                 {
@@ -145,12 +173,14 @@ namespace DespesaDigital.Views.Forms.Despesa
 
                         linkSalvarComputador.Visible = false;
                         bloqueia_visualizacao = false;
+                        btnSalvar.Enabled = true;
                     }
                     catch
                     {
                         picImagem.Image = null;
                         linkSalvarComputador.Visible = true;
                         bloqueia_visualizacao = true;
+                        btnSalvar.Enabled = false;
                     }
                 }
             }
@@ -160,6 +190,8 @@ namespace DespesaDigital.Views.Forms.Despesa
                 bloqueia_visualizacao = true;
                 btnSalvar.Enabled = false;
                 btnGirar.Enabled = false;
+                btnAvanca.Enabled = false;
+                btnRetrocede.Enabled = false;
             }
         }
 
@@ -178,6 +210,8 @@ namespace DespesaDigital.Views.Forms.Despesa
 
             if (bImagensList.Count > 0)
             {
+                lblImagemVisualizando.Text = index_visualizacao + "/" + quantidade_arquivos.ToString();
+                primeira_visualizacao = false;
 
                 using (MemoryStream productImageStream = new MemoryStream(bImagensList[index_visualizacao -1].b_dados_imagem))
                 {
@@ -189,12 +223,14 @@ namespace DespesaDigital.Views.Forms.Despesa
 
                         linkSalvarComputador.Visible = false;
                         bloqueia_visualizacao = false;
+                        btnSalvar.Enabled = true;
                     }
                     catch
                     {
                         picImagem.Image = null;
                         linkSalvarComputador.Visible = true;
                         bloqueia_visualizacao = true;
+                        btnSalvar.Enabled = false;
                     }
                 }
             }
@@ -204,6 +240,8 @@ namespace DespesaDigital.Views.Forms.Despesa
                 bloqueia_visualizacao = true;
                 btnSalvar.Enabled = false;
                 btnGirar.Enabled = false;
+                btnAvanca.Enabled = false;
+                btnRetrocede.Enabled = false;
             }
         }
     }
