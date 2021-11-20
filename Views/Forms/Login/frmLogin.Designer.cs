@@ -29,6 +29,7 @@ namespace DespesaDigital.Views.Forms.Login
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbVersao = new System.Windows.Forms.Label();
             this.linkSolicitarAcesso = new System.Windows.Forms.LinkLabel();
@@ -198,6 +199,7 @@ namespace DespesaDigital.Views.Forms.Login
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLogin";

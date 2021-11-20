@@ -2,6 +2,7 @@
 using DespesaDigital.Code.DTO;
 using DespesaDigital.Core;
 using DespesaDigital.Report.rptDespesa;
+using DespesaDigital.Views.Forms.Usuario;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -29,7 +30,9 @@ namespace DespesaDigital.Views.Forms.Relatorio.Despesa
                     var list = bllUsuario.ListarUsuariosPorSetor(VariaveisGlobais.codigo_setor);
                     CarregaListaColaboradores(list);
                 }
-            }           
+            }
+
+            cmbColaborador.Focus();
         }
 
         void CarregaListaColaboradores(List<dtoUsuario> list)
@@ -91,6 +94,19 @@ namespace DespesaDigital.Views.Forms.Relatorio.Despesa
             using (var rel = new frmRelDespesaPorColaborador(inicial, final, VariaveisGlobais.nivel_acesso > 1 ? codigo_usuario : VariaveisGlobais.codigo_usuario))
             {
                 rel.ShowDialog();
+            }
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            using (var form = new frmPesquisarUsuario())
+            {
+                form.ShowDialog();
+                if (VariaveisGlobais.nome_usuario_relatorio_colaborador != null)
+                {
+                    cmbColaborador.Text = VariaveisGlobais.nome_usuario_relatorio_colaborador.ToString();
+                }
+                VariaveisGlobais.nome_usuario_relatorio_colaborador = null;
             }
         }
     }

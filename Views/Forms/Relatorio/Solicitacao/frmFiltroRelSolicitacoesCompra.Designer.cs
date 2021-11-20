@@ -42,6 +42,7 @@ namespace DespesaDigital.Views.Forms.Relatorio.Solicitacao
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cmbColaborador = new System.Windows.Forms.ComboBox();
+            this.btnPesquisar = new System.Windows.Forms.Button();
             this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -168,6 +169,7 @@ namespace DespesaDigital.Views.Forms.Relatorio.Solicitacao
             // 
             this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox2.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox2.Controls.Add(this.btnPesquisar);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.cmbColaborador);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -183,7 +185,7 @@ namespace DespesaDigital.Views.Forms.Relatorio.Solicitacao
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Black", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(62, 41);
+            this.label4.Location = new System.Drawing.Point(24, 37);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(58, 20);
             this.label4.TabIndex = 10;
@@ -193,10 +195,27 @@ namespace DespesaDigital.Views.Forms.Relatorio.Solicitacao
             // 
             this.cmbColaborador.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbColaborador.FormattingEnabled = true;
-            this.cmbColaborador.Location = new System.Drawing.Point(66, 64);
+            this.cmbColaborador.Location = new System.Drawing.Point(28, 60);
             this.cmbColaborador.Name = "cmbColaborador";
             this.cmbColaborador.Size = new System.Drawing.Size(285, 29);
             this.cmbColaborador.TabIndex = 0;
+            // 
+            // btnPesquisar
+            // 
+            this.btnPesquisar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnPesquisar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.btnPesquisar.FlatAppearance.BorderSize = 0;
+            this.btnPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPesquisar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPesquisar.ForeColor = System.Drawing.Color.White;
+            this.btnPesquisar.Location = new System.Drawing.Point(320, 60);
+            this.btnPesquisar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(79, 29);
+            this.btnPesquisar.TabIndex = 16;
+            this.btnPesquisar.Text = "Pesquisar";
+            this.btnPesquisar.UseVisualStyleBackColor = false;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // frmFiltroRelSolicitacoesCompra
             // 
@@ -237,5 +256,6 @@ namespace DespesaDigital.Views.Forms.Relatorio.Solicitacao
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cmbColaborador;
+        private System.Windows.Forms.Button btnPesquisar;
     }
 }

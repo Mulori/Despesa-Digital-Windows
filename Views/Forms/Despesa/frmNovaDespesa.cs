@@ -160,7 +160,7 @@ namespace DespesaDigital.Views.Forms.Despesa
                     arquivo_formato = array_format[array_format.Length - 1];
 
                     dto_imagem.b_dados_imagem = file_byte;
-                    dto_imagem.formato = arquivo_formato;
+                    dto_imagem.formato = coreMid.MidString(arquivo_formato, 4);
                     dto_imagem.dados_imagem = atributos.ToString();
                     listImagens.Add(dto_imagem);
 

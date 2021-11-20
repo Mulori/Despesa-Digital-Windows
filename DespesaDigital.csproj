@@ -177,6 +177,7 @@
     <Compile Include="Core\coreCrypt.cs" />
     <Compile Include="Core\coreFormat.cs" />
     <Compile Include="Core\coreMascaraMoeda.cs" />
+    <Compile Include="Core\coreMid.cs" />
     <Compile Include="Core\coreNumericToString.cs" />
     <Compile Include="Core\corePopUp.cs" />
     <Compile Include="Core\coreValid.cs" />

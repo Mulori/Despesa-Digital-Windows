@@ -9,6 +9,7 @@ using DespesaDigital.Code.DTO.dtoSetor;
 using DespesaDigital.Code.DTO.dtoTipoDespesa;
 using DespesaDigital.Core;
 using DespesaDigital.Views.Forms.Relatorio.Despesa;
+using DespesaDigital.Views.Forms.Usuario;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;

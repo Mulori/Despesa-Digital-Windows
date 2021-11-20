@@ -18,8 +18,21 @@ namespace DespesaDigital.Views.Forms.Usuario
 
         void Inicializar()
         {
-            dataGrid.DataSource = bllUsuario.ListarUsuariosPorStatus("P");
-            txtNome.Focus();
+            var FormOpen = Application.OpenForms["frmFiltroRelDespesaPorColaborador"];
+
+            if (FormOpen != null)
+            {
+                dataGrid.DataSource = bllUsuario.ListarUsuariosPorStatus("A");
+                rdPendentes.Enabled = false;
+                rdInativos.Enabled = false;
+                rdAtivos.Checked = true;
+                txtNome.Focus();
+            }
+            else
+            {
+                dataGrid.DataSource = bllUsuario.ListarUsuariosPorStatus("P");
+                txtNome.Focus();
+            }            
         }
 
         void AtualizarGrid()
@@ -116,14 +129,32 @@ namespace DespesaDigital.Views.Forms.Usuario
 
         private void dataGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            var codigo = Convert.ToInt32(dataGrid.CurrentRow.Cells[0].Value.ToString());
-
-            using (var form = new frmEditarUsuario(codigo))
+            if (dataGrid.RowCount == 0)
             {
-                form.ShowDialog();
+                return;
             }
 
-            AtualizarGrid();
+            var codigo = Convert.ToInt32(dataGrid.CurrentRow.Cells[0].Value.ToString());
+            var nome =dataGrid.CurrentRow.Cells[1].Value.ToString();
+            var sobrenome = dataGrid.CurrentRow.Cells[2].Value.ToString();
+
+            var FormOpen = Application.OpenForms["frmFiltroRelDespesaPorColaborador"];
+
+            if (FormOpen != null)
+            {
+                VariaveisGlobais.codigo_usuario_relatorio_colaborador = codigo;
+                VariaveisGlobais.nome_usuario_relatorio_colaborador = nome + " " + sobrenome;
+                Close();
+            }
+            else
+            {
+                using (var form = new frmEditarUsuario(codigo))
+                {
+                    form.ShowDialog();
+                }
+
+                AtualizarGrid();
+            }
         }
     }
 }
