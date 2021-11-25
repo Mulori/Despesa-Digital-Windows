@@ -1,3 +1,7 @@
 {
-  "IP": "25.34.72.146"
+  "IP": "25.34.72.146",
+  "PORT": "8077",
+  "USER": "postgres",
+  "PASS": "190123",
+  "NAME": "despesadigital"
 }

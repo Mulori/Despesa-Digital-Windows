@@ -16,7 +16,7 @@ namespace DespesaDigital.Code.DAL.dalConexao
 
                 var server_net = ReadConfigServerNet.GetConfigServerNET();
                 cnn = new NpgsqlConnection();
-                cnn.ConnectionString = $"Server={server_net.IP};Port=8077;User Id=postgres;Password=190123;Database=despesadigital;CommandTimeout=500;";
+                cnn.ConnectionString = $"Server={server_net.IP};Port={server_net.PORT};User Id={server_net.USER};Password={server_net.PASS};Database={server_net.NAME};CommandTimeout=500;";
 
                 cnn.Open();
                 return true;

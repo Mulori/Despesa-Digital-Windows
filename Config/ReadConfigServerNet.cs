@@ -17,6 +17,10 @@ namespace DespesaDigital.Config
                 var atributtes = JsonConvert.DeserializeObject<dtoServerNet>(json);
 
                 dto.IP = atributtes.IP;
+                dto.PASS = atributtes.PASS;
+                dto.NAME = atributtes.NAME;
+                dto.PORT = atributtes.PORT;
+                dto.USER = atributtes.USER;
             }
 
             return dto;
